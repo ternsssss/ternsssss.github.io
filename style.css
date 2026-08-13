@@ -356,7 +356,9 @@ footer {
     }
 }
 
-/* TECH STACK */
+/* =========================================
+   TECH STACK
+   ========================================= */
 
 .tech-stack-logos {
     width: 100%;
@@ -401,9 +403,15 @@ footer {
     transform: scale(1.08);
 }
 
+
+/* =========================================
+   TECH CAPABILITIES
+   ========================================= */
+
 .tech-capabilities {
     width: 100%;
     display: grid;
+    grid-column: 1 / -1;
     grid-template-columns: repeat(3, 1fr);
     margin: 75px auto 0;
     padding-top: 30px;
@@ -424,6 +432,97 @@ footer {
     border-right: 1px solid #dfe7ef;
 }
 
+
+/* =========================================
+   MICROSOFT BRAND LOGOS
+   ========================================= */
+
+.brand-logo {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease;
+}
+
+
+/* Microsoft 365 */
+
+.microsoft365-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 22px;
+
+    background: linear-gradient(
+        135deg,
+        #6f42c1,
+        #4776e6
+    );
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    line-height: 1;
+
+    box-shadow:
+        0 8px 20px rgba(71, 118, 230, 0.15);
+}
+
+.microsoft365-logo span {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+.microsoft365-logo strong {
+    font-size: 26px;
+    font-weight: 700;
+    color: white;
+    margin-top: 4px;
+}
+
+
+/* Microsoft Copilot */
+
+.copilot-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 22px;
+
+    background: linear-gradient(
+        135deg,
+        #f45b69,
+        #9b5de5,
+        #00bbf9
+    );
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 8px 20px rgba(155, 93, 229, 0.15);
+}
+
+.copilot-logo span {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
 @media (max-width: 850px) {
 
     .tech-stack-logos {
@@ -431,7 +530,12 @@ footer {
         gap: 50px 25px;
     }
 
+    .tech-capabilities {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
 }
+
 
 @media (max-width: 500px) {
 
@@ -440,7 +544,10 @@ footer {
         gap: 40px 15px;
     }
 
-    .tech-logo img {
+    .tech-logo img,
+    .brand-logo,
+    .microsoft365-logo,
+    .copilot-logo {
         width: 70px;
         height: 70px;
     }
@@ -461,70 +568,5 @@ footer {
     .tech-capabilities span:last-child {
         border-bottom: none;
     }
-}
 
-/* MICROSOFT BRAND LOGOS */
-
-.brand-logo {
-    width: 90px;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.25s ease;
-}
-
-/* Microsoft 365 */
-
-.microsoft365-logo {
-    position: relative;
-    width: 90px;
-    height: 90px;
-    border-radius: 22px;
-    background: linear-gradient(
-        135deg,
-        #6f42c1,
-        #4776e6
-    );
-    color: white;
-    flex-direction: column;
-    line-height: 1;
-    box-shadow: 0 8px 20px rgba(71, 118, 230, 0.15);
-}
-
-.microsoft365-logo span {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    color: white;
-}
-
-.microsoft365-logo strong {
-    font-size: 26px;
-    font-weight: 700;
-    color: white;
-    margin-top: 4px;
-}
-
-/* Microsoft Copilot */
-
-.copilot-logo {
-    position: relative;
-    width: 90px;
-    height: 90px;
-    border-radius: 22px;
-    background: linear-gradient(
-        135deg,
-        #f45b69,
-        #9b5de5,
-        #00bbf9
-    );
-    color: white;
-    box-shadow: 0 8px 20px rgba(155, 93, 229, 0.15);
-}
-
-.copilot-logo span {
-    font-size: 14px;
-    font-weight: 700;
-    color: white;
 }
