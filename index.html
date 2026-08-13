@@ -3,18 +3,715 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Terence Tiongson | Data Analyst Portfolio</title>
+
+    <meta name="description"
+          content="Terence Tiongson — Data Analyst, Power BI Developer, and Engineer. Explore data analytics projects, dashboards, business insights, and case studies.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8fbff;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #e6edf5;
+            padding: 20px 7%;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #173b67;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #46546a;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #1769aa;
+        }
+
+        /* HERO */
+
+        .hero {
+            max-width: 1200px;
+            margin: auto;
+            min-height: 720px;
+            padding: 120px 7%;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 780px;
+        }
+
+        .eyebrow {
+            color: #1769aa;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: 1.05;
+            color: #142b45;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: #1769aa;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            font-weight: 600;
+            color: #42526a;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 680px;
+            font-size: 17px;
+            color: #66758a;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: #1769aa;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #12578e;
+        }
+
+        .btn-secondary {
+            border: 1px solid #cbd8e6;
+            color: #173b67;
+            background: white;
+        }
+
+        /* SECTIONS */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 7%;
+        }
+
+        .section-label {
+            color: #1769aa;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            line-height: 1.2;
+            color: #142b45;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            max-width: 700px;
+            color: #66758a;
+            font-size: 17px;
+            margin-bottom: 50px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .about-card {
+            background: white;
+            padding: 35px;
+            border: 1px solid #e5edf5;
+            border-radius: 14px;
+        }
+
+        .about-card h3 {
+            margin-bottom: 15px;
+            color: #173b67;
+        }
+
+        .about-card p {
+            color: #66758a;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            border: 1px solid #e5edf5;
+            border-radius: 14px;
+            padding: 28px;
+        }
+
+        .skill-card h3 {
+            color: #173b67;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: #718096;
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid #e5edf5;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(25, 61, 100, 0.10);
+        }
+
+        .project-preview {
+            height: 240px;
+            background: #eaf3fb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7d91;
+            font-size: 14px;
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-content h3 {
+            font-size: 23px;
+            color: #173b67;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #66758a;
+            margin-bottom: 18px;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #eef5fb;
+            color: #1769aa;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+            background: #edf5fc;
+            max-width: none;
+        }
+
+        .contact-inner {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .contact p {
+            color: #66758a;
+            margin-bottom: 30px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #142b45;
+            color: #d9e4ef;
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 600px;
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            .about-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 75px 7%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Terence Tiongson</h1>
+    <!-- NAVIGATION -->
 
-    <h2>Data Analyst | Power BI Developer | Engineer</h2>
+    <nav>
+        <div class="nav-container">
 
-    <p>
-        Welcome to my professional data analytics portfolio.
-    </p>
+            <div class="logo">
+                Terence Tiongson
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Data Analytics & Business Intelligence
+            </div>
+
+            <h1>
+                Terence <span>Tiongson</span>
+            </h1>
+
+            <div class="hero-subtitle">
+                Data Analyst | Power BI Developer | Engineer
+            </div>
+
+            <p class="hero-description">
+                I transform business data into clear insights, practical
+                recommendations, and decision-ready analytics solutions.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    Explore My Projects
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Get In Touch
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="section-label">
+            About Me
+        </div>
+
+        <h2 class="section-title">
+            Data-driven thinking with an engineering mindset.
+        </h2>
+
+        <p class="section-description">
+            I combine analytical thinking, business understanding, and
+            engineering experience to turn complex data into useful
+            information for decision-making.
+        </p>
+
+        <div class="about-grid">
+
+            <div class="about-card">
+
+                <h3>
+                    What I Do
+                </h3>
+
+                <p>
+                    I design analytical solutions, develop Power BI dashboards,
+                    analyze business performance, and communicate insights
+                    through clear and executive-friendly visualizations.
+                </p>
+
+            </div>
+
+            <div class="about-card">
+
+                <h3>
+                    How I Think
+                </h3>
+
+                <p>
+                    I focus on the business problem first — identifying the
+                    right questions, analyzing the evidence, and translating
+                    findings into actionable recommendations.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="section-label">
+            Expertise
+        </div>
+
+        <h2 class="section-title">
+            Tools and capabilities
+        </h2>
+
+        <p class="section-description">
+            A combination of technical analytics skills and business-focused
+            problem solving.
+        </p>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>Power BI</h3>
+                <p>
+                    Dashboard development, data modeling, DAX, KPIs, and
+                    executive reporting.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Data Analytics</h3>
+                <p>
+                    Data exploration, trend analysis, segmentation, and
+                    performance analysis.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Business Analysis</h3>
+                <p>
+                    Business questions, requirements, insights,
+                    recommendations, and decision support.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Engineering</h3>
+                <p>
+                    Structured problem solving, estimation, analytical
+                    thinking, and technical project experience.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="section-label">
+            Selected Work
+        </div>
+
+        <h2 class="section-title">
+            Featured projects
+        </h2>
+
+        <p class="section-description">
+            Business-focused analytics projects that demonstrate how data can
+            support better decisions.
+        </p>
+
+        <div class="projects-grid">
+
+            <article class="project-card">
+
+                <div class="project-preview">
+                    Dashboard Preview
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        HR Analytics
+                    </h3>
+
+                    <p>
+                        Workforce, hiring, attrition, and employee analytics
+                        designed to support HR decision-making.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">DAX</span>
+                        <span class="tag">HR Analytics</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-preview">
+                    Dashboard Preview
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Hospital Analytics
+                    </h3>
+
+                    <p>
+                        Patient, clinical, operational, and financial analysis
+                        using healthcare records.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Healthcare</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-preview">
+                    Dashboard Preview
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        E-Commerce Analytics
+                    </h3>
+
+                    <p>
+                        Revenue, customer loyalty, subscriptions, promotions,
+                        refunds, and repeat-purchase analysis.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">DAX</span>
+                        <span class="tag">E-Commerce</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-preview">
+                    Dashboard Preview
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Financial Analytics
+                    </h3>
+
+                    <p>
+                        Executive financial performance analysis focused on
+                        revenue, profitability, trends, and business impact.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Financial Analytics</span>
+                        <span class="tag">Business Intelligence</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+        <div class="contact-inner">
+
+            <div class="section-label">
+                Contact
+            </div>
+
+            <h2 class="section-title">
+                Let's connect.
+            </h2>
+
+            <p>
+                Interested in data analytics, Power BI, business intelligence,
+                or analytics projects? I'd be happy to connect.
+            </p>
+
+            <a href="mailto:YOUR-EMAIL@example.com"
+               class="btn btn-primary">
+                Contact Me
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Terence Tiongson. All rights reserved.
+
+    </footer>
 
 </body>
 </html>
