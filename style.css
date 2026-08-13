@@ -364,43 +364,45 @@ footer {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(5, minmax(120px, 1fr));
-    gap: 70px 45px;
+    column-gap: 40px;
+    row-gap: 62px;
     align-items: start;
     justify-items: center;
-    margin: 65px auto 0;
+    margin: 58px auto 0;
 }
 
 .tech-logo {
     width: 100%;
+    min-height: 125px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 16px;
+    gap: 14px;
     text-align: center;
     transition: transform 0.25s ease;
 }
 
 .tech-logo img {
-    width: 90px;
-    height: 90px;
+    width: 82px;
+    height: 82px;
     object-fit: contain;
     display: block;
     transition: transform 0.25s ease;
 }
-
 .tech-logo span {
     font-size: 13px;
     font-weight: 600;
-    color: #66758a;
+    color: #52647a;
+    line-height: 1.4;
 }
 
 .tech-logo:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
 }
 
 .tech-logo:hover img {
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
 
@@ -413,19 +415,19 @@ footer {
     display: grid;
     grid-column: 1 / -1;
     grid-template-columns: repeat(3, 1fr);
-    margin: 75px auto 0;
-    padding-top: 30px;
-    border-top: 1px solid #e3ebf3;
+    margin: 62px auto 0;
+    padding-top: 26px;
+    border-top: 1px solid #dfe7ef;
 }
 
 .tech-capabilities span {
     text-align: center;
     color: #1769aa;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.8px;
     text-transform: uppercase;
-    padding: 10px 20px;
+    padding: 8px 20px;
 }
 
 .tech-capabilities span:not(:last-child) {
@@ -449,20 +451,17 @@ footer {
 
 }
 
-
 @media (max-width: 500px) {
 
     .tech-stack-logos {
         grid-template-columns: repeat(2, 1fr);
-        gap: 40px 15px;
+        column-gap: 15px;
+        row-gap: 42px;
     }
 
-    .tech-logo img,
-    .brand-logo,
-    .microsoft365-logo,
-    .copilot-logo {
-        width: 70px;
-        height: 70px;
+    .tech-logo img {
+        width: 68px;
+        height: 68px;
     }
 
     .tech-logo span {
