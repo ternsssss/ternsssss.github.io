@@ -359,28 +359,31 @@ footer {
 /* TECH STACK */
 
 .tech-stack-logos {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 65px 40px;
+    grid-template-columns: repeat(5, minmax(120px, 1fr));
+    gap: 70px 45px;
     align-items: start;
     justify-items: center;
-    margin-top: 65px;
+    margin: 65px auto 0;
 }
 
 .tech-logo {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 16px;
     text-align: center;
     transition: transform 0.25s ease;
 }
 
 .tech-logo img {
-    width: 82px;
-    height: 82px;
+    width: 90px;
+    height: 90px;
     object-fit: contain;
+    display: block;
     transition: transform 0.25s ease;
 }
 
@@ -399,23 +402,26 @@ footer {
 }
 
 .tech-capabilities {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 75px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 75px auto 0;
+    padding-top: 30px;
+    border-top: 1px solid #e3ebf3;
+}
+
+.tech-capabilities span {
+    text-align: center;
     color: #1769aa;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
+    padding: 10px 20px;
 }
 
-.tech-capabilities span:not(:last-child)::after {
-    content: "•";
-    margin-left: 14px;
-    color: #a8b8c8;
+.tech-capabilities span:not(:last-child) {
+    border-right: 1px solid #dfe7ef;
 }
 
 @media (max-width: 850px) {
@@ -435,8 +441,8 @@ footer {
     }
 
     .tech-logo img {
-        width: 68px;
-        height: 68px;
+        width: 70px;
+        height: 70px;
     }
 
     .tech-logo span {
@@ -444,8 +450,81 @@ footer {
     }
 
     .tech-capabilities {
-        font-size: 11px;
-        line-height: 2;
+        grid-template-columns: 1fr;
     }
 
+    .tech-capabilities span {
+        border-right: none !important;
+        border-bottom: 1px solid #dfe7ef;
+    }
+
+    .tech-capabilities span:last-child {
+        border-bottom: none;
+    }
+}
+
+/* MICROSOFT BRAND LOGOS */
+
+.brand-logo {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease;
+}
+
+/* Microsoft 365 */
+
+.microsoft365-logo {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 22px;
+    background: linear-gradient(
+        135deg,
+        #6f42c1,
+        #4776e6
+    );
+    color: white;
+    flex-direction: column;
+    line-height: 1;
+    box-shadow: 0 8px 20px rgba(71, 118, 230, 0.15);
+}
+
+.microsoft365-logo span {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+.microsoft365-logo strong {
+    font-size: 26px;
+    font-weight: 700;
+    color: white;
+    margin-top: 4px;
+}
+
+/* Microsoft Copilot */
+
+.copilot-logo {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 22px;
+    background: linear-gradient(
+        135deg,
+        #f45b69,
+        #9b5de5,
+        #00bbf9
+    );
+    color: white;
+    box-shadow: 0 8px 20px rgba(155, 93, 229, 0.15);
+}
+
+.copilot-logo span {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
 }
