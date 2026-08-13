@@ -361,10 +361,10 @@ footer {
 .tech-stack-logos {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 55px 35px;
-    align-items: center;
+    gap: 65px 40px;
+    align-items: start;
     justify-items: center;
-    margin-top: 55px;
+    margin-top: 65px;
 }
 
 .tech-logo {
@@ -372,23 +372,16 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 14px;
+    gap: 16px;
     text-align: center;
+    transition: transform 0.25s ease;
 }
 
-.logo-placeholder {
-    width: 90px;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 18px;
-    background: #ffffff;
-    border: 1px solid #e5edf5;
-    color: #1769aa;
-    font-size: 18px;
-    font-weight: 700;
-    box-shadow: 0 8px 25px rgba(25, 61, 100, 0.06);
+.tech-logo img {
+    width: 82px;
+    height: 82px;
+    object-fit: contain;
+    transition: transform 0.25s ease;
 }
 
 .tech-logo span {
@@ -397,13 +390,21 @@ footer {
     color: #66758a;
 }
 
+.tech-logo:hover {
+    transform: translateY(-5px);
+}
+
+.tech-logo:hover img {
+    transform: scale(1.08);
+}
+
 .tech-capabilities {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 14px;
-    margin-top: 70px;
+    margin-top: 75px;
     color: #1769aa;
     font-size: 13px;
     font-weight: 700;
@@ -421,7 +422,7 @@ footer {
 
     .tech-stack-logos {
         grid-template-columns: repeat(3, 1fr);
-        gap: 40px 20px;
+        gap: 50px 25px;
     }
 
 }
@@ -430,13 +431,21 @@ footer {
 
     .tech-stack-logos {
         grid-template-columns: repeat(2, 1fr);
-        gap: 35px 15px;
+        gap: 40px 15px;
     }
 
-    .logo-placeholder {
-        width: 75px;
-        height: 75px;
-        font-size: 15px;
+    .tech-logo img {
+        width: 68px;
+        height: 68px;
+    }
+
+    .tech-logo span {
+        font-size: 12px;
+    }
+
+    .tech-capabilities {
+        font-size: 11px;
+        line-height: 2;
     }
 
 }
