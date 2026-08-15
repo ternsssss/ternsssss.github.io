@@ -908,17 +908,55 @@ document.addEventListener("DOMContentLoaded", function () {
        MOUSE WHEEL
        ========================================= */
 
-    rail.addEventListener("wheel", function (event) {
+/* =========================================
+   MOUSE WHEEL
+   ========================================= */
+
+rail.addEventListener(
+    "wheel",
+    function (event) {
+
+        /*
+         * Convert vertical mouse-wheel movement
+         * into horizontal certificate scrolling.
+         */
+
+        const movement =
+            Math.abs(event.deltaY) >= Math.abs(event.deltaX)
+                ? event.deltaY
+                : event.deltaX;
+
+
+        if (movement === 0) {
+            return;
+        }
+
 
         event.preventDefault();
+        event.stopPropagation();
 
-        rail.scrollLeft += event.deltaY;
+
+        /*
+         * Multiply slightly so the movement
+         * feels natural and responsive.
+         */
+
+        rail.scrollLeft += movement * 1.2;
+
+
+        /*
+         * Pause automatic movement while
+         * the visitor is manually scrolling.
+         */
 
         pauseAutoScroll();
 
-    }, {
-        passive: false
-    });
+    },
+    {
+        passive: false,
+        capture: true
+    }
+);
 
 
     /* =========================================
