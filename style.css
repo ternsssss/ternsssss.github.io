@@ -218,6 +218,12 @@ section {
 
 /* PROJECTS */
 
+#projects {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -323,6 +329,13 @@ section {
     padding: 6px 10px;
     border-radius: 5px;
     font-size: 12px;
+    font-weight: 700;
+}
+
+.project-action {
+    margin-top: 18px;
+    color: #173b67;
+    font-size: 13px;
     font-weight: 700;
 }
 
