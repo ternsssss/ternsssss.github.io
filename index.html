@@ -878,7 +878,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-
 <!-- CERTIFICATE AUTO-SCROLL + MANUAL SCROLL -->
 
 <script>
@@ -888,13 +887,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!rail) return;
 
-    let autoScroll;
-    let resumeTimer;
+
+    /* =========================================
+       SETTINGS
+       ========================================= */
 
     const AUTO_DISTANCE = 307;
     const AUTO_INTERVAL = 2500;
     const RESUME_DELAY = 4000;
 
+
+    let autoScroll = null;
+    let resumeTimer = null;
+
+    let isDragging = false;
+    let hasDragged = false;
+
+    let startX = 0;
+    let startScrollLeft = 0;
+
+
+    /* =========================================
+       AUTO-SCROLL
+       ========================================= */
 
     function startAutoScroll() {
 
@@ -902,10 +917,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         autoScroll = setInterval(() => {
 
+            if (isDragging) return;
+
             const maxScroll =
                 rail.scrollWidth - rail.clientWidth;
 
             if (maxScroll <= 0) return;
+
 
             if (rail.scrollLeft >= maxScroll - 5) {
 
@@ -927,6 +945,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    /* =========================================
+       PAUSE AUTO-SCROLL
+       ========================================= */
+
     function pauseAutoScroll() {
 
         clearInterval(autoScroll);
@@ -935,35 +957,52 @@ document.addEventListener("DOMContentLoaded", () => {
         resumeTimer = setTimeout(() => {
             startAutoScroll();
         }, RESUME_DELAY);
+
     }
 
 
-    /* MOUSE WHEEL */
+    /* =========================================
+       MOUSE WHEEL
+       ========================================= */
 
     rail.addEventListener("wheel", (event) => {
 
         event.preventDefault();
 
-        rail.scrollLeft += event.deltaY;
+        const movement =
+            Math.abs(event.deltaY) > Math.abs(event.deltaX)
+                ? event.deltaY
+                : event.deltaX;
+
+        rail.scrollLeft += movement;
 
         pauseAutoScroll();
 
-    }, { passive: false });
+    }, {
+        passive: false
+    });
 
 
-    /* CLICK + DRAG */
+    /* =========================================
+       MOUSE / POINTER DRAG
+       ========================================= */
 
-    let isDragging = false;
-    let startX = 0;
-    let startScroll = 0;
+    rail.addEventListener("pointerdown", (event) => {
 
-
-    rail.addEventListener("mousedown", (event) => {
+        /*
+         * Only respond to the primary mouse button.
+         */
+        if (event.pointerType === "mouse" && event.button !== 0) {
+            return;
+        }
 
         isDragging = true;
+        hasDragged = false;
 
-        startX = event.pageX;
-        startScroll = rail.scrollLeft;
+        startX = event.clientX;
+        startScrollLeft = rail.scrollLeft;
+
+        rail.setPointerCapture(event.pointerId);
 
         rail.style.cursor = "grabbing";
 
@@ -972,22 +1011,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    rail.addEventListener("mousemove", (event) => {
+    rail.addEventListener("pointermove", (event) => {
 
         if (!isDragging) return;
 
-        event.preventDefault();
-
         const distance =
-            event.pageX - startX;
+            event.clientX - startX;
+
+        /*
+         * Small movement = normal click.
+         * Larger movement = actual drag.
+         */
+        if (Math.abs(distance) > 5) {
+            hasDragged = true;
+        }
 
         rail.scrollLeft =
-            startScroll - distance;
+            startScrollLeft - distance;
 
     });
 
 
-    document.addEventListener("mouseup", () => {
+    function stopDragging(event) {
 
         if (!isDragging) return;
 
@@ -995,25 +1040,120 @@ document.addEventListener("DOMContentLoaded", () => {
 
         rail.style.cursor = "grab";
 
-    });
+        /*
+         * Release pointer capture safely.
+         */
+        try {
+
+            if (
+                event &&
+                rail.hasPointerCapture(event.pointerId)
+            ) {
+
+                rail.releasePointerCapture(
+                    event.pointerId
+                );
+
+            }
+
+        } catch (error) {
+            // Ignore pointer release errors.
+        }
+
+    }
 
 
-    /* TOUCH */
+    rail.addEventListener(
+        "pointerup",
+        stopDragging
+    );
+
+    rail.addEventListener(
+        "pointercancel",
+        stopDragging
+    );
+
+
+    /* =========================================
+       PREVENT LINK OPENING AFTER DRAG
+       ========================================= */
+
+    rail.addEventListener("click", (event) => {
+
+        if (hasDragged) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            hasDragged = false;
+        }
+
+    }, true);
+
+
+    /* =========================================
+       TOUCH
+       ========================================= */
 
     rail.addEventListener(
         "touchstart",
-        pauseAutoScroll,
-        { passive: true }
+        () => {
+
+            pauseAutoScroll();
+
+        },
+        {
+            passive: true
+        }
     );
+
 
     rail.addEventListener(
         "touchend",
-        pauseAutoScroll,
-        { passive: true }
+        () => {
+
+            pauseAutoScroll();
+
+        },
+        {
+            passive: true
+        }
     );
 
 
-    /* START */
+    /* =========================================
+       MOUSE ENTER / LEAVE
+       ========================================= */
+
+    rail.addEventListener(
+        "mouseenter",
+        () => {
+
+            pauseAutoScroll();
+
+        }
+    );
+
+
+    rail.addEventListener(
+        "mouseleave",
+        () => {
+
+            clearTimeout(resumeTimer);
+
+            resumeTimer = setTimeout(() => {
+                startAutoScroll();
+            }, RESUME_DELAY);
+
+        }
+    );
+
+
+    /* =========================================
+       INITIALIZE
+       ========================================= */
+
+    rail.style.cursor = "grab";
 
     startAutoScroll();
 
@@ -1022,4 +1162,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
-
