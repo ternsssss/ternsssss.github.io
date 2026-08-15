@@ -333,10 +333,18 @@ section {
 }
 
 .project-action {
-    margin-top: 18px;
-    color: #173b67;
-    font-size: 13px;
+    margin-top: 20px;
+    color: #1769aa;
+    font-size: 14px;
     font-weight: 700;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.project-card:hover .project-action {
+    color: #0f5c96;
+    transform: translateX(4px);
 }
 
 /* CONTACT */
