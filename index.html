@@ -904,61 +904,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 /* =========================================
-   MOUSE WHEEL — SMOOTH
+   MOUSE WHEEL — SAME SMOOTHNESS AS AUTO-SCROLL
    ========================================= */
-
-let wheelTarget = rail.scrollLeft;
-let wheelAnimation = null;
-
-
-function smoothWheelScroll() {
-
-    if (wheelAnimation) {
-        return;
-    }
-
-
-    function animate() {
-
-        const current = rail.scrollLeft;
-
-        const distance =
-            wheelTarget - current;
-
-
-        /*
-         * Smooth easing.
-         * Higher value = faster response.
-         * Lower value = softer movement.
-         */
-
-        const step = distance * 0.12;
-
-
-        if (Math.abs(distance) < 0.5) {
-
-            rail.scrollLeft = wheelTarget;
-
-            wheelAnimation = null;
-
-            return;
-
-        }
-
-
-        rail.scrollLeft += step;
-
-        wheelAnimation =
-            requestAnimationFrame(animate);
-
-    }
-
-
-    wheelAnimation =
-        requestAnimationFrame(animate);
-
-}
-
 
 rail.addEventListener(
     "wheel",
@@ -969,49 +916,21 @@ rail.addEventListener(
                 ? event.deltaY
                 : event.deltaX;
 
-
         if (delta === 0) {
             return;
         }
 
-
         event.preventDefault();
 
-
         /*
-         * Start from the rail's current position
-         * when the first wheel movement occurs.
+         * Use the same native smooth scrolling
+         * behavior as the automatic carousel.
          */
 
-        if (!wheelAnimation) {
-            wheelTarget = rail.scrollLeft;
-        }
-
-
-        /*
-         * Add the wheel movement to the target.
-         *
-         * 0.9 keeps the movement controlled
-         * instead of feeling too sensitive.
-         */
-
-        wheelTarget += delta * 0.9;
-
-
-        /*
-         * Prevent scrolling beyond the rail.
-         */
-
-        const maxScroll =
-            rail.scrollWidth - rail.clientWidth;
-
-
-        wheelTarget =
-            Math.max(
-                0,
-                Math.min(wheelTarget, maxScroll)
-            );
-
+        rail.scrollBy({
+            left: delta,
+            behavior: "smooth"
+        });
 
         /*
          * Pause automatic scrolling while
@@ -1020,16 +939,10 @@ rail.addEventListener(
 
         pauseAutoScroll();
 
-
-        /*
-         * Start smooth movement.
-         */
-
-        smoothWheelScroll();
-
     },
     {
-        passive: false
+        passive: false,
+        capture: true
     }
 );
 
