@@ -813,7 +813,7 @@
 
     </footer>
 
-    <!-- CERTIFICATE AUTO-SCROLL -->
+    <!-- CERTIFICATE AUTO-SCROLL + MANUAL SCROLL -->
 
 <script>
 
@@ -830,19 +830,19 @@ document.addEventListener("DOMContentLoaded", () => {
        ========================================= */
 
     const SCROLL_DISTANCE = 307;
-    const AUTO_SCROLL_INTERVAL = 2200;
+    const AUTO_SCROLL_INTERVAL = 2500;
     const RESUME_DELAY = 4000;
 
 
-    let autoScroll = null;
-    let resumeTimeout = null;
+    let autoScroll;
+    let resumeTimeout;
 
 
     /* =========================================
        AUTO-SCROLL
        ========================================= */
 
-    const startAutoScroll = () => {
+    function startAutoScroll() {
 
         clearInterval(autoScroll);
 
@@ -876,47 +876,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }, AUTO_SCROLL_INTERVAL);
 
-    };
+    }
 
 
     /* =========================================
-       PAUSE / RESUME
+       PAUSE AUTO-SCROLL
        ========================================= */
 
-    const pauseAutoScroll = () => {
+    function pauseAutoScroll() {
 
         clearInterval(autoScroll);
         clearTimeout(resumeTimeout);
 
         resumeTimeout = setTimeout(() => {
-
             startAutoScroll();
-
         }, RESUME_DELAY);
 
-    };
+    }
 
 
     /* =========================================
        MOUSE WHEEL
-       Convert vertical wheel → horizontal
        ========================================= */
 
     certificateScroll.addEventListener(
         "wheel",
         (event) => {
 
-            if (
-                Math.abs(event.deltaY)
-                > Math.abs(event.deltaX)
-            ) {
+            event.preventDefault();
 
-                event.preventDefault();
-
-                certificateScroll.scrollLeft +=
-                    event.deltaY;
-
-            }
+            certificateScroll.scrollLeft +=
+                event.deltaY !== 0
+                    ? event.deltaY
+                    : event.deltaX;
 
             pauseAutoScroll();
 
@@ -926,7 +918,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       POINTER DRAG
+       CLICK + DRAG
        ========================================= */
 
     let isDragging = false;
@@ -935,19 +927,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     certificateScroll.addEventListener(
-        "pointerdown",
+        "mousedown",
         (event) => {
 
             isDragging = true;
 
-            startX = event.clientX;
+            startX = event.pageX;
 
             startScrollLeft =
                 certificateScroll.scrollLeft;
 
-            certificateScroll.setPointerCapture(
-                event.pointerId
-            );
+            certificateScroll.style.cursor =
+                "grabbing";
 
             pauseAutoScroll();
 
@@ -956,13 +947,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     certificateScroll.addEventListener(
-        "pointermove",
+        "mousemove",
         (event) => {
 
             if (!isDragging) return;
 
+            event.preventDefault();
+
             const distance =
-                event.clientX - startX;
+                event.pageX - startX;
 
             certificateScroll.scrollLeft =
                 startScrollLeft - distance;
@@ -971,43 +964,39 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    const stopDragging = () => {
+    document.addEventListener(
+        "mouseup",
+        () => {
 
-        isDragging = false;
+            if (!isDragging) return;
 
-    };
+            isDragging = false;
 
+            certificateScroll.style.cursor =
+                "grab";
 
-    certificateScroll.addEventListener(
-        "pointerup",
-        stopDragging
-    );
-
-    certificateScroll.addEventListener(
-        "pointercancel",
-        stopDragging
-    );
-
-    certificateScroll.addEventListener(
-        "pointerleave",
-        stopDragging
+        }
     );
 
 
     /* =========================================
-       TOUCH
+       TOUCH / MOBILE
        ========================================= */
 
     certificateScroll.addEventListener(
         "touchstart",
-        pauseAutoScroll,
+        () => {
+            pauseAutoScroll();
+        },
         { passive: true }
     );
 
 
     certificateScroll.addEventListener(
         "touchend",
-        pauseAutoScroll,
+        () => {
+            pauseAutoScroll();
+        },
         { passive: true }
     );
 
