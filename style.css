@@ -692,8 +692,8 @@ footer {
 
     padding: 8px 4px 20px;
 
-    scroll-behavior: smooth;
-    scroll-snap-type: x proximity;
+    scroll-behavior: auto;
+    scroll-snap-type: none;
 
     cursor: grab;
 
