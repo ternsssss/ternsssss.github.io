@@ -904,7 +904,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 /* =========================================
-   MOUSE WHEEL — SAME SMOOTHNESS AS AUTO-SCROLL
+   MOUSE WHEEL — MATCH AUTO-SCROLL DISTANCE
    ========================================= */
 
 rail.addEventListener(
@@ -923,12 +923,14 @@ rail.addEventListener(
         event.preventDefault();
 
         /*
-         * Use the same native smooth scrolling
-         * behavior as the automatic carousel.
+         * One wheel action moves approximately
+         * the same distance as one auto-scroll step.
          */
 
+        const direction = delta > 0 ? 1 : -1;
+
         rail.scrollBy({
-            left: delta,
+            left: AUTO_DISTANCE * direction,
             behavior: "smooth"
         });
 
