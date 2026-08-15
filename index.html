@@ -879,136 +879,145 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================================
-       PAUSE AUTO-SCROLL
-       ========================================= */
+<!-- CERTIFICATE AUTO-SCROLL + MANUAL SCROLL -->
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const rail = document.querySelector(".certificate-scroll");
+
+    if (!rail) return;
+
+    let autoScroll;
+    let resumeTimer;
+
+    const AUTO_DISTANCE = 307;
+    const AUTO_INTERVAL = 2500;
+    const RESUME_DELAY = 4000;
+
+
+    function startAutoScroll() {
+
+        clearInterval(autoScroll);
+
+        autoScroll = setInterval(() => {
+
+            const maxScroll =
+                rail.scrollWidth - rail.clientWidth;
+
+            if (maxScroll <= 0) return;
+
+            if (rail.scrollLeft >= maxScroll - 5) {
+
+                rail.scrollTo({
+                    left: 0,
+                    behavior: "smooth"
+                });
+
+            } else {
+
+                rail.scrollBy({
+                    left: AUTO_DISTANCE,
+                    behavior: "smooth"
+                });
+
+            }
+
+        }, AUTO_INTERVAL);
+    }
+
 
     function pauseAutoScroll() {
 
         clearInterval(autoScroll);
-        clearTimeout(resumeTimeout);
+        clearTimeout(resumeTimer);
 
-        resumeTimeout = setTimeout(() => {
+        resumeTimer = setTimeout(() => {
             startAutoScroll();
         }, RESUME_DELAY);
-
     }
 
 
-    /* =========================================
-       MOUSE WHEEL
-       ========================================= */
+    /* MOUSE WHEEL */
 
-    certificateScroll.addEventListener(
-        "wheel",
-        (event) => {
+    rail.addEventListener("wheel", (event) => {
 
-            event.preventDefault();
+        event.preventDefault();
 
-            certificateScroll.scrollLeft +=
-                event.deltaY !== 0
-                    ? event.deltaY
-                    : event.deltaX;
+        rail.scrollLeft += event.deltaY;
 
-            pauseAutoScroll();
+        pauseAutoScroll();
 
-        },
-        { passive: false }
-    );
+    }, { passive: false });
 
 
-    /* =========================================
-       CLICK + DRAG
-       ========================================= */
+    /* CLICK + DRAG */
 
     let isDragging = false;
     let startX = 0;
-    let startScrollLeft = 0;
+    let startScroll = 0;
 
 
-    certificateScroll.addEventListener(
-        "mousedown",
-        (event) => {
+    rail.addEventListener("mousedown", (event) => {
 
-            isDragging = true;
+        isDragging = true;
 
-            startX = event.pageX;
+        startX = event.pageX;
+        startScroll = rail.scrollLeft;
 
-            startScrollLeft =
-                certificateScroll.scrollLeft;
+        rail.style.cursor = "grabbing";
 
-            certificateScroll.style.cursor =
-                "grabbing";
+        pauseAutoScroll();
 
-            pauseAutoScroll();
-
-        }
-    );
+    });
 
 
-    certificateScroll.addEventListener(
-        "mousemove",
-        (event) => {
+    rail.addEventListener("mousemove", (event) => {
 
-            if (!isDragging) return;
+        if (!isDragging) return;
 
-            event.preventDefault();
+        event.preventDefault();
 
-            const distance =
-                event.pageX - startX;
+        const distance =
+            event.pageX - startX;
 
-            certificateScroll.scrollLeft =
-                startScrollLeft - distance;
+        rail.scrollLeft =
+            startScroll - distance;
 
-        }
-    );
+    });
 
 
-    document.addEventListener(
-        "mouseup",
-        () => {
+    document.addEventListener("mouseup", () => {
 
-            if (!isDragging) return;
+        if (!isDragging) return;
 
-            isDragging = false;
+        isDragging = false;
 
-            certificateScroll.style.cursor =
-                "grab";
+        rail.style.cursor = "grab";
 
-        }
-    );
+    });
 
 
-    /* =========================================
-       TOUCH / MOBILE
-       ========================================= */
+    /* TOUCH */
 
-    certificateScroll.addEventListener(
+    rail.addEventListener(
         "touchstart",
-        () => {
-            pauseAutoScroll();
-        },
+        pauseAutoScroll,
         { passive: true }
     );
 
-
-    certificateScroll.addEventListener(
+    rail.addEventListener(
         "touchend",
-        () => {
-            pauseAutoScroll();
-        },
+        pauseAutoScroll,
         { passive: true }
     );
 
 
-    /* =========================================
-       START
-       ========================================= */
+    /* START */
 
     startAutoScroll();
 
 });
-
 </script>
 
 </body>
