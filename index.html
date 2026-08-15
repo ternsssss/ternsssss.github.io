@@ -903,11 +903,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-    /* =========================================
-       MOUSE WHEEL
-       ========================================= */
-
 /* =========================================
    MOUSE WHEEL
    ========================================= */
@@ -917,44 +912,49 @@ rail.addEventListener(
     function (event) {
 
         /*
-         * Convert vertical mouse-wheel movement
-         * into horizontal certificate scrolling.
+         * Use vertical mouse-wheel movement
+         * to control the horizontal certificate rail.
          */
 
-        const movement =
+        const delta =
             Math.abs(event.deltaY) >= Math.abs(event.deltaX)
                 ? event.deltaY
                 : event.deltaX;
 
 
-        if (movement === 0) {
+        if (delta === 0) {
             return;
         }
 
 
-        event.preventDefault();
-        event.stopPropagation();
-
-
         /*
-         * Multiply slightly so the movement
-         * feels natural and responsive.
+         * Stop the page itself from scrolling.
          */
 
-        rail.scrollLeft += movement * 1.2;
+        event.preventDefault();
 
 
         /*
-         * Pause automatic movement while
-         * the visitor is manually scrolling.
+         * Move the certificate rail directly.
+         *
+         * "auto" is intentional here.
+         * Manual wheel movement should NOT
+         * fight smooth scrolling.
+         */
+
+        rail.scrollLeft += delta;
+
+
+        /*
+         * Pause automatic scrolling while
+         * the visitor is using the wheel.
          */
 
         pauseAutoScroll();
 
     },
     {
-        passive: false,
-        capture: true
+        passive: false
     }
 );
 
