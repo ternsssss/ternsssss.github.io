@@ -761,36 +761,6 @@ footer {
         0 16px 38px rgba(25, 61, 100, 0.12);
 }
 
-
-/* CERTIFICATE IMAGE PLACEHOLDER */
-
-.certificate-image {
-    height: 170px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #eef5fb,
-            #f8fbff
-        );
-
-    border-bottom: 1px solid #e3ebf3;
-}
-
-.certificate-image span {
-    color: #1769aa;
-
-    font-size: 15px;
-    font-weight: 800;
-
-    letter-spacing: 1.5px;
-}
-
-
 /* CERTIFICATE INFORMATION */
 
 .certificate-info {
@@ -1109,6 +1079,29 @@ footer {
     letter-spacing: 1.2px;
 
     text-transform: uppercase;
+}
+
+/* =========================================
+   ACTUAL CERTIFICATE PREVIEWS
+   ========================================= */
+
+.certificate-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: center;
+
+    user-select: none;
+    pointer-events: none;
+
+    transition: transform 0.3s ease;
+}
+
+.certificate-card:hover .certificate-image img {
+    transform: scale(1.03);
 }
 
 
