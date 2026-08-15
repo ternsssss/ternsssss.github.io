@@ -993,3 +993,147 @@ footer {
     }
 
 }
+
+/* =========================================
+   CERTIFICATE VISUAL PREVIEWS
+   ========================================= */
+
+.certificate-image {
+    position: relative;
+
+    height: 175px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background: #f5f9fd;
+
+    border-bottom: 1px solid #e3ebf3;
+}
+
+
+/* SUBTLE PAPER EFFECT */
+
+.certificate-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    top: -90px;
+    right: -70px;
+}
+
+
+/* CERTIFICATE MARK */
+
+.certificate-mark {
+    position: relative;
+    z-index: 1;
+
+    color: #1769aa;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* CERTIFICATE TITLE */
+
+.certificate-image strong {
+    position: relative;
+    z-index: 1;
+
+    color: #142b45;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* CERTIFICATE TYPE */
+
+.certificate-image small {
+    position: relative;
+    z-index: 1;
+
+    color: #718096;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+
+/* INDIVIDUAL CERTIFICATE STYLES */
+
+.certificate-dsa {
+    background: linear-gradient(
+        135deg,
+        #f1f7fc,
+        #ffffff
+    );
+}
+
+.certificate-excel {
+    background: linear-gradient(
+        135deg,
+        #f1f8f4,
+        #ffffff
+    );
+}
+
+.certificate-powerbi {
+    background: linear-gradient(
+        135deg,
+        #fffaf0,
+        #ffffff
+    );
+}
+
+.certificate-mysql {
+    background: linear-gradient(
+        135deg,
+        #f1f6fa,
+        #ffffff
+    );
+}
+
+.certificate-python {
+    background: linear-gradient(
+        135deg,
+        #f8f7ef,
+        #ffffff
+    );
+}
+
+.certificate-workshop {
+    background: linear-gradient(
+        135deg,
+        #f4f1fa,
+        #ffffff
+    );
+}
