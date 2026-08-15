@@ -229,7 +229,48 @@ section {
     border: 1px solid #e5edf5;
     border-radius: 16px;
     overflow: hidden;
+    text-decoration: none;
+    color: inherit;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* MORE PROJECTS */
+
+.projects-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.projects-more a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 20px;
+
+    border: 1px solid #d5e1ec;
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #173b67;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.projects-more a:hover {
+    background: #f5f9fd;
+    border-color: #b9c9d9;
+    transform: translateY(-2px);
 }
 
 .project-card:hover {
