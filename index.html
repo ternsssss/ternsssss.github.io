@@ -813,75 +813,14 @@
 
     </footer>
 
-    <!-- CERTIFICATE AUTO-SCROLL + MANUAL SCROLL -->
+<!-- =========================================
+     CERTIFICATE CAROUSEL
+     AUTO-SCROLL + WHEEL + DRAG + TOUCH
+     ========================================= -->
 
 <script>
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    const certificateScroll =
-        document.querySelector(".certificate-scroll");
-
-    if (!certificateScroll) return;
-
-
-    /* =========================================
-       SETTINGS
-       ========================================= */
-
-    const SCROLL_DISTANCE = 307;
-    const AUTO_SCROLL_INTERVAL = 2500;
-    const RESUME_DELAY = 4000;
-
-
-    let autoScroll;
-    let resumeTimeout;
-
-
-    /* =========================================
-       AUTO-SCROLL
-       ========================================= */
-
-    function startAutoScroll() {
-
-        clearInterval(autoScroll);
-
-        autoScroll = setInterval(() => {
-
-            const maxScroll =
-                certificateScroll.scrollWidth -
-                certificateScroll.clientWidth;
-
-            if (maxScroll <= 0) return;
-
-
-            if (
-                certificateScroll.scrollLeft
-                >= maxScroll - 5
-            ) {
-
-                certificateScroll.scrollTo({
-                    left: 0,
-                    behavior: "smooth"
-                });
-
-            } else {
-
-                certificateScroll.scrollBy({
-                    left: SCROLL_DISTANCE,
-                    behavior: "smooth"
-                });
-
-            }
-
-        }, AUTO_SCROLL_INTERVAL);
-
-    }
-
-<!-- CERTIFICATE AUTO-SCROLL + MANUAL SCROLL -->
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
     const rail = document.querySelector(".certificate-scroll");
 
@@ -897,14 +836,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const RESUME_DELAY = 4000;
 
 
-    let autoScroll = null;
+    let autoTimer = null;
     let resumeTimer = null;
 
     let isDragging = false;
-    let hasDragged = false;
 
     let startX = 0;
-    let startScrollLeft = 0;
+    let startScroll = 0;
+
+    let dragged = false;
 
 
     /* =========================================
@@ -913,9 +853,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function startAutoScroll() {
 
-        clearInterval(autoScroll);
+        clearInterval(autoTimer);
 
-        autoScroll = setInterval(() => {
+        autoTimer = setInterval(function () {
 
             if (isDragging) return;
 
@@ -942,20 +882,23 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
         }, AUTO_INTERVAL);
+
     }
 
 
     /* =========================================
-       PAUSE AUTO-SCROLL
+       PAUSE
        ========================================= */
 
     function pauseAutoScroll() {
 
-        clearInterval(autoScroll);
+        clearInterval(autoTimer);
         clearTimeout(resumeTimer);
 
-        resumeTimer = setTimeout(() => {
+        resumeTimer = setTimeout(function () {
+
             startAutoScroll();
+
         }, RESUME_DELAY);
 
     }
@@ -965,16 +908,11 @@ document.addEventListener("DOMContentLoaded", () => {
        MOUSE WHEEL
        ========================================= */
 
-    rail.addEventListener("wheel", (event) => {
+    rail.addEventListener("wheel", function (event) {
 
         event.preventDefault();
 
-        const movement =
-            Math.abs(event.deltaY) > Math.abs(event.deltaX)
-                ? event.deltaY
-                : event.deltaX;
-
-        rail.scrollLeft += movement;
+        rail.scrollLeft += event.deltaY;
 
         pauseAutoScroll();
 
@@ -984,55 +922,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       MOUSE / POINTER DRAG
+       DRAG START
        ========================================= */
 
-    rail.addEventListener("pointerdown", (event) => {
+    rail.addEventListener("mousedown", function (event) {
 
-        /*
-         * Only respond to the primary mouse button.
-         */
-        if (event.pointerType === "mouse" && event.button !== 0) {
-            return;
-        }
+        if (event.button !== 0) return;
 
         isDragging = true;
-        hasDragged = false;
+        dragged = false;
 
         startX = event.clientX;
-        startScrollLeft = rail.scrollLeft;
-
-        rail.setPointerCapture(event.pointerId);
+        startScroll = rail.scrollLeft;
 
         rail.style.cursor = "grabbing";
 
         pauseAutoScroll();
 
+        event.preventDefault();
+
     });
 
 
-    rail.addEventListener("pointermove", (event) => {
+    /* =========================================
+       DRAG MOVE
+       ========================================= */
+
+    window.addEventListener("mousemove", function (event) {
 
         if (!isDragging) return;
+
+        event.preventDefault();
 
         const distance =
             event.clientX - startX;
 
-        /*
-         * Small movement = normal click.
-         * Larger movement = actual drag.
-         */
+
         if (Math.abs(distance) > 5) {
-            hasDragged = true;
+            dragged = true;
         }
 
+
         rail.scrollLeft =
-            startScrollLeft - distance;
+            startScroll - distance;
 
     });
 
 
-    function stopDragging(event) {
+    /* =========================================
+       DRAG END
+       ========================================= */
+
+    window.addEventListener("mouseup", function () {
 
         if (!isDragging) return;
 
@@ -1040,52 +981,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         rail.style.cursor = "grab";
 
-        /*
-         * Release pointer capture safely.
-         */
-        try {
+        pauseAutoScroll();
 
-            if (
-                event &&
-                rail.hasPointerCapture(event.pointerId)
-            ) {
-
-                rail.releasePointerCapture(
-                    event.pointerId
-                );
-
-            }
-
-        } catch (error) {
-            // Ignore pointer release errors.
-        }
-
-    }
-
-
-    rail.addEventListener(
-        "pointerup",
-        stopDragging
-    );
-
-    rail.addEventListener(
-        "pointercancel",
-        stopDragging
-    );
+    });
 
 
     /* =========================================
-       PREVENT LINK OPENING AFTER DRAG
+       PREVENT CLICK AFTER DRAG
        ========================================= */
 
-    rail.addEventListener("click", (event) => {
+    rail.addEventListener("click", function (event) {
 
-        if (hasDragged) {
+        if (dragged) {
 
             event.preventDefault();
             event.stopPropagation();
 
-            hasDragged = false;
+            dragged = false;
+
         }
 
     }, true);
@@ -1097,55 +1010,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rail.addEventListener(
         "touchstart",
-        () => {
-
+        function () {
             pauseAutoScroll();
-
         },
-        {
-            passive: true
-        }
+        { passive: true }
     );
 
 
     rail.addEventListener(
         "touchend",
-        () => {
-
+        function () {
             pauseAutoScroll();
-
         },
-        {
-            passive: true
-        }
-    );
-
-
-    /* =========================================
-       MOUSE ENTER / LEAVE
-       ========================================= */
-
-    rail.addEventListener(
-        "mouseenter",
-        () => {
-
-            pauseAutoScroll();
-
-        }
-    );
-
-
-    rail.addEventListener(
-        "mouseleave",
-        () => {
-
-            clearTimeout(resumeTimer);
-
-            resumeTimer = setTimeout(() => {
-                startAutoScroll();
-            }, RESUME_DELAY);
-
-        }
+        { passive: true }
     );
 
 
@@ -1158,7 +1035,9 @@ document.addEventListener("DOMContentLoaded", () => {
     startAutoScroll();
 
 });
+
 </script>
+
 
 </body>
 </html>
