@@ -995,7 +995,7 @@ footer {
 .certificate-image {
     position: relative;
 
-    height: 220px;
+    height: 240px;
 
     display: flex;
     flex-direction: column;
