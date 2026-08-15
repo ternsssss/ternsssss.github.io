@@ -239,12 +239,20 @@ section {
 
 .project-preview {
     height: 240px;
-    background: #eaf3fb;
+    background: #f5f9fd;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #6b7d91;
-    font-size: 14px;
+    overflow: hidden;
+    border-bottom: 1px solid #e5edf5;
+}
+
+.project-preview img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
 }
 
 .project-content {
