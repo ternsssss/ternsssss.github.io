@@ -677,13 +677,15 @@ footer {
 
 
 /* =========================================
-   PROFESSIONAL CERTIFICATES
+   PROFESSIONAL CERTIFICATE SCROLL
    ========================================= */
 
 .certificate-scroll {
     display: flex;
 
     gap: 22px;
+
+    width: 100%;
 
     overflow-x: auto;
     overflow-y: hidden;
@@ -693,16 +695,36 @@ footer {
     scroll-behavior: smooth;
     scroll-snap-type: x proximity;
 
-    /*
-       Hide scrollbar while keeping
-       horizontal scrolling functional.
-    */
+    cursor: grab;
 
-    scrollbar-width: none;
+    scrollbar-width: thin;
+    scrollbar-color: #b9c9d9 transparent;
+
+    overscroll-behavior-x: contain;
 }
 
+.certificate-scroll:active {
+    cursor: grabbing;
+}
+
+
+/* Chrome / Edge / Safari */
+
 .certificate-scroll::-webkit-scrollbar {
-    display: none;
+    height: 7px;
+}
+
+.certificate-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.certificate-scroll::-webkit-scrollbar-thumb {
+    background: #b9c9d9;
+    border-radius: 20px;
+}
+
+.certificate-scroll::-webkit-scrollbar-thumb:hover {
+    background: #8fa6bd;
 }
 
 
@@ -728,6 +750,8 @@ footer {
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
+
+    user-select: none;
 }
 
 .certificate-card:hover {
