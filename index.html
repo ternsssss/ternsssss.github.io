@@ -904,17 +904,65 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 /* =========================================
-   MOUSE WHEEL
+   MOUSE WHEEL — SMOOTH
    ========================================= */
+
+let wheelTarget = rail.scrollLeft;
+let wheelAnimation = null;
+
+
+function smoothWheelScroll() {
+
+    if (wheelAnimation) {
+        return;
+    }
+
+
+    function animate() {
+
+        const current = rail.scrollLeft;
+
+        const distance =
+            wheelTarget - current;
+
+
+        /*
+         * Smooth easing.
+         * Higher value = faster response.
+         * Lower value = softer movement.
+         */
+
+        const step = distance * 0.12;
+
+
+        if (Math.abs(distance) < 0.5) {
+
+            rail.scrollLeft = wheelTarget;
+
+            wheelAnimation = null;
+
+            return;
+
+        }
+
+
+        rail.scrollLeft += step;
+
+        wheelAnimation =
+            requestAnimationFrame(animate);
+
+    }
+
+
+    wheelAnimation =
+        requestAnimationFrame(animate);
+
+}
+
 
 rail.addEventListener(
     "wheel",
     function (event) {
-
-        /*
-         * Use vertical mouse-wheel movement
-         * to control the horizontal certificate rail.
-         */
 
         const delta =
             Math.abs(event.deltaY) >= Math.abs(event.deltaX)
@@ -927,30 +975,57 @@ rail.addEventListener(
         }
 
 
-        /*
-         * Stop the page itself from scrolling.
-         */
-
         event.preventDefault();
 
 
         /*
-         * Move the certificate rail directly.
-         *
-         * "auto" is intentional here.
-         * Manual wheel movement should NOT
-         * fight smooth scrolling.
+         * Start from the rail's current position
+         * when the first wheel movement occurs.
          */
 
-        rail.scrollLeft += delta;
+        if (!wheelAnimation) {
+            wheelTarget = rail.scrollLeft;
+        }
+
+
+        /*
+         * Add the wheel movement to the target.
+         *
+         * 0.9 keeps the movement controlled
+         * instead of feeling too sensitive.
+         */
+
+        wheelTarget += delta * 0.9;
+
+
+        /*
+         * Prevent scrolling beyond the rail.
+         */
+
+        const maxScroll =
+            rail.scrollWidth - rail.clientWidth;
+
+
+        wheelTarget =
+            Math.max(
+                0,
+                Math.min(wheelTarget, maxScroll)
+            );
 
 
         /*
          * Pause automatic scrolling while
-         * the visitor is using the wheel.
+         * the visitor is manually scrolling.
          */
 
         pauseAutoScroll();
+
+
+        /*
+         * Start smooth movement.
+         */
+
+        smoothWheelScroll();
 
     },
     {
