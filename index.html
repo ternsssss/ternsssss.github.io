@@ -816,6 +816,7 @@
     <!-- CERTIFICATE AUTO-SCROLL -->
 
 <script>
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const certificateScroll =
@@ -823,11 +824,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!certificateScroll) return;
 
-    let autoScroll;
-    let resumeTimeout;
+
+    /* =========================================
+       SETTINGS
+       ========================================= */
+
+    const SCROLL_DISTANCE = 307;
+    const AUTO_SCROLL_INTERVAL = 2200;
+    const RESUME_DELAY = 4000;
 
 
-    /* START AUTO-SCROLL */
+    let autoScroll = null;
+    let resumeTimeout = null;
+
+
+    /* =========================================
+       AUTO-SCROLL
+       ========================================= */
 
     const startAutoScroll = () => {
 
@@ -839,7 +852,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 certificateScroll.scrollWidth -
                 certificateScroll.clientWidth;
 
-            if (certificateScroll.scrollLeft >= maxScroll - 5) {
+            if (maxScroll <= 0) return;
+
+
+            if (
+                certificateScroll.scrollLeft
+                >= maxScroll - 5
+            ) {
 
                 certificateScroll.scrollTo({
                     left: 0,
@@ -849,18 +868,20 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
 
                 certificateScroll.scrollBy({
-                    left: 290,
+                    left: SCROLL_DISTANCE,
                     behavior: "smooth"
                 });
 
             }
 
-        }, 3500);
+        }, AUTO_SCROLL_INTERVAL);
 
     };
 
 
-    /* PAUSE WHEN USER INTERACTS */
+    /* =========================================
+       PAUSE / RESUME
+       ========================================= */
 
     const pauseAutoScroll = () => {
 
@@ -868,38 +889,114 @@ document.addEventListener("DOMContentLoaded", () => {
         clearTimeout(resumeTimeout);
 
         resumeTimeout = setTimeout(() => {
+
             startAutoScroll();
-        }, 5000);
+
+        }, RESUME_DELAY);
 
     };
 
 
-    /* MOUSE */
+    /* =========================================
+       MOUSE WHEEL
+       Convert vertical wheel → horizontal
+       ========================================= */
 
     certificateScroll.addEventListener(
-        "mouseenter",
-        pauseAutoScroll
+        "wheel",
+        (event) => {
+
+            if (
+                Math.abs(event.deltaY)
+                > Math.abs(event.deltaX)
+            ) {
+
+                event.preventDefault();
+
+                certificateScroll.scrollLeft +=
+                    event.deltaY;
+
+            }
+
+            pauseAutoScroll();
+
+        },
+        { passive: false }
     );
 
+
+    /* =========================================
+       POINTER DRAG
+       ========================================= */
+
+    let isDragging = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+
+
     certificateScroll.addEventListener(
-        "mouseleave",
-        () => {
-            clearTimeout(resumeTimeout);
-            startAutoScroll();
+        "pointerdown",
+        (event) => {
+
+            isDragging = true;
+
+            startX = event.clientX;
+
+            startScrollLeft =
+                certificateScroll.scrollLeft;
+
+            certificateScroll.setPointerCapture(
+                event.pointerId
+            );
+
+            pauseAutoScroll();
+
         }
     );
 
 
-    /* MOUSE WHEEL */
-
     certificateScroll.addEventListener(
-        "wheel",
-        pauseAutoScroll,
-        { passive: true }
+        "pointermove",
+        (event) => {
+
+            if (!isDragging) return;
+
+            const distance =
+                event.clientX - startX;
+
+            certificateScroll.scrollLeft =
+                startScrollLeft - distance;
+
+        }
     );
 
 
-    /* TOUCH */
+    const stopDragging = () => {
+
+        isDragging = false;
+
+    };
+
+
+    certificateScroll.addEventListener(
+        "pointerup",
+        stopDragging
+    );
+
+    certificateScroll.addEventListener(
+        "pointercancel",
+        stopDragging
+    );
+
+    certificateScroll.addEventListener(
+        "pointerleave",
+        stopDragging
+    );
+
+
+    /* =========================================
+       TOUCH
+       ========================================= */
 
     certificateScroll.addEventListener(
         "touchstart",
@@ -907,34 +1004,22 @@ document.addEventListener("DOMContentLoaded", () => {
         { passive: true }
     );
 
+
     certificateScroll.addEventListener(
         "touchend",
-        () => {
-
-            clearTimeout(resumeTimeout);
-
-            resumeTimeout = setTimeout(() => {
-                startAutoScroll();
-            }, 5000);
-
-        },
+        pauseAutoScroll,
         { passive: true }
     );
 
 
-    /* POINTER / DRAG */
-
-    certificateScroll.addEventListener(
-        "pointerdown",
-        pauseAutoScroll
-    );
-
-
-    /* START */
+    /* =========================================
+       START
+       ========================================= */
 
     startAutoScroll();
 
 });
+
 </script>
 
 </body>
