@@ -46,7 +46,7 @@ nav {
 .logo img {
     display: block;
 
-    height: 50px;
+    height: 58px;
     width: auto;
 
     max-width: 300px;
@@ -460,8 +460,11 @@ footer {
     }
 
     .logo img {
-    height: 42px;
+        height: 48px;
+        max-width: 320px;
     }
+
+    /* existing rules... */
 
     .footer-inner {
     flex-direction: column;
@@ -501,10 +504,12 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .logo img {
-    height: 38px;
-    max-width: 260px;
+   .logo img {
+        height: 42px;
+        max-width: 280px;
     }
+
+    /* existing rules... */
 
     .hero h1 {
         font-size: 44px;
