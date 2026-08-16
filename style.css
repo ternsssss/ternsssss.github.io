@@ -46,7 +46,7 @@ nav {
 .logo img {
     display: block;
 
-    height: 42px;
+    height: 50px;
     width: auto;
 
     max-width: 300px;
@@ -460,7 +460,7 @@ footer {
     }
 
     .logo img {
-    height: 30px;
+    height: 42px;
     }
 
     .footer-inner {
@@ -499,6 +499,11 @@ footer {
 
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    .logo img {
+    height: 38px;
+    max-width: 260px;
     }
 
     .hero h1 {
