@@ -48,6 +48,8 @@ nav {
 
     height: 38px;
     width: auto;
+
+    max-width: 240px;
 }
 
 .nav-links {
