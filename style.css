@@ -488,25 +488,44 @@ footer {
 .tech-capabilities {
     width: 100%;
     display: grid;
-    grid-column: 1 / -1;
     grid-template-columns: repeat(3, 1fr);
+
     margin: 62px auto 0;
     padding-top: 26px;
+
     border-top: 1px solid #dfe7ef;
 }
 
-.tech-capabilities span {
+.tech-capability {
     text-align: center;
-    color: #1769aa;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.8px;
-    text-transform: uppercase;
-    padding: 8px 20px;
+    padding: 8px 25px;
 }
 
-.tech-capabilities span:not(:last-child) {
+.tech-capability:not(:last-child) {
     border-right: 1px solid #dfe7ef;
+}
+
+.tech-capability span {
+    display: block;
+
+    color: #1769aa;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+
+    margin-bottom: 7px;
+}
+
+.tech-capability p {
+    color: #718096;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    margin: 0;
 }
 
 /* =========================================
@@ -545,15 +564,16 @@ footer {
 
     .tech-capabilities {
         grid-template-columns: 1fr;
+        gap: 0;
     }
 
-    .tech-capabilities span {
-        border-right: none !important;
+    .tech-capability {
+        padding: 16px 10px;
+    }
+
+    .tech-capability:not(:last-child) {
+        border-right: none;
         border-bottom: 1px solid #dfe7ef;
-    }
-
-    .tech-capabilities span:last-child {
-        border-bottom: none;
     }
 
 }
