@@ -804,8 +804,9 @@ footer {
 
     cursor: grab;
 
-    scrollbar-width: thin;
-    scrollbar-color: #b9c9d9 transparent;
+    /* Hide scrollbar while preserving horizontal scrolling */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
     overscroll-behavior-x: contain;
 }
@@ -814,11 +815,10 @@ footer {
     cursor: grabbing;
 }
 
-
 /* Chrome / Edge / Safari */
 
 .certificate-scroll::-webkit-scrollbar {
-    height: 7px;
+    display: none;
 }
 
 .certificate-scroll::-webkit-scrollbar-track {
