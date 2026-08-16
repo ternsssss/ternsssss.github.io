@@ -35,9 +35,19 @@ nav {
 }
 
 .logo {
-    font-size: 20px;
-    font-weight: 700;
-    color: #173b67;
+    display: inline-flex;
+    align-items: center;
+
+    text-decoration: none;
+
+    line-height: 0;
+}
+
+.logo img {
+    display: block;
+
+    height: 38px;
+    width: auto;
 }
 
 .nav-links {
@@ -409,11 +419,34 @@ section {
 /* FOOTER */
 
 footer {
-    background: #142b45;
-    color: #d9e4ef;
-    text-align: center;
-    padding: 30px;
-    font-size: 14px;
+    border-top: 1px solid #dce6f0;
+    background: #ffffff;
+}
+
+.footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    padding: 28px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.footer-brand {
+    color: #173b67;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.footer-copy {
+    color: #71839a;
+
+    font-size: 13px;
+    font-weight: 400;
 }
 
 /* MOBILE */
@@ -422,6 +455,18 @@ footer {
 
     .nav-links {
         display: none;
+    }
+
+    .logo img {
+    height: 30px;
+    }
+
+    .footer-inner {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    padding: 24px 20px;
     }
 
     .hero {
