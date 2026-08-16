@@ -421,19 +421,20 @@ section {
 /* FOOTER */
 
 footer {
-    border-top: 1px solid #dce6f0;
     background: #ffffff;
+    border-top: 1px solid #dce6f0;
 }
 
 .footer-inner {
     max-width: 1280px;
     margin: 0 auto;
 
-    padding: 28px 40px;
+    padding: 26px 7%;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 24px;
 }
 
@@ -475,7 +476,7 @@ footer {
     justify-content: center;
     text-align: center;
 
-    padding: 24px 20px;
+    padding: 24px 6%;
     }
 
     .hero {
