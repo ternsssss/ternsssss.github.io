@@ -47,14 +47,49 @@ nav {
 }
 
 .nav-links a {
+    position: relative;
+
+    display: inline-block;
+
     text-decoration: none;
     color: #46546a;
+
     font-size: 14px;
     font-weight: 600;
+
+    padding: 4px 0;
+
+    transition: color 0.2s ease;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -7px;
+
+    height: 2px;
+
+    background: #1769aa;
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform 0.2s ease;
 }
 
 .nav-links a:hover {
     color: #1769aa;
+}
+
+.nav-links a.active {
+    color: #1769aa;
+}
+
+.nav-links a.active::after {
+    transform: scaleX(1);
 }
 
 /* HERO */
@@ -142,6 +177,7 @@ section {
     max-width: 1200px;
     margin: auto;
     padding: 100px 7%;
+    scroll-margin-top: 90px;
 }
 
 .section-label {
