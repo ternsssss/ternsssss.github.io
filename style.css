@@ -311,23 +311,20 @@ section {
 
 .about-photo-card {
     width: 220px;
-    height: 300px;
+    height: 260px;
 
     display: flex;
 
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 
-    background: #ffffff;
+    background: transparent;
 
-    border: 1px solid #dce7f1;
+    border: none;
 
-    border-radius: 14px;
+    border-radius: 18px;
 
     overflow: hidden;
-
-    box-shadow:
-        0 8px 24px rgba(25, 61, 100, 0.05);
 }
 
 
@@ -337,12 +334,14 @@ section {
 
     display: block;
 
-    object-fit: contain;
+    object-fit: cover;
 
-    object-position: center;
+    object-position: center top;
 
-    background: #ffffff;
+    border-radius: 18px;
 }
+
+
 
 
 /* =========================================
@@ -419,9 +418,9 @@ section {
 
     grid-template-columns: 38px 1fr;
 
-    gap: 12px;
+    gap: 14px;
 
-    padding: 16px 0;
+    padding: 17px 0;
 
     border-top: 1px solid #e5edf5;
 }
@@ -457,9 +456,13 @@ section {
 
 
 .profile-capability p {
-    font-size: 12px;
+    margin: 0;
 
-    line-height: 1.55;
+    color: #5d6d80;
+
+    font-size: 13.5px;
+
+    line-height: 1.6;
 }
 
 
@@ -1701,42 +1704,54 @@ footer {
         padding: 75px 7%;
     }
 
+   
+/* ABOUT */
 
-    /* ABOUT */
+.about-photo {
+    min-height: 0;
 
-    .about-photo {
-        min-height: 0;
-    }
-
-    .about-photo-placeholder {
-        height: 320px;
-        min-height: 320px;
-
-        padding: 22px;
-    }
-
-    .about-profile-main,
-    .about-profile-side {
-        padding: 22px;
-    }
-
-    .about-resume {
-        padding: 22px;
-    }
-
-    .about-resume .buttons {
-        flex-direction: column;
-
-        width: 100%;
-    }
-
-    .about-resume .btn {
-        width: 100%;
-
-        text-align: center;
-    }
+    display: flex;
+    justify-content: center;
+}
 
 
+.about-photo-card {
+    width: 210px;
+    height: 250px;
+
+    border-radius: 18px;
+}
+
+
+.about-profile-main,
+.about-profile-side {
+    padding: 22px;
+}
+
+
+.profile-capability p {
+    font-size: 13.5px;
+    line-height: 1.6;
+}
+
+
+.about-resume {
+    padding: 22px;
+}
+
+.about-resume .buttons {
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.about-resume .btn {
+    width: 100%;
+
+    text-align: center;
+}   
+
+    
     /* SKILLS */
 
     .skills-grid {
