@@ -300,7 +300,13 @@ section {
 
     margin-top: 40px;
 
-    align-items: stretch;
+    /*
+       IMPORTANT:
+       Prevent the right column from stretching
+       to the height of the left column.
+    */
+
+    align-items: start;
 }
 
 
@@ -326,7 +332,13 @@ section {
 .about-photo-card {
     width: 100%;
 
-    height: 320px;
+    /*
+       The original photo is square.
+       A slightly shorter card avoids the
+       "ID card / credit card" appearance.
+    */
+
+    height: 285px;
 
     display: flex;
 
@@ -339,12 +351,22 @@ section {
 
     border: 1px solid #d7e3ef;
 
-    border-radius: 14px;
+    border-radius: 16px;
 
     box-shadow:
-        0 6px 20px rgba(25, 61, 100, 0.04);
+        0 8px 24px rgba(25, 61, 100, 0.05);
 }
 
+
+/*
+   IMPORTANT PHOTO FIX
+
+   Use contain rather than cover.
+
+   This prevents the square original image
+   from being aggressively cropped and
+   zooming into the face.
+*/
 
 .about-photo-card img {
     width: 100%;
@@ -352,9 +374,11 @@ section {
 
     display: block;
 
-    object-fit: cover;
+    object-fit: contain;
 
-    object-position: center 18%;
+    object-position: center;
+
+    background: #ffffff;
 }
 
 
@@ -364,8 +388,6 @@ section {
 
 .about-profile-main {
     min-width: 0;
-
-    flex: 1;
 
     background: #ffffff;
 
@@ -430,9 +452,19 @@ section {
 
     border-radius: 14px;
 
-    padding: 30px 32px;
+    padding: 28px 30px;
 
-    height: 100%;
+    /*
+       KEY FIX:
+       Do NOT use height: 100%.
+
+       The card now ends naturally after
+       the fourth capability.
+    */
+
+    height: fit-content;
+
+    align-self: start;
 }
 
 
@@ -462,6 +494,11 @@ section {
     border-top: none;
 
     padding-top: 0;
+}
+
+
+.profile-capability:last-child {
+    padding-bottom: 0;
 }
 
 
@@ -496,9 +533,14 @@ section {
 
     color: #60758c;
 
-    font-size: 13.5px;
+    /*
+       Slightly larger than before
+       for better readability.
+    */
 
-    line-height: 1.6;
+    font-size: 14px;
+
+    line-height: 1.65;
 }
 
 
@@ -535,7 +577,6 @@ section {
 .about-resume .buttons {
     flex-shrink: 0;
 }
-
 
 
 /* =========================================
@@ -1544,7 +1585,7 @@ footer {
     }
 
     .about-photo-card {
-        height: 300px;
+        height: 275px;
     }
 
     .about-profile-main,
@@ -1603,14 +1644,14 @@ footer {
     }
 
 
-    /* LEFT COLUMN */
-
     .about-left {
         gap: 18px;
     }
 
 
-    /* PROFESSIONAL PHOTO */
+    /* =========================================
+       PROFESSIONAL PHOTO
+       ========================================= */
 
     .about-photo-card {
         width: 100%;
@@ -1624,29 +1665,31 @@ footer {
         width: 100%;
         height: 100%;
 
-        object-fit: cover;
+        object-fit: contain;
 
-        object-position: center 18%;
+        object-position: center;
     }
 
 
-    /* PROFESSIONAL BACKGROUND */
+    /* =========================================
+       PROFESSIONAL BACKGROUND
+       ========================================= */
 
     .about-profile-main {
         padding: 26px;
     }
 
 
-    /* WHAT I BRING */
+    /* =========================================
+       WHAT I BRING
+       ========================================= */
 
     .about-profile-side {
         padding: 26px;
 
-        height: auto;
+        height: fit-content;
     }
 
-
-    /* WHAT I BRING SUBTITLE */
 
     .profile-capability p {
         font-size: 14px;
@@ -1655,7 +1698,9 @@ footer {
     }
 
 
-    /* RESUME */
+    /* =========================================
+       RESUME
+       ========================================= */
 
     .about-resume {
         flex-direction: column;
@@ -1793,7 +1838,6 @@ footer {
         gap: 16px;
     }
 
-
     .about-left {
         gap: 16px;
     }
@@ -1806,7 +1850,7 @@ footer {
     .about-photo-card {
         width: 100%;
 
-        height: 280px;
+        height: 270px;
 
         border-radius: 14px;
 
@@ -1824,9 +1868,9 @@ footer {
 
         display: block;
 
-        object-fit: cover;
+        object-fit: contain;
 
-        object-position: center 18%;
+        object-position: center;
     }
 
 
