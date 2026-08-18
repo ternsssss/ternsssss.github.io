@@ -280,13 +280,21 @@ section {
    ABOUT
    ========================================= */
 
+#about {
+    scroll-margin-top: 90px;
+}
+
+
+/* =========================================
+   ABOUT — MAIN LAYOUT
+   ========================================= */
+
 .about-profile {
     display: grid;
 
     grid-template-columns:
-        280px
-        minmax(350px, 1.35fr)
-        minmax(270px, 1fr);
+        minmax(0, 1.45fr)
+        minmax(300px, 0.85fr);
 
     gap: 20px;
 
@@ -297,27 +305,35 @@ section {
 
 
 /* =========================================
-   ABOUT — PROFESSIONAL PHOTO
+   ABOUT — LEFT COLUMN
    ========================================= */
 
-.about-photo {
-    min-width: 0;
-
+.about-left {
     display: flex;
 
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+
+    gap: 20px;
+
+    min-width: 0;
 }
 
 
+/* =========================================
+   ABOUT — PROFESSIONAL PHOTO
+   ========================================= */
+
 .about-photo-card {
-    width: 280px;
-    height: 295px;
+    width: 100%;
+
+    height: 320px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
+
+    overflow: hidden;
 
     background: #ffffff;
 
@@ -325,10 +341,8 @@ section {
 
     border-radius: 14px;
 
-    overflow: hidden;
-
     box-shadow:
-        0 6px 18px rgba(25, 61, 100, 0.04);
+        0 6px 20px rgba(25, 61, 100, 0.04);
 }
 
 
@@ -340,27 +354,26 @@ section {
 
     object-fit: cover;
 
-    object-position: center top;
+    object-position: center 18%;
 }
 
 
-
-
 /* =========================================
-   ABOUT — MAIN CONTENT
+   ABOUT — PROFESSIONAL BACKGROUND
    ========================================= */
 
-.about-profile-main,
-.about-profile-side {
+.about-profile-main {
     min-width: 0;
+
+    flex: 1;
 
     background: #ffffff;
 
-    border: 1px solid #e1eaf3;
+    border: 1px solid #dce7f1;
 
     border-radius: 14px;
 
-    padding: 28px;
+    padding: 30px 32px;
 }
 
 
@@ -375,11 +388,13 @@ section {
 
 .about-profile h3,
 .about-resume h3 {
-    margin: 0 0 12px;
+    margin: 0 0 14px;
 
     color: #173b67;
 
     font-size: 18px;
+
+    line-height: 1.3;
 
     font-weight: 700;
 }
@@ -398,7 +413,7 @@ section {
 
 
 .about-block p + p {
-    margin-top: 15px;
+    margin-top: 16px;
 }
 
 
@@ -406,23 +421,38 @@ section {
    ABOUT — WHAT I BRING
    ========================================= */
 
+.about-profile-side {
+    min-width: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #dce7f1;
+
+    border-radius: 14px;
+
+    padding: 30px 32px;
+
+    height: 100%;
+}
+
+
 .profile-capabilities {
     display: flex;
 
     flex-direction: column;
 
-    margin-top: 20px;
+    margin-top: 22px;
 }
 
 
 .profile-capability {
     display: grid;
 
-    grid-template-columns: 38px 1fr;
+    grid-template-columns: 42px 1fr;
 
     gap: 14px;
 
-    padding: 17px 0;
+    padding: 18px 0;
 
     border-top: 1px solid #e5edf5;
 }
@@ -441,17 +471,21 @@ section {
     font-size: 12px;
 
     font-weight: 700;
+
+    padding-top: 3px;
 }
 
 
 .profile-capability strong {
     display: block;
 
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 
     color: #24364b;
 
-    font-size: 14px;
+    font-size: 15px;
+
+    line-height: 1.4;
 
     font-weight: 700;
 }
@@ -460,7 +494,7 @@ section {
 .profile-capability p {
     margin: 0;
 
-    color: #5d6d80;
+    color: #60758c;
 
     font-size: 13.5px;
 
@@ -469,7 +503,7 @@ section {
 
 
 /* =========================================
-   ABOUT — RESUME CTA
+   ABOUT — RESUME
    ========================================= */
 
 .about-resume {
@@ -485,7 +519,7 @@ section {
 
     padding: 24px 26px;
 
-    background: #f7faff;
+    background: #f8fbff;
 
     border: 1px solid #dce8f3;
 
@@ -501,6 +535,7 @@ section {
 .about-resume .buttons {
     flex-shrink: 0;
 }
+
 
 
 /* =========================================
@@ -1498,23 +1533,23 @@ footer {
 
 @media (max-width: 1000px) {
 
+    /* ABOUT */
+
     .about-profile {
         grid-template-columns:
-            0.75fr
-            1.25fr;
+            minmax(0, 1.2fr)
+            minmax(280px, 0.85fr);
+
+        gap: 18px;
     }
 
-    .about-photo {
-        min-height: 0;
+    .about-photo-card {
+        height: 300px;
     }
 
-    .about-photo-placeholder {
-        height: 340px;
-        min-height: 340px;
-    }
-
+    .about-profile-main,
     .about-profile-side {
-        grid-column: 1 / -1;
+        padding: 26px;
     }
 
 }
@@ -1557,36 +1592,77 @@ footer {
     }
 
 
-    /* ABOUT */
+    /* =========================================
+       ABOUT
+       ========================================= */
 
     .about-profile {
         grid-template-columns: 1fr;
 
-        gap: 24px;
+        gap: 18px;
     }
 
-    .about-photo {
-        min-height: 0;
+
+    /* LEFT COLUMN */
+
+    .about-left {
+        gap: 18px;
     }
 
-    .about-photo-placeholder {
-        height: 340px;
-        min-height: 340px;
+
+    /* PROFESSIONAL PHOTO */
+
+    .about-photo-card {
+        width: 100%;
+
+        height: 300px;
+
+        border-radius: 14px;
     }
 
-    .about-profile-main,
-    .about-profile-side {
+    .about-photo-card img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center 18%;
+    }
+
+
+    /* PROFESSIONAL BACKGROUND */
+
+    .about-profile-main {
         padding: 26px;
     }
 
+
+    /* WHAT I BRING */
+
     .about-profile-side {
-        grid-column: auto;
+        padding: 26px;
+
+        height: auto;
     }
+
+
+    /* WHAT I BRING SUBTITLE */
+
+    .profile-capability p {
+        font-size: 14px;
+
+        line-height: 1.65;
+    }
+
+
+    /* RESUME */
 
     .about-resume {
         flex-direction: column;
 
         align-items: flex-start;
+
+        gap: 22px;
     }
 
     .about-resume .buttons {
@@ -1706,72 +1782,152 @@ footer {
         padding: 75px 7%;
     }
 
-   
-/* ABOUT */
 
-.about-photo {
-    min-height: 0;
+    /* =========================================
+       ABOUT
+       ========================================= */
 
-    display: flex;
-    justify-content: center;
-}
+    .about-profile {
+        grid-template-columns: 1fr;
 
-
-.about-photo-card {
-    width: 210px;
-    height: 250px;
-
-    border-radius: 18px;
-}
+        gap: 16px;
+    }
 
 
-.about-profile-main,
-.about-profile-side {
-    padding: 22px;
-}
+    .about-left {
+        gap: 16px;
+    }
 
 
-.profile-capability p {
-    font-size: 13.5px;
-    line-height: 1.6;
-}
+    /* =========================================
+       PROFESSIONAL PHOTO
+       ========================================= */
+
+    .about-photo-card {
+        width: 100%;
+
+        height: 280px;
+
+        border-radius: 14px;
+
+        overflow: hidden;
+
+        border: 1px solid #d7e3ef;
+
+        background: #ffffff;
+    }
 
 
-.about-resume {
-    padding: 22px;
-}
+    .about-photo-card img {
+        width: 100%;
+        height: 100%;
 
-.about-resume .buttons {
-    flex-direction: column;
+        display: block;
 
-    width: 100%;
-}
+        object-fit: cover;
 
-.about-resume .btn {
-    width: 100%;
+        object-position: center 18%;
+    }
 
-    text-align: center;
-}   
 
-    
-    /* SKILLS */
+    /* =========================================
+       PROFESSIONAL BACKGROUND
+       ========================================= */
+
+    .about-profile-main,
+    .about-profile-side {
+        padding: 22px;
+    }
+
+
+    .about-profile h3 {
+        font-size: 17px;
+    }
+
+
+    .about-profile p {
+        font-size: 13.5px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =========================================
+       WHAT I BRING
+       ========================================= */
+
+    .profile-capability {
+        grid-template-columns: 36px 1fr;
+
+        gap: 12px;
+
+        padding: 16px 0;
+    }
+
+
+    .profile-capability strong {
+        font-size: 14px;
+
+        line-height: 1.45;
+    }
+
+
+    .profile-capability p {
+        font-size: 13.5px;
+
+        line-height: 1.65;
+    }
+
+
+    /* =========================================
+       RESUME
+       ========================================= */
+
+    .about-resume {
+        padding: 22px;
+
+        gap: 20px;
+    }
+
+    .about-resume .buttons {
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 10px;
+    }
+
+    .about-resume .btn {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    /* =========================================
+       SKILLS
+       ========================================= */
 
     .skills-grid {
         grid-template-columns: 1fr;
     }
 
 
-    /* TECH STACK */
+    /* =========================================
+       TECH STACK
+       ========================================= */
 
     .tech-stack-logos {
         grid-template-columns: repeat(2, 1fr);
 
         column-gap: 15px;
+
         row-gap: 42px;
     }
 
     .tech-logo img {
         width: 68px;
+
         height: 68px;
     }
 
@@ -1796,7 +1952,9 @@ footer {
     }
 
 
-    /* CREDENTIALS */
+    /* =========================================
+       CREDENTIALS
+       ========================================= */
 
     .featured-credential {
         padding: 22px;
@@ -1824,19 +1982,4 @@ footer {
         padding: 16px;
     }
 
-}
-
-
-/* PROFESSIONAL PHOTO */
-
-.about-photo-placeholder {
-    overflow: hidden;
-}
-
-.about-photo-placeholder img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: center top;
 }
