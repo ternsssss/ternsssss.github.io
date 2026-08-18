@@ -348,22 +348,8 @@ section {
 
 
 /* =========================================
-   ABOUT
+   ABOUT — TOP LAYOUT
    ========================================= */
-
-#about {
-    scroll-margin-top: 90px;
-}
-
-
-/*
-    IMPORTANT:
-    The About section now has ONLY
-    two items in the top grid:
-
-    1. Photo
-    2. Professional Background
-*/
 
 .about-top {
     display: grid;
@@ -376,9 +362,8 @@ section {
 
     margin-top: 40px;
 
-    align-items: stretch;
+    align-items: start;
 }
-
 
 
 /* =========================================
@@ -388,11 +373,11 @@ section {
 .about-photo-card {
     width: 100%;
 
-    min-width: 0;
+    aspect-ratio: 1 / 1;
 
-    min-height: 390px;
+    min-height: 0;
 
-    height: 100%;
+    height: auto;
 
     display: flex;
 
@@ -411,12 +396,7 @@ section {
 
     box-shadow:
         0 8px 24px
-        rgba(
-            25,
-            61,
-            100,
-            0.05
-        );
+        rgba(25, 61, 100, 0.05);
 }
 
 
@@ -435,7 +415,6 @@ section {
 }
 
 
-
 /* =========================================
    ABOUT — PROFESSIONAL BACKGROUND
    ========================================= */
@@ -443,15 +422,9 @@ section {
 .about-profile-main {
     min-width: 0;
 
-    min-height: 390px;
+    min-height: 0;
 
-    height: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
+    height: auto;
 
     background: #ffffff;
 
@@ -461,32 +434,26 @@ section {
     border-radius: 16px;
 
     padding:
-        30px 34px;
+        28px 34px;
 
     box-shadow:
         0 8px 24px
-        rgba(
-            25,
-            61,
-            100,
-            0.025
-        );
+        rgba(25, 61, 100, 0.025);
 }
 
 
 .about-block + .about-block {
-    margin-top: 20px;
+    margin-top: 18px;
 
-    padding-top: 20px;
+    padding-top: 18px;
 
     border-top:
         1px solid #e5edf5;
 }
 
 
-.about-profile h3,
-.about-resume h3 {
-    margin: 0 0 10px;
+.about-profile-main h3 {
+    margin: 0 0 9px;
 
     color: #173b67;
 
@@ -498,20 +465,19 @@ section {
 }
 
 
-.about-profile p,
-.about-resume p {
+.about-profile-main p {
     margin: 0;
 
-    color: #5d6d80;
+    color: #4f6680;
 
     font-size: 14px;
 
-    line-height: 1.7;
+    line-height: 1.65;
 }
 
 
 .about-block p + p {
-    margin-top: 13px;
+    margin-top: 12px;
 }
 
 
@@ -537,19 +503,12 @@ section {
 
     box-shadow:
         0 8px 24px
-        rgba(
-            25,
-            61,
-            100,
-            0.025
-        );
+        rgba(25, 61, 100, 0.025);
 }
 
 
 .what-i-bring-header {
-    display: block;
-
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 
@@ -568,7 +527,7 @@ section {
 
 
 /* =========================================
-   WHAT I BRING — FOUR COLUMNS
+   FOUR CAPABILITIES
    ========================================= */
 
 .profile-capabilities {
@@ -580,9 +539,9 @@ section {
             minmax(0, 1fr)
         );
 
-    gap: 0;
-
     width: 100%;
+
+    gap: 0;
 }
 
 
@@ -590,16 +549,16 @@ section {
     display: grid;
 
     grid-template-columns:
-        34px 1fr;
+        36px minmax(0, 1fr);
 
-    gap: 12px;
-
-    padding:
-        12px 24px;
-
-    border: none;
+    column-gap: 14px;
 
     min-width: 0;
+
+    padding:
+        8px 22px 4px;
+
+    align-items: start;
 }
 
 
@@ -620,14 +579,29 @@ section {
 
     font-weight: 700;
 
-    padding-top: 3px;
+    line-height: 1.5;
+
+    padding-top: 2px;
+}
+
+
+/* =========================================
+   CAPABILITY CONTENT
+   ========================================= */
+
+.profile-capability > div {
+    min-width: 0;
 }
 
 
 .profile-capability strong {
-    display: block;
+    display: flex;
 
-    margin-bottom: 7px;
+    align-items: flex-start;
+
+    min-height: 42px;
+
+    margin: 0 0 7px;
 
     color: #24364b;
 
@@ -1913,10 +1887,13 @@ footer {
     }
 
 
-    .about-photo-card,
-    .about-profile-main {
-        min-height: 360px;
-    }
+     .about-photo-card {
+       min-height: 0;
+   }
+   
+   .about-profile-main {
+       min-height: 0;
+   }
 
 
     .profile-capabilities {
@@ -1964,120 +1941,74 @@ footer {
 
 
 /* =========================================
-   TABLET / MOBILE — 850px
+   ABOUT — TABLET
    ========================================= */
 
-@media (max-width: 850px) {
+.about-top {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+}
 
 
-    /* NAVIGATION */
+.about-photo-card {
+    width: 100%;
 
-    nav {
-        padding:
-            12px 7%;
-    }
+    max-width: 420px;
 
+    aspect-ratio: 1 / 1;
 
-    .nav-links {
-        display: none;
-    }
+    height: auto;
 
+    min-height: 0;
 
-    .logo img {
-        height: 52px;
-
-        max-width: 320px;
-    }
+    margin: 0 auto;
+}
 
 
+.about-profile-main {
+    min-height: 0;
 
-    /* HERO */
+    height: auto;
 
-    .hero {
-        min-height: 600px;
-
-        padding-top: 80px;
-
-        padding-bottom: 80px;
-    }
+    padding: 26px;
+}
 
 
-    .hero h1 {
-        font-size: 52px;
-    }
+.about-profile-side {
+    margin-top: 18px;
+
+    padding: 26px;
+}
 
 
+.profile-capabilities {
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
 
-    /* SECTIONS */
-
-    section {
-        padding:
-            80px 7%;
-    }
-
-
-    .section-title {
-        font-size: 34px;
-    }
+    row-gap: 12px;
+}
 
 
-
-    /* ABOUT */
-
-    .about-top {
-        grid-template-columns: 1fr;
-
-        gap: 18px;
-    }
+.profile-capability {
+    padding:
+        14px 12px;
+}
 
 
-    .about-photo-card {
-        width: 100%;
-
-        height: 360px;
-
-        min-height: 360px;
-    }
+.profile-capability:first-child,
+.profile-capability:nth-child(3) {
+    padding-left: 0;
+}
 
 
-    .about-profile-main {
-        min-height: 0;
-
-        height: auto;
-
-        padding: 26px;
-    }
-
-
-    .about-profile-side {
-        margin-top: 18px;
-
-        padding: 26px;
-    }
-
-
-    .profile-capabilities {
-        grid-template-columns: 1fr 1fr;
-    }
-
-
-    .profile-capability {
-        padding:
-            16px 12px;
-    }
-
-
-    .profile-capability:first-child,
-    .profile-capability:nth-child(3) {
-        padding-left: 0;
-    }
-
-
-    .profile-capability:nth-child(2),
-    .profile-capability:last-child {
-        padding-right: 0;
-    }
-
+.profile-capability:nth-child(2),
+.profile-capability:last-child {
+    padding-right: 0;
+}
 
 
     /* RESUME */
@@ -2177,129 +2108,83 @@ footer {
 
 
 /* =========================================
-   MOBILE — 500px
+   ABOUT — MOBILE
    ========================================= */
 
-@media (max-width: 500px) {
+.about-photo-card {
+    width: 100%;
+
+    max-width: 320px;
+
+    aspect-ratio: 1 / 1;
+
+    height: auto;
+
+    min-height: 0;
+
+    margin: 0 auto;
+
+    border-radius: 14px;
+}
 
 
-    /* NAVIGATION */
-
-    nav {
-        padding:
-            10px 6%;
-    }
+.about-profile-main {
+    padding: 22px;
+}
 
 
-    .logo img {
-        height: 44px;
-
-        max-width: 280px;
-    }
+.about-profile-side {
+    padding: 22px;
+}
 
 
-
-    /* HERO */
-
-    .hero h1 {
-        font-size: 44px;
-    }
+.about-profile-main h3 {
+    font-size: 18px;
+}
 
 
-    .hero-subtitle {
-        font-size: 18px;
-    }
+.about-profile-main p {
+    font-size: 13.5px;
+
+    line-height: 1.7;
+}
 
 
+/* WHAT I BRING */
 
-    /* SECTIONS */
-
-    section {
-        padding:
-            75px 7%;
-    }
+.what-i-bring-header h3 {
+    font-size: 20px;
+}
 
 
-
-    /* ABOUT PHOTO */
-
-    .about-photo-card {
-        height: 300px;
-
-        min-height: 300px;
-
-        border-radius: 14px;
-    }
+.profile-capabilities {
+    grid-template-columns: 1fr;
+}
 
 
-    .about-profile-main {
-        padding: 22px;
-    }
+.profile-capability {
+    grid-template-columns:
+        36px minmax(0, 1fr);
+
+    column-gap: 12px;
+
+    padding:
+        15px 0;
+}
 
 
-    .about-profile-side {
-        padding: 22px;
-    }
+.profile-capability strong {
+    min-height: 0;
+
+    font-size: 14px;
+}
 
 
-    .about-profile h3 {
-        font-size: 18px;
-    }
+.profile-capability p {
+    font-size: 13px;
 
-
-    .about-profile p {
-        font-size: 13.5px;
-
-        line-height: 1.7;
-    }
-
-
-
-    /* WHAT I BRING */
-
-    .what-i-bring-header h3 {
-        font-size: 20px;
-    }
-
-
-    .profile-capabilities {
-        grid-template-columns: 1fr;
-    }
-
-
-    .profile-capability {
-        grid-template-columns:
-            36px 1fr;
-
-        gap: 12px;
-
-        padding:
-            16px 0;
-    }
-
-
-    .profile-capability:first-child,
-    .profile-capability:nth-child(3) {
-        padding-left: 0;
-    }
-
-
-    .profile-capability:nth-child(2),
-    .profile-capability:last-child {
-        padding-right: 0;
-    }
-
-
-    .profile-capability strong {
-        font-size: 14px;
-    }
-
-
-    .profile-capability p {
-        font-size: 13px;
-
-        line-height: 1.6;
-    }
+    line-height: 1.6;
+}
 
 
 
