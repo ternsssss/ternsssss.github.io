@@ -28,6 +28,7 @@ body {
 }
 
 
+
 /* =========================================
    NAVIGATION
    ========================================= */
@@ -40,7 +41,12 @@ nav {
     z-index: 1000;
 
     background:
-        rgba(255, 255, 255, 0.96);
+        rgba(
+            255,
+            255,
+            255,
+            0.96
+        );
 
     border-bottom:
         1px solid #e6edf5;
@@ -57,9 +63,11 @@ nav {
 
     display: flex;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
-    align-items: center;
+    align-items:
+        center;
 }
 
 
@@ -120,7 +128,6 @@ nav {
     position: absolute;
 
     left: 0;
-
     right: 0;
 
     bottom: -7px;
@@ -173,7 +180,8 @@ nav {
 
     display: flex;
 
-    align-items: center;
+    align-items:
+        center;
 }
 
 
@@ -191,7 +199,8 @@ nav {
 
     letter-spacing: 2px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
     margin-bottom: 20px;
 }
@@ -273,7 +282,7 @@ nav {
 .btn-primary {
     background: #1769aa;
 
-    color: #ffffff;
+    color: white;
 }
 
 
@@ -288,7 +297,7 @@ nav {
 
     color: #173b67;
 
-    background: #ffffff;
+    background: white;
 }
 
 
@@ -318,7 +327,8 @@ section {
 
     letter-spacing: 2px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
     margin-bottom: 12px;
 }
@@ -348,36 +358,62 @@ section {
 
 
 /* =========================================
-   ABOUT — TOP LAYOUT
+   ABOUT
    ========================================= */
 
-.about-top {
+#about {
+    scroll-margin-top: 90px;
+}
+
+
+/*
+   IMPORTANT:
+   The About section now has ONLY TWO columns
+   in the upper layout:
+
+   LEFT  = PHOTO
+   RIGHT = PROFESSIONAL BACKGROUND + HOW I WORK
+
+   What I Bring is placed underneath.
+*/
+
+.about-profile {
     display: grid;
 
     grid-template-columns:
-        0.78fr
-        1.22fr;
+        minmax(300px, 0.78fr)
+        minmax(520px, 1.22fr);
 
     gap: 22px;
 
     margin-top: 40px;
 
-    align-items: start;
+    align-items: stretch;
 }
+
 
 
 /* =========================================
    ABOUT — PHOTO
    ========================================= */
 
+.about-photo {
+    min-width: 0;
+
+    display: flex;
+
+    align-items: stretch;
+}
+
+
 .about-photo-card {
     width: 100%;
 
-    aspect-ratio: 1 / 1;
+    height: 100%;
 
     min-height: 0;
 
-    height: auto;
+    overflow: hidden;
 
     display: flex;
 
@@ -385,18 +421,21 @@ section {
 
     justify-content: center;
 
-    overflow: hidden;
-
     background: #ffffff;
 
     border:
-        1px solid #d7e3ef;
+        1px solid #dce7f1;
 
     border-radius: 16px;
 
     box-shadow:
         0 8px 24px
-        rgba(25, 61, 100, 0.05);
+        rgba(
+            25,
+            61,
+            100,
+            0.04
+        );
 }
 
 
@@ -407,12 +446,24 @@ section {
 
     display: block;
 
-    object-fit: contain;
+    /*
+       COVER is intentional here.
 
-    object-position: center;
+       The source photo is square while the
+       professional card is slightly wider/
+       taller. Cover removes the unwanted
+       white strip underneath while keeping
+       the photo proportional.
+    */
+
+    object-fit: cover;
+
+    object-position:
+        center center;
 
     background: #ffffff;
 }
+
 
 
 /* =========================================
@@ -422,9 +473,15 @@ section {
 .about-profile-main {
     min-width: 0;
 
+    height: 100%;
+
     min-height: 0;
 
-    height: auto;
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
 
     background: #ffffff;
 
@@ -438,22 +495,18 @@ section {
 
     box-shadow:
         0 8px 24px
-        rgba(25, 61, 100, 0.025);
-}
-
-
-.about-block + .about-block {
-    margin-top: 18px;
-
-    padding-top: 18px;
-
-    border-top:
-        1px solid #e5edf5;
+        rgba(
+            25,
+            61,
+            100,
+            0.025
+        );
 }
 
 
 .about-profile-main h3 {
-    margin: 0 0 9px;
+    margin:
+        0 0 10px;
 
     color: #173b67;
 
@@ -481,15 +534,33 @@ section {
 }
 
 
+/*
+   Divider between Professional Background
+   and How I Work.
+*/
+
+.about-block + .about-block {
+    margin-top: 17px;
+
+    padding-top: 17px;
+
+    border-top:
+        1px solid #e3ebf3;
+}
+
+
 
 /* =========================================
    ABOUT — WHAT I BRING
    ========================================= */
 
 .about-profile-side {
-    width: 100%;
+    grid-column:
+        1 / -1;
 
-    margin-top: 22px;
+    min-width: 0;
+
+    margin-top: 0;
 
     background: #ffffff;
 
@@ -503,17 +574,18 @@ section {
 
     box-shadow:
         0 8px 24px
-        rgba(25, 61, 100, 0.025);
+        rgba(
+            25,
+            61,
+            100,
+            0.025
+        );
 }
 
 
-.what-i-bring-header {
-    margin-bottom: 22px;
-}
-
-
-.what-i-bring-header h3 {
-    margin: 0;
+.about-profile-side > h3 {
+    margin:
+        0 0 24px;
 
     color: #173b67;
 
@@ -526,9 +598,7 @@ section {
 
 
 
-/* =========================================
-   FOUR CAPABILITIES
-   ========================================= */
+/* FOUR CAPABILITIES */
 
 .profile-capabilities {
     display: grid;
@@ -546,6 +616,8 @@ section {
 
 
 .profile-capability {
+    min-width: 0;
+
     display: grid;
 
     grid-template-columns:
@@ -553,12 +625,11 @@ section {
 
     column-gap: 14px;
 
-    min-width: 0;
-
     padding:
-        8px 22px 4px;
+        4px 24px;
 
-    align-items: start;
+    align-items:
+        start;
 }
 
 
@@ -585,23 +656,18 @@ section {
 }
 
 
-/* =========================================
-   CAPABILITY CONTENT
-   ========================================= */
-
-.profile-capability > div {
+.capability-content {
     min-width: 0;
 }
 
 
 .profile-capability strong {
-    display: flex;
-
-    align-items: flex-start;
+    display: block;
 
     min-height: 42px;
 
-    margin: 0 0 7px;
+    margin:
+        0 0 7px;
 
     color: #24364b;
 
@@ -634,11 +700,12 @@ section {
 
     align-items: center;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
     gap: 30px;
 
-    margin-top: 20px;
+    margin-top: 18px;
 
     padding:
         22px 24px;
@@ -664,7 +731,7 @@ section {
 
 
 /* =========================================
-   LEGACY SKILLS
+   UNUSED / LEGACY SKILLS
    ========================================= */
 
 .skills-grid {
@@ -681,7 +748,7 @@ section {
 
 
 .skill-card {
-    background: #ffffff;
+    background: white;
 
     border:
         1px solid #e5edf5;
@@ -734,7 +801,7 @@ section {
 
 
 .project-card {
-    background: #ffffff;
+    background: white;
 
     border:
         1px solid #e5edf5;
@@ -808,7 +875,7 @@ section {
 .project-content h3 {
     color: #173b67;
 
-    font-size: 22px;
+    font-size: 24px;
 
     line-height: 1.3;
 
@@ -886,11 +953,6 @@ section {
 }
 
 
-
-/* =========================================
-   MORE PROJECTS
-   ========================================= */
-
 .projects-more {
     display: flex;
 
@@ -931,6 +993,84 @@ section {
 
 
 /* =========================================
+   CONTACT
+   ========================================= */
+
+.contact {
+    text-align: center;
+
+    background: #edf5fc;
+
+    max-width: none;
+}
+
+
+.contact-inner {
+    max-width: 750px;
+
+    margin: auto;
+}
+
+
+.contact p {
+    color: #66758a;
+
+    margin-bottom: 30px;
+}
+
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    background: #ffffff;
+
+    border-top:
+        1px solid #dce6f0;
+}
+
+
+.footer-inner {
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    padding:
+        26px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    gap: 24px;
+}
+
+
+.footer-brand {
+    color: #173b67;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+.footer-copy {
+    color: #71839a;
+
+    font-size: 13px;
+
+    font-weight: 400;
+}
+
+
+
+/* =========================================
    TECH STACK
    ========================================= */
 
@@ -952,9 +1092,11 @@ section {
 
     row-gap: 62px;
 
-    align-items: start;
+    align-items:
+        start;
 
-    justify-items: center;
+    justify-items:
+        center;
 
     margin:
         58px auto 0;
@@ -970,9 +1112,11 @@ section {
 
     flex-direction: column;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: flex-start;
+    justify-content:
+        flex-start;
 
     gap: 14px;
 
@@ -1066,7 +1210,8 @@ section {
 
     letter-spacing: 1.8px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
     margin-bottom: 7px;
 }
@@ -1088,6 +1233,11 @@ section {
    CREDENTIALS
    ========================================= */
 
+#certifications {
+    overflow: hidden;
+}
+
+
 .featured-credential {
     display: grid;
 
@@ -1096,7 +1246,8 @@ section {
 
     gap: 70px;
 
-    align-items: center;
+    align-items:
+        center;
 
     margin-top: 60px;
 
@@ -1123,9 +1274,11 @@ section {
 .featured-certificate {
     display: flex;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    align-items: center;
+    align-items:
+        center;
 }
 
 
@@ -1150,9 +1303,11 @@ section {
 
     flex-direction: column;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    align-items: center;
+    align-items:
+        center;
 
     padding: 12px;
 
@@ -1233,7 +1388,8 @@ section {
 
     letter-spacing: 2px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
     margin-bottom: 14px;
 }
@@ -1305,7 +1461,8 @@ section {
 
     align-items: center;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
     margin-bottom: 28px;
 }
@@ -1351,7 +1508,8 @@ section {
 
     -ms-overflow-style: none;
 
-    overscroll-behavior-x: contain;
+    overscroll-behavior-x:
+        contain;
 }
 
 
@@ -1374,18 +1532,23 @@ section {
     flex:
         0 0 285px;
 
-    scroll-snap-align: start;
+    scroll-snap-align:
+        start;
 
-    background: #ffffff;
+    background:
+        #ffffff;
 
     border:
         1px solid #e3ebf3;
 
-    border-radius: 14px;
+    border-radius:
+        14px;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
-    text-decoration: none;
+    text-decoration:
+        none;
 
     box-shadow:
         0 8px 25px
@@ -1400,7 +1563,8 @@ section {
         transform 0.25s ease,
         box-shadow 0.25s ease;
 
-    user-select: none;
+    user-select:
+        none;
 }
 
 
@@ -1416,86 +1580,6 @@ section {
             100,
             0.12
         );
-}
-
-
-.certificate-image {
-    position: relative;
-
-    height: 220px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 7px;
-
-    padding: 25px;
-
-    text-align: center;
-
-    overflow: hidden;
-
-    background: #f5f9fd;
-
-    border-bottom:
-        1px solid #e3ebf3;
-}
-
-
-.certificate-image::before {
-    content: "";
-
-    position: absolute;
-
-    width: 180px;
-
-    height: 180px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.65
-        );
-
-    top: -90px;
-
-    right: -70px;
-}
-
-
-.certificate-image img {
-    width: 100%;
-
-    height: 100%;
-
-    display: block;
-
-    object-fit: contain;
-
-    object-position: center;
-
-    user-select: none;
-
-    pointer-events: none;
-
-    transition:
-        transform 0.3s ease;
-}
-
-
-.certificate-card:hover
-.certificate-image img {
-    transform:
-        scale(1.03);
 }
 
 
@@ -1526,8 +1610,360 @@ section {
 
 
 /* =========================================
-   CERTIFICATE COLORS
+   ACHIEVEMENTS
    ========================================= */
+
+.achievements-section {
+    margin-top: 70px;
+}
+
+
+.achievements-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 18px;
+}
+
+
+.achievement-card {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    min-height: 125px;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e3ebf3;
+
+    border-radius:
+        14px;
+
+    text-decoration:
+        none;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            25,
+            61,
+            100,
+            0.04
+        );
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.achievement-card:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 14px 32px
+        rgba(
+            25,
+            61,
+            100,
+            0.10
+        );
+}
+
+
+.achievement-badge {
+    flex:
+        0 0 62px;
+
+    width: 62px;
+
+    height: 62px;
+
+    display: flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        #eef5fb;
+
+    color:
+        #1769aa;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    text-align:
+        center;
+}
+
+
+.achievement-badge.achievement-preview {
+    width: 110px;
+
+    height: 82px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    overflow:
+        hidden;
+
+    background:
+        #f8fbff;
+
+    border:
+        1px solid #dce7f2;
+
+    border-radius:
+        10px;
+
+    box-sizing:
+        border-box;
+}
+
+
+.achievement-badge.achievement-preview img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit:
+        contain;
+
+    object-position:
+        center;
+
+    user-select:
+        none;
+
+    pointer-events:
+        none;
+}
+
+
+.achievement-content {
+    min-width:
+        0;
+
+    padding-right:
+        18px;
+}
+
+
+.achievement-content > span {
+    display:
+        block;
+
+    color:
+        #1769aa;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1.3px;
+
+    margin-bottom:
+        5px;
+}
+
+
+.achievement-content h4 {
+    color:
+        #173b67;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.4;
+
+    margin-bottom:
+        5px;
+}
+
+
+.achievement-content p {
+    color:
+        #7a899b;
+
+    font-size:
+        12px;
+
+    margin:
+        0;
+}
+
+
+.achievement-arrow {
+    position:
+        absolute;
+
+    right:
+        18px;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        #1769aa;
+
+    font-size:
+        18px;
+
+    font-weight:
+        700;
+}
+
+
+
+/* =========================================
+   CERTIFICATE VISUAL PREVIEWS
+   ========================================= */
+
+.certificate-image {
+    position:
+        relative;
+
+    height:
+        220px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    padding:
+        25px;
+
+    text-align:
+        center;
+
+    overflow:
+        hidden;
+
+    background:
+        #f5f9fd;
+
+    border-bottom:
+        1px solid #e3ebf3;
+}
+
+
+.certificate-image::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        180px;
+
+    height:
+        180px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.65
+        );
+
+    top:
+        -90px;
+
+    right:
+        -70px;
+}
+
+
+.certificate-image img {
+    width:
+        100%;
+
+    height:
+        100%;
+
+    display:
+        block;
+
+    object-fit:
+        contain;
+
+    object-position:
+        center;
+
+    user-select:
+        none;
+
+    pointer-events:
+        none;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.certificate-card:hover
+.certificate-image img {
+    transform:
+        scale(1.03);
+}
+
 
 .certificate-dsa {
     background:
@@ -1591,437 +2027,187 @@ section {
 
 
 /* =========================================
-   ACHIEVEMENTS
-   ========================================= */
-
-.achievements-section {
-    margin-top: 70px;
-}
-
-
-.achievements-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            3,
-            1fr
-        );
-
-    gap: 18px;
-}
-
-
-.achievement-card {
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 18px;
-
-    min-height: 125px;
-
-    padding: 20px;
-
-    background: #ffffff;
-
-    border:
-        1px solid #e3ebf3;
-
-    border-radius: 14px;
-
-    text-decoration: none;
-
-    box-shadow:
-        0 8px 25px
-        rgba(
-            25,
-            61,
-            100,
-            0.04
-        );
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-
-.achievement-card:hover {
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-        0 14px 32px
-        rgba(
-            25,
-            61,
-            100,
-            0.10
-        );
-}
-
-
-.achievement-badge {
-    flex:
-        0 0 62px;
-
-    width: 62px;
-
-    height: 62px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #eef5fb;
-
-    color: #1769aa;
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    text-align: center;
-}
-
-
-.achievement-badge.achievement-preview {
-    width: 110px;
-
-    height: 82px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    overflow: hidden;
-
-    background: #f8fbff;
-
-    border:
-        1px solid #dce7f2;
-
-    border-radius: 10px;
-
-    box-sizing: border-box;
-}
-
-
-.achievement-badge.achievement-preview img {
-    width: 100%;
-
-    height: 100%;
-
-    display: block;
-
-    object-fit: contain;
-
-    object-position: center;
-
-    user-select: none;
-
-    pointer-events: none;
-}
-
-
-.achievement-content {
-    min-width: 0;
-
-    padding-right: 18px;
-}
-
-
-.achievement-content > span {
-    display: block;
-
-    color: #1769aa;
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: 1.3px;
-
-    margin-bottom: 5px;
-}
-
-
-.achievement-content h4 {
-    color: #173b67;
-
-    font-size: 14px;
-
-    line-height: 1.4;
-
-    margin-bottom: 5px;
-}
-
-
-.achievement-content p {
-    color: #7a899b;
-
-    font-size: 12px;
-
-    margin: 0;
-}
-
-
-.achievement-arrow {
-    position: absolute;
-
-    right: 18px;
-
-    top: 50%;
-
-    transform:
-        translateY(-50%);
-
-    color: #1769aa;
-
-    font-size: 18px;
-
-    font-weight: 700;
-}
-
-
-
-/* =========================================
-   CONTACT
-   ========================================= */
-
-.contact {
-    text-align: center;
-
-    background: #edf5fc;
-
-    max-width: none;
-}
-
-
-.contact-inner {
-    max-width: 750px;
-
-    margin: auto;
-}
-
-
-.contact p {
-    color: #66758a;
-
-    margin-bottom: 30px;
-}
-
-
-
-/* =========================================
-   FOOTER
-   ========================================= */
-
-footer {
-    background: #ffffff;
-
-    border-top:
-        1px solid #dce6f0;
-}
-
-
-.footer-inner {
-    max-width: 1280px;
-
-    margin: 0 auto;
-
-    padding:
-        26px 7%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 24px;
-}
-
-
-.footer-brand {
-    color: #173b67;
-
-    font-size: 15px;
-
-    font-weight: 700;
-}
-
-
-.footer-copy {
-    color: #71839a;
-
-    font-size: 13px;
-
-    font-weight: 400;
-}
-
-
-
-/* =========================================
    TABLET — 1000px
    ========================================= */
 
 @media (max-width: 1000px) {
 
-    .about-top {
+    .about-profile {
         grid-template-columns:
-            0.8fr 1.2fr;
-
-        gap: 18px;
+            200px
+            minmax(
+                0,
+                1fr
+            );
     }
 
 
-     .about-photo-card {
-       min-height: 0;
-   }
-   
-   .about-profile-main {
-       min-height: 0;
-   }
+    .about-photo-card {
+        min-height:
+            0;
+    }
+
+}
+
+
+
+/* =========================================
+   TABLET / MOBILE — 850px
+   ========================================= */
+
+@media (max-width: 850px) {
+
+
+    /* NAVIGATION */
+
+    nav {
+        padding:
+            12px 7%;
+    }
+
+
+    .nav-links {
+        display:
+            none;
+    }
+
+
+    .logo img {
+        height:
+            52px;
+
+        max-width:
+            320px;
+    }
+
+
+
+    /* HERO */
+
+    .hero {
+        min-height:
+            600px;
+
+        padding-top:
+            80px;
+
+        padding-bottom:
+            80px;
+    }
+
+
+    .hero h1 {
+        font-size:
+            52px;
+    }
+
+
+
+    /* ABOUT */
+
+    .about-profile {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            20px;
+    }
+
+
+    .about-photo {
+        justify-content:
+            center;
+    }
+
+
+    .about-photo-card {
+        width:
+            min(
+                100%,
+                420px
+            );
+
+        aspect-ratio:
+            1 / 1;
+
+        height:
+            auto;
+
+        min-height:
+            0;
+    }
+
+
+    .about-profile-main {
+        height:
+            auto;
+
+        min-height:
+            0;
+
+        padding:
+            26px;
+    }
+
+
+    .about-profile-side {
+        grid-column:
+            auto;
+
+        padding:
+            26px;
+    }
 
 
     .profile-capabilities {
         grid-template-columns:
             repeat(
                 2,
-                minmax(0, 1fr)
+                minmax(
+                    0,
+                    1fr
+                )
             );
 
-        row-gap: 10px;
+        row-gap:
+            24px;
     }
 
 
     .profile-capability {
         padding:
-            14px 16px;
+            4px 12px;
     }
 
 
-    .profile-capability:first-child,
-    .profile-capability:nth-child(3) {
-        padding-left: 0;
+    .profile-capability:nth-child(
+        odd
+    ) {
+        padding-left:
+            0;
     }
 
 
-    .profile-capability:nth-child(2),
-    .profile-capability:last-child {
-        padding-right: 0;
+    .profile-capability:nth-child(
+        even
+    ) {
+        padding-right:
+            0;
     }
 
-
-    .tech-stack-logos {
-        grid-template-columns:
-            repeat(
-                4,
-                minmax(
-                    100px,
-                    1fr
-                )
-            );
-    }
-
-}
-
-
-
-/* =========================================
-   ABOUT — TABLET
-   ========================================= */
-
-.about-top {
-    grid-template-columns: 1fr;
-
-    gap: 18px;
-}
-
-
-.about-photo-card {
-    width: 100%;
-
-    max-width: 420px;
-
-    aspect-ratio: 1 / 1;
-
-    height: auto;
-
-    min-height: 0;
-
-    margin: 0 auto;
-}
-
-
-.about-profile-main {
-    min-height: 0;
-
-    height: auto;
-
-    padding: 26px;
-}
-
-
-.about-profile-side {
-    margin-top: 18px;
-
-    padding: 26px;
-}
-
-
-.profile-capabilities {
-    grid-template-columns:
-        repeat(
-            2,
-            minmax(0, 1fr)
-        );
-
-    row-gap: 12px;
-}
-
-
-.profile-capability {
-    padding:
-        14px 12px;
-}
-
-
-.profile-capability:first-child,
-.profile-capability:nth-child(3) {
-    padding-left: 0;
-}
-
-
-.profile-capability:nth-child(2),
-.profile-capability:last-child {
-    padding-right: 0;
-}
-
-
-    /* RESUME */
 
     .about-resume {
-        flex-direction: column;
+        flex-direction:
+            column;
 
-        align-items: flex-start;
+        align-items:
+            flex-start;
     }
 
 
     .about-resume .buttons {
-        width: 100%;
+        width:
+            100%;
     }
 
 
@@ -2029,7 +2215,44 @@ footer {
     /* PROJECTS */
 
     .projects-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
+    }
+
+
+
+    /* SKILLS */
+
+    .skills-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+
+    /* SECTION */
+
+    .section-title {
+        font-size:
+            34px;
+    }
+
+
+
+    /* FOOTER */
+
+    .footer-inner {
+        flex-direction:
+            column;
+
+        justify-content:
+            center;
+
+        text-align:
+            center;
+
+        padding:
+            24px 6%;
     }
 
 
@@ -2061,46 +2284,38 @@ footer {
     /* CREDENTIALS */
 
     .featured-credential {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
-        gap: 40px;
+        gap:
+            40px;
 
-        padding: 30px;
+        padding:
+            30px;
     }
 
 
     .featured-credential-content {
-        max-width: none;
+        max-width:
+            none;
     }
 
 
     .featured-credential-content h3 {
-        font-size: 28px;
+        font-size:
+            28px;
     }
 
 
     .achievements-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
 
     .certificate-card {
-        flex-basis: 260px;
-    }
-
-
-
-    /* FOOTER */
-
-    .footer-inner {
-        flex-direction: column;
-
-        justify-content: center;
-
-        text-align: center;
-
-        padding:
-            24px 6%;
+        flex-basis:
+            260px;
     }
 
 }
@@ -2108,104 +2323,172 @@ footer {
 
 
 /* =========================================
-   ABOUT — MOBILE
+   MOBILE — 500px
    ========================================= */
 
-.about-photo-card {
-    width: 100%;
-
-    max-width: 320px;
-
-    aspect-ratio: 1 / 1;
-
-    height: auto;
-
-    min-height: 0;
-
-    margin: 0 auto;
-
-    border-radius: 14px;
-}
+@media (max-width: 500px) {
 
 
-.about-profile-main {
-    padding: 22px;
-}
+    /* NAVIGATION */
+
+    nav {
+        padding:
+            10px 6%;
+    }
 
 
-.about-profile-side {
-    padding: 22px;
-}
+    .logo img {
+        height:
+            44px;
 
-
-.about-profile-main h3 {
-    font-size: 18px;
-}
-
-
-.about-profile-main p {
-    font-size: 13.5px;
-
-    line-height: 1.7;
-}
-
-
-/* WHAT I BRING */
-
-.what-i-bring-header h3 {
-    font-size: 20px;
-}
-
-
-.profile-capabilities {
-    grid-template-columns: 1fr;
-}
-
-
-.profile-capability {
-    grid-template-columns:
-        36px minmax(0, 1fr);
-
-    column-gap: 12px;
-
-    padding:
-        15px 0;
-}
-
-
-.profile-capability strong {
-    min-height: 0;
-
-    font-size: 14px;
-}
-
-
-.profile-capability p {
-    font-size: 13px;
-
-    line-height: 1.6;
-}
+        max-width:
+            280px;
+    }
 
 
 
-    /* RESUME */
+    /* HERO */
+
+    .hero h1 {
+        font-size:
+            44px;
+    }
+
+
+    .hero-subtitle {
+        font-size:
+            18px;
+    }
+
+
+
+    /* SECTIONS */
+
+    section {
+        padding:
+            75px 7%;
+    }
+
+
+
+    /* ABOUT */
+
+    .about-photo-card {
+        width:
+            100%;
+
+        max-width:
+            320px;
+
+        aspect-ratio:
+            1 / 1;
+
+        height:
+            auto;
+
+        margin:
+            0 auto;
+
+        border-radius:
+            14px;
+    }
+
+
+    .about-profile-main,
+    .about-profile-side {
+        padding:
+            22px;
+    }
+
+
+    .about-profile-main h3 {
+        font-size:
+            18px;
+    }
+
+
+    .about-profile-main p {
+        font-size:
+            13.5px;
+
+        line-height:
+            1.7;
+    }
+
+
+    .about-profile-side > h3 {
+        font-size:
+            20px;
+    }
+
+
+    .profile-capabilities {
+        grid-template-columns:
+            1fr;
+
+        row-gap:
+            20px;
+    }
+
+
+    .profile-capability,
+    .profile-capability:nth-child(
+        odd
+    ),
+    .profile-capability:nth-child(
+        even
+    ) {
+        grid-template-columns:
+            36px
+            minmax(
+                0,
+                1fr
+            );
+
+        padding:
+            4px 0;
+    }
+
+
+    .profile-capability strong {
+        min-height:
+            0;
+
+        font-size:
+            14px;
+    }
+
+
+    .profile-capability p {
+        font-size:
+            13px;
+
+        line-height:
+            1.6;
+    }
+
 
     .about-resume {
-        padding: 22px;
+        padding:
+            22px;
     }
 
 
     .about-resume .buttons {
-        flex-direction: column;
+        flex-direction:
+            column;
 
-        width: 100%;
+        width:
+            100%;
     }
 
 
     .about-resume .btn {
-        width: 100%;
+        width:
+            100%;
 
-        text-align: center;
+        text-align:
+            center;
     }
 
 
@@ -2213,7 +2496,8 @@ footer {
     /* SKILLS */
 
     .skills-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
 
@@ -2227,28 +2511,35 @@ footer {
                 1fr
             );
 
-        column-gap: 15px;
+        column-gap:
+            15px;
 
-        row-gap: 42px;
+        row-gap:
+            42px;
     }
 
 
     .tech-logo img {
-        width: 68px;
+        width:
+            68px;
 
-        height: 68px;
+        height:
+            68px;
     }
 
 
     .tech-logo span {
-        font-size: 12px;
+        font-size:
+            12px;
     }
 
 
     .tech-capabilities {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
-        gap: 0;
+        gap:
+            0;
     }
 
 
@@ -2259,7 +2550,8 @@ footer {
 
 
     .tech-capability:not(:last-child) {
-        border-right: none;
+        border-right:
+            none;
 
         border-bottom:
             1px solid #dfe7ef;
@@ -2270,34 +2562,41 @@ footer {
     /* CREDENTIALS */
 
     .featured-credential {
-        padding: 22px;
+        padding:
+            22px;
     }
 
 
     .certificate-preview {
-        padding: 25px;
+        padding:
+            25px;
     }
 
 
     .featured-credential-content h3 {
-        font-size: 24px;
+        font-size:
+            24px;
     }
 
 
     .credentials-subsection-header h3 {
-        font-size: 23px;
+        font-size:
+            23px;
     }
 
 
     .certificate-card {
-        flex-basis: 240px;
+        flex-basis:
+            240px;
     }
 
 
     .achievement-card {
-        min-height: 110px;
+        min-height:
+            110px;
 
-        padding: 16px;
+        padding:
+            16px;
     }
 
 }
