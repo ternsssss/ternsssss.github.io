@@ -22,7 +22,7 @@ body {
 
 /* =========================================
    NAVIGATION
-   ORIGINAL NAVIGATION TYPOGRAPHY
+   ORIGINAL TYPOGRAPHY — DO NOT CHANGE
    ========================================= */
 
 nav {
@@ -297,9 +297,9 @@ section {
 }
 
 
-/* ABOUT LABEL
-   Kept independent from navigation typography.
-*/
+/* =========================================
+   ABOUT LABEL
+   ========================================= */
 
 .about-label {
     color: #1769aa;
@@ -316,7 +316,9 @@ section {
 }
 
 
-/* ABOUT MAIN TITLE */
+/* =========================================
+   ABOUT MAIN TITLE
+   ========================================= */
 
 #about .section-title {
     color: #142b45;
@@ -331,7 +333,9 @@ section {
 }
 
 
-/* ABOUT DESCRIPTION */
+/* =========================================
+   ABOUT DESCRIPTION
+   ========================================= */
 
 .about-description {
     max-width: 760px;
@@ -347,67 +351,62 @@ section {
 
 
 /* =========================================
-   ABOUT MAIN COMBINED CARD
+   COMBINED ABOUT PROFILE CARD
    PHOTO + PROFESSIONAL BACKGROUND
    ========================================= */
 
-.about-main-layout {
+.about-profile-card {
+
+    width: 100%;
+
     display: grid;
 
     grid-template-columns:
-        minmax(280px, 0.72fr)
+        minmax(300px, 0.72fr)
         minmax(0, 1.55fr);
-
-    gap: 24px;
 
     align-items: stretch;
 
-    margin-bottom: 28px;
+    background: #ffffff;
+
+    border: 1px solid #dce7f1;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    margin-bottom: 30px;
+
+    min-height: 430px;
 }
 
 
 /* =========================================
-   ABOUT PHOTO
+   PROFILE PHOTO
    ========================================= */
 
 .about-photo {
+
     min-width: 0;
 
-    display: flex;
-
-    height: 100%;
-}
-
-
-.about-photo-card {
-    width: 100%;
-
-    height: 100%;
-
-    min-height: 0;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
+    min-height: 430px;
 
     background: #ffffff;
 
-    border: 1px solid #d7e3ef;
+    overflow: hidden;
 
-    border-radius: 14px;
+    display: flex;
 }
 
 
 /*
    IMPORTANT:
-   The image fills the card without creating
-   a white strip underneath.
+   The image itself fills the entire
+   left side of the combined card.
 */
 
-.about-photo-card img {
+.about-photo img {
+
     width: 100%;
 
     height: 100%;
@@ -417,37 +416,46 @@ section {
     object-fit: cover;
 
     object-position: center top;
-
-    background: #ffffff;
 }
 
 
 /* =========================================
-   PROFESSIONAL BACKGROUND + HOW I WORK
+   PROFESSIONAL BACKGROUND
+   + HOW I WORK
    ========================================= */
 
-.about-profile-main {
+.about-profile-content {
+
     min-width: 0;
 
-    background: #ffffff;
-
-    border: 1px solid #dce7f1;
-
-    border-radius: 14px;
-
-    padding: 30px 34px;
+    padding: 38px 40px;
 
     display: flex;
 
     flex-direction: column;
 
     justify-content: center;
+
+    background: #ffffff;
 }
 
 
-/* HEADINGS */
+/* =========================================
+   ABOUT BLOCK
+   ========================================= */
 
-.about-profile-main h3 {
+.about-block {
+
+    min-width: 0;
+}
+
+
+/* =========================================
+   ABOUT HEADINGS
+   ========================================= */
+
+.about-profile-content h3 {
+
     margin: 0 0 10px;
 
     color: #173b67;
@@ -460,9 +468,12 @@ section {
 }
 
 
-/* BODY TEXT */
+/* =========================================
+   ABOUT BODY TEXT
+   ========================================= */
 
-.about-profile-main p {
+.about-profile-content p {
+
     margin: 0;
 
     color: #5d6d80;
@@ -473,21 +484,25 @@ section {
 }
 
 
-/* PARAGRAPH SPACING */
+/* =========================================
+   PARAGRAPH SPACING
+   ========================================= */
 
 .about-block p + p {
+
     margin-top: 14px;
 }
 
 
 /* =========================================
-   HOW I WORK
+   HOW I WORK DIVIDER
    ========================================= */
 
 .about-block + .about-block {
-    margin-top: 22px;
 
-    padding-top: 22px;
+    margin-top: 24px;
+
+    padding-top: 24px;
 
     border-top: 1px solid #e5edf5;
 }
@@ -498,21 +513,23 @@ section {
    ========================================= */
 
 .about-capabilities {
+
     width: 100%;
 
     background: #ffffff;
 
     border: 1px solid #dce7f1;
 
-    border-radius: 14px;
+    border-radius: 16px;
 
     padding: 30px 34px 32px;
 
-    margin-bottom: 28px;
+    margin-bottom: 30px;
 }
 
 
 .about-capabilities > h3 {
+
     margin: 0 0 28px;
 
     color: #173b67;
@@ -530,6 +547,7 @@ section {
    ========================================= */
 
 .capabilities-grid {
+
     display: grid;
 
     grid-template-columns:
@@ -541,10 +559,17 @@ section {
 }
 
 
+/* =========================================
+   CAPABILITY ITEM
+   ========================================= */
+
 .capability-item {
+
     display: grid;
 
-    grid-template-columns: 34px minmax(0, 1fr);
+    grid-template-columns:
+        34px
+        minmax(0, 1fr);
 
     gap: 12px;
 
@@ -554,7 +579,12 @@ section {
 }
 
 
+/* =========================================
+   CAPABILITY NUMBER
+   ========================================= */
+
 .capability-number {
+
     color: #1769aa;
 
     font-size: 12px;
@@ -567,7 +597,12 @@ section {
 }
 
 
+/* =========================================
+   CAPABILITY CONTENT
+   ========================================= */
+
 .capability-content {
+
     min-width: 0;
 
     display: flex;
@@ -576,9 +611,12 @@ section {
 }
 
 
-/* CAPABILITY TITLE */
+/* =========================================
+   CAPABILITY TITLE
+   ========================================= */
 
 .capability-content strong {
+
     display: block;
 
     color: #24364b;
@@ -591,13 +629,21 @@ section {
 
     margin-bottom: 10px;
 
+    /*
+       Same title height keeps all
+       descriptions aligned.
+    */
+
     min-height: 43px;
 }
 
 
-/* CAPABILITY DESCRIPTION */
+/* =========================================
+   CAPABILITY DESCRIPTION
+   ========================================= */
 
 .capability-content p {
+
     margin: 0;
 
     color: #5d6d80;
@@ -609,10 +655,11 @@ section {
 
 
 /* =========================================
-   ABOUT — RESUME
+   RESUME
    ========================================= */
 
 .about-resume {
+
     width: 100%;
 
     display: flex;
@@ -630,15 +677,19 @@ section {
     border: 1px solid #dce8f3;
 
     border-radius: 14px;
+
+    margin-bottom: 0;
 }
 
 
 .about-resume > div:first-child {
+
     min-width: 0;
 }
 
 
 .about-resume h3 {
+
     margin: 0 0 5px;
 
     color: #173b67;
@@ -652,6 +703,7 @@ section {
 
 
 .about-resume p {
+
     margin: 0;
 
     color: #5d6d80;
@@ -663,15 +715,17 @@ section {
 
 
 .about-resume .buttons {
+
     flex-shrink: 0;
 }
 
 
 /* =========================================
-   UNUSED / LEGACY SKILLS
+   LEGACY SKILLS
    ========================================= */
 
 .skills-grid {
+
     display: grid;
 
     grid-template-columns:
@@ -681,6 +735,7 @@ section {
 }
 
 .skill-card {
+
     background: #ffffff;
 
     border: 1px solid #e5edf5;
@@ -691,12 +746,14 @@ section {
 }
 
 .skill-card h3 {
+
     color: #173b67;
 
     margin-bottom: 10px;
 }
 
 .skill-card p {
+
     color: #718096;
 
     font-size: 14px;
@@ -708,6 +765,7 @@ section {
    ========================================= */
 
 #projects {
+
     max-width: 1200px;
 
     margin-left: auto;
@@ -715,6 +773,7 @@ section {
 }
 
 .projects-grid {
+
     display: grid;
 
     grid-template-columns:
@@ -725,6 +784,7 @@ section {
 
 
 .project-card {
+
     background: #ffffff;
 
     border: 1px solid #e5edf5;
@@ -744,6 +804,7 @@ section {
 
 
 .project-card:hover {
+
     transform: translateY(-4px);
 
     box-shadow:
@@ -753,6 +814,7 @@ section {
 
 
 .project-preview {
+
     height: 270px;
 
     background: #f5f9fd;
@@ -769,6 +831,7 @@ section {
 
 
 .project-preview img {
+
     width: 100%;
     height: 100%;
 
@@ -781,11 +844,13 @@ section {
 
 
 .project-content {
+
     padding: 32px 36px 34px;
 }
 
 
 .project-content h3 {
+
     color: #173b67;
 
     font-size: 22px;
@@ -797,6 +862,7 @@ section {
 
 
 .project-content p {
+
     color: #66758a;
 
     font-size: 15px;
@@ -808,6 +874,7 @@ section {
 
 
 .project-tags {
+
     display: flex;
 
     gap: 7px;
@@ -817,6 +884,7 @@ section {
 
 
 .tag {
+
     display: inline-flex;
 
     align-items: center;
@@ -842,6 +910,7 @@ section {
 
 
 .project-action {
+
     margin-top: 20px;
 
     color: #1769aa;
@@ -857,6 +926,7 @@ section {
 
 
 .project-card:hover .project-action {
+
     color: #0f5c96;
 
     transform: translateX(4px);
@@ -868,6 +938,7 @@ section {
    ========================================= */
 
 .projects-more {
+
     display: flex;
 
     justify-content: center;
@@ -877,6 +948,7 @@ section {
 
 
 .projects-more a {
+
     display: inline-flex;
 
     align-items: center;
@@ -898,6 +970,7 @@ section {
 
 
 .projects-more a:hover {
+
     color: #0f5c96;
 
     transform: translateX(4px);
@@ -909,6 +982,7 @@ section {
    ========================================= */
 
 .contact {
+
     text-align: center;
 
     background: #edf5fc;
@@ -918,6 +992,7 @@ section {
 
 
 .contact-inner {
+
     max-width: 750px;
 
     margin: auto;
@@ -925,6 +1000,7 @@ section {
 
 
 .contact p {
+
     color: #66758a;
 
     margin-bottom: 30px;
@@ -936,6 +1012,7 @@ section {
    ========================================= */
 
 footer {
+
     background: #ffffff;
 
     border-top: 1px solid #dce6f0;
@@ -943,6 +1020,7 @@ footer {
 
 
 .footer-inner {
+
     max-width: 1280px;
 
     margin: 0 auto;
@@ -960,6 +1038,7 @@ footer {
 
 
 .footer-brand {
+
     color: #173b67;
 
     font-size: 15px;
@@ -969,6 +1048,7 @@ footer {
 
 
 .footer-copy {
+
     color: #71839a;
 
     font-size: 13px;
@@ -982,6 +1062,7 @@ footer {
    ========================================= */
 
 .tech-stack-logos {
+
     width: 100%;
 
     display: grid;
@@ -1002,6 +1083,7 @@ footer {
 
 
 .tech-logo {
+
     width: 100%;
 
     min-height: 125px;
@@ -1024,6 +1106,7 @@ footer {
 
 
 .tech-logo img {
+
     width: 82px;
     height: 82px;
 
@@ -1037,6 +1120,7 @@ footer {
 
 
 .tech-logo span {
+
     font-size: 13px;
 
     font-weight: 600;
@@ -1048,11 +1132,13 @@ footer {
 
 
 .tech-logo:hover {
+
     transform: translateY(-4px);
 }
 
 
 .tech-logo:hover img {
+
     transform: scale(1.05);
 }
 
@@ -1062,6 +1148,7 @@ footer {
    ========================================= */
 
 .tech-capabilities {
+
     width: 100%;
 
     display: grid;
@@ -1078,6 +1165,7 @@ footer {
 
 
 .tech-capability {
+
     text-align: center;
 
     padding: 8px 25px;
@@ -1085,11 +1173,13 @@ footer {
 
 
 .tech-capability:not(:last-child) {
+
     border-right: 1px solid #dfe7ef;
 }
 
 
 .tech-capability span {
+
     display: block;
 
     color: #1769aa;
@@ -1107,6 +1197,7 @@ footer {
 
 
 .tech-capability p {
+
     color: #718096;
 
     font-size: 13px;
@@ -1122,6 +1213,7 @@ footer {
    ========================================= */
 
 .featured-credential {
+
     display: grid;
 
     grid-template-columns:
@@ -1142,11 +1234,13 @@ footer {
 
 
 .featured-certificate {
+
     min-width: 0;
 }
 
 
 .certificate-preview {
+
     position: relative;
 
     height: 280px;
@@ -1178,6 +1272,7 @@ footer {
 
 
 .certificate-preview img {
+
     width: 100%;
     height: 100%;
 
@@ -1194,6 +1289,7 @@ footer {
 
 
 .certificate-preview:hover {
+
     transform: translateY(-6px);
 
     box-shadow:
@@ -1203,11 +1299,13 @@ footer {
 
 
 .featured-credential-content {
+
     max-width: 560px;
 }
 
 
 .credential-label {
+
     display: inline-block;
 
     color: #1769aa;
@@ -1225,6 +1323,7 @@ footer {
 
 
 .featured-credential-content h3 {
+
     color: #142b45;
 
     font-size: 32px;
@@ -1236,6 +1335,7 @@ footer {
 
 
 .credential-provider {
+
     color: #1769aa !important;
 
     font-size: 15px;
@@ -1247,6 +1347,7 @@ footer {
 
 
 .featured-credential-content p {
+
     color: #66758a;
 
     font-size: 16px;
@@ -1258,6 +1359,7 @@ footer {
 
 
 .credential-link {
+
     display: inline-block;
 
     color: #1769aa;
@@ -1271,6 +1373,7 @@ footer {
 
 
 .credential-link:hover {
+
     color: #12578e;
 }
 
@@ -1280,11 +1383,13 @@ footer {
    ========================================= */
 
 .credentials-subsection {
+
     margin-top: 85px;
 }
 
 
 .credentials-subsection-header {
+
     display: flex;
 
     align-items: center;
@@ -1296,6 +1401,7 @@ footer {
 
 
 .credentials-subsection-header h3 {
+
     color: #142b45;
 
     font-size: 28px;
@@ -1311,6 +1417,7 @@ footer {
    ========================================= */
 
 .certificate-scroll {
+
     display: flex;
 
     gap: 22px;
@@ -1338,11 +1445,13 @@ footer {
 
 
 .certificate-scroll:active {
+
     cursor: grabbing;
 }
 
 
 .certificate-scroll::-webkit-scrollbar {
+
     display: none;
 }
 
@@ -1352,6 +1461,7 @@ footer {
    ========================================= */
 
 .certificate-card {
+
     flex: 0 0 285px;
 
     scroll-snap-align: start;
@@ -1379,6 +1489,7 @@ footer {
 
 
 .certificate-card:hover {
+
     transform: translateY(-6px);
 
     box-shadow:
@@ -1388,11 +1499,13 @@ footer {
 
 
 .certificate-info {
+
     padding: 20px;
 }
 
 
 .certificate-info h4 {
+
     color: #173b67;
 
     font-size: 15px;
@@ -1404,6 +1517,7 @@ footer {
 
 
 .certificate-info p {
+
     color: #7a899b;
 
     font-size: 13px;
@@ -1417,6 +1531,7 @@ footer {
    ========================================= */
 
 .certificate-image {
+
     position: relative;
 
     height: 220px;
@@ -1444,6 +1559,7 @@ footer {
 
 
 .certificate-image::before {
+
     content: "";
 
     position: absolute;
@@ -1461,11 +1577,13 @@ footer {
     );
 
     top: -90px;
+
     right: -70px;
 }
 
 
 .certificate-image img {
+
     width: 100%;
     height: 100%;
 
@@ -1486,11 +1604,13 @@ footer {
 
 .certificate-card:hover
 .certificate-image img {
+
     transform: scale(1.03);
 }
 
 
 .certificate-dsa {
+
     background:
         linear-gradient(
             135deg,
@@ -1501,6 +1621,7 @@ footer {
 
 
 .certificate-excel {
+
     background:
         linear-gradient(
             135deg,
@@ -1511,6 +1632,7 @@ footer {
 
 
 .certificate-powerbi {
+
     background:
         linear-gradient(
             135deg,
@@ -1521,6 +1643,7 @@ footer {
 
 
 .certificate-mysql {
+
     background:
         linear-gradient(
             135deg,
@@ -1531,6 +1654,7 @@ footer {
 
 
 .certificate-python {
+
     background:
         linear-gradient(
             135deg,
@@ -1541,6 +1665,7 @@ footer {
 
 
 .certificate-workshop {
+
     background:
         linear-gradient(
             135deg,
@@ -1555,11 +1680,13 @@ footer {
    ========================================= */
 
 .achievements-section {
+
     margin-top: 70px;
 }
 
 
 .achievements-grid {
+
     display: grid;
 
     grid-template-columns:
@@ -1570,6 +1697,7 @@ footer {
 
 
 .achievement-card {
+
     position: relative;
 
     display: flex;
@@ -1601,6 +1729,7 @@ footer {
 
 
 .achievement-card:hover {
+
     transform: translateY(-4px);
 
     box-shadow:
@@ -1610,6 +1739,7 @@ footer {
 
 
 .achievement-badge {
+
     flex: 0 0 62px;
 
     width: 62px;
@@ -1637,6 +1767,7 @@ footer {
 
 
 .achievement-badge.achievement-preview {
+
     border: 1px solid #dce7f2;
 
     border-radius: 10px;
@@ -1646,6 +1777,7 @@ footer {
 
 
 .achievement-badge.achievement-preview img {
+
     width: 100%;
     height: 100%;
 
@@ -1662,6 +1794,7 @@ footer {
 
 
 .achievement-content {
+
     min-width: 0;
 
     padding-right: 18px;
@@ -1669,6 +1802,7 @@ footer {
 
 
 .achievement-content > span {
+
     display: block;
 
     color: #1769aa;
@@ -1684,6 +1818,7 @@ footer {
 
 
 .achievement-content h4 {
+
     color: #173b67;
 
     font-size: 14px;
@@ -1695,6 +1830,7 @@ footer {
 
 
 .achievement-content p {
+
     color: #7a899b;
 
     font-size: 12px;
@@ -1704,6 +1840,7 @@ footer {
 
 
 .achievement-arrow {
+
     position: absolute;
 
     right: 18px;
@@ -1726,14 +1863,22 @@ footer {
 
 @media (max-width: 1000px) {
 
-    .about-main-layout {
+    .about-profile-card {
+
         grid-template-columns:
-            0.8fr
-            1.2fr;
+            minmax(260px, 0.78fr)
+            minmax(0, 1.22fr);
+    }
+
+
+    .about-profile-content {
+
+        padding: 32px;
     }
 
 
     .capabilities-grid {
+
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
 
@@ -1749,17 +1894,23 @@ footer {
 
 @media (max-width: 850px) {
 
+
     /* NAVIGATION */
 
     nav {
+
         padding: 12px 7%;
     }
 
+
     .nav-links {
+
         display: none;
     }
 
+
     .logo img {
+
         height: 52px;
 
         max-width: 320px;
@@ -1769,6 +1920,7 @@ footer {
     /* HERO */
 
     .hero {
+
         min-height: 600px;
 
         padding-top: 80px;
@@ -1776,7 +1928,9 @@ footer {
         padding-bottom: 80px;
     }
 
+
     .hero h1 {
+
         font-size: 52px;
     }
 
@@ -1784,44 +1938,58 @@ footer {
     /* ABOUT */
 
     .about-description {
+
         margin-bottom: 34px;
     }
 
 
-    .about-main-layout {
+    /*
+       The combined card becomes
+       a vertical card on smaller screens.
+    */
+
+    .about-profile-card {
+
         grid-template-columns: 1fr;
 
-        gap: 20px;
+        margin-bottom: 24px;
     }
 
 
     .about-photo {
-        height: auto;
 
-        justify-content: center;
+        min-height: 0;
+
+        height: 390px;
     }
 
 
-    .about-photo-card {
+    .about-photo img {
+
         width: 100%;
 
-        height: 360px;
+        height: 100%;
 
-        min-height: 360px;
+        object-fit: cover;
+
+        object-position: center top;
     }
 
 
-    .about-profile-main {
-        padding: 28px;
+    .about-profile-content {
+
+        padding: 30px;
     }
 
 
     .about-capabilities {
+
         padding: 26px;
     }
 
 
     .capabilities-grid {
+
         grid-template-columns:
             1fr 1fr;
 
@@ -1830,6 +1998,7 @@ footer {
 
 
     .about-resume {
+
         flex-direction: column;
 
         align-items: flex-start;
@@ -1837,6 +2006,7 @@ footer {
 
 
     .about-resume .buttons {
+
         width: 100%;
     }
 
@@ -1844,6 +2014,7 @@ footer {
     /* PROJECTS */
 
     .projects-grid {
+
         grid-template-columns: 1fr;
     }
 
@@ -1851,6 +2022,7 @@ footer {
     /* SKILLS */
 
     .skills-grid {
+
         grid-template-columns:
             1fr 1fr;
     }
@@ -1859,6 +2031,7 @@ footer {
     /* SECTION */
 
     .section-title {
+
         font-size: 34px;
     }
 
@@ -1866,6 +2039,7 @@ footer {
     /* FOOTER */
 
     .footer-inner {
+
         flex-direction: column;
 
         justify-content: center;
@@ -1879,6 +2053,7 @@ footer {
     /* TECH STACK */
 
     .tech-stack-logos {
+
         grid-template-columns:
             repeat(3, 1fr);
 
@@ -1887,6 +2062,7 @@ footer {
 
 
     .tech-capabilities {
+
         grid-template-columns:
             repeat(3, 1fr);
     }
@@ -1895,6 +2071,7 @@ footer {
     /* CREDENTIALS */
 
     .featured-credential {
+
         grid-template-columns: 1fr;
 
         gap: 40px;
@@ -1904,21 +2081,25 @@ footer {
 
 
     .featured-credential-content {
+
         max-width: none;
     }
 
 
     .featured-credential-content h3 {
+
         font-size: 28px;
     }
 
 
     .achievements-grid {
+
         grid-template-columns: 1fr;
     }
 
 
     .certificate-card {
+
         flex-basis: 260px;
     }
 
@@ -1931,14 +2112,17 @@ footer {
 
 @media (max-width: 500px) {
 
+
     /* NAVIGATION */
 
     nav {
+
         padding: 10px 6%;
     }
 
 
     .logo img {
+
         height: 44px;
 
         max-width: 280px;
@@ -1948,11 +2132,13 @@ footer {
     /* HERO */
 
     .hero h1 {
+
         font-size: 44px;
     }
 
 
     .hero-subtitle {
+
         font-size: 18px;
     }
 
@@ -1960,6 +2146,7 @@ footer {
     /* SECTIONS */
 
     section {
+
         padding: 75px 7%;
     }
 
@@ -1967,6 +2154,7 @@ footer {
     /* ABOUT */
 
     .about-label {
+
         font-size: 12px;
 
         margin-bottom: 10px;
@@ -1974,6 +2162,7 @@ footer {
 
 
     #about .section-title {
+
         font-size: 32px;
 
         line-height: 1.2;
@@ -1983,6 +2172,7 @@ footer {
 
 
     .about-description {
+
         font-size: 15px;
 
         line-height: 1.65;
@@ -1991,27 +2181,30 @@ footer {
     }
 
 
-    .about-main-layout {
+    /*
+       Mobile profile card remains ONE card.
+    */
+
+    .about-profile-card {
+
         grid-template-columns: 1fr;
 
-        gap: 18px;
+        border-radius: 14px;
 
         margin-bottom: 22px;
     }
 
 
-    .about-photo-card {
-        width: 100%;
+    .about-photo {
 
-        height: auto;
+        height: 320px;
 
-        min-height: 0;
-
-        aspect-ratio: 1 / 1;
+        min-height: 320px;
     }
 
 
-    .about-photo-card img {
+    .about-photo img {
+
         width: 100%;
 
         height: 100%;
@@ -2022,17 +2215,20 @@ footer {
     }
 
 
-    .about-profile-main {
-        padding: 22px;
+    .about-profile-content {
+
+        padding: 24px 22px;
     }
 
 
-    .about-profile-main h3 {
+    .about-profile-content h3 {
+
         font-size: 19px;
     }
 
 
-    .about-profile-main p {
+    .about-profile-content p {
+
         font-size: 14px;
 
         line-height: 1.65;
@@ -2040,6 +2236,7 @@ footer {
 
 
     .about-block + .about-block {
+
         margin-top: 20px;
 
         padding-top: 20px;
@@ -2049,6 +2246,7 @@ footer {
     /* WHAT I BRING */
 
     .about-capabilities {
+
         padding: 22px;
 
         margin-bottom: 22px;
@@ -2056,6 +2254,7 @@ footer {
 
 
     .about-capabilities > h3 {
+
         font-size: 22px;
 
         margin-bottom: 22px;
@@ -2063,32 +2262,49 @@ footer {
 
 
     .capabilities-grid {
+
         grid-template-columns: 1fr;
 
         gap: 24px;
     }
 
 
+    .capability-item {
+
+        grid-template-columns:
+            30px
+            minmax(0, 1fr);
+    }
+
+
     .capability-content strong {
+
         font-size: 15px;
 
         min-height: 0;
+
+        margin-bottom: 8px;
     }
 
 
     .capability-content p {
+
         font-size: 13.5px;
+
+        line-height: 1.6;
     }
 
 
     /* RESUME */
 
     .about-resume {
+
         padding: 22px;
     }
 
 
     .about-resume .buttons {
+
         flex-direction: column;
 
         width: 100%;
@@ -2096,6 +2312,7 @@ footer {
 
 
     .about-resume .btn {
+
         width: 100%;
 
         text-align: center;
@@ -2105,6 +2322,7 @@ footer {
     /* SKILLS */
 
     .skills-grid {
+
         grid-template-columns: 1fr;
     }
 
@@ -2112,6 +2330,7 @@ footer {
     /* TECH STACK */
 
     .tech-stack-logos {
+
         grid-template-columns:
             repeat(2, 1fr);
 
@@ -2122,17 +2341,20 @@ footer {
 
 
     .tech-logo img {
+
         width: 68px;
         height: 68px;
     }
 
 
     .tech-logo span {
+
         font-size: 12px;
     }
 
 
     .tech-capabilities {
+
         grid-template-columns: 1fr;
 
         gap: 0;
@@ -2140,11 +2362,13 @@ footer {
 
 
     .tech-capability {
+
         padding: 16px 10px;
     }
 
 
     .tech-capability:not(:last-child) {
+
         border-right: none;
 
         border-bottom: 1px solid #dfe7ef;
@@ -2154,31 +2378,37 @@ footer {
     /* CREDENTIALS */
 
     .featured-credential {
+
         padding: 22px;
     }
 
 
     .certificate-preview {
+
         padding: 25px;
     }
 
 
     .featured-credential-content h3 {
+
         font-size: 24px;
     }
 
 
     .credentials-subsection-header h3 {
+
         font-size: 23px;
     }
 
 
     .certificate-card {
+
         flex-basis: 240px;
     }
 
 
     .achievement-card {
+
         min-height: 110px;
 
         padding: 16px;
