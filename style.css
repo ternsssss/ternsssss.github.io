@@ -277,18 +277,11 @@ section {
 
 
 /* =========================================
-   ABOUT & PROFESSIONAL BACKGROUND
+   ABOUT
    ========================================= */
 
 .about-profile {
     display: grid;
-
-    /*
-     * Three-column layout:
-     * 1. Professional photo
-     * 2. Professional background / how I work
-     * 3. What I bring
-     */
 
     grid-template-columns:
         minmax(220px, 0.75fr)
@@ -307,14 +300,16 @@ section {
 
 .about-photo {
     min-width: 0;
-    min-height: 520px;
+
+    display: flex;
+    align-items: flex-start;
 }
 
 .about-photo-placeholder {
     width: 100%;
-    height: 100%;
 
-    min-height: 520px;
+    height: 360px;
+    min-height: 360px;
 
     display: flex;
 
@@ -461,7 +456,7 @@ section {
 
 
 /* =========================================
-   ABOUT — RESUME ACTION
+   ABOUT — RESUME
    ========================================= */
 
 .about-resume {
@@ -562,44 +557,6 @@ section {
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
-}
-
-
-/* =========================================
-   MORE PROJECTS
-   ========================================= */
-
-.projects-more {
-    display: flex;
-
-    justify-content: center;
-
-    margin-top: 36px;
-}
-
-.projects-more a {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    color: #1769aa;
-
-    font-size: 14px;
-    font-weight: 700;
-
-    text-decoration: none;
-
-    transition:
-        color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.projects-more a:hover {
-    color: #0f5c96;
-
-    transform: translateX(4px);
 }
 
 .project-card:hover {
@@ -704,6 +661,44 @@ section {
 }
 
 .project-card:hover .project-action {
+    color: #0f5c96;
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   MORE PROJECTS
+   ========================================= */
+
+.projects-more {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 36px;
+}
+
+.projects-more a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #1769aa;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.projects-more a:hover {
     color: #0f5c96;
 
     transform: translateX(4px);
@@ -899,17 +894,12 @@ footer {
 
 
 /* =========================================
-   CREDENTIALS — PREMIUM DESIGN
+   CREDENTIALS
    ========================================= */
 
 #certifications {
     overflow: hidden;
 }
-
-
-/* =========================================
-   FEATURED CERTIFICATION
-   ========================================= */
 
 .featured-credential {
     display: grid;
@@ -933,11 +923,6 @@ footer {
     box-shadow:
         0 12px 35px rgba(25, 61, 100, 0.05);
 }
-
-
-/* =========================================
-   CERTIFICATE PREVIEW
-   ========================================= */
 
 .featured-certificate {
     display: flex;
@@ -1012,30 +997,6 @@ footer {
         0 22px 50px rgba(25, 61, 100, 0.15);
 }
 
-.certificate-preview span {
-    color: #1769aa;
-
-    font-size: 12px;
-    font-weight: 800;
-
-    letter-spacing: 2px;
-}
-
-.certificate-preview strong {
-    margin-top: 12px;
-
-    color: #142b45;
-
-    font-size: 28px;
-
-    line-height: 1.15;
-}
-
-
-/* =========================================
-   FEATURED CERTIFICATION TEXT
-   ========================================= */
-
 .featured-credential-content {
     max-width: 560px;
 }
@@ -1093,8 +1054,6 @@ footer {
     font-weight: 700;
 
     text-decoration: none;
-
-    transition: color 0.2s ease;
 }
 
 .credential-link:hover {
@@ -1131,7 +1090,7 @@ footer {
 
 
 /* =========================================
-   PROFESSIONAL CERTIFICATE SCROLL
+   CERTIFICATE SCROLL
    ========================================= */
 
 .certificate-scroll {
@@ -1165,20 +1124,6 @@ footer {
 
 .certificate-scroll::-webkit-scrollbar {
     display: none;
-}
-
-.certificate-scroll::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.certificate-scroll::-webkit-scrollbar-thumb {
-    background: #b9c9d9;
-
-    border-radius: 20px;
-}
-
-.certificate-scroll::-webkit-scrollbar-thumb:hover {
-    background: #8fa6bd;
 }
 
 
@@ -1217,11 +1162,6 @@ footer {
     box-shadow:
         0 16px 38px rgba(25, 61, 100, 0.12);
 }
-
-
-/* =========================================
-   CERTIFICATE INFORMATION
-   ========================================= */
 
 .certificate-info {
     padding: 20px;
@@ -1262,11 +1202,6 @@ footer {
     gap: 18px;
 }
 
-
-/* =========================================
-   ACHIEVEMENT CARD
-   ========================================= */
-
 .achievement-card {
     position: relative;
 
@@ -1303,11 +1238,6 @@ footer {
         0 14px 32px rgba(25, 61, 100, 0.10);
 }
 
-
-/* =========================================
-   ACHIEVEMENT BADGE
-   ========================================= */
-
 .achievement-badge {
     flex: 0 0 62px;
 
@@ -1328,17 +1258,8 @@ footer {
     font-size: 10px;
     font-weight: 800;
 
-    line-height: 1.2;
-
-    letter-spacing: 0.5px;
-
     text-align: center;
 }
-
-
-/* =========================================
-   ACHIEVEMENT CERTIFICATE PREVIEWS
-   ========================================= */
 
 .achievement-badge.achievement-preview {
     width: 110px;
@@ -1376,11 +1297,6 @@ footer {
 
     pointer-events: none;
 }
-
-
-/* =========================================
-   ACHIEVEMENT TEXT
-   ========================================= */
 
 .achievement-content {
     min-width: 0;
@@ -1479,52 +1395,6 @@ footer {
     right: -70px;
 }
 
-.certificate-mark {
-    position: relative;
-
-    z-index: 1;
-
-    color: #1769aa;
-
-    font-size: 22px;
-    font-weight: 800;
-
-    letter-spacing: 1px;
-}
-
-.certificate-image strong {
-    position: relative;
-
-    z-index: 1;
-
-    color: #142b45;
-
-    font-size: 14px;
-    font-weight: 800;
-
-    letter-spacing: 1px;
-}
-
-.certificate-image small {
-    position: relative;
-
-    z-index: 1;
-
-    color: #718096;
-
-    font-size: 9px;
-    font-weight: 700;
-
-    letter-spacing: 1.2px;
-
-    text-transform: uppercase;
-}
-
-
-/* =========================================
-   ACTUAL CERTIFICATE PREVIEWS
-   ========================================= */
-
 .certificate-image img {
     width: 100%;
     height: 100%;
@@ -1607,26 +1477,24 @@ footer {
 
 
 /* =========================================
-   TABLET RESPONSIVE
+   TABLET — 1000px
    ========================================= */
 
 @media (max-width: 1000px) {
 
-    /*
-     * The three-column About layout becomes
-     * two columns before going fully stacked.
-     */
-
     .about-profile {
-        grid-template-columns: 0.75fr 1.25fr;
+        grid-template-columns:
+            0.75fr
+            1.25fr;
     }
 
     .about-photo {
-        min-height: 440px;
+        min-height: 0;
     }
 
     .about-photo-placeholder {
-        min-height: 440px;
+        height: 340px;
+        min-height: 340px;
     }
 
     .about-profile-side {
@@ -1682,11 +1550,12 @@ footer {
     }
 
     .about-photo {
-        min-height: 420px;
+        min-height: 0;
     }
 
     .about-photo-placeholder {
-        min-height: 420px;
+        height: 340px;
+        min-height: 340px;
     }
 
     .about-profile-main,
@@ -1711,7 +1580,6 @@ footer {
 
     /* PROJECTS */
 
-    .about-grid,
     .projects-grid {
         grid-template-columns: 1fr;
     }
@@ -1826,11 +1694,12 @@ footer {
     /* ABOUT */
 
     .about-photo {
-        min-height: 360px;
+        min-height: 0;
     }
 
     .about-photo-placeholder {
-        min-height: 360px;
+        height: 320px;
+        min-height: 320px;
 
         padding: 22px;
     }
@@ -1907,10 +1776,6 @@ footer {
 
     .certificate-preview {
         padding: 25px;
-    }
-
-    .certificate-preview strong {
-        font-size: 22px;
     }
 
     .featured-credential-content h3 {
