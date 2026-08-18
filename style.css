@@ -284,7 +284,7 @@ section {
     display: grid;
 
     grid-template-columns:
-        220px
+        280px
         minmax(350px, 1.35fr)
         minmax(270px, 1fr);
 
@@ -304,27 +304,31 @@ section {
     min-width: 0;
 
     display: flex;
-    align-items: flex-start;
+
+    align-items: center;
     justify-content: center;
 }
 
 
 .about-photo-card {
-    width: 220px;
-    height: 260px;
+    width: 280px;
+    height: 295px;
 
     display: flex;
 
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
 
-    background: transparent;
+    background: #ffffff;
 
-    border: none;
+    border: 1px solid #d7e3ef;
 
-    border-radius: 18px;
+    border-radius: 14px;
 
     overflow: hidden;
+
+    box-shadow:
+        0 6px 18px rgba(25, 61, 100, 0.04);
 }
 
 
@@ -337,8 +341,6 @@ section {
     object-fit: cover;
 
     object-position: center top;
-
-    border-radius: 18px;
 }
 
 
