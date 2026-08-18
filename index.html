@@ -1,2187 +1,667 @@
-/* =========================================
-   GLOBAL RESET
-   ========================================= */
+<!DOCTYPE html>
+<html lang="en">
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<head>
+    <meta charset="UTF-8">
 
-html {
-    scroll-behavior: smooth;
-}
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f8fbff;
-    color: #172033;
-    line-height: 1.6;
-}
+    <title>Terns Data Prism</title>
 
+    <link rel="stylesheet" href="style.css">
+</head>
 
-/* =========================================
-   NAVIGATION
-   ORIGINAL NAVIGATION TYPOGRAPHY
-   ========================================= */
+<body>
 
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 
-    background: rgba(255, 255, 255, 0.96);
+    <!-- =========================================
+         NAVIGATION
+         ========================================= -->
 
-    border-bottom: 1px solid #e6edf5;
+    <nav>
 
-    padding: 14px 7%;
-}
+        <div class="nav-container">
 
-.nav-container {
-    max-width: 1200px;
-    margin: auto;
+            <a href="#about" class="logo">
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+                <img
+                    src="assets/logo.png"
+                    alt="Terns Data Prism"
+                >
 
-.logo {
-    display: inline-flex;
-    align-items: center;
+            </a>
 
-    text-decoration: none;
-    line-height: 0;
-}
 
-.logo img {
-    display: block;
+            <ul class="nav-links">
 
-    height: 64px;
-    width: auto;
+                <li>
+                    <a href="#about" class="active">
+                        About
+                    </a>
+                </li>
 
-    max-width: 300px;
-}
+                <li>
+                    <a href="#portfolio">
+                        Portfolio
+                    </a>
+                </li>
 
-.nav-links {
-    display: flex;
+                <li>
+                    <a href="#tech-stack">
+                        Tech Stack
+                    </a>
+                </li>
 
-    gap: 30px;
+                <li>
+                    <a href="#credentials">
+                        Credentials
+                    </a>
+                </li>
 
-    list-style: none;
-}
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
 
-.nav-links a {
-    position: relative;
+            </ul>
 
-    display: inline-block;
+        </div>
 
-    text-decoration: none;
+    </nav>
 
-    color: #46546a;
 
-    font-size: 14px;
-    font-weight: 600;
 
-    padding: 4px 0;
+    <!-- =========================================
+         ABOUT
+         ========================================= -->
 
-    transition: color 0.2s ease;
-}
+    <section id="about">
 
-.nav-links a::after {
-    content: "";
 
-    position: absolute;
+        <!-- ABOUT INTRO -->
 
-    left: 0;
-    right: 0;
+        <div class="about-intro">
 
-    bottom: -7px;
+            <div class="about-label">
+                About Me
+            </div>
 
-    height: 2px;
 
-    background: #1769aa;
+            <h1 class="about-title">
+                Engineering experience.
+                Analytical thinking.
+                Data-driven direction.
+            </h1>
 
-    transform: scaleX(0);
 
-    transform-origin: center;
+            <p class="about-description">
 
-    transition: transform 0.2s ease;
-}
+                I combine engineering experience, analytical thinking,
+                and business understanding to turn complex data into
+                clear insights and practical solutions for better
+                decision-making.
 
-.nav-links a:hover {
-    color: #1769aa;
-}
+            </p>
 
-.nav-links a.active {
-    color: #1769aa;
-}
+        </div>
 
-.nav-links a.active::after {
-    transform: scaleX(1);
-}
 
 
-/* =========================================
-   HERO
-   ========================================= */
+        <!-- =====================================
+             COMBINED PROFILE CARD
+             PHOTO + PROFESSIONAL BACKGROUND
+             ===================================== -->
 
-.hero {
-    max-width: 1200px;
+        <div class="about-profile-card">
 
-    margin: auto;
 
-    min-height: 720px;
+            <!-- PHOTO -->
 
-    padding: 120px 7%;
+            <div class="about-photo">
 
-    display: flex;
-    align-items: center;
-}
+                <img
+                    src="assets/profile.jpg"
+                    alt="Professional profile photo"
+                >
 
-.hero-content {
-    max-width: 780px;
-}
+            </div>
 
-.eyebrow {
-    color: #1769aa;
 
-    font-size: 14px;
-    font-weight: 700;
 
-    letter-spacing: 2px;
+            <!-- PROFESSIONAL CONTENT -->
 
-    text-transform: uppercase;
+            <div class="about-profile-content">
 
-    margin-bottom: 20px;
-}
 
-.hero h1 {
-    font-size: clamp(48px, 7vw, 82px);
+                <!-- PROFESSIONAL BACKGROUND -->
 
-    line-height: 1.05;
+                <div class="about-block">
 
-    color: #142b45;
+                    <h2>
+                        Professional Background
+                    </h2>
 
-    margin-bottom: 24px;
-}
 
-.hero h1 span {
-    color: #1769aa;
-}
+                    <p>
 
-.hero-subtitle {
-    font-size: 22px;
-    font-weight: 600;
+                        My professional foundation is rooted in
+                        engineering, where I developed a structured
+                        approach to problem-solving, project
+                        coordination, cost analysis, and
+                        decision-making.
 
-    color: #42526a;
+                    </p>
 
-    margin-bottom: 20px;
-}
 
-.hero-description {
-    max-width: 680px;
+                    <p>
 
-    font-size: 17px;
+                        I am now applying that same analytical mindset
+                        to data analytics and business intelligence —
+                        building dashboards, analyzing performance,
+                        and translating data into insights that
+                        support better business decisions.
 
-    color: #66758a;
+                    </p>
 
-    margin-bottom: 35px;
-}
+                </div>
 
 
-/* =========================================
-   BUTTONS
-   ========================================= */
 
-.buttons {
-    display: flex;
+                <!-- HOW I WORK -->
 
-    gap: 15px;
+                <div class="about-block how-i-work">
 
-    flex-wrap: wrap;
-}
+                    <h2>
+                        How I Work
+                    </h2>
 
-.btn {
-    display: inline-block;
 
-    padding: 14px 24px;
+                    <p>
 
-    border-radius: 8px;
+                        I start with the business problem first —
+                        asking the right questions, analyzing the
+                        evidence, and communicating the findings
+                        through clear, executive-friendly solutions.
 
-    text-decoration: none;
+                    </p>
 
-    font-weight: 700;
+                </div>
 
-    font-size: 14px;
-}
+            </div>
 
-.btn-primary {
-    background: #1769aa;
+        </div>
 
-    color: #ffffff;
-}
 
-.btn-primary:hover {
-    background: #12578e;
-}
 
-.btn-secondary {
-    border: 1px solid #cbd8e6;
+        <!-- =====================================
+             WHAT I BRING
+             ===================================== -->
 
-    color: #173b67;
+        <div class="about-capabilities">
 
-    background: #ffffff;
-}
 
+            <h2>
+                What I Bring
+            </h2>
 
-/* =========================================
-   SECTIONS
-   ========================================= */
 
-section {
-    max-width: 1200px;
+            <div class="capabilities-grid">
 
-    margin: auto;
 
-    padding: 100px 7%;
+                <!-- 01 -->
 
-    scroll-margin-top: 90px;
-}
+                <div class="capability-item">
 
+                    <div class="capability-number">
+                        01
+                    </div>
 
-/* =========================================
-   GENERAL SECTION TYPOGRAPHY
-   ========================================= */
 
-.section-label {
-    color: #1769aa;
+                    <div class="capability-content">
 
-    font-size: 13px;
-    font-weight: 700;
+                        <h3>
+                            Analytical Thinking
+                        </h3>
 
-    letter-spacing: 2px;
 
-    text-transform: uppercase;
+                        <p>
 
-    margin-bottom: 12px;
-}
+                            Structured problem-solving and
+                            evidence-based analysis.
 
-.section-title {
-    font-size: 42px;
+                        </p>
 
-    line-height: 1.2;
+                    </div>
 
-    color: #142b45;
+                </div>
 
-    margin-bottom: 20px;
-}
 
-.section-description {
-    max-width: 700px;
 
-    color: #66758a;
+                <!-- 02 -->
 
-    font-size: 17px;
+                <div class="capability-item">
 
-    margin-bottom: 50px;
-}
+                    <div class="capability-number">
+                        02
+                    </div>
 
 
-/* =========================================
-   ABOUT
-   ========================================= */
+                    <div class="capability-content">
 
-#about {
-    scroll-margin-top: 90px;
-}
+                        <h3>
+                            Business Understanding
+                        </h3>
 
 
-/* ABOUT LABEL
-   Kept independent from navigation typography.
-*/
+                        <p>
 
-.about-label {
-    color: #1769aa;
+                            Connecting analysis to business
+                            questions and decision-making.
 
-    font-size: 13px;
+                        </p>
 
-    font-weight: 700;
+                    </div>
 
-    letter-spacing: 2px;
+                </div>
 
-    text-transform: uppercase;
 
-    margin-bottom: 12px;
-}
 
+                <!-- 03 -->
 
-/* ABOUT MAIN TITLE */
+                <div class="capability-item">
 
-#about .section-title {
-    color: #142b45;
+                    <div class="capability-number">
+                        03
+                    </div>
 
-    font-size: 42px;
 
-    line-height: 1.2;
+                    <div class="capability-content">
 
-    font-weight: 700;
+                        <h3>
+                            Data Visualization
+                        </h3>
 
-    margin-bottom: 18px;
-}
 
+                        <p>
 
-/* ABOUT DESCRIPTION */
+                            Turning complex information into
+                            clear, executive-friendly dashboards.
 
-.about-description {
-    max-width: 760px;
+                        </p>
 
-    color: #66758a;
+                    </div>
 
-    font-size: 17px;
+                </div>
 
-    line-height: 1.65;
 
-    margin-bottom: 42px;
-}
 
+                <!-- 04 -->
 
-/* =========================================
-   ABOUT MAIN COMBINED CARD
-   PHOTO + PROFESSIONAL BACKGROUND
-   ========================================= */
+                <div class="capability-item">
 
-.about-main-layout {
-    display: grid;
+                    <div class="capability-number">
+                        04
+                    </div>
 
-    grid-template-columns:
-        minmax(280px, 0.72fr)
-        minmax(0, 1.55fr);
 
-    gap: 24px;
+                    <div class="capability-content">
 
-    align-items: stretch;
+                        <h3>
+                            Engineering Mindset
+                        </h3>
 
-    margin-bottom: 28px;
-}
 
+                        <p>
 
-/* =========================================
-   ABOUT PHOTO
-   ========================================= */
+                            Applying structured thinking,
+                            precision, and practical
+                            problem-solving.
 
-.about-photo {
-    min-width: 0;
+                        </p>
 
-    display: flex;
+                    </div>
 
-    height: 100%;
-}
+                </div>
 
 
-.about-photo-card {
-    width: 100%;
+            </div>
 
-    height: 100%;
+        </div>
 
-    min-height: 0;
 
-    display: flex;
 
-    align-items: center;
-    justify-content: center;
+        <!-- =====================================
+             RESUME
+             ===================================== -->
 
-    overflow: hidden;
+        <div class="about-resume">
 
-    background: #ffffff;
 
-    border: 1px solid #d7e3ef;
+            <div>
 
-    border-radius: 14px;
-}
+                <h2>
+                    Professional Background
+                </h2>
 
 
-/*
-   IMPORTANT:
-   The image fills the card without creating
-   a white strip underneath.
-*/
+                <p>
 
-.about-photo-card img {
-    width: 100%;
+                    Explore my experience, skills,
+                    qualifications, and career journey.
 
-    height: 100%;
+                </p>
 
-    display: block;
+            </div>
 
-    object-fit: cover;
 
-    object-position: center top;
+            <div class="buttons">
 
-    background: #ffffff;
-}
+                <a
+                    href="#"
+                    class="btn btn-primary"
+                >
+                    View Resume
+                </a>
 
 
-/* =========================================
-   PROFESSIONAL BACKGROUND + HOW I WORK
-   ========================================= */
+                <a
+                    href="#"
+                    class="btn btn-secondary"
+                >
+                    Download Resume
+                </a>
 
-.about-profile-main {
-    min-width: 0;
+            </div>
 
-    background: #ffffff;
+        </div>
 
-    border: 1px solid #dce7f1;
 
-    border-radius: 14px;
+    </section>
 
-    padding: 30px 34px;
 
-    display: flex;
 
-    flex-direction: column;
+    <!-- =========================================
+         PORTFOLIO
+         ========================================= -->
 
-    justify-content: center;
-}
+    <section id="portfolio">
 
+        <div class="section-label">
+            Portfolio
+        </div>
 
-/* HEADINGS */
+        <h2 class="section-title">
+            Selected Projects
+        </h2>
 
-.about-profile-main h3 {
-    margin: 0 0 10px;
+        <p class="section-description">
+            Data analytics, business intelligence,
+            and decision-support projects.
+        </p>
 
-    color: #173b67;
 
-    font-size: 22px;
+        <div class="projects-grid">
 
-    line-height: 1.3;
 
-    font-weight: 700;
-}
+            <a href="#" class="project-card">
 
+                <div class="project-preview">
 
-/* BODY TEXT */
+                    <img
+                        src="assets/project-1.png"
+                        alt="Project dashboard"
+                    >
 
-.about-profile-main p {
-    margin: 0;
+                </div>
 
-    color: #5d6d80;
 
-    font-size: 15px;
+                <div class="project-content">
 
-    line-height: 1.7;
-}
+                    <h3>
+                        Analytics Dashboard
+                    </h3>
 
+                    <p>
+                        A business-focused dashboard
+                        designed to transform data into
+                        actionable insights.
+                    </p>
 
-/* PARAGRAPH SPACING */
+                </div>
 
-.about-block p + p {
-    margin-top: 14px;
-}
+            </a>
 
 
-/* =========================================
-   HOW I WORK
-   ========================================= */
+            <a href="#" class="project-card">
 
-.about-block + .about-block {
-    margin-top: 22px;
+                <div class="project-preview">
 
-    padding-top: 22px;
+                    <img
+                        src="assets/project-2.png"
+                        alt="Project dashboard"
+                    >
 
-    border-top: 1px solid #e5edf5;
-}
+                </div>
 
 
-/* =========================================
-   WHAT I BRING
-   ========================================= */
+                <div class="project-content">
 
-.about-capabilities {
-    width: 100%;
+                    <h3>
+                        Business Intelligence Analysis
+                    </h3>
 
-    background: #ffffff;
+                    <p>
+                        Performance analysis designed
+                        to support better business
+                        decisions.
+                    </p>
 
-    border: 1px solid #dce7f1;
+                </div>
 
-    border-radius: 14px;
+            </a>
 
-    padding: 30px 34px 32px;
 
-    margin-bottom: 28px;
-}
+        </div>
 
+    </section>
 
-.about-capabilities > h3 {
-    margin: 0 0 28px;
 
-    color: #173b67;
 
-    font-size: 24px;
+    <!-- =========================================
+         TECH STACK
+         ========================================= -->
 
-    line-height: 1.3;
+    <section id="tech-stack">
 
-    font-weight: 700;
-}
+        <div class="section-label">
+            Tech Stack
+        </div>
 
+        <h2 class="section-title">
+            Tools & Technologies
+        </h2>
 
-/* =========================================
-   CAPABILITIES GRID
-   ========================================= */
 
-.capabilities-grid {
-    display: grid;
+        <div class="tech-stack-logos">
 
-    grid-template-columns:
-        repeat(4, minmax(0, 1fr));
+            <div class="tech-logo">
+                <img
+                    src="assets/powerbi.png"
+                    alt="Power BI"
+                >
+                <span>Power BI</span>
+            </div>
 
-    gap: 38px;
 
-    align-items: start;
-}
+            <div class="tech-logo">
+                <img
+                    src="assets/excel.png"
+                    alt="Microsoft Excel"
+                >
+                <span>Excel</span>
+            </div>
 
 
-.capability-item {
-    display: grid;
+            <div class="tech-logo">
+                <img
+                    src="assets/python.png"
+                    alt="Python"
+                >
+                <span>Python</span>
+            </div>
 
-    grid-template-columns: 34px minmax(0, 1fr);
 
-    gap: 12px;
+            <div class="tech-logo">
+                <img
+                    src="assets/mysql.png"
+                    alt="MySQL"
+                >
+                <span>MySQL</span>
+            </div>
 
-    min-width: 0;
 
-    align-items: start;
-}
+            <div class="tech-logo">
+                <img
+                    src="assets/figma.png"
+                    alt="Figma"
+                >
+                <span>Figma</span>
+            </div>
 
+        </div>
 
-.capability-number {
-    color: #1769aa;
+    </section>
 
-    font-size: 12px;
 
-    font-weight: 700;
 
-    line-height: 1.5;
+    <!-- =========================================
+         CREDENTIALS
+         ========================================= -->
 
-    padding-top: 2px;
-}
+    <section id="credentials">
 
+        <div class="section-label">
+            Credentials
+        </div>
 
-.capability-content {
-    min-width: 0;
+        <h2 class="section-title">
+            Certifications & Achievements
+        </h2>
 
-    display: flex;
 
-    flex-direction: column;
-}
+        <div class="featured-credential">
 
+            <div class="featured-certificate">
 
-/* CAPABILITY TITLE */
+                <div class="certificate-preview">
 
-.capability-content strong {
-    display: block;
+                    <img
+                        src="assets/certificate-featured.jpg"
+                        alt="Featured certification"
+                    >
 
-    color: #24364b;
+                </div>
 
-    font-size: 16px;
+            </div>
 
-    line-height: 1.35;
 
-    font-weight: 700;
+            <div class="featured-credential-content">
 
-    margin-bottom: 10px;
+                <span class="credential-label">
+                    Featured Credential
+                </span>
 
-    min-height: 43px;
-}
 
+                <h3>
+                    Professional Certification
+                </h3>
 
-/* CAPABILITY DESCRIPTION */
 
-.capability-content p {
-    margin: 0;
+                <p class="credential-provider">
+                    Professional Development
+                </p>
 
-    color: #5d6d80;
 
-    font-size: 14px;
+                <p>
+                    A selected professional credential
+                    demonstrating continued development
+                    in analytics and business intelligence.
+                </p>
 
-    line-height: 1.65;
-}
+            </div>
 
+        </div>
 
-/* =========================================
-   ABOUT — RESUME
-   ========================================= */
+    </section>
 
-.about-resume {
-    width: 100%;
 
-    display: flex;
 
-    align-items: center;
+    <!-- =========================================
+         CONTACT
+         ========================================= -->
 
-    justify-content: space-between;
+    <section
+        id="contact"
+        class="contact"
+    >
 
-    gap: 30px;
+        <div class="contact-inner">
 
-    padding: 24px 28px;
+            <div class="section-label">
+                Contact
+            </div>
 
-    background: #f8fbff;
 
-    border: 1px solid #dce8f3;
+            <h2 class="section-title">
+                Let's Work Together
+            </h2>
 
-    border-radius: 14px;
-}
 
+            <p>
+                Have a project, business problem, or
+                opportunity in mind? Let's connect.
+            </p>
 
-.about-resume > div:first-child {
-    min-width: 0;
-}
 
+            <a
+                href="mailto:your@email.com"
+                class="btn btn-primary"
+            >
+                Get In Touch
+            </a>
 
-.about-resume h3 {
-    margin: 0 0 5px;
+        </div>
 
-    color: #173b67;
+    </section>
 
-    font-size: 18px;
 
-    line-height: 1.3;
 
-    font-weight: 700;
-}
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
 
+    <footer>
 
-.about-resume p {
-    margin: 0;
+        <div class="footer-inner">
 
-    color: #5d6d80;
+            <div class="footer-brand">
+                Terns Data Prism
+            </div>
 
-    font-size: 13px;
 
-    line-height: 1.6;
-}
+            <div class="footer-copy">
+                © 2026 Terns Data Prism. All rights reserved.
+            </div>
 
+        </div>
 
-.about-resume .buttons {
-    flex-shrink: 0;
-}
+    </footer>
 
 
-/* =========================================
-   UNUSED / LEGACY SKILLS
-   ========================================= */
+</body>
 
-.skills-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 20px;
-}
-
-.skill-card {
-    background: #ffffff;
-
-    border: 1px solid #e5edf5;
-
-    border-radius: 14px;
-
-    padding: 28px;
-}
-
-.skill-card h3 {
-    color: #173b67;
-
-    margin-bottom: 10px;
-}
-
-.skill-card p {
-    color: #718096;
-
-    font-size: 14px;
-}
-
-
-/* =========================================
-   PROJECTS
-   ========================================= */
-
-#projects {
-    max-width: 1200px;
-
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.projects-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 25px;
-}
-
-
-.project-card {
-    background: #ffffff;
-
-    border: 1px solid #e5edf5;
-
-    border-radius: 16px;
-
-    overflow: hidden;
-
-    text-decoration: none;
-
-    color: inherit;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-.project-card:hover {
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 18px 40px
-        rgba(25, 61, 100, 0.12);
-}
-
-
-.project-preview {
-    height: 270px;
-
-    background: #f5f9fd;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-    border-bottom: 1px solid #e5edf5;
-}
-
-
-.project-preview img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: contain;
-
-    object-position: center;
-}
-
-
-.project-content {
-    padding: 32px 36px 34px;
-}
-
-
-.project-content h3 {
-    color: #173b67;
-
-    font-size: 22px;
-
-    line-height: 1.3;
-
-    margin-bottom: 12px;
-}
-
-
-.project-content p {
-    color: #66758a;
-
-    font-size: 15px;
-
-    line-height: 1.65;
-
-    margin-bottom: 22px;
-}
-
-
-.project-tags {
-    display: flex;
-
-    gap: 7px;
-
-    flex-wrap: wrap;
-}
-
-
-.tag {
-    display: inline-flex;
-
-    align-items: center;
-
-    background: #f0f6fb;
-
-    color: #1769aa;
-
-    padding: 5px 9px;
-
-    border: 1px solid #e1ebf4;
-
-    border-radius: 5px;
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    line-height: 1.3;
-
-    white-space: nowrap;
-}
-
-
-.project-action {
-    margin-top: 20px;
-
-    color: #1769aa;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    transition:
-        color 0.2s ease,
-        transform 0.2s ease;
-}
-
-
-.project-card:hover .project-action {
-    color: #0f5c96;
-
-    transform: translateX(4px);
-}
-
-
-/* =========================================
-   MORE PROJECTS
-   ========================================= */
-
-.projects-more {
-    display: flex;
-
-    justify-content: center;
-
-    margin-top: 36px;
-}
-
-
-.projects-more a {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    color: #1769aa;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    text-decoration: none;
-
-    transition:
-        color 0.2s ease,
-        transform 0.2s ease;
-}
-
-
-.projects-more a:hover {
-    color: #0f5c96;
-
-    transform: translateX(4px);
-}
-
-
-/* =========================================
-   CONTACT
-   ========================================= */
-
-.contact {
-    text-align: center;
-
-    background: #edf5fc;
-
-    max-width: none;
-}
-
-
-.contact-inner {
-    max-width: 750px;
-
-    margin: auto;
-}
-
-
-.contact p {
-    color: #66758a;
-
-    margin-bottom: 30px;
-}
-
-
-/* =========================================
-   FOOTER
-   ========================================= */
-
-footer {
-    background: #ffffff;
-
-    border-top: 1px solid #dce6f0;
-}
-
-
-.footer-inner {
-    max-width: 1280px;
-
-    margin: 0 auto;
-
-    padding: 26px 7%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 24px;
-}
-
-
-.footer-brand {
-    color: #173b67;
-
-    font-size: 15px;
-
-    font-weight: 700;
-}
-
-
-.footer-copy {
-    color: #71839a;
-
-    font-size: 13px;
-
-    font-weight: 400;
-}
-
-
-/* =========================================
-   TECH STACK
-   ========================================= */
-
-.tech-stack-logos {
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(5, minmax(120px, 1fr));
-
-    column-gap: 40px;
-
-    row-gap: 62px;
-
-    align-items: start;
-
-    justify-items: center;
-
-    margin: 58px auto 0;
-}
-
-
-.tech-logo {
-    width: 100%;
-
-    min-height: 125px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: flex-start;
-
-    gap: 14px;
-
-    text-align: center;
-
-    transition:
-        transform 0.25s ease;
-}
-
-
-.tech-logo img {
-    width: 82px;
-    height: 82px;
-
-    object-fit: contain;
-
-    display: block;
-
-    transition:
-        transform 0.25s ease;
-}
-
-
-.tech-logo span {
-    font-size: 13px;
-
-    font-weight: 600;
-
-    color: #52647a;
-
-    line-height: 1.4;
-}
-
-
-.tech-logo:hover {
-    transform: translateY(-4px);
-}
-
-
-.tech-logo:hover img {
-    transform: scale(1.05);
-}
-
-
-/* =========================================
-   TECH CAPABILITIES
-   ========================================= */
-
-.tech-capabilities {
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    margin: 62px auto 0;
-
-    padding-top: 26px;
-
-    border-top: 1px solid #dfe7ef;
-}
-
-
-.tech-capability {
-    text-align: center;
-
-    padding: 8px 25px;
-}
-
-
-.tech-capability:not(:last-child) {
-    border-right: 1px solid #dfe7ef;
-}
-
-
-.tech-capability span {
-    display: block;
-
-    color: #1769aa;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: 1.8px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 7px;
-}
-
-
-.tech-capability p {
-    color: #718096;
-
-    font-size: 13px;
-
-    line-height: 1.5;
-
-    margin: 0;
-}
-
-
-/* =========================================
-   CREDENTIALS
-   ========================================= */
-
-.featured-credential {
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 60px;
-
-    align-items: center;
-
-    padding: 40px;
-
-    background: #ffffff;
-
-    border: 1px solid #dce7f1;
-
-    border-radius: 16px;
-}
-
-
-.featured-certificate {
-    min-width: 0;
-}
-
-
-.certificate-preview {
-    position: relative;
-
-    height: 280px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 30px;
-
-    background: #f8fbff;
-
-    border: 1px solid #e3ebf3;
-
-    border-radius: 14px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 8px 25px
-        rgba(25, 61, 100, 0.05);
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-
-.certificate-preview img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: contain;
-
-    object-position: center;
-
-    user-select: none;
-
-    pointer-events: none;
-}
-
-
-.certificate-preview:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 22px 50px
-        rgba(25, 61, 100, 0.15);
-}
-
-
-.featured-credential-content {
-    max-width: 560px;
-}
-
-
-.credential-label {
-    display: inline-block;
-
-    color: #1769aa;
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 14px;
-}
-
-
-.featured-credential-content h3 {
-    color: #142b45;
-
-    font-size: 32px;
-
-    line-height: 1.2;
-
-    margin-bottom: 10px;
-}
-
-
-.credential-provider {
-    color: #1769aa !important;
-
-    font-size: 15px;
-
-    font-weight: 700;
-
-    margin-bottom: 18px !important;
-}
-
-
-.featured-credential-content p {
-    color: #66758a;
-
-    font-size: 16px;
-
-    line-height: 1.7;
-
-    margin-bottom: 24px;
-}
-
-
-.credential-link {
-    display: inline-block;
-
-    color: #1769aa;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    text-decoration: none;
-}
-
-
-.credential-link:hover {
-    color: #12578e;
-}
-
-
-/* =========================================
-   CREDENTIAL SUBSECTIONS
-   ========================================= */
-
-.credentials-subsection {
-    margin-top: 85px;
-}
-
-
-.credentials-subsection-header {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    margin-bottom: 28px;
-}
-
-
-.credentials-subsection-header h3 {
-    color: #142b45;
-
-    font-size: 28px;
-
-    line-height: 1.2;
-
-    margin-top: 4px;
-}
-
-
-/* =========================================
-   CERTIFICATE SCROLL
-   ========================================= */
-
-.certificate-scroll {
-    display: flex;
-
-    gap: 22px;
-
-    width: 100%;
-
-    overflow-x: auto;
-
-    overflow-y: hidden;
-
-    padding: 8px 4px 20px;
-
-    scroll-behavior: auto;
-
-    scroll-snap-type: none;
-
-    cursor: grab;
-
-    scrollbar-width: none;
-
-    -ms-overflow-style: none;
-
-    overscroll-behavior-x: contain;
-}
-
-
-.certificate-scroll:active {
-    cursor: grabbing;
-}
-
-
-.certificate-scroll::-webkit-scrollbar {
-    display: none;
-}
-
-
-/* =========================================
-   CERTIFICATE CARD
-   ========================================= */
-
-.certificate-card {
-    flex: 0 0 285px;
-
-    scroll-snap-align: start;
-
-    background: #ffffff;
-
-    border: 1px solid #e3ebf3;
-
-    border-radius: 14px;
-
-    overflow: hidden;
-
-    text-decoration: none;
-
-    box-shadow:
-        0 8px 25px
-        rgba(25, 61, 100, 0.04);
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-
-    user-select: none;
-}
-
-
-.certificate-card:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 16px 38px
-        rgba(25, 61, 100, 0.12);
-}
-
-
-.certificate-info {
-    padding: 20px;
-}
-
-
-.certificate-info h4 {
-    color: #173b67;
-
-    font-size: 15px;
-
-    line-height: 1.45;
-
-    margin-bottom: 8px;
-}
-
-
-.certificate-info p {
-    color: #7a899b;
-
-    font-size: 13px;
-
-    margin: 0;
-}
-
-
-/* =========================================
-   CERTIFICATE IMAGE
-   ========================================= */
-
-.certificate-image {
-    position: relative;
-
-    height: 220px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 7px;
-
-    padding: 25px;
-
-    text-align: center;
-
-    overflow: hidden;
-
-    background: #f5f9fd;
-
-    border-bottom: 1px solid #e3ebf3;
-}
-
-
-.certificate-image::before {
-    content: "";
-
-    position: absolute;
-
-    width: 180px;
-    height: 180px;
-
-    border-radius: 50%;
-
-    background: rgba(
-        255,
-        255,
-        255,
-        0.65
-    );
-
-    top: -90px;
-    right: -70px;
-}
-
-
-.certificate-image img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: contain;
-
-    object-position: center;
-
-    user-select: none;
-
-    pointer-events: none;
-
-    transition:
-        transform 0.3s ease;
-}
-
-
-.certificate-card:hover
-.certificate-image img {
-    transform: scale(1.03);
-}
-
-
-.certificate-dsa {
-    background:
-        linear-gradient(
-            135deg,
-            #f1f7fc,
-            #ffffff
-        );
-}
-
-
-.certificate-excel {
-    background:
-        linear-gradient(
-            135deg,
-            #f1f8f4,
-            #ffffff
-        );
-}
-
-
-.certificate-powerbi {
-    background:
-        linear-gradient(
-            135deg,
-            #fffaf0,
-            #ffffff
-        );
-}
-
-
-.certificate-mysql {
-    background:
-        linear-gradient(
-            135deg,
-            #f1f6fa,
-            #ffffff
-        );
-}
-
-
-.certificate-python {
-    background:
-        linear-gradient(
-            135deg,
-            #f8f7ef,
-            #ffffff
-        );
-}
-
-
-.certificate-workshop {
-    background:
-        linear-gradient(
-            135deg,
-            #f4f1fa,
-            #ffffff
-        );
-}
-
-
-/* =========================================
-   ACHIEVEMENTS
-   ========================================= */
-
-.achievements-section {
-    margin-top: 70px;
-}
-
-
-.achievements-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 18px;
-}
-
-
-.achievement-card {
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 18px;
-
-    min-height: 125px;
-
-    padding: 20px;
-
-    background: #ffffff;
-
-    border: 1px solid #e3ebf3;
-
-    border-radius: 14px;
-
-    text-decoration: none;
-
-    box-shadow:
-        0 8px 25px
-        rgba(25, 61, 100, 0.04);
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-
-.achievement-card:hover {
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 14px 32px
-        rgba(25, 61, 100, 0.10);
-}
-
-
-.achievement-badge {
-    flex: 0 0 62px;
-
-    width: 62px;
-    height: 62px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #eef5fb;
-
-    color: #1769aa;
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    text-align: center;
-
-    overflow: hidden;
-}
-
-
-.achievement-badge.achievement-preview {
-    border: 1px solid #dce7f2;
-
-    border-radius: 10px;
-
-    box-sizing: border-box;
-}
-
-
-.achievement-badge.achievement-preview img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: contain;
-
-    object-position: center;
-
-    user-select: none;
-
-    pointer-events: none;
-}
-
-
-.achievement-content {
-    min-width: 0;
-
-    padding-right: 18px;
-}
-
-
-.achievement-content > span {
-    display: block;
-
-    color: #1769aa;
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: 1.3px;
-
-    margin-bottom: 5px;
-}
-
-
-.achievement-content h4 {
-    color: #173b67;
-
-    font-size: 14px;
-
-    line-height: 1.4;
-
-    margin-bottom: 5px;
-}
-
-
-.achievement-content p {
-    color: #7a899b;
-
-    font-size: 12px;
-
-    margin: 0;
-}
-
-
-.achievement-arrow {
-    position: absolute;
-
-    right: 18px;
-
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    color: #1769aa;
-
-    font-size: 18px;
-
-    font-weight: 700;
-}
-
-
-/* =========================================
-   TABLET — 1000px
-   ========================================= */
-
-@media (max-width: 1000px) {
-
-    .about-main-layout {
-        grid-template-columns:
-            0.8fr
-            1.2fr;
-    }
-
-
-    .capabilities-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        row-gap: 28px;
-    }
-
-}
-
-
-/* =========================================
-   TABLET / MOBILE — 850px
-   ========================================= */
-
-@media (max-width: 850px) {
-
-    /* NAVIGATION */
-
-    nav {
-        padding: 12px 7%;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .logo img {
-        height: 52px;
-
-        max-width: 320px;
-    }
-
-
-    /* HERO */
-
-    .hero {
-        min-height: 600px;
-
-        padding-top: 80px;
-
-        padding-bottom: 80px;
-    }
-
-    .hero h1 {
-        font-size: 52px;
-    }
-
-
-    /* ABOUT */
-
-    .about-description {
-        margin-bottom: 34px;
-    }
-
-
-    .about-main-layout {
-        grid-template-columns: 1fr;
-
-        gap: 20px;
-    }
-
-
-    .about-photo {
-        height: auto;
-
-        justify-content: center;
-    }
-
-
-    .about-photo-card {
-        width: 100%;
-
-        height: 360px;
-
-        min-height: 360px;
-    }
-
-
-    .about-profile-main {
-        padding: 28px;
-    }
-
-
-    .about-capabilities {
-        padding: 26px;
-    }
-
-
-    .capabilities-grid {
-        grid-template-columns:
-            1fr 1fr;
-
-        gap: 28px 24px;
-    }
-
-
-    .about-resume {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-
-
-    .about-resume .buttons {
-        width: 100%;
-    }
-
-
-    /* PROJECTS */
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* SKILLS */
-
-    .skills-grid {
-        grid-template-columns:
-            1fr 1fr;
-    }
-
-
-    /* SECTION */
-
-    .section-title {
-        font-size: 34px;
-    }
-
-
-    /* FOOTER */
-
-    .footer-inner {
-        flex-direction: column;
-
-        justify-content: center;
-
-        text-align: center;
-
-        padding: 24px 6%;
-    }
-
-
-    /* TECH STACK */
-
-    .tech-stack-logos {
-        grid-template-columns:
-            repeat(3, 1fr);
-
-        gap: 50px 25px;
-    }
-
-
-    .tech-capabilities {
-        grid-template-columns:
-            repeat(3, 1fr);
-    }
-
-
-    /* CREDENTIALS */
-
-    .featured-credential {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-
-        padding: 30px;
-    }
-
-
-    .featured-credential-content {
-        max-width: none;
-    }
-
-
-    .featured-credential-content h3 {
-        font-size: 28px;
-    }
-
-
-    .achievements-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    .certificate-card {
-        flex-basis: 260px;
-    }
-
-}
-
-
-/* =========================================
-   MOBILE — 500px
-   ========================================= */
-
-@media (max-width: 500px) {
-
-    /* NAVIGATION */
-
-    nav {
-        padding: 10px 6%;
-    }
-
-
-    .logo img {
-        height: 44px;
-
-        max-width: 280px;
-    }
-
-
-    /* HERO */
-
-    .hero h1 {
-        font-size: 44px;
-    }
-
-
-    .hero-subtitle {
-        font-size: 18px;
-    }
-
-
-    /* SECTIONS */
-
-    section {
-        padding: 75px 7%;
-    }
-
-
-    /* ABOUT */
-
-    .about-label {
-        font-size: 12px;
-
-        margin-bottom: 10px;
-    }
-
-
-    #about .section-title {
-        font-size: 32px;
-
-        line-height: 1.2;
-
-        margin-bottom: 16px;
-    }
-
-
-    .about-description {
-        font-size: 15px;
-
-        line-height: 1.65;
-
-        margin-bottom: 30px;
-    }
-
-
-    .about-main-layout {
-        grid-template-columns: 1fr;
-
-        gap: 18px;
-
-        margin-bottom: 22px;
-    }
-
-
-    .about-photo-card {
-        width: 100%;
-
-        height: auto;
-
-        min-height: 0;
-
-        aspect-ratio: 1 / 1;
-    }
-
-
-    .about-photo-card img {
-        width: 100%;
-
-        height: 100%;
-
-        object-fit: cover;
-
-        object-position: center top;
-    }
-
-
-    .about-profile-main {
-        padding: 22px;
-    }
-
-
-    .about-profile-main h3 {
-        font-size: 19px;
-    }
-
-
-    .about-profile-main p {
-        font-size: 14px;
-
-        line-height: 1.65;
-    }
-
-
-    .about-block + .about-block {
-        margin-top: 20px;
-
-        padding-top: 20px;
-    }
-
-
-    /* WHAT I BRING */
-
-    .about-capabilities {
-        padding: 22px;
-
-        margin-bottom: 22px;
-    }
-
-
-    .about-capabilities > h3 {
-        font-size: 22px;
-
-        margin-bottom: 22px;
-    }
-
-
-    .capabilities-grid {
-        grid-template-columns: 1fr;
-
-        gap: 24px;
-    }
-
-
-    .capability-content strong {
-        font-size: 15px;
-
-        min-height: 0;
-    }
-
-
-    .capability-content p {
-        font-size: 13.5px;
-    }
-
-
-    /* RESUME */
-
-    .about-resume {
-        padding: 22px;
-    }
-
-
-    .about-resume .buttons {
-        flex-direction: column;
-
-        width: 100%;
-    }
-
-
-    .about-resume .btn {
-        width: 100%;
-
-        text-align: center;
-    }
-
-
-    /* SKILLS */
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* TECH STACK */
-
-    .tech-stack-logos {
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        column-gap: 15px;
-
-        row-gap: 42px;
-    }
-
-
-    .tech-logo img {
-        width: 68px;
-        height: 68px;
-    }
-
-
-    .tech-logo span {
-        font-size: 12px;
-    }
-
-
-    .tech-capabilities {
-        grid-template-columns: 1fr;
-
-        gap: 0;
-    }
-
-
-    .tech-capability {
-        padding: 16px 10px;
-    }
-
-
-    .tech-capability:not(:last-child) {
-        border-right: none;
-
-        border-bottom: 1px solid #dfe7ef;
-    }
-
-
-    /* CREDENTIALS */
-
-    .featured-credential {
-        padding: 22px;
-    }
-
-
-    .certificate-preview {
-        padding: 25px;
-    }
-
-
-    .featured-credential-content h3 {
-        font-size: 24px;
-    }
-
-
-    .credentials-subsection-header h3 {
-        font-size: 23px;
-    }
-
-
-    .certificate-card {
-        flex-basis: 240px;
-    }
-
-
-    .achievement-card {
-        min-height: 110px;
-
-        padding: 16px;
-    }
-
-}
+</html>
