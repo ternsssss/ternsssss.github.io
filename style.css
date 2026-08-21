@@ -1,6 +1,6 @@
 /* =========================================================
    GLOBAL RESET
-   ========================================================= */
+========================================================= */
 
 * {
     margin: 0;
@@ -8,9 +8,11 @@
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
+
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -22,8 +24,7 @@ body {
 
 /* =========================================================
    NAVIGATION
-   ORIGINAL NAVIGATION TYPOGRAPHY
-   ========================================================= */
+========================================================= */
 
 nav {
     position: sticky;
@@ -34,17 +35,21 @@ nav {
 
     border-bottom: 1px solid #e6edf5;
 
-    padding: 14px 7%;
+    padding: 14px 4%;
 }
+
 
 .nav-container {
-    max-width: 1200px;
-    margin: auto;
+    width: 100%;
+    max-width: 1440px;
+
+    margin: 0 auto;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
+
 
 .logo {
     display: inline-flex;
@@ -53,6 +58,7 @@ nav {
     text-decoration: none;
     line-height: 0;
 }
+
 
 .logo img {
     display: block;
@@ -63,6 +69,7 @@ nav {
     max-width: 300px;
 }
 
+
 .nav-links {
     display: flex;
 
@@ -71,22 +78,24 @@ nav {
     list-style: none;
 }
 
+
 .nav-links a {
     position: relative;
 
     display: inline-block;
-
-    text-decoration: none;
 
     color: #46546a;
 
     font-size: 14px;
     font-weight: 600;
 
+    text-decoration: none;
+
     padding: 4px 0;
 
     transition: color 0.2s ease;
 }
+
 
 .nav-links a::after {
     content: "";
@@ -103,19 +112,21 @@ nav {
     background: #1769aa;
 
     transform: scaleX(0);
-
     transform-origin: center;
 
     transition: transform 0.2s ease;
 }
 
+
 .nav-links a:hover {
     color: #1769aa;
 }
 
+
 .nav-links a.active {
     color: #1769aa;
 }
+
 
 .nav-links a.active::after {
     transform: scaleX(1);
@@ -124,24 +135,29 @@ nav {
 
 /* =========================================================
    HERO
-   ========================================================= */
+========================================================= */
 
 .hero {
-    max-width: 1200px;
-
-    margin: auto;
+    width: 100%;
+    max-width: 1440px;
 
     min-height: 720px;
 
-    padding: 120px 7%;
+    margin: 0 auto;
+
+    padding:
+        120px
+        clamp(32px, 4vw, 72px);
 
     display: flex;
     align-items: center;
 }
 
+
 .hero-content {
     max-width: 780px;
 }
+
 
 .eyebrow {
     color: #1769aa;
@@ -150,11 +166,11 @@ nav {
     font-weight: 700;
 
     letter-spacing: 2px;
-
     text-transform: uppercase;
 
     margin-bottom: 20px;
 }
+
 
 .hero h1 {
     font-size: clamp(48px, 7vw, 82px);
@@ -166,26 +182,28 @@ nav {
     margin-bottom: 24px;
 }
 
+
 .hero h1 span {
     color: #1769aa;
 }
 
+
 .hero-subtitle {
-    font-size: 22px;
-
-    font-weight: 600;
-
     color: #42526a;
+
+    font-size: 22px;
+    font-weight: 600;
 
     margin-bottom: 20px;
 }
 
+
 .hero-description {
     max-width: 680px;
 
-    font-size: 17px;
-
     color: #66758a;
+
+    font-size: 17px;
 
     margin-bottom: 35px;
 }
@@ -193,7 +211,7 @@ nav {
 
 /* =========================================================
    BUTTONS
-   ========================================================= */
+========================================================= */
 
 .buttons {
     display: flex;
@@ -202,6 +220,7 @@ nav {
 
     flex-wrap: wrap;
 }
+
 
 .btn {
     display: inline-block;
@@ -212,94 +231,56 @@ nav {
 
     text-decoration: none;
 
+    font-size: 14px;
     font-weight: 700;
 
-    font-size: 14px;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
 }
+
 
 .btn-primary {
     background: #1769aa;
-
     color: #ffffff;
 }
+
 
 .btn-primary:hover {
     background: #12578e;
 }
 
+
 .btn-secondary {
+    background: #ffffff;
+
     border: 1px solid #cbd8e6;
 
     color: #173b67;
-
-    background: #ffffff;
 }
 
 
 /* =========================================================
    SECTIONS
-   ========================================================= */
+   WIDER DESKTOP LAYOUT
+========================================================= */
 
 section {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1440px;
 
-    margin: auto;
+    margin: 0 auto;
 
-    padding: 100px 7%;
+    padding:
+        100px
+        clamp(32px, 4vw, 72px);
 
     scroll-margin-top: 90px;
 }
 
 
-/* =========================================================
-   GENERAL SECTION TYPOGRAPHY
-   ========================================================= */
-
-.section-label {
-    color: #1769aa;
-
-    font-size: 13px;
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 12px;
-}
-
-.section-title {
-    font-size: 42px;
-
-    line-height: 1.2;
-
-    color: #142b45;
-
-    margin-bottom: 20px;
-}
-
-.section-description {
-    max-width: 700px;
-
-    color: #66758a;
-
-    font-size: 17px;
-
-    margin-bottom: 50px;
-}
-
-
-/* =========================================================
-   ABOUT
-   ========================================================= */
-
-#about {
-    scroll-margin-top: 90px;
-}
-
-
-/* ABOUT LABEL */
-
+.section-label,
 .about-label {
     color: #1769aa;
 
@@ -307,37 +288,30 @@ section {
     font-weight: 700;
 
     letter-spacing: 2px;
-
     text-transform: uppercase;
 
     margin-bottom: 12px;
 }
 
 
-/* ABOUT MAIN TITLE */
-
-#about .section-title {
+.section-title {
     color: #142b45;
 
     font-size: 42px;
 
     line-height: 1.2;
 
-    font-weight: 700;
-
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 
-/* ABOUT DESCRIPTION */
-
+.section-description,
 .about-description {
-    max-width: 760px;
+    max-width: 700px;
 
     color: #66758a;
 
     font-size: 17px;
-
     line-height: 1.65;
 
     margin-bottom: 42px;
@@ -345,18 +319,25 @@ section {
 
 
 /* =========================================================
+   ABOUT
+========================================================= */
+
+#about {
+    scroll-margin-top: 90px;
+}
+
+
+/* =========================================================
    ABOUT — COMBINED CARD
-   PHOTO + PROFESSIONAL BACKGROUND
-   ========================================================= */
+========================================================= */
 
 .about-main-card {
-
     width: 100%;
 
     display: grid;
 
     grid-template-columns:
-        minmax(280px, 0.72fr)
+        minmax(340px, 0.85fr)
         minmax(0, 1.55fr);
 
     align-items: stretch;
@@ -375,7 +356,7 @@ section {
 
 /* =========================================================
    ABOUT PHOTO
-   ========================================================= */
+========================================================= */
 
 .about-photo {
     min-width: 0;
@@ -385,11 +366,10 @@ section {
     display: flex;
 }
 
-.about-photo-card {
 
+.about-photo-card {
     width: 100%;
     height: 100%;
-
     min-height: 100%;
 
     display: flex;
@@ -402,19 +382,17 @@ section {
     background: #ffffff;
 
     border: none;
-
     border-radius: 0;
 }
 
-.about-photo-card img {
 
+.about-photo-card img {
     width: 100%;
     height: 100%;
 
     display: block;
 
     object-fit: cover;
-
     object-position: center top;
 
     background: #ffffff;
@@ -422,46 +400,35 @@ section {
 
 
 /* =========================================================
-   PROFESSIONAL BACKGROUND
-   + HOW I WORK
-   ========================================================= */
+   PROFESSIONAL BACKGROUND + HOW I WORK
+========================================================= */
 
 .about-profile-main {
-
     min-width: 0;
 
     background: #ffffff;
 
-    padding: 30px 34px;
+    padding: 30px 40px;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
 }
 
 
-/* HEADINGS */
-
 .about-profile-main h3 {
-
     margin: 0 0 10px;
 
     color: #173b67;
 
     font-size: 22px;
+    font-weight: 700;
 
     line-height: 1.3;
-
-    font-weight: 700;
 }
 
 
-/* BODY TEXT */
-
 .about-profile-main p {
-
     margin: 0;
 
     color: #5d6d80;
@@ -472,33 +439,31 @@ section {
 }
 
 
-/* PARAGRAPH SPACING */
-
 .about-block p + p {
     margin-top: 14px;
 }
 
 
-/* =========================================================
-   HOW I WORK
-   ========================================================= */
+/*
+   INTENTIONALLY NO SEPARATOR LINE
+   BETWEEN PROFESSIONAL BACKGROUND
+   AND HOW I WORK
+*/
 
 .about-block + .about-block {
+    margin-top: 24px;
 
-    margin-top: 20px;
+    padding-top: 0;
 
-    padding-top: 20px;
-
-    border-top: 1px solid #e5edf5;
+    border-top: none;
 }
 
 
 /* =========================================================
    WHAT I BRING
-   ========================================================= */
+========================================================= */
 
 .about-capabilities {
-
     width: 100%;
 
     background: #ffffff;
@@ -507,49 +472,46 @@ section {
 
     border-radius: 14px;
 
-    padding: 30px 34px 32px;
+    padding: 30px 40px 32px;
 
     margin-bottom: 28px;
 }
 
 
 .about-capabilities > h3 {
-
     margin: 0 0 28px;
 
     color: #173b67;
 
     font-size: 24px;
+    font-weight: 700;
 
     line-height: 1.3;
-
-    font-weight: 700;
 }
 
 
 /* =========================================================
    CAPABILITIES GRID
-   ========================================================= */
+========================================================= */
 
 .capabilities-grid {
-
     display: grid;
 
     grid-template-columns:
         repeat(4, minmax(0, 1fr));
 
-    gap: 38px;
+    gap: 42px;
 
     align-items: start;
 }
 
 
 .capability-item {
-
     display: grid;
 
     grid-template-columns:
-        34px minmax(0, 1fr);
+        34px
+        minmax(0, 1fr);
 
     gap: 12px;
 
@@ -560,11 +522,9 @@ section {
 
 
 .capability-number {
-
     color: #1769aa;
 
     font-size: 12px;
-
     font-weight: 700;
 
     line-height: 1.5;
@@ -574,44 +534,30 @@ section {
 
 
 .capability-content {
-
     min-width: 0;
 
     display: flex;
-
     flex-direction: column;
 }
 
 
-/* CAPABILITY TITLE */
-
 .capability-content strong {
-
     display: block;
 
     color: #24364b;
 
     font-size: 16px;
+    font-weight: 700;
 
     line-height: 1.35;
 
-    font-weight: 700;
-
     margin-bottom: 10px;
-
-    /*
-       Keeps every description starting
-       at the same vertical position.
-    */
 
     min-height: 43px;
 }
 
 
-/* CAPABILITY DESCRIPTION */
-
 .capability-content p {
-
     margin: 0;
 
     color: #5d6d80;
@@ -624,21 +570,19 @@ section {
 
 /* =========================================================
    ABOUT — RESUME
-   ========================================================= */
+========================================================= */
 
 .about-resume {
-
     width: 100%;
 
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 30px;
 
-    padding: 24px 28px;
+    padding: 24px 32px;
 
     background: #f8fbff;
 
@@ -647,25 +591,25 @@ section {
     border-radius: 14px;
 }
 
+
 .about-resume > div:first-child {
     min-width: 0;
 }
 
-.about-resume h3 {
 
+.about-resume h3 {
     margin: 0 0 5px;
 
     color: #173b67;
 
     font-size: 18px;
+    font-weight: 700;
 
     line-height: 1.3;
-
-    font-weight: 700;
 }
 
-.about-resume p {
 
+.about-resume p {
     margin: 0;
 
     color: #5d6d80;
@@ -675,75 +619,35 @@ section {
     line-height: 1.6;
 }
 
+
 .about-resume .buttons {
     flex-shrink: 0;
 }
 
 
 /* =========================================================
-   UNUSED / LEGACY SKILLS
-   ========================================================= */
-
-.skills-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 20px;
-}
-
-.skill-card {
-
-    background: #ffffff;
-
-    border: 1px solid #e5edf5;
-
-    border-radius: 14px;
-
-    padding: 28px;
-}
-
-.skill-card h3 {
-
-    color: #173b67;
-
-    margin-bottom: 10px;
-}
-
-.skill-card p {
-
-    color: #718096;
-
-    font-size: 14px;
-}
-
-
-/* =========================================================
    PROJECTS
-   ========================================================= */
+========================================================= */
 
 #projects {
-
-    max-width: 1200px;
-
-    margin-left: auto;
-
-    margin-right: auto;
+    max-width: 1440px;
 }
 
-.projects-grid {
 
+.projects-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(2, 1fr);
+        repeat(2, minmax(0, 1fr));
 
     gap: 25px;
 }
 
+
 .project-card {
+    display: block;
+
+    overflow: hidden;
 
     background: #ffffff;
 
@@ -751,19 +655,17 @@ section {
 
     border-radius: 16px;
 
-    overflow: hidden;
+    color: inherit;
 
     text-decoration: none;
-
-    color: inherit;
 
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
 }
 
-.project-card:hover {
 
+.project-card:hover {
     transform: translateY(-4px);
 
     box-shadow:
@@ -771,42 +673,40 @@ section {
         rgba(25, 61, 100, 0.12);
 }
 
+
 .project-preview {
-
-    height: 270px;
-
-    background: #f5f9fd;
+    height: 300px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     overflow: hidden;
 
+    background: #f5f9fd;
+
     border-bottom: 1px solid #e5edf5;
 }
 
-.project-preview img {
 
+.project-preview img {
     width: 100%;
     height: 100%;
 
     display: block;
 
     object-fit: contain;
-
     object-position: center;
 }
 
-.project-content {
 
+.project-content {
     padding: 32px 36px 34px;
 }
 
-.project-content h3 {
 
+.project-content h3 {
     color: #173b67;
 
     font-size: 22px;
@@ -816,8 +716,8 @@ section {
     margin-bottom: 12px;
 }
 
-.project-content p {
 
+.project-content p {
     color: #66758a;
 
     font-size: 15px;
@@ -827,8 +727,8 @@ section {
     margin-bottom: 22px;
 }
 
-.project-tags {
 
+.project-tags {
     display: flex;
 
     gap: 7px;
@@ -836,8 +736,8 @@ section {
     flex-wrap: wrap;
 }
 
-.tag {
 
+.tag {
     display: inline-flex;
 
     align-items: center;
@@ -853,7 +753,6 @@ section {
     border-radius: 5px;
 
     font-size: 11px;
-
     font-weight: 700;
 
     line-height: 1.3;
@@ -861,23 +760,22 @@ section {
     white-space: nowrap;
 }
 
-.project-action {
 
+.project-action {
     margin-top: 20px;
 
     color: #1769aa;
 
     font-size: 14px;
-
-    font-weight: 700;
+    font-weight: 600;
 
     transition:
         color 0.2s ease,
         transform 0.2s ease;
 }
 
-.project-card:hover .project-action {
 
+.project-card:hover .project-action {
     color: #0f5c96;
 
     transform: translateX(4px);
@@ -886,10 +784,9 @@ section {
 
 /* =========================================================
    MORE PROJECTS
-   ========================================================= */
+========================================================= */
 
 .projects-more {
-
     display: flex;
 
     justify-content: center;
@@ -897,19 +794,16 @@ section {
     margin-top: 36px;
 }
 
-.projects-more a {
 
+.projects-more a {
     display: inline-flex;
 
     align-items: center;
 
-    gap: 8px;
-
     color: #1769aa;
 
     font-size: 14px;
-
-    font-weight: 700;
+    font-weight: 600;
 
     text-decoration: none;
 
@@ -918,8 +812,8 @@ section {
         transform 0.2s ease;
 }
 
-.projects-more a:hover {
 
+.projects-more a:hover {
     color: #0f5c96;
 
     transform: translateX(4px);
@@ -927,86 +821,10 @@ section {
 
 
 /* =========================================================
-   CONTACT
-   ========================================================= */
-
-.contact {
-
-    text-align: center;
-
-    background: #edf5fc;
-
-    max-width: none;
-}
-
-.contact-inner {
-
-    max-width: 750px;
-
-    margin: auto;
-}
-
-.contact p {
-
-    color: #66758a;
-
-    margin-bottom: 30px;
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-
-    background: #ffffff;
-
-    border-top: 1px solid #dce6f0;
-}
-
-.footer-inner {
-
-    max-width: 1280px;
-
-    margin: 0 auto;
-
-    padding: 26px 7%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 24px;
-}
-
-.footer-brand {
-
-    color: #173b67;
-
-    font-size: 15px;
-
-    font-weight: 700;
-}
-
-.footer-copy {
-
-    color: #71839a;
-
-    font-size: 13px;
-
-    font-weight: 400;
-}
-
-
-/* =========================================================
    TECH STACK
-   ========================================================= */
+========================================================= */
 
 .tech-stack-logos {
-
     width: 100%;
 
     display: grid;
@@ -1015,18 +833,16 @@ footer {
         repeat(5, minmax(120px, 1fr));
 
     column-gap: 40px;
-
     row-gap: 62px;
 
     align-items: start;
-
     justify-items: center;
 
     margin: 58px auto 0;
 }
 
-.tech-logo {
 
+.tech-logo {
     width: 100%;
 
     min-height: 125px;
@@ -1036,19 +852,17 @@ footer {
     flex-direction: column;
 
     align-items: center;
-
     justify-content: flex-start;
 
     gap: 14px;
 
     text-align: center;
 
-    transition:
-        transform 0.25s ease;
+    transition: transform 0.25s ease;
 }
 
-.tech-logo img {
 
+.tech-logo img {
     width: 82px;
     height: 82px;
 
@@ -1056,38 +870,35 @@ footer {
 
     display: block;
 
-    transition:
-        transform 0.25s ease;
+    transition: transform 0.25s ease;
 }
 
+
 .tech-logo span {
+    color: #52647a;
 
     font-size: 13px;
-
     font-weight: 600;
-
-    color: #52647a;
 
     line-height: 1.4;
 }
 
-.tech-logo:hover {
 
+.tech-logo:hover {
     transform: translateY(-4px);
 }
 
-.tech-logo:hover img {
 
+.tech-logo:hover img {
     transform: scale(1.05);
 }
 
 
 /* =========================================================
    TECH CAPABILITIES
-   ========================================================= */
+========================================================= */
 
 .tech-capabilities {
-
     width: 100%;
 
     display: grid;
@@ -1102,37 +913,35 @@ footer {
     border-top: 1px solid #dfe7ef;
 }
 
-.tech-capability {
 
+.tech-capability {
     text-align: center;
 
     padding: 8px 25px;
 }
 
-.tech-capability:not(:last-child) {
 
+.tech-capability:not(:last-child) {
     border-right: 1px solid #dfe7ef;
 }
 
-.tech-capability span {
 
+.tech-capability span {
     display: block;
 
     color: #1769aa;
 
     font-size: 12px;
-
     font-weight: 700;
 
     letter-spacing: 1.8px;
-
     text-transform: uppercase;
 
     margin-bottom: 7px;
 }
 
-.tech-capability p {
 
+.tech-capability p {
     color: #718096;
 
     font-size: 13px;
@@ -1145,82 +954,104 @@ footer {
 
 /* =========================================================
    CREDENTIALS
-   ========================================================= */
+========================================================= */
+
+#certifications {
+    overflow: hidden;
+}
+
 
 .featured-credential {
-
     display: grid;
 
     grid-template-columns:
-        1fr 1fr;
+        0.9fr
+        1.1fr;
 
-    gap: 60px;
+    gap: 70px;
 
     align-items: center;
 
-    padding: 40px;
+    margin-top: 60px;
+
+    padding: 45px;
 
     background: #ffffff;
 
-    border: 1px solid #dce7f1;
+    border: 1px solid #e3ebf3;
 
-    border-radius: 16px;
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(25, 61, 100, 0.05);
 }
+
 
 .featured-certificate {
+    display: flex;
 
-    min-width: 0;
+    align-items: center;
+    justify-content: center;
 }
 
+
+.featured-certificate a {
+    display: block;
+
+    width: 100%;
+
+    text-decoration: none;
+}
+
+
 .certificate-preview {
+    width: 100%;
 
-    position: relative;
+    max-width: 440px;
 
-    height: 280px;
+    aspect-ratio: 1.414 / 1;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    padding: 30px;
+    padding: 12px;
 
-    background: #f8fbff;
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f2f7fc 100%
+        );
 
-    border: 1px solid #e3ebf3;
+    border: 1px solid #d9e5f0;
 
-    border-radius: 14px;
-
-    overflow: hidden;
+    border-radius: 10px;
 
     box-shadow:
-        0 8px 25px
-        rgba(25, 61, 100, 0.05);
+        0 18px 45px
+        rgba(25, 61, 100, 0.10);
 
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
 }
 
-.certificate-preview img {
 
+.certificate-preview img {
     width: 100%;
     height: 100%;
 
     display: block;
 
     object-fit: contain;
-
     object-position: center;
-
-    user-select: none;
-
-    pointer-events: none;
 }
 
-.certificate-preview:hover {
 
+.certificate-preview:hover {
     transform: translateY(-6px);
 
     box-shadow:
@@ -1228,30 +1059,28 @@ footer {
         rgba(25, 61, 100, 0.15);
 }
 
-.featured-credential-content {
 
+.featured-credential-content {
     max-width: 560px;
 }
 
-.credential-label {
 
+.credential-label {
     display: inline-block;
 
     color: #1769aa;
 
     font-size: 12px;
-
     font-weight: 800;
 
     letter-spacing: 2px;
-
     text-transform: uppercase;
 
     margin-bottom: 14px;
 }
 
-.featured-credential-content h3 {
 
+.featured-credential-content h3 {
     color: #142b45;
 
     font-size: 32px;
@@ -1261,19 +1090,18 @@ footer {
     margin-bottom: 10px;
 }
 
-.credential-provider {
 
+.credential-provider {
     color: #1769aa !important;
 
     font-size: 15px;
-
     font-weight: 700;
 
     margin-bottom: 18px !important;
 }
 
-.featured-credential-content p {
 
+.featured-credential-content p {
     color: #66758a;
 
     font-size: 16px;
@@ -1283,63 +1111,57 @@ footer {
     margin-bottom: 24px;
 }
 
-.credential-link {
 
+.credential-link {
     display: inline-block;
 
     color: #1769aa;
 
     font-size: 14px;
-
     font-weight: 700;
 
     text-decoration: none;
 }
 
-.credential-link:hover {
 
+.credential-link:hover {
     color: #12578e;
 }
 
 
 /* =========================================================
    CREDENTIAL SUBSECTIONS
-   ========================================================= */
+========================================================= */
 
 .credentials-subsection {
-
     margin-top: 85px;
 }
 
-.credentials-subsection-header {
 
+.credentials-subsection-header {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     margin-bottom: 28px;
 }
 
-.credentials-subsection-header h3 {
 
+.credentials-subsection-header h3 {
     color: #142b45;
 
     font-size: 28px;
 
     line-height: 1.2;
-
-    margin-top: 4px;
 }
 
 
 /* =========================================================
    CERTIFICATE SCROLL
-   ========================================================= */
+========================================================= */
 
 .certificate-scroll {
-
     display: flex;
 
     gap: 22px;
@@ -1347,14 +1169,11 @@ footer {
     width: 100%;
 
     overflow-x: auto;
-
     overflow-y: hidden;
 
     padding: 8px 4px 20px;
 
     scroll-behavior: auto;
-
-    scroll-snap-type: none;
 
     cursor: grab;
 
@@ -1365,26 +1184,23 @@ footer {
     overscroll-behavior-x: contain;
 }
 
-.certificate-scroll:active {
 
+.certificate-scroll:active {
     cursor: grabbing;
 }
 
-.certificate-scroll::-webkit-scrollbar {
 
+.certificate-scroll::-webkit-scrollbar {
     display: none;
 }
 
 
 /* =========================================================
    CERTIFICATE CARD
-   ========================================================= */
+========================================================= */
 
 .certificate-card {
-
     flex: 0 0 285px;
-
-    scroll-snap-align: start;
 
     background: #ffffff;
 
@@ -1407,8 +1223,8 @@ footer {
     user-select: none;
 }
 
-.certificate-card:hover {
 
+.certificate-card:hover {
     transform: translateY(-6px);
 
     box-shadow:
@@ -1416,55 +1232,18 @@ footer {
         rgba(25, 61, 100, 0.12);
 }
 
-.certificate-info {
-
-    padding: 20px;
-}
-
-.certificate-info h4 {
-
-    color: #173b67;
-
-    font-size: 15px;
-
-    line-height: 1.45;
-
-    margin-bottom: 8px;
-}
-
-.certificate-info p {
-
-    color: #7a899b;
-
-    font-size: 13px;
-
-    margin: 0;
-}
-
-
-/* =========================================================
-   CERTIFICATE IMAGE
-   ========================================================= */
 
 .certificate-image {
-
     position: relative;
 
     height: 220px;
 
     display: flex;
 
-    flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
 
-    gap: 7px;
-
     padding: 25px;
-
-    text-align: center;
 
     overflow: hidden;
 
@@ -1473,8 +1252,8 @@ footer {
     border-bottom: 1px solid #e3ebf3;
 }
 
-.certificate-image::before {
 
+.certificate-image::before {
     content: "";
 
     position: absolute;
@@ -1485,19 +1264,16 @@ footer {
     border-radius: 50%;
 
     background:
-        rgba(
-            255,
-            255,
-            255,
-            0.65
-        );
+        rgba(255, 255, 255, 0.65);
 
     top: -90px;
-
     right: -70px;
 }
 
+
 .certificate-image img {
+    position: relative;
+    z-index: 1;
 
     width: 100%;
     height: 100%;
@@ -1505,25 +1281,51 @@ footer {
     display: block;
 
     object-fit: contain;
-
     object-position: center;
 
     user-select: none;
 
     pointer-events: none;
 
-    transition:
-        transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-.certificate-card:hover
-.certificate-image img {
 
+.certificate-card:hover .certificate-image img {
     transform: scale(1.03);
 }
 
-.certificate-dsa {
 
+.certificate-info {
+    padding: 20px;
+}
+
+
+.certificate-info h4 {
+    color: #173b67;
+
+    font-size: 15px;
+
+    line-height: 1.45;
+
+    margin-bottom: 8px;
+}
+
+
+.certificate-info p {
+    color: #7a899b;
+
+    font-size: 13px;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   INDIVIDUAL CERTIFICATE BACKGROUNDS
+========================================================= */
+
+.certificate-dsa {
     background:
         linear-gradient(
             135deg,
@@ -1532,8 +1334,8 @@ footer {
         );
 }
 
-.certificate-excel {
 
+.certificate-excel {
     background:
         linear-gradient(
             135deg,
@@ -1542,8 +1344,8 @@ footer {
         );
 }
 
-.certificate-powerbi {
 
+.certificate-powerbi {
     background:
         linear-gradient(
             135deg,
@@ -1552,8 +1354,8 @@ footer {
         );
 }
 
-.certificate-mysql {
 
+.certificate-mysql {
     background:
         linear-gradient(
             135deg,
@@ -1562,8 +1364,8 @@ footer {
         );
 }
 
-.certificate-python {
 
+.certificate-python {
     background:
         linear-gradient(
             135deg,
@@ -1572,8 +1374,8 @@ footer {
         );
 }
 
-.certificate-workshop {
 
+.certificate-workshop {
     background:
         linear-gradient(
             135deg,
@@ -1585,25 +1387,24 @@ footer {
 
 /* =========================================================
    ACHIEVEMENTS
-   ========================================================= */
+========================================================= */
 
 .achievements-section {
-
     margin-top: 70px;
 }
 
-.achievements-grid {
 
+.achievements-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3, minmax(0, 1fr));
 
     gap: 18px;
 }
 
-.achievement-card {
 
+.achievement-card {
     position: relative;
 
     display: flex;
@@ -1633,8 +1434,8 @@ footer {
         box-shadow 0.25s ease;
 }
 
-.achievement-card:hover {
 
+.achievement-card:hover {
     transform: translateY(-4px);
 
     box-shadow:
@@ -1642,52 +1443,35 @@ footer {
         rgba(25, 61, 100, 0.10);
 }
 
-.achievement-badge {
 
-    flex: 0 0 62px;
+.achievement-badge.achievement-preview {
+    flex: 0 0 110px;
 
-    width: 62px;
-    height: 62px;
+    width: 110px;
+    height: 82px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    border-radius: 50%;
-
-    background: #eef5fb;
-
-    color: #1769aa;
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    text-align: center;
-
     overflow: hidden;
-}
 
-.achievement-badge.achievement-preview {
+    background: #f8fbff;
 
     border: 1px solid #dce7f2;
 
     border-radius: 10px;
-
-    box-sizing: border-box;
 }
 
-.achievement-badge.achievement-preview img {
 
+.achievement-badge.achievement-preview img {
     width: 100%;
     height: 100%;
 
     display: block;
 
     object-fit: contain;
-
     object-position: center;
 
     user-select: none;
@@ -1695,21 +1479,20 @@ footer {
     pointer-events: none;
 }
 
-.achievement-content {
 
+.achievement-content {
     min-width: 0;
 
     padding-right: 18px;
 }
 
-.achievement-content > span {
 
+.achievement-content > span {
     display: block;
 
     color: #1769aa;
 
     font-size: 10px;
-
     font-weight: 800;
 
     letter-spacing: 1.3px;
@@ -1717,8 +1500,8 @@ footer {
     margin-bottom: 5px;
 }
 
-.achievement-content h4 {
 
+.achievement-content h4 {
     color: #173b67;
 
     font-size: 14px;
@@ -1728,8 +1511,8 @@ footer {
     margin-bottom: 5px;
 }
 
-.achievement-content p {
 
+.achievement-content p {
     color: #7a899b;
 
     font-size: 12px;
@@ -1737,12 +1520,11 @@ footer {
     margin: 0;
 }
 
-.achievement-arrow {
 
+.achievement-arrow {
     position: absolute;
 
     right: 18px;
-
     top: 50%;
 
     transform: translateY(-50%);
@@ -1750,30 +1532,114 @@ footer {
     color: #1769aa;
 
     font-size: 18px;
-
     font-weight: 700;
 }
 
 
 /* =========================================================
-   TABLET — 1000px
-   ========================================================= */
+   CONTACT
+========================================================= */
 
-@media (max-width: 1000px) {
+.contact {
+    width: 100%;
+    max-width: none;
+
+    text-align: center;
+
+    background: #edf5fc;
+
+    padding-left:
+        clamp(32px, 4vw, 72px);
+
+    padding-right:
+        clamp(32px, 4vw, 72px);
+}
+
+
+.contact-inner {
+    max-width: 750px;
+
+    margin: 0 auto;
+}
+
+
+.contact p {
+    color: #66758a;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #ffffff;
+
+    border-top: 1px solid #dce6f0;
+}
+
+
+.footer-inner {
+    width: 100%;
+    max-width: 1440px;
+
+    margin: 0 auto;
+
+    padding:
+        26px
+        clamp(32px, 4vw, 72px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+}
+
+
+.footer-brand {
+    color: #173b67;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+.footer-copy {
+    color: #71839a;
+
+    font-size: 13px;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   TABLET — 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
 
     .about-main-card {
-
         grid-template-columns:
-            0.8fr
-            1.2fr;
+            minmax(280px, 0.8fr)
+            minmax(0, 1.2fr);
     }
 
-    .capabilities-grid {
 
+    .capabilities-grid {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
 
         row-gap: 28px;
+    }
+
+
+    .tech-stack-logos {
+        grid-template-columns:
+            repeat(4, minmax(120px, 1fr));
     }
 
 }
@@ -1781,70 +1647,60 @@ footer {
 
 /* =========================================================
    TABLET / MOBILE — 850px
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 850px) {
 
-
-    /* NAVIGATION */
-
     nav {
-
-        padding: 12px 7%;
+        padding:
+            12px
+            7%;
     }
 
-    .nav-links {
 
+    .nav-links {
         display: none;
     }
 
-    .logo img {
 
+    .logo img {
         height: 52px;
 
         max-width: 320px;
     }
 
 
-    /* HERO */
-
     .hero {
-
         min-height: 600px;
 
         padding-top: 80px;
-
         padding-bottom: 80px;
     }
 
-    .hero h1 {
 
+    .hero h1 {
         font-size: 52px;
     }
 
 
-    /* ABOUT */
+    section {
+        padding:
+            75px
+            7%;
+    }
+
 
     .about-description {
-
         margin-bottom: 34px;
     }
 
 
-    /*
-       Combined card becomes one vertical card.
-    */
-
     .about-main-card {
-
         grid-template-columns: 1fr;
-
-        gap: 0;
     }
 
 
     .about-photo {
-
         height: auto;
 
         justify-content: center;
@@ -1852,38 +1708,33 @@ footer {
 
 
     .about-photo-card {
-
         width: 100%;
 
         height: 360px;
-
         min-height: 360px;
     }
 
 
     .about-profile-main {
-
         padding: 28px;
     }
 
 
     .about-capabilities {
-
         padding: 26px;
     }
 
 
     .capabilities-grid {
-
         grid-template-columns:
-            1fr 1fr;
+            1fr
+            1fr;
 
         gap: 28px 24px;
     }
 
 
     .about-resume {
-
         flex-direction: column;
 
         align-items: flex-start;
@@ -1891,71 +1742,30 @@ footer {
 
 
     .about-resume .buttons {
-
         width: 100%;
     }
 
 
-    /* PROJECTS */
-
     .projects-grid {
-
         grid-template-columns: 1fr;
     }
 
 
-    /* SKILLS */
-
-    .skills-grid {
-
-        grid-template-columns:
-            1fr 1fr;
-    }
-
-
-    /* SECTION */
-
-    .section-title {
-
-        font-size: 34px;
-    }
-
-
-    /* FOOTER */
-
-    .footer-inner {
-
-        flex-direction: column;
-
-        justify-content: center;
-
-        text-align: center;
-
-        padding: 24px 6%;
-    }
-
-
-    /* TECH STACK */
-
     .tech-stack-logos {
-
         grid-template-columns:
             repeat(3, 1fr);
 
         gap: 50px 25px;
     }
 
-    .tech-capabilities {
 
+    .tech-capabilities {
         grid-template-columns:
             repeat(3, 1fr);
     }
 
 
-    /* CREDENTIALS */
-
     .featured-credential {
-
         grid-template-columns: 1fr;
 
         gap: 40px;
@@ -1963,24 +1773,37 @@ footer {
         padding: 30px;
     }
 
-    .featured-credential-content {
 
+    .featured-credential-content {
         max-width: none;
     }
 
-    .featured-credential-content h3 {
 
+    .featured-credential-content h3 {
         font-size: 28px;
     }
 
-    .achievements-grid {
 
+    .achievements-grid {
         grid-template-columns: 1fr;
     }
 
-    .certificate-card {
 
+    .certificate-card {
         flex-basis: 260px;
+    }
+
+
+    .footer-inner {
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding:
+            24px
+            7%;
     }
 
 }
@@ -1988,58 +1811,49 @@ footer {
 
 /* =========================================================
    MOBILE — 500px
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 500px) {
 
-
-    /* NAVIGATION */
-
     nav {
-
-        padding: 10px 6%;
+        padding:
+            10px
+            6%;
     }
 
-    .logo img {
 
+    .logo img {
         height: 44px;
 
         max-width: 280px;
     }
 
 
-    /* HERO */
-
     .hero h1 {
-
         font-size: 44px;
     }
 
-    .hero-subtitle {
 
+    .hero-subtitle {
         font-size: 18px;
     }
 
 
-    /* SECTIONS */
-
     section {
-
-        padding: 75px 7%;
+        padding:
+            75px
+            7%;
     }
 
 
-    /* ABOUT */
-
     .about-label {
-
         font-size: 12px;
 
         margin-bottom: 10px;
     }
 
-    #about .section-title {
 
+    #about .section-title {
         font-size: 32px;
 
         line-height: 1.2;
@@ -2047,8 +1861,8 @@ footer {
         margin-bottom: 16px;
     }
 
-    .about-description {
 
+    .about-description {
         font-size: 15px;
 
         line-height: 1.65;
@@ -2057,26 +1871,10 @@ footer {
     }
 
 
-    /*
-       Mobile combined card.
-    */
-
-    .about-main-card {
-
-        grid-template-columns: 1fr;
-
-        gap: 0;
-
-        margin-bottom: 22px;
-    }
-
-
     .about-photo-card {
-
         width: 100%;
 
         height: auto;
-
         min-height: 0;
 
         aspect-ratio: 1 / 1;
@@ -2084,65 +1882,22 @@ footer {
 
 
     .about-photo-card img {
-
         width: 100%;
-
         height: 100%;
-
-        object-fit: cover;
-
-        object-position: center top;
     }
 
 
     .about-profile-main {
-
         padding: 22px;
     }
 
-
-    .about-profile-main h3 {
-
-        font-size: 19px;
-    }
-
-
-    .about-profile-main p {
-
-        font-size: 14px;
-
-        line-height: 1.65;
-    }
-
-
-    .about-block + .about-block {
-
-        margin-top: 20px;
-
-        padding-top: 20px;
-    }
-
-
-    /* WHAT I BRING */
 
     .about-capabilities {
-
         padding: 22px;
-
-        margin-bottom: 22px;
-    }
-
-
-    .about-capabilities > h3 {
-
-        font-size: 22px;
-
-        margin-bottom: 22px;
     }
 
 
     .capabilities-grid {
-
         grid-template-columns: 1fr;
 
         gap: 24px;
@@ -2150,122 +1905,94 @@ footer {
 
 
     .capability-content strong {
-
-        font-size: 15px;
-
-        min-height: 0;
+        min-height: auto;
     }
 
-
-    .capability-content p {
-
-        font-size: 13.5px;
-    }
-
-
-    /* RESUME */
 
     .about-resume {
-
         padding: 22px;
     }
 
-    .about-resume .buttons {
 
+    .about-resume .buttons {
         flex-direction: column;
 
         width: 100%;
     }
 
-    .about-resume .btn {
 
+    .about-resume .btn {
         width: 100%;
 
         text-align: center;
     }
 
 
-    /* SKILLS */
-
-    .skills-grid {
-
-        grid-template-columns: 1fr;
-    }
-
-
-    /* TECH STACK */
-
     .tech-stack-logos {
-
         grid-template-columns:
             repeat(2, 1fr);
 
         column-gap: 15px;
-
         row-gap: 42px;
     }
 
+
     .tech-logo img {
-
         width: 68px;
-
         height: 68px;
     }
 
-    .tech-logo span {
 
+    .tech-logo span {
         font-size: 12px;
     }
 
-    .tech-capabilities {
 
+    .tech-capabilities {
         grid-template-columns: 1fr;
 
         gap: 0;
     }
 
-    .tech-capability {
 
+    .tech-capability {
         padding: 16px 10px;
     }
 
-    .tech-capability:not(:last-child) {
 
+    .tech-capability:not(:last-child) {
         border-right: none;
 
         border-bottom: 1px solid #dfe7ef;
     }
 
 
-    /* CREDENTIALS */
-
     .featured-credential {
-
         padding: 22px;
     }
 
-    .certificate-preview {
 
+    .certificate-preview {
         padding: 25px;
     }
 
-    .featured-credential-content h3 {
 
+    .featured-credential-content h3 {
         font-size: 24px;
     }
 
-    .credentials-subsection-header h3 {
 
+    .credentials-subsection-header h3 {
         font-size: 23px;
     }
 
-    .certificate-card {
 
+    .certificate-card {
         flex-basis: 240px;
     }
 
-    .achievement-card {
 
+    .achievement-card {
         min-height: 110px;
 
         padding: 16px;
