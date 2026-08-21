@@ -747,55 +747,6 @@ section {
     transform: scale(1.05);
 }
 
-.tech-capabilities {
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    margin: 62px auto 0;
-
-    padding-top: 26px;
-
-    border-top: 1px solid #dfe7ef;
-}
-
-.tech-capability {
-    padding: 8px 25px;
-
-    text-align: center;
-}
-
-.tech-capability:not(:last-child) {
-    border-right: 1px solid #dfe7ef;
-}
-
-.tech-capability span {
-    display: block;
-
-    color: var(--primary);
-
-    font-size: 12px;
-    font-weight: 700;
-
-    letter-spacing: 1.8px;
-    text-transform: uppercase;
-
-    margin-bottom: 7px;
-}
-
-.tech-capability p {
-    margin: 0;
-
-    color: #718096;
-
-    font-size: 13px;
-    line-height: 1.5;
-}
-
-
 /* =========================================================
    CREDENTIALS
 ========================================================= */
@@ -1532,11 +1483,6 @@ footer {
 
         gap: 50px 25px;
     }
-
-    .tech-capabilities {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
     .footer-inner {
         flex-direction: column;
 
@@ -1653,21 +1599,6 @@ footer {
     .tech-logo span {
         font-size: 12px;
     }
-
-    .tech-capabilities {
-        grid-template-columns: 1fr;
-    }
-
-    .tech-capability {
-        padding: 16px 10px;
-    }
-
-    .tech-capability:not(:last-child) {
-        border-right: none;
-
-        border-bottom: 1px solid #dfe7ef;
-    }
-
     .featured-credential {
         padding: 22px;
     }
