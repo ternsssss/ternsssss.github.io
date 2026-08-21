@@ -868,6 +868,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (rail) {
 
         const AUTO_INTERVAL = 2000;
+        const END_PAUSE = 2000;
         const RESUME_DELAY = 2500;
         const DRAG_THRESHOLD = 6;
 
@@ -923,6 +924,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const nextPosition = rail.scrollLeft + step;
 
             if (nextPosition >= maxScroll - 4) {
+                window.clearInterval(autoTimer);
+
                 rail.scrollTo({
                     left: maxScroll,
                     behavior: "smooth"
@@ -937,8 +940,13 @@ document.addEventListener("DOMContentLoaded", function () {
                             left: 0,
                             behavior: "smooth"
                         });
+
+                        window.setTimeout(
+                            startAutoScroll,
+                            AUTO_INTERVAL
+                        );
                     }
-                }, 450);
+                }, END_PAUSE);
 
                 return;
             }
