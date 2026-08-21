@@ -493,12 +493,9 @@ section {
 
 .project-card:nth-child(1) .project-preview,
 .project-card:nth-child(2) .project-preview,
+.project-card:nth-child(3) .project-preview,
 .project-card:nth-child(4) .project-preview {
     height: clamp(360px, 26vw, 430px);
-}
-
-.project-card:nth-child(3) .project-preview {
-    height: 330px;
 }
 
 .project-preview img {
@@ -1389,6 +1386,7 @@ footer {
 
     .project-card:nth-child(1) .project-preview,
     .project-card:nth-child(2) .project-preview,
+    .project-card:nth-child(3) .project-preview,
     .project-card:nth-child(4) .project-preview {
         height: 360px;
     }
