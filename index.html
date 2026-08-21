@@ -647,7 +647,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /* =====================================================
-       ACTIVE NAVIGATION — FIXED NAV GROUP + SMOOTH INDICATOR
+       ACTIVE NAVIGATION — STABLE NAV GROUP + SMOOTH ACCENT
+       Only the accent bar moves. The navigation group itself
+       stays fixed in place.
     ====================================================== */
     const nav = document.getElementById("site-nav");
     const navMenu = document.querySelector(".nav-menu");
@@ -664,7 +666,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let scrollTicking = false;
     let clickedLink = null;
     let clickScrolling = false;
-    let releaseTimer = null;
+    let scrollStopTimer = null;
 
     function moveIndicator(link, immediate) {
         if (!link || !navIndicator || !navMenu) return;
@@ -708,10 +710,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function getCurrentLink() {
-        if (!sections.length) return null;
+        if (!sections.length) return navLinks[0] || null;
 
         const navHeight = nav ? nav.offsetHeight : 0;
-        const activationLine = window.scrollY + navHeight + 12;
+        const activationLine = window.scrollY + navHeight + 16;
 
         const pageBottom = window.scrollY + window.innerHeight;
         const pageHeight = Math.max(
@@ -736,38 +738,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }) || navLinks[0];
     }
 
-    function destinationReached() {
-        if (!clickedLink || !nav) return true;
+    function finishClickNavigation() {
+        clearTimeout(scrollStopTimer);
 
-        const target = document.querySelector(
-            clickedLink.getAttribute("href")
-        );
+        if (!clickScrolling) return;
 
-        if (!target) return true;
-
-        const navHeight = nav.offsetHeight;
-        const targetTop = target.getBoundingClientRect().top;
-        const pageBottom = window.scrollY + window.innerHeight;
-        const pageHeight = Math.max(
-            document.body.scrollHeight,
-            document.documentElement.scrollHeight
-        );
-
-        if (
-            clickedLink.getAttribute("href") === "#contact" &&
-            pageBottom >= pageHeight - 2
-        ) {
-            return true;
-        }
-
-        return Math.abs(targetTop - navHeight) <= 6;
-    }
-
-    function releaseClickLock() {
-        clearTimeout(releaseTimer);
         clickScrolling = false;
         clickedLink = null;
-        requestNavigationUpdate();
+
+        const currentLink = getCurrentLink();
+
+        if (currentLink) {
+            setActiveLink(currentLink, false);
+        }
     }
 
     function updateNavigationFromScroll() {
@@ -775,12 +758,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!navLinks.length) return;
 
-        if (clickScrolling) {
-            if (destinationReached()) {
-                releaseClickLock();
-            } else {
-                return;
-            }
+        /* While a clicked section is being smoothly scrolled to,
+           keep the accent on that destination. This prevents the
+           bar from jumping backward through intermediate sections. */
+        if (clickScrolling && clickedLink) {
+            return;
         }
 
         const currentLink = getCurrentLink();
@@ -807,13 +789,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (!target || !nav) return;
 
-            clearTimeout(releaseTimer);
-
-            clickScrolling = true;
             clickedLink = link;
+            clickScrolling = true;
 
-            /* The nav group itself never changes position.
-               Only this separate indicator moves. */
+            /* The accent moves immediately and smoothly.
+               The navigation group remains fixed. */
             setActiveLink(link, false);
 
             const top =
@@ -826,25 +806,44 @@ document.addEventListener("DOMContentLoaded", function () {
                 behavior: "smooth"
             });
 
-            /* Fallback for browsers without scrollend. */
-            releaseTimer = setTimeout(function () {
-                if (clickScrolling) {
-                    releaseClickLock();
-                }
-            }, 2200);
+            /* Update the URL without allowing the browser's default
+               anchor jump to interfere with the smooth movement. */
+            if (history.replaceState) {
+                history.replaceState(
+                    null,
+                    "",
+                    link.getAttribute("href")
+                );
+            }
+
+            clearTimeout(scrollStopTimer);
+            scrollStopTimer = setTimeout(
+                finishClickNavigation,
+                2200
+            );
         });
     });
 
     window.addEventListener(
         "scroll",
-        requestNavigationUpdate,
+        function () {
+            requestNavigationUpdate();
+
+            if (clickScrolling) {
+                clearTimeout(scrollStopTimer);
+                scrollStopTimer = setTimeout(
+                    finishClickNavigation,
+                    140
+                );
+            }
+        },
         { passive: true }
     );
 
     if ("onscrollend" in window) {
         window.addEventListener("scrollend", function () {
             if (clickScrolling) {
-                releaseClickLock();
+                finishClickNavigation();
             } else {
                 requestNavigationUpdate();
             }
