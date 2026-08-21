@@ -143,7 +143,9 @@ nav {
 
 
 
-/* NAV LINKS */
+/* =========================================================
+   NAV LINKS
+========================================================= */
 
 .nav-links {
 
@@ -196,8 +198,6 @@ nav {
 
 }
 
-
-/* SHARED SMOOTH ACCENT BAR */
 
 .nav-indicator {
 
@@ -494,8 +494,6 @@ section:not(.contact) {
 }
 
 
-/* KEEP CURRENT LABEL STYLE — NO EXTRA BOLDING */
-
 .section-label,
 .about-label {
 
@@ -748,6 +746,8 @@ section:not(.contact) {
 
     display: block;
 
+    height: 100%;
+
     overflow: hidden;
 
     color: inherit;
@@ -785,7 +785,19 @@ section:not(.contact) {
 }
 
 
-/* PROJECT DASHBOARD PREVIEWS */
+
+/* =========================================================
+   PROJECT DASHBOARD PREVIEWS
+
+   1 = Hospital       enlarged
+   2 = E-Commerce     enlarged
+   3 = RFQ            image unchanged / container aligned
+   4 = HR             enlarged
+
+   IMPORTANT:
+   RFQ AND HR NOW HAVE MATCHING PREVIEW CONTAINER HEIGHTS.
+   This aligns the titles and all content below the images.
+========================================================= */
 
 .project-preview {
 
@@ -808,7 +820,8 @@ section:not(.contact) {
 }
 
 
-/* HOSPITAL / E-COMMERCE / HR */
+/* HOSPITAL + E-COMMERCE + HR
+   Enlarged dashboard preview area */
 
 .project-card:nth-child(1) .project-preview,
 .project-card:nth-child(2) .project-preview,
@@ -824,14 +837,26 @@ section:not(.contact) {
 }
 
 
-/* RFQ UNCHANGED */
+/* RFQ:
+   SAME PREVIEW CONTAINER HEIGHT AS HR
+   so the row aligns correctly.
+
+   The RFQ image itself remains unchanged
+   at its original visual scale. */
 
 .project-card:nth-child(3) .project-preview {
 
-    height: 330px;
+    height:
+        clamp(
+            360px,
+            26vw,
+            430px
+        );
 
 }
 
+
+/* DEFAULT DASHBOARD IMAGE */
 
 .project-preview img {
 
@@ -847,6 +872,28 @@ section:not(.contact) {
 
 }
 
+
+/* RFQ IMAGE REMAINS UNCHANGED IN SIZE */
+
+.project-card:nth-child(3) .project-preview img {
+
+    width: 100%;
+
+    max-height: 330px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    object-position: center;
+
+}
+
+
+
+/* =========================================================
+   PROJECT CONTENT
+========================================================= */
 
 .project-content {
 
@@ -1806,7 +1853,10 @@ section:not(.contact) {
 }
 
 
-/* INDIVIDUAL CERTIFICATE BACKGROUNDS */
+
+/* =========================================================
+   INDIVIDUAL CERTIFICATE BACKGROUNDS
+========================================================= */
 
 .certificate-dsa {
 
@@ -2330,11 +2380,25 @@ footer {
 
 @media (max-width: 1000px) {
 
+    /* RFQ + HR REMAIN ALIGNED */
+
     .project-card:nth-child(1) .project-preview,
     .project-card:nth-child(2) .project-preview,
+    .project-card:nth-child(3) .project-preview,
     .project-card:nth-child(4) .project-preview {
 
         height: 360px;
+
+    }
+
+
+    /* RFQ IMAGE STILL RETAINS ITS ORIGINAL SCALE */
+
+    .project-card:nth-child(3) .project-preview img {
+
+        max-height: 330px;
+
+        height: auto;
 
     }
 
@@ -2462,6 +2526,17 @@ footer {
 
         aspect-ratio:
             16 / 9;
+
+    }
+
+
+    .project-card:nth-child(3) .project-preview img {
+
+        width: 100%;
+
+        max-height: none;
+
+        height: 100%;
 
     }
 
