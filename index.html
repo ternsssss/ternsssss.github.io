@@ -20,15 +20,18 @@
             <img src="assets/logos/terns-data-prism.png" alt="Terns Data Prism">
         </a>
 
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Portfolio</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#tech-stack">Tech Stack</a></li>
-            <li><a href="#certifications">Credentials</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Portfolio</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#tech-stack">Tech Stack</a></li>
+                <li><a href="#certifications">Credentials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
             <span class="nav-indicator" aria-hidden="true"></span>
-        </ul>
+        </div>
     </div>
 </nav>
 
@@ -644,10 +647,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /* =====================================================
-       ACTIVE NAVIGATION — SINGLE SMOOTH INDICATOR
+       ACTIVE NAVIGATION — FIXED NAV GROUP + SMOOTH INDICATOR
     ====================================================== */
     const nav = document.getElementById("site-nav");
-    const navLinksContainer = document.querySelector(".nav-links");
+    const navMenu = document.querySelector(".nav-menu");
     const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
     const navIndicator = document.querySelector(".nav-indicator");
 
@@ -659,16 +662,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let activeLink = null;
     let scrollTicking = false;
-    let navigationTarget = null;
-    let programmaticScroll = false;
+    let clickedLink = null;
+    let clickScrolling = false;
+    let releaseTimer = null;
 
     function moveIndicator(link, immediate) {
-        if (!link || !navIndicator || !navLinksContainer) return;
+        if (!link || !navIndicator || !navMenu) return;
 
         const linkRect = link.getBoundingClientRect();
-        const containerRect = navLinksContainer.getBoundingClientRect();
-
-        const left = linkRect.left - containerRect.left;
+        const menuRect = navMenu.getBoundingClientRect();
+        const left = linkRect.left - menuRect.left;
 
         if (immediate) {
             navIndicator.classList.add("is-instant");
@@ -734,10 +737,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function destinationReached() {
-        if (!navigationTarget || !nav) return true;
+        if (!clickedLink || !nav) return true;
 
         const target = document.querySelector(
-            navigationTarget.getAttribute("href")
+            clickedLink.getAttribute("href")
         );
 
         if (!target) return true;
@@ -751,14 +754,20 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
         if (
-            navigationTarget.getAttribute("href") === "#contact" &&
+            clickedLink.getAttribute("href") === "#contact" &&
             pageBottom >= pageHeight - 2
         ) {
             return true;
         }
 
-        return Math.abs(targetTop - navHeight) <= 4 ||
-            (targetTop <= navHeight + 4 && targetTop >= navHeight - 4);
+        return Math.abs(targetTop - navHeight) <= 6;
+    }
+
+    function releaseClickLock() {
+        clearTimeout(releaseTimer);
+        clickScrolling = false;
+        clickedLink = null;
+        requestNavigationUpdate();
     }
 
     function updateNavigationFromScroll() {
@@ -766,10 +775,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!navLinks.length) return;
 
-        if (programmaticScroll && navigationTarget) {
+        if (clickScrolling) {
             if (destinationReached()) {
-                programmaticScroll = false;
-                navigationTarget = null;
+                releaseClickLock();
             } else {
                 return;
             }
@@ -799,9 +807,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (!target || !nav) return;
 
-            programmaticScroll = true;
-            navigationTarget = link;
+            clearTimeout(releaseTimer);
 
+            clickScrolling = true;
+            clickedLink = link;
+
+            /* The nav group itself never changes position.
+               Only this separate indicator moves. */
             setActiveLink(link, false);
 
             const top =
@@ -813,6 +825,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 top: Math.max(0, top),
                 behavior: "smooth"
             });
+
+            /* Fallback for browsers without scrollend. */
+            releaseTimer = setTimeout(function () {
+                if (clickScrolling) {
+                    releaseClickLock();
+                }
+            }, 2200);
         });
     });
 
@@ -824,12 +843,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if ("onscrollend" in window) {
         window.addEventListener("scrollend", function () {
-            if (programmaticScroll) {
-                programmaticScroll = false;
-                navigationTarget = null;
+            if (clickScrolling) {
+                releaseClickLock();
+            } else {
+                requestNavigationUpdate();
             }
-
-            requestNavigationUpdate();
         });
     }
 
@@ -851,8 +869,6 @@ document.addEventListener("DOMContentLoaded", function () {
         moveIndicator(activeLink, true);
         updateNavigationFromScroll();
     });
-
-});
 </script>
 
 </body>
