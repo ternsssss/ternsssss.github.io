@@ -1004,57 +1004,55 @@ document.addEventListener("DOMContentLoaded", function () {
            POINTER DRAGGING
         -------------------------------------------------- */
 
-        rail.addEventListener("pointerdown", function (event) {
-
-            if (
-                event.pointerType === "mouse" &&
-                event.button !== 0
-            ) {
-                return;
-            }
-
-            isDragging = true;
-            didDrag = false;
-
-            startX = event.clientX;
-            startScrollLeft = rail.scrollLeft;
-
-            rail._activePointerId = event.pointerId;
-
-            rail.classList.add("is-dragging");
-
-            rail.setPointerCapture(event.pointerId);
-
-            pauseAutoScroll();
-
-            if (event.pointerType === "mouse") {
-                event.preventDefault();
-            }
-
-        });
+             rail.addEventListener("pointerdown", function (event) {
+            
+                if (
+                    event.pointerType === "mouse" &&
+                    event.button !== 0
+                ) {
+                    return;
+                }
+            
+                isDragging = true;
+                didDrag = false;
+            
+                startX = event.clientX;
+                startScrollLeft = rail.scrollLeft;
+            
+                rail._activePointerId = event.pointerId;
+            
+                rail.setPointerCapture(event.pointerId);
+            
+                pauseAutoScroll();
+            
+            });
 
 
-        rail.addEventListener("pointermove", function (event) {
-
-            if (
-                !isDragging ||
-                event.pointerId !== rail._activePointerId
-            ) {
-                return;
-            }
-
-            const distance = event.clientX - startX;
-
-            if (Math.abs(distance) > DRAG_THRESHOLD) {
-                didDrag = true;
-            }
-
-            if (didDrag) {
-                rail.scrollLeft =
-                    startScrollLeft - distance;
-            }
-
-        });
+            rail.addEventListener("pointermove", function (event) {
+            
+                if (
+                    !isDragging ||
+                    event.pointerId !== rail._activePointerId
+                ) {
+                    return;
+                }
+            
+                const distance = event.clientX - startX;
+            
+                if (Math.abs(distance) > DRAG_THRESHOLD) {
+                    didDrag = true;
+            
+                    rail.classList.add("is-dragging");
+            
+                    event.preventDefault();
+                }
+            
+                if (didDrag) {
+                    rail.scrollLeft =
+                        startScrollLeft - distance;
+                }
+            
+            });
 
 
         rail.addEventListener("pointerup", stopDragging);
