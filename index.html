@@ -1032,7 +1032,13 @@ document.addEventListener("DOMContentLoaded", function () {
         
             rail._activePointerId = event.pointerId;
         
-            rail.setPointerCapture(event.pointerId);
+            /*
+               IMPORTANT:
+               Do NOT capture the pointer yet.
+        
+               This allows a normal click on the
+               certificate <a> element to work normally.
+            */
         
             pauseAutoScroll();
         
@@ -1051,7 +1057,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const distance = event.clientX - startX;
         
         
-            /* Activate drag only after exceeding threshold */
+            /*
+               Activate drag only after exceeding
+               the drag threshold.
+            */
+        
             if (
                 !didDrag &&
                 Math.abs(distance) > DRAG_THRESHOLD
@@ -1060,6 +1070,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 didDrag = true;
         
                 rail.classList.add("is-dragging");
+        
+        
+                /*
+                   Capture only after a real drag starts.
+                */
+        
+                if (!rail.hasPointerCapture(event.pointerId)) {
+        
+                    rail.setPointerCapture(event.pointerId);
+        
+                }
         
             }
         
@@ -1085,7 +1106,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         
         
-            /* Block only the click generated after a real drag */
+            /*
+               Only suppress the click if the user
+               actually dragged the carousel.
+            */
+        
             suppressNextClick = didDrag;
         
         
@@ -1094,15 +1119,22 @@ document.addEventListener("DOMContentLoaded", function () {
             rail.classList.remove("is-dragging");
         
         
-            try {
+            /*
+               Release pointer capture only if
+               a real drag activated it.
+            */
         
-                rail.releasePointerCapture(
-                    event.pointerId
-                );
+            if (rail.hasPointerCapture(event.pointerId)) {
         
-            } catch (error) {
+                try {
         
-                /* Pointer may already be released. */
+                    rail.releasePointerCapture(event.pointerId);
+        
+                } catch (error) {
+        
+                    /* Pointer may already be released. */
+        
+                }
         
             }
         
@@ -1125,6 +1157,22 @@ document.addEventListener("DOMContentLoaded", function () {
         
             rail.classList.remove("is-dragging");
         
+        
+            if (rail.hasPointerCapture(event.pointerId)) {
+        
+                try {
+        
+                    rail.releasePointerCapture(event.pointerId);
+        
+                } catch (error) {
+        
+                    /* Pointer may already be released. */
+        
+                }
+        
+            }
+        
+        
             pauseAutoScroll();
         
         });
@@ -1134,7 +1182,10 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function (event) {
         
-                /* Block only the click immediately after dragging */
+                /*
+                   Block only the click generated
+                   immediately after a real drag.
+                */
         
                 if (suppressNextClick) {
         
