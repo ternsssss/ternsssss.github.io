@@ -1001,82 +1001,113 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /* -------------------------------------------------
-           POINTER DRAGGING
+           POINTER DRAGGING + CERTIFICATE CLICK HANDLING
         -------------------------------------------------- */
-
-             rail.addEventListener("pointerdown", function (event) {
-            
-                if (
-                    event.pointerType === "mouse" &&
-                    event.button !== 0
-                ) {
-                    return;
-                }
-            
-                isDragging = true;
-                didDrag = false;
-            
-                startX = event.clientX;
-                startScrollLeft = rail.scrollLeft;
-            
-                rail._activePointerId = event.pointerId;
-            
-                rail.setPointerCapture(event.pointerId);
-            
-                pauseAutoScroll();
-            
-            });
-
-
-            rail.addEventListener("pointermove", function (event) {
-            
-                if (
-                    !isDragging ||
-                    event.pointerId !== rail._activePointerId
-                ) {
-                    return;
-                }
-            
-                const distance = event.clientX - startX;
-            
-                if (Math.abs(distance) > DRAG_THRESHOLD) {
-                    didDrag = true;
-            
-                    rail.classList.add("is-dragging");
-            
-                    event.preventDefault();
-                }
-            
-                if (didDrag) {
-                    rail.scrollLeft =
-                        startScrollLeft - distance;
-                }
-            
-            });
-
-
-        rail.addEventListener("pointerup", stopDragging);
-        rail.addEventListener("pointercancel", stopDragging);
-        rail.addEventListener("lostpointercapture", stopDragging);
-
-
-        /* -------------------------------------------------
-           PREVENT ACCIDENTAL CARD CLICK AFTER DRAG
-        -------------------------------------------------- */
-
+        
+        rail.addEventListener("pointerdown", function (event) {
+        
+            if (
+                event.pointerType === "mouse" &&
+                event.button !== 0
+            ) {
+                return;
+            }
+        
+            isDragging = true;
+            didDrag = false;
+        
+            startX = event.clientX;
+            startScrollLeft = rail.scrollLeft;
+        
+            rail._activePointerId = event.pointerId;
+        
+            rail.setPointerCapture(event.pointerId);
+        
+            pauseAutoScroll();
+        
+        });
+        
+        
+        rail.addEventListener("pointermove", function (event) {
+        
+            if (
+                !isDragging ||
+                event.pointerId !== rail._activePointerId
+            ) {
+                return;
+            }
+        
+            const distance = event.clientX - startX;
+        
+            if (Math.abs(distance) > DRAG_THRESHOLD) {
+        
+                didDrag = true;
+        
+                rail.classList.add("is-dragging");
+        
+                event.preventDefault();
+        
+                rail.scrollLeft =
+                    startScrollLeft - distance;
+            }
+        
+        });
+        
+        
+        rail.addEventListener("pointerup", function (event) {
+        
+            if (
+                event.pointerId !== rail._activePointerId
+            ) {
+                return;
+            }
+        
+            isDragging = false;
+        
+            rail.classList.remove("is-dragging");
+        
+            try {
+                rail.releasePointerCapture(
+                    event.pointerId
+                );
+            } catch (error) {
+                /* Pointer may already be released. */
+            }
+        
+            pauseAutoScroll();
+        
+        });
+        
+        
+        rail.addEventListener("pointercancel", function () {
+        
+            isDragging = false;
+        
+            rail.classList.remove("is-dragging");
+        
+            pauseAutoScroll();
+        
+        });
+        
+        
         rail.addEventListener(
             "click",
             function (event) {
-
+        
+                /*
+                   Only block the click when the user
+                   actually dragged the carousel.
+                */
+        
                 if (didDrag) {
+        
                     event.preventDefault();
                     event.stopPropagation();
-
-                    window.setTimeout(function () {
-                        didDrag = false;
-                    }, 0);
+        
+                    didDrag = false;
+        
                 }
-
+        
             },
             true
         );
