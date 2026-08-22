@@ -1001,8 +1001,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /* -------------------------------------------------
-           POINTER DRAGGING + CERTIFICATE CLICK HANDLING
+           CERTIFICATE CLICK + DRAG
         -------------------------------------------------- */
+        
+        let suppressNextClick = false;
+        
+        
+        /* Prevent native browser dragging of links/images */
+        rail.addEventListener("dragstart", function (event) {
+        
+            event.preventDefault();
+        
+        });
+        
         
         rail.addEventListener("pointerdown", function (event) {
         
@@ -1039,16 +1050,27 @@ document.addEventListener("DOMContentLoaded", function () {
         
             const distance = event.clientX - startX;
         
-            if (Math.abs(distance) > DRAG_THRESHOLD) {
+        
+            /* Activate drag only after exceeding threshold */
+            if (
+                !didDrag &&
+                Math.abs(distance) > DRAG_THRESHOLD
+            ) {
         
                 didDrag = true;
         
                 rail.classList.add("is-dragging");
         
+            }
+        
+        
+            if (didDrag) {
+        
                 event.preventDefault();
         
                 rail.scrollLeft =
                     startScrollLeft - distance;
+        
             }
         
         });
@@ -1062,26 +1084,44 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
         
+        
+            /* Block only the click generated after a real drag */
+            suppressNextClick = didDrag;
+        
+        
             isDragging = false;
         
             rail.classList.remove("is-dragging");
         
+        
             try {
+        
                 rail.releasePointerCapture(
                     event.pointerId
                 );
+        
             } catch (error) {
+        
                 /* Pointer may already be released. */
+        
             }
+        
         
             pauseAutoScroll();
         
         });
         
         
-        rail.addEventListener("pointercancel", function () {
+        rail.addEventListener("pointercancel", function (event) {
+        
+            if (
+                event.pointerId !== rail._activePointerId
+            ) {
+                return;
+            }
         
             isDragging = false;
+            didDrag = false;
         
             rail.classList.remove("is-dragging");
         
@@ -1094,17 +1134,14 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function (event) {
         
-                /*
-                   Only block the click when the user
-                   actually dragged the carousel.
-                */
+                /* Block only the click immediately after dragging */
         
-                if (didDrag) {
+                if (suppressNextClick) {
         
                     event.preventDefault();
                     event.stopPropagation();
         
-                    didDrag = false;
+                    suppressNextClick = false;
         
                 }
         
