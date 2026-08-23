@@ -2,31 +2,59 @@
    HOSPITAL ER ANALYSIS — CASE STUDY
    ================================================= */
 
+
+/* =================================================
+   ROOT VARIABLES
+   ================================================= */
+
 :root {
+
     --bg-primary: #F8FBFF;
+    --bg-secondary: #EEF5FB;
     --bg-white: #FFFFFF;
 
     --text-primary: #1F3A5F;
     --text-secondary: #5E6F82;
 
     --accent-blue: #2F6FAE;
+    --accent-blue-dark: #1F5A8F;
+
     --border-color: #E3EAF2;
+
+    --shadow-soft:
+        0 18px 45px
+        rgba(31, 58, 95, 0.08);
+
+    --shadow-hover:
+        0 24px 55px
+        rgba(31, 58, 95, 0.12);
+
 }
 
 
+/* =================================================
+   GLOBAL RESET
+   ================================================= */
+
 * {
+
     margin: 0;
     padding: 0;
+
     box-sizing: border-box;
+
 }
 
 
 html {
+
     scroll-behavior: smooth;
+
 }
 
 
 body {
+
     font-family:
         "Inter",
         Arial,
@@ -37,59 +65,761 @@ body {
 
     color:
         var(--text-primary);
+
+    line-height: 1.6;
+
 }
 
 
 main {
+
     width: 100%;
+
 }
 
 
-.case-study-container {
+img {
+
+    max-width: 100%;
+
+    display: block;
+
+}
+
+
+/* =================================================
+   CASE STUDY MAIN CONTAINER
+   ================================================= */
+
+.case-study {
+
     width: min(
-        1200px,
-        calc(100% - 48px)
+        1280px,
+        calc(100% - 80px)
     );
 
     margin: 0 auto;
+
+    padding:
+        48px 0 120px;
+
 }
 
 
-.case-study-placeholder {
-    min-height: 100vh;
+/* =================================================
+   BACK TO PORTFOLIO
+   ================================================= */
 
-    display: flex;
+.back-to-portfolio {
+
+    width: fit-content;
+
+    display: inline-flex;
+
     align-items: center;
-    justify-content: center;
 
-    text-align: center;
+    padding:
+        11px 18px;
+
+    margin-bottom:
+        80px;
+
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius:
+        999px;
+
+    background:
+        var(--bg-white);
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        0.9rem;
+
+    font-weight:
+        600;
+
+    text-decoration:
+        none;
+
+    box-shadow:
+        0 6px 20px
+        rgba(31, 58, 95, 0.05);
+
+    transition:
+        all 0.25s ease;
+
 }
 
 
-.case-study-placeholder h1 {
-    font-size: clamp(
-        2.5rem,
-        5vw,
-        5rem
-    );
+.back-to-portfolio:hover {
 
-    margin-bottom: 20px;
+    color:
+        var(--accent-blue);
+
+    border-color:
+        rgba(47, 111, 174, 0.35);
+
+    transform:
+        translateX(-4px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(31, 58, 95, 0.08);
+
 }
 
 
-.case-study-placeholder p {
-    max-width: 700px;
+/* =================================================
+   HERO SECTION
+   ================================================= */
 
-    margin: 0 auto;
+.case-hero {
 
-    font-size: clamp(
-        1rem,
-        1.5vw,
-        1.25rem
-    );
+    position: relative;
 
-    line-height: 1.7;
+    max-width:
+        1050px;
+
+    margin:
+        0 auto;
+
+    padding:
+        40px 0 100px;
+
+    text-align:
+        center;
+
+}
+
+
+/* =================================================
+   EYEBROW
+   ================================================= */
+
+.case-eyebrow {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        9px 16px;
+
+    margin-bottom:
+        24px;
+
+    border:
+        1px solid
+        rgba(47, 111, 174, 0.18);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 255, 255, 0.75);
+
+    color:
+        var(--accent-blue);
+
+    font-size:
+        0.7rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.16em;
+
+}
+
+
+/* =================================================
+   HERO TITLE
+   ================================================= */
+
+.case-hero h1 {
+
+    max-width:
+        900px;
+
+    margin:
+        0 auto;
+
+    font-size:
+        clamp(
+            3.2rem,
+            7vw,
+            6.8rem
+        );
+
+    font-weight:
+        800;
+
+    line-height:
+        1.05;
+
+    letter-spacing:
+        -0.055em;
+
+    color:
+        var(--text-primary);
+
+}
+
+
+/* =================================================
+   HERO SUBTITLE
+   ================================================= */
+
+.case-subtitle {
+
+    max-width:
+        760px;
+
+    margin:
+        28px auto 0;
+
+    font-size:
+        clamp(
+            1.15rem,
+            2vw,
+            1.5rem
+        );
+
+    font-weight:
+        600;
+
+    line-height:
+        1.5;
+
+    color:
+        var(--accent-blue);
+
+}
+
+
+/* =================================================
+   HERO SUMMARY
+   ================================================= */
+
+.case-summary {
+
+    max-width:
+        820px;
+
+    margin:
+        30px auto 0;
 
     color:
         var(--text-secondary);
+
+    font-size:
+        1.05rem;
+
+    line-height:
+        1.85;
+
+}
+
+
+/* =================================================
+   PROJECT META
+   ================================================= */
+
+.project-meta {
+
+    max-width:
+        1080px;
+
+    margin:
+        56px auto 0;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        18px;
+
+}
+
+
+.meta-item {
+
+    min-height:
+        145px;
+
+    padding:
+        28px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    background:
+        var(--bg-white);
+
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius:
+        20px;
+
+    box-shadow:
+        var(--shadow-soft);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.meta-item:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        var(--shadow-hover);
+
+}
+
+
+.meta-label {
+
+    margin-bottom:
+        12px;
+
+    color:
+        var(--accent-blue);
+
+    font-size:
+        0.68rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.14em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.meta-value {
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        1rem;
+
+    font-weight:
+        700;
+
+    line-height:
+        1.55;
+
+}
+
+
+/* =================================================
+   PROJECT SHOWCASE
+   ================================================= */
+
+.project-showcase {
+
+    padding:
+        100px 0 0;
+
+}
+
+
+.showcase-header {
+
+    max-width:
+        850px;
+
+    margin:
+        0 auto 48px;
+
+    text-align:
+        center;
+
+}
+
+
+.showcase-label {
+
+    margin-bottom:
+        16px;
+
+    color:
+        var(--accent-blue);
+
+    font-size:
+        0.7rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.16em;
+
+}
+
+
+.showcase-header h2 {
+
+    font-size:
+        clamp(
+            2.3rem,
+            5vw,
+            4.2rem
+        );
+
+    font-weight:
+        800;
+
+    line-height:
+        1.15;
+
+    letter-spacing:
+        -0.04em;
+
+    color:
+        var(--text-primary);
+
+}
+
+
+.showcase-header p:last-child {
+
+    max-width:
+        720px;
+
+    margin:
+        22px auto 0;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        1rem;
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =================================================
+   DASHBOARD PREVIEW
+   ================================================= */
+
+.dashboard-preview {
+
+    position: relative;
+
+    width:
+        100%;
+
+    aspect-ratio:
+        16 / 9;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        var(--border-color);
+
+    border-radius:
+        24px;
+
+    background:
+        var(--bg-white);
+
+    box-shadow:
+        0 30px 70px
+        rgba(31, 58, 95, 0.13);
+
+}
+
+
+/* =================================================
+   DASHBOARD PLACEHOLDER
+   ================================================= */
+
+.dashboard-placeholder {
+
+    width: 100%;
+    height: 100%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF 0%,
+            #F0F6FC 100%
+        );
+
+    color:
+        var(--accent-blue);
+
+    font-size:
+        1rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.08em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* =================================================
+   TABLET
+   ================================================= */
+
+@media screen and (max-width: 1024px) {
+
+    .case-study {
+
+        width:
+            min(
+                100% - 56px,
+                1280px
+            );
+
+    }
+
+
+    .case-hero {
+
+        padding-bottom:
+            80px;
+
+    }
+
+
+    .project-meta {
+
+        grid-template-columns:
+            1fr;
+
+        max-width:
+            650px;
+
+    }
+
+
+    .meta-item {
+
+        min-height:
+            auto;
+
+    }
+
+}
+
+
+/* =================================================
+   MOBILE
+   ================================================= */
+
+@media screen and (max-width: 768px) {
+
+    .case-study {
+
+        width:
+            calc(100% - 40px);
+
+        padding:
+            28px 0 80px;
+
+    }
+
+
+    .back-to-portfolio {
+
+        margin-bottom:
+            55px;
+
+    }
+
+
+    .case-hero {
+
+        padding:
+            20px 0 65px;
+
+    }
+
+
+    .case-hero h1 {
+
+        font-size:
+            clamp(
+                2.8rem,
+                14vw,
+                4.5rem
+            );
+
+    }
+
+
+    .case-subtitle {
+
+        font-size:
+            1.1rem;
+
+    }
+
+
+    .case-summary {
+
+        font-size:
+            0.98rem;
+
+        line-height:
+            1.75;
+
+    }
+
+
+    .project-meta {
+
+        margin-top:
+            42px;
+
+    }
+
+
+    .meta-item {
+
+        padding:
+            24px;
+
+    }
+
+
+    .project-showcase {
+
+        padding-top:
+            70px;
+
+    }
+
+
+    .showcase-header {
+
+        margin-bottom:
+            34px;
+
+    }
+
+
+    .dashboard-preview {
+
+        border-radius:
+            16px;
+
+    }
+
+}
+
+
+/* =================================================
+   SMALL MOBILE
+   ================================================= */
+
+@media screen and (max-width: 480px) {
+
+    .case-study {
+
+        width:
+            calc(100% - 32px);
+
+    }
+
+
+    .back-to-portfolio {
+
+        padding:
+            9px 15px;
+
+        font-size:
+            0.82rem;
+
+    }
+
+
+    .case-eyebrow {
+
+        font-size:
+            0.62rem;
+
+        letter-spacing:
+            0.12em;
+
+    }
+
+
+    .case-hero h1 {
+
+        font-size:
+            2.8rem;
+
+    }
+
+
+    .project-meta {
+
+        gap:
+            14px;
+
+    }
+
+
+    .meta-item {
+
+        border-radius:
+            16px;
+
+    }
+
 }
