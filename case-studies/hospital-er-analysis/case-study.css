@@ -110,15 +110,15 @@ img {
 
     width:
         min(
-            1200px,
-            calc(100% - 96px)
+            960px,
+            calc(100% - 80px)
         );
 
     margin:
         0 auto;
 
     padding:
-        32px 0 96px;
+        40px 0 120px;
 
 }
 
@@ -142,7 +142,7 @@ img {
         9px 15px;
 
     margin-bottom:
-        48px;
+        64px;
 
     border:
         1px solid
@@ -205,7 +205,10 @@ img {
 .business-report {
 
     width:
-        100%;
+        min(
+            880px,
+            100%
+        );
 
 }
 
@@ -216,14 +219,11 @@ img {
 
 .report-item {
 
-    width:
-        100%;
-
     padding-bottom:
-        36px;
+        46px;
 
     margin-bottom:
-        36px;
+        46px;
 
     border-bottom:
         1px solid
@@ -235,9 +235,6 @@ img {
 .report-item:last-child {
 
     margin-bottom:
-        0;
-
-    padding-bottom:
         0;
 
     border-bottom:
@@ -256,7 +253,7 @@ img {
         block;
 
     margin-bottom:
-        14px;
+        16px;
 
     color:
         var(--accent-blue);
@@ -282,24 +279,24 @@ img {
 
 .report-project h1 {
 
-    width:
-        100%;
+    max-width:
+        820px;
 
     color:
         var(--text-primary);
 
     font-size:
         clamp(
-            2.5rem,
+            2.2rem,
             4vw,
-            3.5rem
+            3.35rem
         );
 
     font-weight:
         500;
 
     line-height:
-        1.18;
+        1.22;
 
     letter-spacing:
         -0.025em;
@@ -315,19 +312,19 @@ img {
 .report-item p {
 
     max-width:
-        1120px;
+        850px;
 
     color:
         var(--text-secondary);
 
     font-size:
-        1.1rem;
+        1.12rem;
 
     font-weight:
         400;
 
     line-height:
-        1.85;
+        1.9;
 
 }
 
@@ -339,23 +336,22 @@ img {
 .report-project {
 
     padding-bottom:
-        40px;
+        52px;
 
     margin-bottom:
-        40px;
+        52px;
 
 }
 
 
 /* =================================================
    BUSINESS CASE
-   BUSINESS OBJECTIVE
 ================================================= */
 
 .report-item:not(.report-project) {
 
     padding-right:
-        0;
+        24px;
 
 }
 
@@ -382,10 +378,10 @@ img {
     .case-study {
 
         width:
-            calc(100% - 64px);
+            calc(100% - 56px);
 
         padding:
-            32px 0 88px;
+            36px 0 100px;
 
     }
 
@@ -393,7 +389,15 @@ img {
     .back-to-portfolio {
 
         margin-bottom:
-            44px;
+            56px;
+
+    }
+
+
+    .business-report {
+
+        width:
+            100%;
 
     }
 
@@ -402,21 +406,10 @@ img {
 
         font-size:
             clamp(
-                2.25rem,
+                2.1rem,
                 5vw,
-                3.1rem
+                3rem
             );
-
-    }
-
-
-    .report-item p {
-
-        max-width:
-            100%;
-
-        font-size:
-            1.06rem;
 
     }
 
@@ -431,17 +424,13 @@ img {
 @media screen and (max-width: 640px) {
 
 
-    /* ---------------------------------------------
-       MAIN CONTAINER
-    --------------------------------------------- */
-
     .case-study {
 
         width:
             calc(100% - 36px);
 
         padding:
-            24px 0 72px;
+            24px 0 80px;
 
     }
 
@@ -452,11 +441,8 @@ img {
 
     .back-to-portfolio {
 
-        padding:
-            8px 13px;
-
         margin-bottom:
-            40px;
+            44px;
 
         font-size:
             0.8rem;
@@ -471,10 +457,10 @@ img {
     .report-item {
 
         padding-bottom:
-            30px;
+            34px;
 
         margin-bottom:
-            30px;
+            34px;
 
     }
 
@@ -482,10 +468,10 @@ img {
     .report-project {
 
         padding-bottom:
-            34px;
+            38px;
 
         margin-bottom:
-            34px;
+            38px;
 
     }
 
@@ -497,13 +483,10 @@ img {
     .report-label {
 
         margin-bottom:
-            12px;
+            13px;
 
         font-size:
             0.7rem;
-
-        letter-spacing:
-            0.1em;
 
     }
 
@@ -515,14 +498,10 @@ img {
     .report-project h1 {
 
         font-size:
-            clamp(
-                2rem,
-                10vw,
-                2.6rem
-            );
+            2rem;
 
         line-height:
-            1.2;
+            1.28;
 
         letter-spacing:
             -0.02em;
@@ -541,6 +520,14 @@ img {
 
         line-height:
             1.8;
+
+    }
+
+
+    .report-item:not(.report-project) {
+
+        padding-right:
+            0;
 
     }
 
