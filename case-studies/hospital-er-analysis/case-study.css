@@ -1,6 +1,6 @@
 /* =================================================
    HOSPITAL ER ANALYSIS
-   CASE STUDY
+   BUSINESS REPORT CASE STUDY
 ================================================= */
 
 
@@ -103,14 +103,14 @@ img {
 
 
 /* =================================================
-   MAIN REPORT CONTAINER
+   MAIN CASE STUDY CONTAINER
 ================================================= */
 
 .case-study {
 
     width:
         min(
-            1180px,
+            1240px,
             calc(100% - 80px)
         );
 
@@ -137,9 +137,6 @@ img {
 
     justify-content:
         space-between;
-
-    gap:
-        40px;
 
     padding-bottom:
         34px;
@@ -192,9 +189,7 @@ img {
         none;
 
     transition:
-        color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
+        0.2s ease;
 
 }
 
@@ -214,7 +209,7 @@ img {
 
 
 /* =================================================
-   INDUSTRY
+   PROJECT INDUSTRY
 ================================================= */
 
 .project-industry {
@@ -229,7 +224,7 @@ img {
         flex-end;
 
     gap:
-        4px;
+        3px;
 
 }
 
@@ -240,7 +235,7 @@ img {
         var(--text-muted);
 
     font-size:
-        0.68rem;
+        0.66rem;
 
     font-weight:
         600;
@@ -260,7 +255,7 @@ img {
         var(--text-primary);
 
     font-size:
-        0.94rem;
+        0.92rem;
 
     font-weight:
         500;
@@ -281,39 +276,14 @@ img {
         center;
 
     gap:
-        30px;
+        28px;
 
-    position:
-        sticky;
-
-    top:
-        0;
-
-    z-index:
-        100;
-
-    margin-bottom:
-        72px;
-
-    padding:
-        15px 0 16px;
-
-    background:
-        rgba(
-            248,
-            251,
-            255,
-            0.96
-        );
+    min-height:
+        54px;
 
     border-bottom:
         1px solid
         var(--border-color);
-
-    backdrop-filter:
-        blur(
-            12px
-        );
 
 }
 
@@ -323,8 +293,14 @@ img {
     position:
         relative;
 
-    padding:
-        4px 0;
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    height:
+        54px;
 
     color:
         var(--text-secondary);
@@ -333,7 +309,7 @@ img {
         0.82rem;
 
     font-weight:
-        500;
+        400;
 
     text-decoration:
         none;
@@ -347,10 +323,6 @@ img {
 }
 
 
-/* -----------------------------------------------
-   NAVIGATION UNDERLINE
------------------------------------------------- */
-
 .case-nav-link::after {
 
     content:
@@ -363,10 +335,10 @@ img {
         0;
 
     bottom:
-        -17px;
+        -1px;
 
     width:
-        100%;
+        0;
 
     height:
         2px;
@@ -374,50 +346,32 @@ img {
     background:
         var(--accent-blue);
 
-    transform:
-        scaleX(
-            0
-        );
-
-    transform-origin:
-        left;
-
     transition:
-        transform 0.25s ease;
+        width 0.25s ease;
 
 }
 
 
-/* -----------------------------------------------
-   NAVIGATION HOVER
------------------------------------------------- */
-
 .case-nav-link:hover {
 
     color:
-        var(--accent-blue);
+        var(--text-primary);
 
 }
 
 
 .case-nav-link:hover::after {
 
-    transform:
-        scaleX(
-            1
-        );
+    width:
+        100%;
 
 }
 
 
-/* -----------------------------------------------
-   ACTIVE NAVIGATION
------------------------------------------------- */
-
 .case-nav-link.active {
 
     color:
-        var(--accent-blue-dark);
+        var(--text-primary);
 
     font-weight:
         600;
@@ -427,42 +381,45 @@ img {
 
 .case-nav-link.active::after {
 
-    transform:
-        scaleX(
-            1
-        );
+    width:
+        100%;
 
 }
 
 
 /* =================================================
-   REPORT GROUP
+   CASE STUDY SECTIONS
 ================================================= */
 
-.report-group {
+.case-study-section {
+
+    width:
+        100%;
+
+    padding-top:
+        54px;
 
     scroll-margin-top:
-        86px;
-
-    margin-bottom:
-        104px;
+        80px;
 
 }
 
 
-.report-group:last-child {
+.case-study-section
++
+.case-study-section {
 
-    margin-bottom:
-        0;
+    margin-top:
+        86px;
 
 }
 
 
 /* =================================================
-   REPORT GROUP HEADER
+   MAIN REPORT HEADER
 ================================================= */
 
-.report-group-heading {
+.main-report-header {
 
     display:
         flex;
@@ -476,11 +433,11 @@ img {
     width:
         100%;
 
+    padding-bottom:
+        24px;
+
     margin-bottom:
         42px;
-
-    padding-bottom:
-        22px;
 
     border-bottom:
         1px solid
@@ -489,7 +446,7 @@ img {
 }
 
 
-.group-number {
+.main-section-number {
 
     flex:
         0 0 auto;
@@ -498,34 +455,38 @@ img {
         var(--accent-blue);
 
     font-size:
-        0.98rem;
+        1.3rem;
 
     font-weight:
-        700;
+        600;
+
+    line-height:
+        1;
 
     letter-spacing:
-        0.04em;
+        -0.02em;
 
 }
 
 
-.report-group-heading h2 {
+.main-report-header h1,
+.main-report-header h2 {
 
     color:
         var(--text-primary);
 
     font-size:
         clamp(
-            2rem,
+            2.2rem,
             3vw,
-            2.65rem
+            2.8rem
         );
 
     font-weight:
-        500;
+        400;
 
     line-height:
-        1.2;
+        1.15;
 
     letter-spacing:
         -0.025em;
@@ -551,11 +512,14 @@ img {
 
 .report-item {
 
+    width:
+        100%;
+
     padding-bottom:
-        42px;
+        38px;
 
     margin-bottom:
-        42px;
+        38px;
 
     border-bottom:
         1px solid
@@ -585,19 +549,19 @@ img {
         block;
 
     margin-bottom:
-        15px;
+        14px;
 
     color:
         var(--accent-blue);
 
     font-size:
-        0.74rem;
+        0.72rem;
 
     font-weight:
         600;
 
     letter-spacing:
-        0.15em;
+        0.16em;
 
     text-transform:
         uppercase;
@@ -609,26 +573,23 @@ img {
    PROJECT TITLE
 ================================================= */
 
-.report-project h1 {
-
-    max-width:
-        900px;
+.report-project h2 {
 
     color:
         var(--text-primary);
 
     font-size:
         clamp(
-            2.5rem,
+            2.3rem,
             4vw,
-            3.5rem
+            3.25rem
         );
 
     font-weight:
-        500;
+        400;
 
     line-height:
-        1.18;
+        1.2;
 
     letter-spacing:
         -0.03em;
@@ -643,64 +604,13 @@ img {
 .report-item p {
 
     max-width:
-        1120px;
+        1160px;
 
     color:
         var(--text-secondary);
 
     font-size:
-        1.02rem;
-
-    font-weight:
-        400;
-
-    line-height:
-        1.85;
-
-}
-
-
-/* =================================================
-   BUSINESS OBJECTIVE
-================================================= */
-
-.report-objective {
-
-    padding-bottom:
-        0;
-
-}
-
-
-/* =================================================
-   BUSINESS QUESTIONS
-================================================= */
-
-.question-block {
-
-    padding-bottom:
-        42px;
-
-    margin-bottom:
-        42px;
-
-    border-bottom:
-        1px solid
-        var(--border-color);
-
-}
-
-
-.question-block p {
-
-    max-width:
-        1120px;
-
-    color:
-        var(--text-secondary);
-
-    font-size:
-        0.98rem;
+        1.03rem;
 
     font-weight:
         400;
@@ -712,25 +622,52 @@ img {
 
 
 /* =================================================
-   QUESTIONS INTRODUCTION
+   BUSINESS PROBLEM
 ================================================= */
 
-.questions-introduction {
+.business-problem-text {
 
-    margin-bottom:
-        30px;
+    max-width:
+        1120px;
 
 }
 
 
 /* =================================================
-   QUESTIONS LIST
+   KEY QUESTIONS
 ================================================= */
 
-.questions-list {
+.report-key-questions {
 
-    list-style:
-        none;
+    padding-bottom:
+        0;
+
+}
+
+
+/* ---------------------------------------------
+   INTRODUCTION
+--------------------------------------------- */
+
+.questions-intro {
+
+    max-width:
+        1100px;
+
+    margin-bottom:
+        24px;
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+/* ---------------------------------------------
+   QUESTION LIST
+--------------------------------------------- */
+
+.key-question-list {
 
     display:
         flex;
@@ -738,8 +675,34 @@ img {
     flex-direction:
         column;
 
-    width:
-        100%;
+    gap:
+        0;
+
+    list-style:
+        none;
+
+}
+
+
+.key-question-list li {
+
+    position:
+        relative;
+
+    padding:
+        16px 0 16px 24px;
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        1.08rem;
+
+    font-weight:
+        400;
+
+    line-height:
+        1.65;
 
     border-top:
         1px solid
@@ -748,26 +711,47 @@ img {
 }
 
 
-.questions-list li {
+/* ---------------------------------------------
+   BULLET
+--------------------------------------------- */
 
-    display:
-        grid;
+.key-question-list li::before {
 
-    grid-template-columns:
-        64px
-        minmax(
-            0,
-            1fr
-        );
+    content:
+        "";
 
-    gap:
-        24px;
+    position:
+        absolute;
 
-    align-items:
-        start;
+    left:
+        2px;
 
-    padding:
-        26px 0;
+    top:
+        50%;
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--accent-blue);
+
+    transform:
+        translateY(-50%);
+
+}
+
+
+/* ---------------------------------------------
+   LAST QUESTION
+--------------------------------------------- */
+
+.key-question-list li:last-child {
 
     border-bottom:
         1px solid
@@ -776,71 +760,36 @@ img {
 }
 
 
-.question-number {
-
-    color:
-        var(--accent-blue);
-
-    font-size:
-        0.75rem;
-
-    font-weight:
-        600;
-
-    letter-spacing:
-        0.08em;
-
-}
-
-
-.questions-list h3 {
-
-    color:
-        var(--text-primary);
-
-    font-size:
-        1.28rem;
-
-    font-weight:
-        500;
-
-    line-height:
-        1.45;
-
-}
-
-
-/* =================================================
-   FUTURE SECTIONS
-================================================= */
-
-.future-section {
-
-    min-height:
-        180px;
-
-}
-
-
 /* =================================================
    TABLET
 ================================================= */
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
 
+
+    /* ---------------------------------------------
+       MAIN CONTAINER
+    --------------------------------------------- */
 
     .case-study {
 
         width:
-            calc(100% - 64px);
+            calc(100% - 56px);
+
+        padding:
+            36px 0 100px;
 
     }
 
 
+    /* ---------------------------------------------
+       NAVIGATION
+    --------------------------------------------- */
+
     .case-study-navigation {
 
         gap:
-            24px;
+            22px;
 
         overflow-x:
             auto;
@@ -859,6 +808,72 @@ img {
     }
 
 
+    /* ---------------------------------------------
+       SECTIONS
+    --------------------------------------------- */
+
+    .case-study-section {
+
+        padding-top:
+            48px;
+
+    }
+
+
+    .case-study-section
+    +
+    .case-study-section {
+
+        margin-top:
+            72px;
+
+    }
+
+
+    /* ---------------------------------------------
+       REPORT HEADER
+    --------------------------------------------- */
+
+    .main-report-header {
+
+        margin-bottom:
+            36px;
+
+    }
+
+
+    .main-section-number {
+
+        font-size:
+            1.2rem;
+
+    }
+
+
+    /* ---------------------------------------------
+       REPORT TEXT
+    --------------------------------------------- */
+
+    .report-item p {
+
+        font-size:
+            1rem;
+
+    }
+
+
+    /* ---------------------------------------------
+       QUESTIONS
+    --------------------------------------------- */
+
+    .key-question-list li {
+
+        font-size:
+            1.03rem;
+
+    }
+
+
 }
 
 
@@ -868,6 +883,10 @@ img {
 
 @media screen and (max-width: 640px) {
 
+
+    /* ---------------------------------------------
+       MAIN CONTAINER
+    --------------------------------------------- */
 
     .case-study {
 
@@ -892,10 +911,37 @@ img {
     }
 
 
-    .project-industry {
+    /* ---------------------------------------------
+       BACK BUTTON
+    --------------------------------------------- */
 
-        display:
-            none;
+    .back-to-portfolio {
+
+        padding:
+            8px 13px;
+
+        font-size:
+            0.78rem;
+
+    }
+
+
+    /* ---------------------------------------------
+       INDUSTRY
+    --------------------------------------------- */
+
+    .project-industry span {
+
+        font-size:
+            0.6rem;
+
+    }
+
+
+    .project-industry strong {
+
+        font-size:
+            0.82rem;
 
     }
 
@@ -907,66 +953,81 @@ img {
     .case-study-navigation {
 
         gap:
-            24px;
+            22px;
 
-        margin-bottom:
-            52px;
-
-        padding:
-            14px 0 15px;
+        min-height:
+            50px;
 
     }
 
 
     .case-nav-link {
 
+        height:
+            50px;
+
         font-size:
-            0.78rem;
+            0.76rem;
 
     }
 
 
     /* ---------------------------------------------
-       REPORT GROUP
+       SECTIONS
     --------------------------------------------- */
 
-    .report-group {
+    .case-study-section {
+
+        padding-top:
+            40px;
 
         scroll-margin-top:
-            76px;
-
-        margin-bottom:
-            76px;
+            70px;
 
     }
 
 
-    .report-group-heading {
+    .case-study-section
+    +
+    .case-study-section {
+
+        margin-top:
+            58px;
+
+    }
+
+
+    /* ---------------------------------------------
+       MAIN REPORT HEADER
+    --------------------------------------------- */
+
+    .main-report-header {
 
         gap:
-            12px;
-
-        margin-bottom:
-            32px;
+            11px;
 
         padding-bottom:
             18px;
 
-    }
-
-
-    .group-number {
-
-        font-size:
-            0.88rem;
+        margin-bottom:
+            30px;
 
     }
 
 
-    .report-group-heading h2 {
+    .main-section-number {
 
         font-size:
-            1.85rem;
+            1.05rem;
+
+    }
+
+
+    .main-report-header h1,
+    .main-report-header h2 {
+
+        font-size:
+            2rem;
 
     }
 
@@ -978,13 +1039,17 @@ img {
     .report-item {
 
         padding-bottom:
-            32px;
+            30px;
 
         margin-bottom:
-            32px;
+            30px;
 
     }
 
+
+    /* ---------------------------------------------
+       REPORT LABEL
+    --------------------------------------------- */
 
     .report-label {
 
@@ -992,7 +1057,7 @@ img {
             12px;
 
         font-size:
-            0.68rem;
+            0.66rem;
 
     }
 
@@ -1001,13 +1066,10 @@ img {
        PROJECT TITLE
     --------------------------------------------- */
 
-    .report-project h1 {
+    .report-project h2 {
 
         font-size:
-            2.2rem;
-
-        line-height:
-            1.22;
+            2.15rem;
 
     }
 
@@ -1019,10 +1081,10 @@ img {
     .report-item p {
 
         font-size:
-            0.98rem;
+            0.96rem;
 
         line-height:
-            1.8;
+            1.75;
 
     }
 
@@ -1031,39 +1093,35 @@ img {
        QUESTIONS
     --------------------------------------------- */
 
-    .question-block {
-
-        padding-bottom:
-            32px;
+    .questions-intro {
 
         margin-bottom:
-            32px;
+            18px;
 
     }
 
 
-    .questions-list li {
-
-        grid-template-columns:
-            44px
-            minmax(
-                0,
-                1fr
-            );
-
-        gap:
-            16px;
+    .key-question-list li {
 
         padding:
-            22px 0;
+            14px 0 14px 20px;
+
+        font-size:
+            0.98rem;
+
+        line-height:
+            1.6;
 
     }
 
 
-    .questions-list h3 {
+    .key-question-list li::before {
 
-        font-size:
-            1.08rem;
+        width:
+            5px;
+
+        height:
+            5px;
 
     }
 
