@@ -143,17 +143,17 @@ img {
         fit-content;
 
     padding:
-        10px 16px;
+        9px 15px;
 
     margin-bottom:
-        56px;
+        42px;
 
     border:
         1px solid
         var(--border-color);
 
     border-radius:
-        8px;
+        7px;
 
     background:
         var(--bg-white);
@@ -162,7 +162,7 @@ img {
         var(--text-primary);
 
     font-size:
-        0.88rem;
+        0.84rem;
 
     font-weight:
         600;
@@ -191,229 +191,13 @@ img {
 
 
 /* =================================================
-   PROJECT HEADER
-================================================= */
-
-.project-header {
-
-    padding-bottom:
-        64px;
-
-    border-bottom:
-        1px solid
-        var(--border-color);
-
-}
-
-
-.project-header-top {
-
-    display:
-        flex;
-
-    align-items:
-        flex-start;
-
-    justify-content:
-        space-between;
-
-    gap:
-        48px;
-
-}
-
-
-.project-intro {
-
-    max-width:
-        780px;
-
-}
-
-
-/* =================================================
-   CASE STUDY LABEL
-================================================= */
-
-.case-eyebrow {
-
-    margin-bottom:
-        14px;
-
-    color:
-        var(--accent-blue);
-
-    font-size:
-        0.72rem;
-
-    font-weight:
-        800;
-
-    letter-spacing:
-        0.14em;
-
-    text-transform:
-        uppercase;
-
-}
-
-
-/* =================================================
-   PROJECT TITLE
-================================================= */
-
-.project-header h1 {
-
-    font-size:
-        clamp(
-            2.5rem,
-            4vw,
-            3.9rem
-        );
-
-    font-weight:
-        700;
-
-    line-height:
-        1.12;
-
-    letter-spacing:
-        -0.04em;
-
-    color:
-        var(--text-primary);
-
-}
-
-
-/* =================================================
-   PROJECT SUBTITLE
-================================================= */
-
-.case-subtitle {
-
-    max-width:
-        700px;
-
-    margin-top:
-        16px;
-
-    color:
-        var(--accent-blue-dark);
-
-    font-size:
-        clamp(
-            1rem,
-            1.7vw,
-            1.25rem
-        );
-
-    font-weight:
-        600;
-
-    line-height:
-        1.55;
-
-}
-
-
-/* =================================================
-   INDUSTRY BLOCK
-================================================= */
-
-.project-industry {
-
-    min-width:
-        180px;
-
-    padding:
-        18px 20px;
-
-    border:
-        1px solid
-        var(--border-color);
-
-    border-radius:
-        10px;
-
-    background:
-        var(--bg-white);
-
-}
-
-
-.project-industry span {
-
-    display:
-        block;
-
-    margin-bottom:
-        6px;
-
-    color:
-        var(--text-muted);
-
-    font-size:
-        0.68rem;
-
-    font-weight:
-        700;
-
-    letter-spacing:
-        0.12em;
-
-    text-transform:
-        uppercase;
-
-}
-
-
-.project-industry strong {
-
-    color:
-        var(--text-primary);
-
-    font-size:
-        1rem;
-
-    font-weight:
-        650;
-
-}
-
-
-/* =================================================
-   PROJECT SUMMARY
-================================================= */
-
-.case-summary {
-
-    max-width:
-        880px;
-
-    margin-top:
-        34px;
-
-    color:
-        var(--text-secondary);
-
-    font-size:
-        1rem;
-
-    line-height:
-        1.85;
-
-}
-
-
-/* =================================================
    DASHBOARD OVERVIEW
 ================================================= */
 
 .dashboard-overview {
 
-    padding:
-        88px 0;
+    padding-bottom:
+        88px;
 
     border-bottom:
         1px solid
@@ -438,7 +222,7 @@ img {
         24px;
 
     max-width:
-        900px;
+        920px;
 
     margin-bottom:
         40px;
@@ -449,16 +233,16 @@ img {
 .section-number {
 
     padding-top:
-        4px;
+        6px;
 
     color:
         var(--accent-blue);
 
     font-size:
-        0.85rem;
+        0.82rem;
 
     font-weight:
-        750;
+        700;
 
     letter-spacing:
         0.08em;
@@ -475,7 +259,7 @@ img {
         var(--accent-blue);
 
     font-size:
-        0.72rem;
+        0.7rem;
 
     font-weight:
         750;
@@ -489,26 +273,26 @@ img {
 }
 
 
-.report-section-heading h2 {
+.report-section-heading h1 {
 
     color:
         var(--text-primary);
 
     font-size:
         clamp(
-            2rem,
-            3.5vw,
-            3rem
+            2.15rem,
+            3.4vw,
+            3.1rem
         );
 
     font-weight:
-        700;
+        600;
 
     line-height:
-        1.18;
+        1.2;
 
     letter-spacing:
-        -0.035em;
+        -0.03em;
 
 }
 
@@ -525,10 +309,13 @@ img {
         var(--text-secondary);
 
     font-size:
-        1rem;
+        1.02rem;
+
+    font-weight:
+        400;
 
     line-height:
-        1.75;
+        1.8;
 
 }
 
@@ -587,8 +374,11 @@ img {
 
 .business-report {
 
-    max-width:
-        1040px;
+    width:
+        min(
+            900px,
+            100%
+        );
 
 }
 
@@ -599,11 +389,11 @@ img {
 
 .report-item {
 
-    padding:
-        0 0 36px;
+    padding-bottom:
+        42px;
 
     margin-bottom:
-        36px;
+        42px;
 
     border-bottom:
         1px solid
@@ -636,10 +426,10 @@ img {
         var(--accent-blue);
 
     font-size:
-        0.74rem;
+        0.72rem;
 
     font-weight:
-        800;
+        750;
 
     letter-spacing:
         0.13em;
@@ -651,29 +441,29 @@ img {
 
 
 /* =================================================
-   PROJECT TITLE REPORT ITEM
+   PROJECT TITLE
 ================================================= */
 
-.report-project h3 {
+.report-project h2 {
 
     max-width:
-        780px;
+        850px;
 
     color:
         var(--text-primary);
 
     font-size:
         clamp(
-            1.8rem,
+            2rem,
             3vw,
-            2.7rem
+            2.85rem
         );
 
     font-weight:
-        700;
+        600;
 
     line-height:
-        1.28;
+        1.25;
 
     letter-spacing:
         -0.025em;
@@ -688,22 +478,26 @@ img {
 .report-item p {
 
     max-width:
-        900px;
+        880px;
 
     color:
         var(--text-secondary);
 
     font-size:
-        1.02rem;
+        1.08rem;
+
+    font-weight:
+        400;
 
     line-height:
-        1.85;
+        1.9;
 
 }
 
 
 /* =================================================
    DECISION LENS
+   CLEAN REPORT-STYLE LAYOUT
 ================================================= */
 
 .decision-lens {
@@ -712,30 +506,27 @@ img {
         grid;
 
     grid-template-columns:
-        150px minmax(0, 1fr);
+        170px minmax(0, 1fr);
 
     gap:
-        32px;
+        48px;
 
     align-items:
         start;
 
     padding:
-        30px 32px;
+        34px 0;
 
     margin-top:
-        12px;
+        8px;
 
-    background:
-        var(--bg-white);
+    border-top:
+        2px solid
+        var(--accent-blue);
 
-    border:
+    border-bottom:
         1px solid
         var(--border-color);
-
-    border-left:
-        3px solid
-        var(--accent-blue);
 
 }
 
@@ -746,13 +537,13 @@ img {
         var(--accent-blue);
 
     font-size:
-        0.75rem;
+        0.72rem;
 
     font-weight:
-        800;
+        750;
 
     letter-spacing:
-        0.12em;
+        0.14em;
 
     text-transform:
         uppercase;
@@ -760,44 +551,82 @@ img {
 }
 
 
-.decision-items {
+.decision-content {
 
-    display:
-        flex;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        12px 18px;
+    max-width:
+        700px;
 
 }
 
 
-.decision-items span {
+.decision-intro {
+
+    margin-bottom:
+        16px;
 
     color:
         var(--text-secondary);
 
     font-size:
-        0.95rem;
+        1rem;
 
     font-weight:
-        600;
+        400;
+
+    line-height:
+        1.7;
 
 }
 
 
-.decision-items span:not(:last-child)::after {
+/* =================================================
+   DECISION QUESTIONS
+================================================= */
 
-    content:
-        "•";
+.decision-items {
 
-    margin-left:
-        18px;
+    display:
+        grid;
+
+    gap:
+        14px;
+
+    padding-left:
+        22px;
+
+    color:
+        var(--text-primary);
+
+}
+
+
+.decision-items li {
+
+    padding-left:
+        6px;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        1rem;
+
+    font-weight:
+        500;
+
+    line-height:
+        1.7;
+
+}
+
+
+.decision-items li::marker {
 
     color:
         var(--accent-blue);
+
+    font-weight:
+        700;
 
 }
 
@@ -817,21 +646,10 @@ img {
     }
 
 
-    .project-header-top {
+    .report-section-heading {
 
-        flex-direction:
-            column;
-
-        gap:
-            30px;
-
-    }
-
-
-    .project-industry {
-
-        width:
-            100%;
+        grid-template-columns:
+            60px minmax(0, 1fr);
 
     }
 
@@ -842,26 +660,7 @@ img {
             1fr;
 
         gap:
-            18px;
-
-    }
-
-
-    .decision-items span:not(:last-child)::after {
-
-        display:
-            none;
-
-    }
-
-
-    .decision-items {
-
-        flex-direction:
-            column;
-
-        gap:
-            10px;
+            20px;
 
     }
 
@@ -887,52 +686,33 @@ img {
     }
 
 
+    /* ---------------------------------------------
+       BACK TO PORTFOLIO
+    --------------------------------------------- */
+
     .back-to-portfolio {
 
         margin-bottom:
-            42px;
+            36px;
 
     }
 
 
-    .project-header {
-
-        padding-bottom:
-            52px;
-
-    }
-
-
-    .project-header h1 {
-
-        font-size:
-            clamp(
-                2.35rem,
-                11vw,
-                3.4rem
-            );
-
-    }
-
-
-    .case-summary {
-
-        font-size:
-            0.96rem;
-
-        line-height:
-            1.75;
-
-    }
-
+    /* ---------------------------------------------
+       DASHBOARD OVERVIEW
+    --------------------------------------------- */
 
     .dashboard-overview {
 
-        padding:
-            64px 0;
+        padding-bottom:
+            64px;
 
     }
 
+
+    /* ---------------------------------------------
+       SECTION HEADING
+    --------------------------------------------- */
 
     .report-section-heading {
 
@@ -956,7 +736,7 @@ img {
     }
 
 
-    .report-section-heading h2 {
+    .report-section-heading h1 {
 
         font-size:
             2rem;
@@ -967,10 +747,17 @@ img {
     .section-description {
 
         font-size:
-            0.95rem;
+            0.96rem;
+
+        line-height:
+            1.75;
 
     }
 
+
+    /* ---------------------------------------------
+       DASHBOARD IMAGE
+    --------------------------------------------- */
 
     .dashboard-preview {
 
@@ -980,6 +767,10 @@ img {
     }
 
 
+    /* ---------------------------------------------
+       BUSINESS SECTION
+    --------------------------------------------- */
+
     .business-section {
 
         padding-top:
@@ -988,21 +779,33 @@ img {
     }
 
 
+    /* ---------------------------------------------
+       REPORT ITEM
+    --------------------------------------------- */
+
     .report-item {
 
         padding-bottom:
-            30px;
+            32px;
 
         margin-bottom:
-            30px;
+            32px;
 
     }
 
 
-    .report-project h3 {
+    .report-label {
+
+        margin-bottom:
+            12px;
+
+    }
+
+
+    .report-project h2 {
 
         font-size:
-            1.7rem;
+            1.8rem;
 
         line-height:
             1.3;
@@ -1013,7 +816,7 @@ img {
     .report-item p {
 
         font-size:
-            0.96rem;
+            0.98rem;
 
         line-height:
             1.8;
@@ -1021,10 +824,44 @@ img {
     }
 
 
+    /* ---------------------------------------------
+       DECISION LENS
+    --------------------------------------------- */
+
     .decision-lens {
 
         padding:
-            24px;
+            28px 0;
+
+        gap:
+            16px;
+
+    }
+
+
+    .decision-intro {
+
+        margin-bottom:
+            14px;
+
+        font-size:
+            0.95rem;
+
+    }
+
+
+    .decision-items {
+
+        gap:
+            12px;
+
+    }
+
+
+    .decision-items li {
+
+        font-size:
+            0.95rem;
 
     }
 
