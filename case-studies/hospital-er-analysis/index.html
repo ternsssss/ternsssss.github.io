@@ -31,12 +31,12 @@
 <body>
 
 
-    <!-- =================================================
-         HOSPITAL ER ANALYSIS CASE STUDY
-    ================================================== -->
-
+<!-- =================================================
+     HOSPITAL ER ANALYSIS CASE STUDY
+================================================== -->
 
 <main class="case-study">
+
 
     <!-- =============================================
          BACK TO PORTFOLIO
@@ -232,7 +232,193 @@
 
 
     <!-- =============================================
-         NEXT SECTION PLACEHOLDER
+         DASHBOARD OVERVIEW
+    ============================================== -->
+
+    <section class="dashboard-overview">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-number">
+                    DASHBOARD EXPERIENCE
+                </span>
+
+                <h2>
+                    Interactive Report Overview
+                </h2>
+
+            </div>
+
+            <p>
+                The analysis was structured across five report pages,
+                progressing from executive-level performance monitoring
+                to patient demographics, operational efficiency,
+                patient experience, and strategic recommendations.
+            </p>
+
+        </div>
+
+
+        <!-- =========================================
+             MAIN DASHBOARD PREVIEW
+        ========================================== -->
+
+        <div class="dashboard-featured">
+
+            <div class="dashboard-featured-image">
+
+                <img
+                    id="featuredDashboard"
+                    src="../../assets/projects/previews/hospital-er-analysis/hospital-er-analysis-page-01.png"
+                    alt="Hospital ER Analysis Executive Dashboard"
+                >
+
+            </div>
+
+
+            <div class="dashboard-featured-content">
+
+                <span id="dashboardPageNumber">
+                    PAGE 01
+                </span>
+
+                <h3 id="dashboardTitle">
+                    ER Executive Dashboard
+                </h3>
+
+                <p id="dashboardDescription">
+                    A high-level overview of emergency department
+                    performance, combining ER visits, admissions,
+                    discharges, wait time, patient satisfaction,
+                    referrals, and volume trends.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             DASHBOARD NAVIGATION
+        ========================================== -->
+
+        <div class="dashboard-gallery">
+
+
+            <button
+                class="dashboard-thumbnail active"
+                type="button"
+                data-image="../../assets/projects/previews/hospital-er-analysis/hospital-er-analysis-page-01.png"
+                data-page="PAGE 01"
+                data-title="ER Executive Dashboard"
+                data-description="A high-level overview of emergency department performance, combining ER visits, admissions, discharges, wait time, patient satisfaction, referrals, and volume trends."
+            >
+
+                <img
+                    src="../../assets/projects/previews/hospital-er-analysis/hospital-er-analysis-page-01.png"
+                    alt="ER Executive Dashboard Preview"
+                >
+
+                <span>
+                    Executive
+                </span>
+
+            </button>
+
+
+            <button
+                class="dashboard-thumbnail"
+                type="button"
+                data-image="../../assets/projects/previews/hospital-er-analysis/hospital-er-analysis-page-02.png"
+                data-page="PAGE 02"
+                data-title="Patient Demographics"
+                data-description="A detailed analysis of patient demographics, including age groups, gender distribution, race composition, and admission patterns across patient segments."
+            >
+
+                <img
+                    src="../../assets/projects/previews/hospital-er-analysis/hospital-er-analysis-page-02.png"
+                    alt="Patient Demographics Dashboard Preview"
+                >
+
+                <span>
+                    Demographics
+                </span>
+
+            </button>
+
+
+            <button
+                class="dashboard-thumbnail"
+                type="button"
+                data-image="../../assets/projects/previews/hospital-er-analysis/hospital-er-analysis-page-03.png"
+                data-page="PAGE 03"
+                data-title="Operational Efficiency"
+                data-description="An operational view of patient arrivals, peak demand periods, shift performance, admissions, case management, referrals, and waiting time."
+            >
+
+                <img
+                    src="../../assets/projects/previews/hospital-er-analysis/hospital-er-analysis-page-03.png"
+                    alt="Operational Efficiency Dashboard Preview"
+                >
+
+                <span>
+                    Operations
+                </span>
+
+            </button>
+
+
+            <button
+                class="dashboard-thumbnail"
+                type="button"
+                data-image="../../assets/projects/previews/hospital-er-analysis/hospital-er-analysis-page-04.png"
+                data-page="PAGE 04"
+                data-title="Care Quality & Patient Experience"
+                data-description="An analysis of patient satisfaction, waiting time, satisfaction gaps, demographic differences, and referral department performance."
+            >
+
+                <img
+                    src="../../assets/projects/previews/hospital-er-analysis/hospital-er-analysis-page-04.png"
+                    alt="Care Quality and Patient Experience Dashboard Preview"
+                >
+
+                <span>
+                    Patient Experience
+                </span>
+
+            </button>
+
+
+            <button
+                class="dashboard-thumbnail"
+                type="button"
+                data-image="../../assets/projects/previews/hospital-er-analysis/hospital-er-analysis-page-05.png"
+                data-page="PAGE 05"
+                data-title="Insights & Recommendations"
+                data-description="A decision-focused summary translating analytical findings into key actions, strategic recommendations, and an executive conclusion."
+            >
+
+                <img
+                    src="../../assets/projects/previews/hospital-er-analysis/hospital-er-analysis-page-05.png"
+                    alt="Insights and Recommendations Dashboard Preview"
+                >
+
+                <span>
+                    Recommendations
+                </span>
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =============================================
+         NEXT SECTION
          ELEMENT 01 — BUSINESS CASE
     ============================================== -->
 
@@ -261,7 +447,76 @@
 
     </section>
 
+
 </main>
+
+
+<!-- =================================================
+     DASHBOARD GALLERY SCRIPT
+================================================== -->
+
+<script>
+
+    const dashboardThumbnails = document.querySelectorAll(
+        ".dashboard-thumbnail"
+    );
+
+    const featuredDashboard = document.getElementById(
+        "featuredDashboard"
+    );
+
+    const dashboardPageNumber = document.getElementById(
+        "dashboardPageNumber"
+    );
+
+    const dashboardTitle = document.getElementById(
+        "dashboardTitle"
+    );
+
+    const dashboardDescription = document.getElementById(
+        "dashboardDescription"
+    );
+
+
+    dashboardThumbnails.forEach((thumbnail) => {
+
+        thumbnail.addEventListener("click", () => {
+
+            dashboardThumbnails.forEach((item) => {
+
+                item.classList.remove("active");
+
+            });
+
+
+            thumbnail.classList.add("active");
+
+
+            featuredDashboard.src =
+                thumbnail.dataset.image;
+
+
+            featuredDashboard.alt =
+                thumbnail.dataset.title;
+
+
+            dashboardPageNumber.textContent =
+                thumbnail.dataset.page;
+
+
+            dashboardTitle.textContent =
+                thumbnail.dataset.title;
+
+
+            dashboardDescription.textContent =
+                thumbnail.dataset.description;
+
+
+        });
+
+    });
+
+</script>
 
 
 </body>
