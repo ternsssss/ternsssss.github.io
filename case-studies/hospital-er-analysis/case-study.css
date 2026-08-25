@@ -269,7 +269,7 @@ img {
 
 
 /* =================================================
-   BUSINESS REPORT SECTION
+   BUSINESS REPORT
 ================================================= */
 
 .business-section {
@@ -280,10 +280,6 @@ img {
 }
 
 
-/* =================================================
-   BUSINESS REPORT
-================================================= */
-
 .business-report {
 
     width:
@@ -293,7 +289,7 @@ img {
 
 
 /* =================================================
-   REPORT ITEM
+   STANDARD REPORT ITEM
 ================================================= */
 
 .report-item {
@@ -313,24 +309,6 @@ img {
 
 }
 
-
-.report-item:last-child {
-
-    margin-bottom:
-        0;
-
-    padding-bottom:
-        0;
-
-    border-bottom:
-        none;
-
-}
-
-
-/* =================================================
-   REPORT LABEL
-================================================= */
 
 .report-label {
 
@@ -362,6 +340,17 @@ img {
    PROJECT TITLE
 ================================================= */
 
+.report-project {
+
+    padding-bottom:
+        40px;
+
+    margin-bottom:
+        40px;
+
+}
+
+
 .report-project h1 {
 
     width:
@@ -390,8 +379,7 @@ img {
 
 
 /* =================================================
-   BUSINESS CASE
-   BUSINESS OBJECTIVE
+   REPORT TEXT
 ================================================= */
 
 .report-item p {
@@ -415,10 +403,10 @@ img {
 
 
 /* =================================================
-   PROJECT TITLE SPACING
+   BUSINESS PROBLEM
 ================================================= */
 
-.report-project {
+.report-problem {
 
     padding-bottom:
         40px;
@@ -429,27 +417,177 @@ img {
 }
 
 
-/* =================================================
-   BUSINESS CASE
-   BUSINESS OBJECTIVE
-================================================= */
+.problem-statement {
 
-.report-item:not(.report-project) {
+    max-width:
+        1050px;
 
-    padding-right:
-        0;
+    color:
+        var(--text-primary) !important;
+
+    font-size:
+        clamp(
+            1.25rem,
+            2vw,
+            1.55rem
+        ) !important;
+
+    font-weight:
+        400 !important;
+
+    line-height:
+        1.7 !important;
 
 }
 
 
 /* =================================================
-   BUSINESS OBJECTIVE
+   BUSINESS QUESTIONS
 ================================================= */
 
-.report-objective {
+.business-questions {
 
-    padding-bottom:
+    width:
+        100%;
+
+    padding-top:
         0;
+
+}
+
+
+.questions-header {
+
+    margin-bottom:
+        24px;
+
+}
+
+
+.questions-intro {
+
+    max-width:
+        780px;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        1rem;
+
+    line-height:
+        1.75;
+
+}
+
+
+/* =================================================
+   QUESTIONS LIST
+================================================= */
+
+.questions-list {
+
+    width:
+        100%;
+
+    border-top:
+        1px solid
+        var(--border-color);
+
+}
+
+
+/* =================================================
+   QUESTION ITEM
+================================================= */
+
+.question-item {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        72px
+        minmax(0, 1fr);
+
+    column-gap:
+        24px;
+
+    padding:
+        28px 0;
+
+    border-bottom:
+        1px solid
+        var(--border-color);
+
+}
+
+
+.question-number {
+
+    color:
+        var(--accent-blue);
+
+    font-size:
+        0.78rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        0.1em;
+
+    padding-top:
+        4px;
+
+}
+
+
+.question-content {
+
+    max-width:
+        1000px;
+
+}
+
+
+.question-content h2 {
+
+    margin-bottom:
+        7px;
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        clamp(
+            1.2rem,
+            2vw,
+            1.45rem
+        );
+
+    font-weight:
+        500;
+
+    line-height:
+        1.35;
+
+    letter-spacing:
+        -0.01em;
+
+}
+
+
+.question-content p {
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        0.98rem;
+
+    line-height:
+        1.7;
 
 }
 
@@ -499,6 +637,18 @@ img {
 
         font-size:
             1.06rem;
+
+    }
+
+
+    .question-item {
+
+        grid-template-columns:
+            60px
+            minmax(0, 1fr);
+
+        column-gap:
+            20px;
 
     }
 
@@ -612,6 +762,17 @@ img {
     }
 
 
+    .report-problem {
+
+        padding-bottom:
+            34px;
+
+        margin-bottom:
+            34px;
+
+    }
+
+
     /* ---------------------------------------------
        REPORT LABEL
     --------------------------------------------- */
@@ -663,6 +824,86 @@ img {
 
         line-height:
             1.8;
+
+    }
+
+
+    /* ---------------------------------------------
+       BUSINESS PROBLEM
+    --------------------------------------------- */
+
+    .problem-statement {
+
+        font-size:
+            1.18rem !important;
+
+        line-height:
+            1.7 !important;
+
+    }
+
+
+    /* ---------------------------------------------
+       QUESTIONS
+    --------------------------------------------- */
+
+    .questions-header {
+
+        margin-bottom:
+            20px;
+
+    }
+
+
+    .questions-intro {
+
+        font-size:
+            0.95rem;
+
+    }
+
+
+    .question-item {
+
+        grid-template-columns:
+            46px
+            minmax(0, 1fr);
+
+        column-gap:
+            14px;
+
+        padding:
+            24px 0;
+
+    }
+
+
+    .question-number {
+
+        font-size:
+            0.7rem;
+
+    }
+
+
+    .question-content h2 {
+
+        font-size:
+            1.1rem;
+
+        line-height:
+            1.4;
+
+    }
+
+
+    .question-content p {
+
+        font-size:
+            0.93rem;
+
+        line-height:
+            1.7;
 
     }
 
