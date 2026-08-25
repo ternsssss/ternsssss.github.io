@@ -84,35 +84,59 @@
         aria-label="Case study navigation"
     >
 
-        <a href="#overview">
+        <a
+            href="#overview"
+            class="case-nav-link active"
+        >
             Overview
         </a>
 
-        <a href="#business-questions">
+
+        <a
+            href="#business-questions"
+            class="case-nav-link"
+        >
             Business Questions
         </a>
 
-        <a href="#key-insights">
+
+        <a
+            href="#key-insights"
+            class="case-nav-link"
+        >
             Key Insights
         </a>
 
-        <a href="#recommendations">
+
+        <a
+            href="#recommendations"
+            class="case-nav-link"
+        >
             Recommendations
         </a>
 
-        <a href="#business-impact">
+
+        <a
+            href="#business-impact"
+            class="case-nav-link"
+        >
             Business Impact
         </a>
 
-        <a href="#technical-tools">
+
+        <a
+            href="#technical-tools"
+            class="case-nav-link"
+        >
             Technical Tools
         </a>
+
 
     </nav>
 
 
     <!-- =============================================
-         OVERVIEW
+         I. OVERVIEW
     ============================================== -->
 
     <section
@@ -121,12 +145,36 @@
     >
 
 
+        <!-- SECTION HEADER -->
+
+        <header class="section-group-header">
+
+            <span class="section-number">
+                I.
+            </span>
+
+
+            <div class="section-heading-content">
+
+                <p class="section-label">
+                    CASE STUDY
+                </p>
+
+                <h2>
+                    Overview
+                </h2>
+
+            </div>
+
+        </header>
+
+
+        <!-- BUSINESS REPORT -->
+
         <div class="business-report">
 
 
-            <!-- =====================================
-                 PROJECT TITLE
-            ====================================== -->
+            <!-- PROJECT TITLE -->
 
             <article class="report-item report-project">
 
@@ -141,9 +189,7 @@
             </article>
 
 
-            <!-- =====================================
-                 BUSINESS CASE
-            ====================================== -->
+            <!-- BUSINESS CASE -->
 
             <article class="report-item">
 
@@ -165,9 +211,7 @@
             </article>
 
 
-            <!-- =====================================
-                 BUSINESS OBJECTIVE
-            ====================================== -->
+            <!-- BUSINESS OBJECTIVE -->
 
             <article class="report-item report-overview-end">
 
@@ -194,7 +238,7 @@
 
 
     <!-- =============================================
-         BUSINESS QUESTIONS
+         II. BUSINESS QUESTIONS
     ============================================== -->
 
     <section
@@ -203,19 +247,20 @@
     >
 
 
-        <!-- SECTION TITLE -->
+        <!-- SECTION HEADER -->
 
-        <div class="section-group-header">
+        <header class="section-group-header">
 
-            <span class="section-group-number">
-                02
+            <span class="section-number">
+                II.
             </span>
 
-            <div>
 
-                <span class="section-group-label">
-                    CASE STUDY ELEMENT
-                </span>
+            <div class="section-heading-content">
+
+                <p class="section-label">
+                    CASE STUDY
+                </p>
 
                 <h2>
                     Business Questions
@@ -223,7 +268,7 @@
 
             </div>
 
-        </div>
+        </header>
 
 
         <!-- BUSINESS PROBLEM -->
@@ -248,7 +293,7 @@
         </article>
 
 
-        <!-- BUSINESS QUESTIONS -->
+        <!-- KEY QUESTIONS -->
 
         <section class="business-questions">
 
@@ -256,7 +301,7 @@
             <div class="questions-header">
 
                 <span class="report-label">
-                    Business Questions
+                    Key Questions
                 </span>
 
                 <p class="questions-intro">
@@ -379,7 +424,201 @@
     </section>
 
 
+    <!-- =============================================
+         PLACEHOLDERS FOR FUTURE SECTIONS
+         These allow the navigation links to work.
+         We will replace them as we build each element.
+    ============================================== -->
+
+    <section
+        class="future-section"
+        id="key-insights"
+    >
+
+        <header class="section-group-header">
+
+            <span class="section-number">
+                III.
+            </span>
+
+            <div class="section-heading-content">
+
+                <p class="section-label">
+                    CASE STUDY
+                </p>
+
+                <h2>
+                    Key Insights
+                </h2>
+
+            </div>
+
+        </header>
+
+    </section>
+
+
+    <section
+        class="future-section"
+        id="recommendations"
+    >
+
+        <header class="section-group-header">
+
+            <span class="section-number">
+                IV.
+            </span>
+
+            <div class="section-heading-content">
+
+                <p class="section-label">
+                    CASE STUDY
+                </p>
+
+                <h2>
+                    Recommendations
+                </h2>
+
+            </div>
+
+        </header>
+
+    </section>
+
+
+    <section
+        class="future-section"
+        id="business-impact"
+    >
+
+        <header class="section-group-header">
+
+            <span class="section-number">
+                V.
+            </span>
+
+            <div class="section-heading-content">
+
+                <p class="section-label">
+                    CASE STUDY
+                </p>
+
+                <h2>
+                    Business Impact
+                </h2>
+
+            </div>
+
+        </header>
+
+    </section>
+
+
+    <section
+        class="future-section"
+        id="technical-tools"
+    >
+
+        <header class="section-group-header">
+
+            <span class="section-number">
+                VI.
+            </span>
+
+            <div class="section-heading-content">
+
+                <p class="section-label">
+                    CASE STUDY
+                </p>
+
+                <h2>
+                    Technical Tools
+                </h2>
+
+            </div>
+
+        </header>
+
+    </section>
+
+
 </main>
+
+
+<!-- =============================================
+     ACTIVE NAVIGATION SCRIPT
+============================================= -->
+
+<script>
+
+    const sections = document.querySelectorAll(
+        "section[id]"
+    );
+
+    const navLinks = document.querySelectorAll(
+        ".case-nav-link"
+    );
+
+
+    function updateActiveNavigation() {
+
+        let currentSection = "";
+
+
+        sections.forEach(section => {
+
+            const sectionTop =
+                section.offsetTop;
+
+            const sectionHeight =
+                section.offsetHeight;
+
+
+            if (
+                window.scrollY >=
+                sectionTop - 180
+            ) {
+
+                currentSection =
+                    section.getAttribute("id");
+
+            }
+
+        });
+
+
+        navLinks.forEach(link => {
+
+            link.classList.remove(
+                "active"
+            );
+
+
+            if (
+                link.getAttribute("href") ===
+                "#" + currentSection
+            ) {
+
+                link.classList.add(
+                    "active"
+                );
+
+            }
+
+        });
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveNavigation
+    );
+
+
+    updateActiveNavigation();
+
+</script>
 
 
 </body>
