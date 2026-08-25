@@ -37,10 +37,6 @@
     --border-color:
         #E3EAF2;
 
-    --shadow-soft:
-        0 12px 35px
-        rgba(31, 58, 95, 0.06);
-
 }
 
 
@@ -114,7 +110,7 @@ img {
 
     width:
         min(
-            1180px,
+            960px,
             calc(100% - 80px)
         );
 
@@ -146,7 +142,7 @@ img {
         9px 15px;
 
     margin-bottom:
-        42px;
+        64px;
 
     border:
         1px solid
@@ -165,7 +161,7 @@ img {
         0.84rem;
 
     font-weight:
-        600;
+        500;
 
     text-decoration:
         none;
@@ -191,179 +187,13 @@ img {
 
 
 /* =================================================
-   DASHBOARD OVERVIEW
-================================================= */
-
-.dashboard-overview {
-
-    padding-bottom:
-        88px;
-
-    border-bottom:
-        1px solid
-        var(--border-color);
-
-}
-
-
-/* =================================================
-   REPORT SECTION HEADING
-================================================= */
-
-.report-section-heading {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        72px minmax(0, 1fr);
-
-    gap:
-        24px;
-
-    max-width:
-        920px;
-
-    margin-bottom:
-        40px;
-
-}
-
-
-.section-number {
-
-    padding-top:
-        6px;
-
-    color:
-        var(--accent-blue);
-
-    font-size:
-        0.82rem;
-
-    font-weight:
-        700;
-
-    letter-spacing:
-        0.08em;
-
-}
-
-
-.section-label {
-
-    margin-bottom:
-        10px;
-
-    color:
-        var(--accent-blue);
-
-    font-size:
-        0.7rem;
-
-    font-weight:
-        750;
-
-    letter-spacing:
-        0.15em;
-
-    text-transform:
-        uppercase;
-
-}
-
-
-.report-section-heading h1 {
-
-    color:
-        var(--text-primary);
-
-    font-size:
-        clamp(
-            2.15rem,
-            3.4vw,
-            3.1rem
-        );
-
-    font-weight:
-        600;
-
-    line-height:
-        1.2;
-
-    letter-spacing:
-        -0.03em;
-
-}
-
-
-.section-description {
-
-    max-width:
-        720px;
-
-    margin-top:
-        16px;
-
-    color:
-        var(--text-secondary);
-
-    font-size:
-        1.02rem;
-
-    font-weight:
-        400;
-
-    line-height:
-        1.8;
-
-}
-
-
-/* =================================================
-   DASHBOARD PREVIEW
-================================================= */
-
-.dashboard-preview {
-
-    overflow:
-        hidden;
-
-    border:
-        1px solid
-        var(--border-color);
-
-    border-radius:
-        14px;
-
-    background:
-        var(--bg-white);
-
-    box-shadow:
-        var(--shadow-soft);
-
-}
-
-
-.dashboard-preview img {
-
-    width:
-        100%;
-
-    height:
-        auto;
-
-}
-
-
-/* =================================================
    BUSINESS REPORT SECTION
 ================================================= */
 
 .business-section {
 
-    padding-top:
-        88px;
+    width:
+        100%;
 
 }
 
@@ -376,7 +206,7 @@ img {
 
     width:
         min(
-            900px,
+            880px,
             100%
         );
 
@@ -390,10 +220,10 @@ img {
 .report-item {
 
     padding-bottom:
-        42px;
+        46px;
 
     margin-bottom:
-        42px;
+        46px;
 
     border-bottom:
         1px solid
@@ -402,10 +232,13 @@ img {
 }
 
 
-.report-item:last-of-type {
+.report-item:last-child {
 
     margin-bottom:
         0;
+
+    border-bottom:
+        none;
 
 }
 
@@ -420,19 +253,19 @@ img {
         block;
 
     margin-bottom:
-        14px;
+        16px;
 
     color:
         var(--accent-blue);
 
     font-size:
-        0.72rem;
+        0.78rem;
 
     font-weight:
-        750;
+        600;
 
     letter-spacing:
-        0.13em;
+        0.12em;
 
     text-transform:
         uppercase;
@@ -444,26 +277,26 @@ img {
    PROJECT TITLE
 ================================================= */
 
-.report-project h2 {
+.report-project h1 {
 
     max-width:
-        850px;
+        820px;
 
     color:
         var(--text-primary);
 
     font-size:
         clamp(
-            2rem,
-            3vw,
-            2.85rem
+            2.2rem,
+            4vw,
+            3.35rem
         );
 
     font-weight:
-        600;
+        500;
 
     line-height:
-        1.25;
+        1.22;
 
     letter-spacing:
         -0.025em;
@@ -472,19 +305,20 @@ img {
 
 
 /* =================================================
-   BUSINESS CASE / OBJECTIVE
+   BUSINESS CASE
+   BUSINESS OBJECTIVE
 ================================================= */
 
 .report-item p {
 
     max-width:
-        880px;
+        850px;
 
     color:
         var(--text-secondary);
 
     font-size:
-        1.08rem;
+        1.12rem;
 
     font-weight:
         400;
@@ -496,137 +330,40 @@ img {
 
 
 /* =================================================
-   DECISION LENS
-   CLEAN REPORT-STYLE LAYOUT
+   PROJECT TITLE SPACING
 ================================================= */
 
-.decision-lens {
+.report-project {
 
-    display:
-        grid;
-
-    grid-template-columns:
-        170px minmax(0, 1fr);
-
-    gap:
-        48px;
-
-    align-items:
-        start;
-
-    padding:
-        34px 0;
-
-    margin-top:
-        8px;
-
-    border-top:
-        2px solid
-        var(--accent-blue);
-
-    border-bottom:
-        1px solid
-        var(--border-color);
-
-}
-
-
-.decision-label {
-
-    color:
-        var(--accent-blue);
-
-    font-size:
-        0.72rem;
-
-    font-weight:
-        750;
-
-    letter-spacing:
-        0.14em;
-
-    text-transform:
-        uppercase;
-
-}
-
-
-.decision-content {
-
-    max-width:
-        700px;
-
-}
-
-
-.decision-intro {
+    padding-bottom:
+        52px;
 
     margin-bottom:
-        16px;
-
-    color:
-        var(--text-secondary);
-
-    font-size:
-        1rem;
-
-    font-weight:
-        400;
-
-    line-height:
-        1.7;
+        52px;
 
 }
 
 
 /* =================================================
-   DECISION QUESTIONS
+   BUSINESS CASE
 ================================================= */
 
-.decision-items {
+.report-item:not(.report-project) {
 
-    display:
-        grid;
-
-    gap:
-        14px;
-
-    padding-left:
-        22px;
-
-    color:
-        var(--text-primary);
+    padding-right:
+        24px;
 
 }
 
 
-.decision-items li {
+/* =================================================
+   BUSINESS OBJECTIVE
+================================================= */
 
-    padding-left:
-        6px;
+.report-objective {
 
-    color:
-        var(--text-secondary);
-
-    font-size:
-        1rem;
-
-    font-weight:
-        500;
-
-    line-height:
-        1.7;
-
-}
-
-
-.decision-items li::marker {
-
-    color:
-        var(--accent-blue);
-
-    font-weight:
-        700;
+    padding-bottom:
+        0;
 
 }
 
@@ -643,24 +380,36 @@ img {
         width:
             calc(100% - 56px);
 
-    }
-
-
-    .report-section-heading {
-
-        grid-template-columns:
-            60px minmax(0, 1fr);
+        padding:
+            36px 0 100px;
 
     }
 
 
-    .decision-lens {
+    .back-to-portfolio {
 
-        grid-template-columns:
-            1fr;
+        margin-bottom:
+            56px;
 
-        gap:
-            20px;
+    }
+
+
+    .business-report {
+
+        width:
+            100%;
+
+    }
+
+
+    .report-project h1 {
+
+        font-size:
+            clamp(
+                2.1rem,
+                5vw,
+                3rem
+            );
 
     }
 
@@ -693,130 +442,81 @@ img {
     .back-to-portfolio {
 
         margin-bottom:
-            36px;
-
-    }
-
-
-    /* ---------------------------------------------
-       DASHBOARD OVERVIEW
-    --------------------------------------------- */
-
-    .dashboard-overview {
-
-        padding-bottom:
-            64px;
-
-    }
-
-
-    /* ---------------------------------------------
-       SECTION HEADING
-    --------------------------------------------- */
-
-    .report-section-heading {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            12px;
-
-        margin-bottom:
-            30px;
-
-    }
-
-
-    .section-number {
-
-        padding-top:
-            0;
-
-    }
-
-
-    .report-section-heading h1 {
+            44px;
 
         font-size:
-            2rem;
-
-    }
-
-
-    .section-description {
-
-        font-size:
-            0.96rem;
-
-        line-height:
-            1.75;
+            0.8rem;
 
     }
 
 
     /* ---------------------------------------------
-       DASHBOARD IMAGE
-    --------------------------------------------- */
-
-    .dashboard-preview {
-
-        border-radius:
-            10px;
-
-    }
-
-
-    /* ---------------------------------------------
-       BUSINESS SECTION
-    --------------------------------------------- */
-
-    .business-section {
-
-        padding-top:
-            64px;
-
-    }
-
-
-    /* ---------------------------------------------
-       REPORT ITEM
+       REPORT ITEMS
     --------------------------------------------- */
 
     .report-item {
 
         padding-bottom:
-            32px;
+            34px;
 
         margin-bottom:
-            32px;
+            34px;
 
     }
 
+
+    .report-project {
+
+        padding-bottom:
+            38px;
+
+        margin-bottom:
+            38px;
+
+    }
+
+
+    /* ---------------------------------------------
+       REPORT LABEL
+    --------------------------------------------- */
 
     .report-label {
 
         margin-bottom:
-            12px;
-
-    }
-
-
-    .report-project h2 {
+            13px;
 
         font-size:
-            1.8rem;
-
-        line-height:
-            1.3;
+            0.7rem;
 
     }
 
+
+    /* ---------------------------------------------
+       PROJECT TITLE
+    --------------------------------------------- */
+
+    .report-project h1 {
+
+        font-size:
+            2rem;
+
+        line-height:
+            1.28;
+
+        letter-spacing:
+            -0.02em;
+
+    }
+
+
+    /* ---------------------------------------------
+       REPORT TEXT
+    --------------------------------------------- */
 
     .report-item p {
 
         font-size:
-            0.98rem;
+            1rem;
 
         line-height:
             1.8;
@@ -824,44 +524,10 @@ img {
     }
 
 
-    /* ---------------------------------------------
-       DECISION LENS
-    --------------------------------------------- */
+    .report-item:not(.report-project) {
 
-    .decision-lens {
-
-        padding:
-            28px 0;
-
-        gap:
-            16px;
-
-    }
-
-
-    .decision-intro {
-
-        margin-bottom:
-            14px;
-
-        font-size:
-            0.95rem;
-
-    }
-
-
-    .decision-items {
-
-        gap:
-            12px;
-
-    }
-
-
-    .decision-items li {
-
-        font-size:
-            0.95rem;
+        padding-right:
+            0;
 
     }
 
