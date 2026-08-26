@@ -2207,97 +2207,42 @@ img {
 
 
 /* =================================================
-   MANAGEMENT LOOP
+   HOW THE DASHBOARD DRIVES ACTION
 ================================================= */
 
 .management-loop {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        28px;
 
     margin-top:
         26px;
 
     padding:
-        22px 26px;
+        24px 28px;
 
     border:
-        1px solid #dcece6;
+        1px solid var(--border-color);
 
     border-radius:
         10px;
 
     background:
-        #f3faf7;
+        var(--bg-white);
 
 }
 
 
 .management-loop-label {
 
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    flex:
-        0 0 auto;
-
-    min-width:
-        105px;
-
-    padding-right:
-        28px;
-
-    border-right:
-        1px solid #cfe2db;
-
-}
-
-
-.management-loop-label span {
+    margin-bottom:
+        8px;
 
     color:
-        var(--text-muted);
+        var(--text-primary);
 
     font-size:
-        0.64rem;
+        0.95rem;
 
     font-weight:
         600;
-
-    letter-spacing:
-        0.1em;
-
-    text-transform:
-        uppercase;
-
-}
-
-
-.management-loop-label strong {
-
-    margin-top:
-        3px;
-
-    color:
-        #4d766b;
-
-    font-size:
-        0.9rem;
-
-    font-weight:
-        600;
-
-    text-transform:
-        uppercase;
 
 }
 
@@ -2314,10 +2259,7 @@ img {
         space-between;
 
     gap:
-        28px;
-
-    width:
-        100%;
+        32px;
 
 }
 
@@ -2326,6 +2268,9 @@ img {
 
     margin:
         0;
+
+    max-width:
+        430px;
 
     color:
         var(--text-secondary);
@@ -2342,33 +2287,60 @@ img {
 .management-loop-steps {
 
     display:
-        flex;
+        grid;
+
+    grid-template-columns:
+        1fr auto
+        1fr auto
+        1fr auto
+        1fr;
 
     align-items:
         center;
 
     gap:
-        11px;
+        12px;
 
     flex:
-        0 0 auto;
+        1;
 
-    white-space:
-        nowrap;
+    max-width:
+        600px;
 
 }
 
 
 .management-loop-steps span {
 
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        42px;
+
+    padding:
+        0 12px;
+
     color:
         var(--text-primary);
 
     font-size:
-        0.78rem;
+        0.74rem;
 
     font-weight:
         600;
+
+    letter-spacing:
+        0.06em;
+
+    text-align:
+        center;
 
     text-transform:
         uppercase;
@@ -2377,6 +2349,15 @@ img {
 
 
 .management-loop-steps i {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
 
     color:
         var(--accent-blue);
