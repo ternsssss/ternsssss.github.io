@@ -1977,3 +1977,725 @@ img {
 
 
 }
+
+
+
+/* =================================================
+   5. BUSINESS IMPACT
+================================================= */
+
+#business-impact {
+
+    min-height:
+        auto;
+
+    padding-bottom:
+        0;
+
+}
+
+
+.business-impact-intro {
+
+    margin:
+        0 0 24px;
+
+    max-width:
+        760px;
+
+}
+
+
+.business-impact-intro p {
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        0.92rem;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =================================================
+   BUSINESS IMPACT MATRIX
+================================================= */
+
+.business-impact-matrix {
+
+    width:
+        100%;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius:
+        10px;
+
+    background:
+        var(--bg-white);
+
+}
+
+
+.business-impact-matrix-header {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1.15fr 1.15fr;
+
+    border-bottom:
+        1px solid var(--border-color);
+
+    background:
+        var(--bg-soft);
+
+}
+
+
+.impact-heading {
+
+    padding:
+        15px 20px;
+
+    color:
+        var(--text-muted);
+
+    font-size:
+        0.68rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        0.1em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.business-impact-row {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1.15fr 1.15fr;
+
+    border-bottom:
+        1px solid var(--border-color);
+
+}
+
+
+.business-impact-row:last-child {
+
+    border-bottom:
+        none;
+
+}
+
+
+.business-impact-cell {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    min-height:
+        100px;
+
+    padding:
+        20px;
+
+}
+
+
+.business-impact-cell p {
+
+    margin:
+        0;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        0.88rem;
+
+    line-height:
+        1.65;
+
+}
+
+
+/* =================================================
+   RECOMMENDATION COLUMN
+================================================= */
+
+.impact-recommendation {
+
+    background:
+        #edf6fc;
+
+}
+
+
+.impact-recommendation p {
+
+    color:
+        var(--accent-blue-dark);
+
+    font-weight:
+        600;
+
+}
+
+
+/* =================================================
+   BUSINESS BENEFIT COLUMN
+================================================= */
+
+.impact-benefit {
+
+    background:
+        var(--bg-white);
+
+}
+
+
+/* =================================================
+   BUSINESS IMPACT COLUMN
+================================================= */
+
+.impact-outcome {
+
+    background:
+        #f0f8f5;
+
+}
+
+
+.impact-outcome p {
+
+    color:
+        #4d766b;
+
+    font-weight:
+        500;
+
+}
+
+
+.impact-outcome span {
+
+    margin:
+        0 5px;
+
+}
+
+
+/* =================================================
+   MANAGEMENT LOOP
+================================================= */
+
+.management-loop {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        28px;
+
+    margin-top:
+        26px;
+
+    padding:
+        22px 26px;
+
+    border:
+        1px solid #dcece6;
+
+    border-radius:
+        10px;
+
+    background:
+        #f3faf7;
+
+}
+
+
+.management-loop-label {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    flex:
+        0 0 auto;
+
+    min-width:
+        105px;
+
+    padding-right:
+        28px;
+
+    border-right:
+        1px solid #cfe2db;
+
+}
+
+
+.management-loop-label span {
+
+    color:
+        var(--text-muted);
+
+    font-size:
+        0.64rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        0.1em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.management-loop-label strong {
+
+    margin-top:
+        3px;
+
+    color:
+        #4d766b;
+
+    font-size:
+        0.9rem;
+
+    font-weight:
+        600;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.management-loop-content {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        28px;
+
+    width:
+        100%;
+
+}
+
+
+.management-loop-content p {
+
+    margin:
+        0;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        0.88rem;
+
+    line-height:
+        1.6;
+
+}
+
+
+.management-loop-steps {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+    flex:
+        0 0 auto;
+
+    white-space:
+        nowrap;
+
+}
+
+
+.management-loop-steps span {
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        0.78rem;
+
+    font-weight:
+        600;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.management-loop-steps i {
+
+    color:
+        var(--accent-blue);
+
+    font-size:
+        0.9rem;
+
+    font-style:
+        normal;
+
+}
+
+
+/* =================================================
+   BUSINESS IMPACT RESPONSIVE
+================================================= */
+
+@media screen and (max-width: 980px) {
+
+    .business-impact-matrix-header,
+    .business-impact-row {
+
+        grid-template-columns:
+            1fr 1fr 1fr;
+
+    }
+
+
+    .impact-heading {
+
+        padding:
+            14px;
+
+        font-size:
+            0.62rem;
+
+    }
+
+
+    .business-impact-cell {
+
+        min-height:
+            94px;
+
+        padding:
+            18px 14px;
+
+    }
+
+
+    .business-impact-cell p {
+
+        font-size:
+            0.82rem;
+
+    }
+
+
+    .management-loop {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap:
+            16px;
+
+    }
+
+
+    .management-loop-label {
+
+        min-width:
+            auto;
+
+        padding:
+            0 0 12px;
+
+        border-right:
+            none;
+
+        border-bottom:
+            1px solid #cfe2db;
+
+    }
+
+
+    .management-loop-content {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap:
+            16px;
+
+    }
+
+}
+
+
+@media screen and (max-width: 640px) {
+
+    .business-impact-intro {
+
+        margin-bottom:
+            20px;
+
+    }
+
+
+    .business-impact-intro p {
+
+        font-size:
+            0.88rem;
+
+    }
+
+
+    .business-impact-matrix {
+
+        overflow:
+            visible;
+
+        border:
+            none;
+
+        background:
+            transparent;
+
+    }
+
+
+    .business-impact-matrix-header {
+
+        display:
+            none;
+
+    }
+
+
+    .business-impact-row {
+
+        display:
+            block;
+
+        margin-bottom:
+            16px;
+
+        overflow:
+            hidden;
+
+        border:
+            1px solid var(--border-color);
+
+        border-radius:
+            8px;
+
+        background:
+            var(--bg-white);
+
+    }
+
+
+    .business-impact-row:last-child {
+
+        margin-bottom:
+            0;
+
+    }
+
+
+    .business-impact-cell {
+
+        display:
+            block;
+
+        min-height:
+            auto;
+
+        padding:
+            16px;
+
+        border-bottom:
+            1px solid var(--border-color);
+
+    }
+
+
+    .business-impact-cell:last-child {
+
+        border-bottom:
+            none;
+
+    }
+
+
+    .business-impact-cell::before {
+
+        content:
+            attr(data-label);
+
+        display:
+            block;
+
+        margin-bottom:
+            7px;
+
+        color:
+            var(--text-muted);
+
+        font-size:
+            0.62rem;
+
+        font-weight:
+            600;
+
+        letter-spacing:
+            0.1em;
+
+        text-transform:
+            uppercase;
+
+    }
+
+
+    .business-impact-cell p {
+
+        font-size:
+            0.88rem;
+
+        line-height:
+            1.65;
+
+    }
+
+
+    .management-loop {
+
+        display:
+            block;
+
+        margin-top:
+            20px;
+
+        padding:
+            20px;
+
+    }
+
+
+    .management-loop-label {
+
+        display:
+            block;
+
+        margin-bottom:
+            14px;
+
+    }
+
+
+    .management-loop-label span {
+
+        display:
+            block;
+
+        margin-bottom:
+            4px;
+
+    }
+
+
+    .management-loop-content {
+
+        display:
+            block;
+
+    }
+
+
+    .management-loop-content p {
+
+        margin-bottom:
+            16px;
+
+        font-size:
+            0.88rem;
+
+    }
+
+
+    .management-loop-steps {
+
+        display:
+            flex;
+
+        flex-wrap:
+            wrap;
+
+        gap:
+            8px 10px;
+
+        white-space:
+            normal;
+
+    }
+
+
+    .management-loop-steps span {
+
+        font-size:
+            0.74rem;
+
+    }
+
+}
+
