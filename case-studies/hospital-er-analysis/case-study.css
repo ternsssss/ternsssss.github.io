@@ -10,35 +10,32 @@
 
 :root {
 
-    --bg-main:
+    --bg-primary:
         #F8FBFF;
 
     --bg-white:
         #FFFFFF;
 
     --bg-soft:
-        #F3F7FB;
+        #F2F7FC;
 
     --text-primary:
-        #1C3653;
+        #1F3A5F;
 
     --text-secondary:
-        #52657A;
+        #5E6F82;
 
     --text-muted:
-        #7B8B9C;
+        #7B8998;
 
     --accent-blue:
-        #2F5F8F;
+        #2F6FAE;
 
     --accent-blue-dark:
-        #244D75;
+        #1F5A8F;
 
     --border-color:
-        #DCE5EE;
-
-    --border-soft:
-        #E8EEF4;
+        #E3EAF2;
 
 }
 
@@ -72,12 +69,12 @@ html {
 body {
 
     font-family:
+        "Inter",
         Arial,
-        Helvetica,
         sans-serif;
 
     background:
-        var(--bg-main);
+        var(--bg-primary);
 
     color:
         var(--text-primary);
@@ -113,15 +110,15 @@ img {
 
     width:
         min(
-            calc(100% - 96px),
-            1220px
+            1220px,
+            calc(100% - 80px)
         );
 
     margin:
         0 auto;
 
     padding:
-        32px 0 100px;
+        40px 0 120px;
 
 }
 
@@ -136,23 +133,16 @@ img {
         flex;
 
     align-items:
-        center;
+        flex-start;
 
     justify-content:
         space-between;
 
     gap:
-        24px;
-
-    padding-bottom:
-        26px;
+        32px;
 
     margin-bottom:
-        0;
-
-    border-bottom:
-        1px solid
-        var(--border-color);
+        32px;
 
 }
 
@@ -169,23 +159,11 @@ img {
     align-items:
         center;
 
-    justify-content:
-        center;
+    width:
+        fit-content;
 
     padding:
         9px 15px;
-
-    color:
-        var(--text-primary);
-
-    font-size:
-        0.82rem;
-
-    font-weight:
-        500;
-
-    text-decoration:
-        none;
 
     border:
         1px solid
@@ -197,11 +175,20 @@ img {
     background:
         var(--bg-white);
 
+    color:
+        var(--text-primary);
+
+    font-size:
+        0.84rem;
+
+    font-weight:
+        500;
+
+    text-decoration:
+        none;
+
     transition:
-        color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        0.2s ease;
 
 }
 
@@ -212,25 +199,16 @@ img {
         var(--accent-blue);
 
     border-color:
-        #BFCFDD;
+        var(--accent-blue);
 
     transform:
-        translateY(-1px);
-
-    box-shadow:
-        0 5px 14px
-        rgba(
-            37,
-            77,
-            117,
-            0.08
-        );
+        translateX(-3px);
 
 }
 
 
 /* =================================================
-   INDUSTRY
+   PROJECT INDUSTRY
 ================================================= */
 
 .project-industry {
@@ -245,7 +223,13 @@ img {
         flex-end;
 
     gap:
+        2px;
+
+    padding-top:
         3px;
+
+    text-align:
+        right;
 
 }
 
@@ -256,10 +240,10 @@ img {
         var(--text-muted);
 
     font-size:
-        0.64rem;
+        0.68rem;
 
     font-weight:
-        700;
+        600;
 
     letter-spacing:
         0.18em;
@@ -276,7 +260,7 @@ img {
         var(--text-primary);
 
     font-size:
-        0.88rem;
+        0.9rem;
 
     font-weight:
         500;
@@ -297,24 +281,20 @@ img {
         0;
 
     z-index:
-        100;
+        1000;
+
+    width:
+        100%;
 
     margin-bottom:
-        56px;
+        52px;
 
     background:
-        rgba(
-            248,
-            251,
-            255,
-            0.94
-        );
+        var(--bg-primary);
 
-    backdrop-filter:
-        blur(12px);
-
-    -webkit-backdrop-filter:
-        blur(12px);
+    border-top:
+        1px solid
+        var(--border-color);
 
     border-bottom:
         1px solid
@@ -332,7 +312,7 @@ img {
         center;
 
     gap:
-        30px;
+        32px;
 
     width:
         100%;
@@ -370,13 +350,13 @@ img {
         center;
 
     padding:
-        16px 0 15px;
+        16px 0;
 
     color:
-        var(--text-secondary);
+        var(--text-muted);
 
     font-size:
-        0.84rem;
+        0.82rem;
 
     font-weight:
         500;
@@ -388,7 +368,8 @@ img {
         nowrap;
 
     transition:
-        color 0.2s ease;
+        color
+        0.2s ease;
 
 }
 
@@ -423,7 +404,8 @@ img {
         left;
 
     transition:
-        transform 0.2s ease;
+        transform
+        0.25s ease;
 
 }
 
@@ -431,7 +413,7 @@ img {
 .case-navigation a:hover {
 
     color:
-        var(--accent-blue);
+        var(--text-primary);
 
 }
 
@@ -439,10 +421,10 @@ img {
 .case-navigation a.active {
 
     color:
-        var(--text-primary);
+        var(--accent-blue-dark);
 
     font-weight:
-        700;
+        600;
 
 }
 
@@ -456,21 +438,24 @@ img {
 
 
 /* =================================================
-   CASE STUDY SECTION
+   MAIN SECTIONS
 ================================================= */
 
 .case-study-section {
 
     scroll-margin-top:
-        88px;
+        90px;
+
+    margin-bottom:
+        110px;
 
 }
 
 
-.case-study-section:not(:last-child) {
+.case-study-section:last-of-type {
 
     margin-bottom:
-        96px;
+        0;
 
 }
 
@@ -488,13 +473,13 @@ img {
         baseline;
 
     gap:
-        12px;
-
-    padding-bottom:
-        22px;
+        18px;
 
     margin-bottom:
-        44px;
+        42px;
+
+    padding-bottom:
+        18px;
 
     border-bottom:
         1px solid
@@ -505,14 +490,20 @@ img {
 
 .main-section-number {
 
+    flex:
+        0 0 auto;
+
     color:
         var(--accent-blue);
 
     font-size:
-        1rem;
+        1.5rem;
 
     font-weight:
-        700;
+        500;
+
+    line-height:
+        1;
 
 }
 
@@ -524,31 +515,31 @@ img {
 
     font-size:
         clamp(
-            2rem,
-            3.4vw,
-            2.9rem
+            1.9rem,
+            3vw,
+            2.7rem
         );
 
     font-weight:
         500;
 
     line-height:
-        1.2;
+        1.15;
 
     letter-spacing:
-        -0.035em;
+        -0.025em;
 
 }
 
 
 /* =================================================
-   REPORT ITEMS
+   REPORT ITEM
 ================================================= */
 
 .report-item {
 
     max-width:
-        930px;
+        1040px;
 
     padding-bottom:
         38px;
@@ -558,26 +549,21 @@ img {
 
     border-bottom:
         1px solid
-        var(--border-soft);
+        var(--border-color);
 
 }
 
 
 .report-item:last-child {
 
+    padding-bottom:
+        0;
+
     margin-bottom:
         0;
 
-}
-
-
-.report-project {
-
-    padding-bottom:
-        44px;
-
-    margin-bottom:
-        44px;
+    border-bottom:
+        none;
 
 }
 
@@ -598,13 +584,13 @@ img {
         var(--accent-blue);
 
     font-size:
-        0.7rem;
+        0.72rem;
 
     font-weight:
-        700;
+        600;
 
     letter-spacing:
-        0.18em;
+        0.13em;
 
     text-transform:
         uppercase;
@@ -623,19 +609,19 @@ img {
 
     font-size:
         clamp(
-            2.6rem,
-            5vw,
-            4.2rem
+            2.25rem,
+            4vw,
+            3.35rem
         );
 
     font-weight:
         500;
 
     line-height:
-        1.12;
+        1.18;
 
     letter-spacing:
-        -0.05em;
+        -0.03em;
 
 }
 
@@ -646,17 +632,20 @@ img {
 
 .report-item p {
 
+    max-width:
+        1000px;
+
     color:
         var(--text-secondary);
 
     font-size:
-        1rem;
+        1.02rem;
 
     font-weight:
         400;
 
     line-height:
-        1.8;
+        1.85;
 
 }
 
@@ -668,12 +657,18 @@ img {
 .questions-intro {
 
     margin-bottom:
-        20px;
+        22px;
 
 }
 
 
 .business-question-list {
+
+    display:
+        grid;
+
+    gap:
+        14px;
 
     list-style:
         none;
@@ -686,70 +681,8 @@ img {
     position:
         relative;
 
-    padding:
-        17px 0 17px 22px;
-
-    color:
-        var(--text-primary);
-
-    font-size:
-        1.05rem;
-
-    font-weight:
-        400;
-
-    line-height:
-        1.6;
-
-    border-bottom:
-        1px solid
-        var(--border-soft);
-
-}
-
-
-.business-question-list li::before {
-
-    content:
-        "•";
-
-    position:
-        absolute;
-
-    left:
-        0;
-
-    top:
-        17px;
-
-    color:
-        var(--accent-blue);
-
-    font-size:
-        1rem;
-
-    font-weight:
-        700;
-
-}
-
-
-/* =================================================
-   KEY INSIGHTS INTRO
-================================================= */
-
-.insights-intro {
-
-    max-width:
-        760px;
-
-    margin-bottom:
-        34px;
-
-}
-
-
-.insights-intro p {
+    padding-left:
+        22px;
 
     color:
         var(--text-secondary);
@@ -758,13 +691,42 @@ img {
         1rem;
 
     line-height:
-        1.8;
+        1.75;
+
+}
+
+
+.business-question-list li::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0.75em;
+
+    left:
+        0;
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--accent-blue);
 
 }
 
 
 /* =================================================
-   INSIGHT CARD
+   KEY INSIGHTS
 ================================================= */
 
 .insight-card {
@@ -784,15 +746,17 @@ img {
 
 .insight-card-last {
 
+    padding-bottom:
+        0;
+
     margin-bottom:
         0;
 
+    border-bottom:
+        none;
+
 }
 
-
-/* =================================================
-   INSIGHT HEADING
-================================================= */
 
 .insight-heading {
 
@@ -803,24 +767,27 @@ img {
         baseline;
 
     gap:
-        12px;
+        14px;
 
     margin-bottom:
-        22px;
+        20px;
 
 }
 
 
 .insight-number {
 
+    flex:
+        0 0 auto;
+
     color:
         var(--accent-blue);
 
     font-size:
-        0.98rem;
+        1rem;
 
     font-weight:
-        700;
+        600;
 
 }
 
@@ -831,27 +798,16 @@ img {
         var(--text-primary);
 
     font-size:
-        clamp(
-            1.45rem,
-            2.2vw,
-            2rem
-        );
+        1.3rem;
 
     font-weight:
         500;
 
     line-height:
-        1.3;
-
-    letter-spacing:
-        -0.025em;
+        1.4;
 
 }
 
-
-/* =================================================
-   INSIGHT LAYOUT
-================================================= */
 
 .insight-layout {
 
@@ -859,11 +815,17 @@ img {
         grid;
 
     grid-template-columns:
-        minmax(0, 0.9fr)
-        minmax(0, 1.3fr);
+        minmax(
+            280px,
+            0.82fr
+        )
+        minmax(
+            0,
+            1.18fr
+        );
 
     gap:
-        32px;
+        28px;
 
     align-items:
         start;
@@ -877,8 +839,8 @@ img {
 
 .insight-dashboard {
 
-    width:
-        100%;
+    margin:
+        0;
 
 }
 
@@ -900,41 +862,27 @@ img {
     overflow:
         hidden;
 
-    cursor:
-        pointer;
-
     border:
         1px solid
         var(--border-color);
 
     border-radius:
-        10px;
+        8px;
 
     background:
         var(--bg-white);
 
-    box-shadow:
-        0 8px 24px
-        rgba(
-            28,
-            54,
-            83,
-            0.05
-        );
+    cursor:
+        zoom-in;
 
 }
 
 
 .insight-dashboard-trigger img {
 
-    display:
-        block;
-
-    width:
-        100%;
-
     transition:
-        transform 0.35s ease;
+        transform
+        0.25s ease;
 
 }
 
@@ -947,65 +895,30 @@ img {
 }
 
 
-.insight-dashboard-trigger::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(
-                18,
-                45,
-                73,
-                0.25
-            ),
-            transparent 42%
-        );
-
-    pointer-events:
-        none;
-
-    opacity:
-        0;
-
-    transition:
-        opacity 0.25s ease;
-
-}
-
-
-.insight-dashboard-trigger:hover::after {
-
-    opacity:
-        1;
-
-}
-
-
 .image-expand-label {
 
     position:
         absolute;
 
-    left:
-        14px;
+    right:
+        10px;
 
     bottom:
-        12px;
-
-    z-index:
-        2;
+        10px;
 
     padding:
         6px 9px;
+
+    border-radius:
+        5px;
+
+    background:
+        rgba(
+            31,
+            58,
+            95,
+            0.88
+        );
 
     color:
         #FFFFFF;
@@ -1014,31 +927,16 @@ img {
         0.68rem;
 
     font-weight:
-        600;
-
-    letter-spacing:
-        0.03em;
-
-    border-radius:
-        5px;
-
-    background:
-        rgba(
-            28,
-            54,
-            83,
-            0.82
-        );
+        500;
 
     opacity:
         0;
 
     transform:
-        translateY(5px);
+        translateY(4px);
 
     transition:
-        opacity 0.25s ease,
-        transform 0.25s ease;
+        0.2s ease;
 
 }
 
@@ -1064,40 +962,31 @@ img {
     display:
         grid;
 
-    grid-template-columns:
-        repeat(
-            2,
-            minmax(0, 1fr)
-        );
-
     gap:
-        14px;
+        12px;
 
 }
 
 
 .insight-block {
 
-    min-height:
-        132px;
+    padding-bottom:
+        12px;
 
-    padding:
-        18px 20px;
-
-    border:
+    border-bottom:
         1px solid
         var(--border-color);
 
-    border-radius:
-        10px;
+}
 
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.58
-        );
+
+.insight-block:last-child {
+
+    padding-bottom:
+        0;
+
+    border-bottom:
+        none;
 
 }
 
@@ -1108,19 +997,19 @@ img {
         block;
 
     margin-bottom:
-        8px;
+        5px;
 
     color:
         var(--accent-blue);
 
     font-size:
-        0.66rem;
+        0.68rem;
 
     font-weight:
-        700;
+        600;
 
     letter-spacing:
-        0.16em;
+        0.1em;
 
     text-transform:
         uppercase;
@@ -1137,205 +1026,15 @@ img {
         0.93rem;
 
     line-height:
-        1.7;
+        1.68;
 
 }
 
 
-.insight-recommendation {
-
-    border-color:
-        #CBD9E7;
-
-    background:
-        #F4F8FC;
-
-}
-
-
-/* =================================================
-   RECOMMENDATIONS READING FLOW
-================================================= */
-
-.recommendations-reading-flow {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        8px;
-
-    margin-bottom:
-        22px;
-
-    color:
-        var(--text-muted);
-
-    font-size:
-        0.75rem;
-
-    font-weight:
-        600;
-
-}
-
-
-.recommendations-reading-flow span:nth-child(even) {
-
-    color:
-        var(--accent-blue);
-
-    font-size:
-        1rem;
-
-}
-
-
-/* =================================================
-   RECOMMENDATION MATRIX
-================================================= */
-
-.recommendation-matrix {
-
-    overflow:
-        hidden;
-
-    border:
-        1px solid
-        var(--border-color);
-
-    border-radius:
-        12px;
-
-    background:
-        var(--bg-white);
-
-    box-shadow:
-        0 8px 24px
-        rgba(
-            28,
-            54,
-            83,
-            0.035
-        );
-
-}
-
-
-.recommendation-matrix-head {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        1.05fr
-        1.45fr
-        1.45fr
-        1.15fr;
-
-    background:
-        #EDF4FA;
-
-    border-bottom:
-        1px solid
-        var(--border-color);
-
-}
-
-
-.recommendation-matrix-head div {
-
-    padding:
-        14px 16px;
-
-    color:
-        var(--accent-blue-dark);
-
-    font-size:
-        0.67rem;
-
-    font-weight:
-        700;
-
-    letter-spacing:
-        0.1em;
-
-    text-transform:
-        uppercase;
-
-}
-
-
-.recommendation-row {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        1.05fr
-        1.45fr
-        1.45fr
-        1.15fr;
-
-}
-
-
-.recommendation-row:not(:last-child) {
-
-    border-bottom:
-        1px solid
-        var(--border-soft);
-
-}
-
-
-.recommendation-cell {
-
-    padding:
-        18px 16px;
-
-    color:
-        var(--text-secondary);
-
-    font-size:
-        0.84rem;
-
-    line-height:
-        1.65;
-
-}
-
-
-.recommendation-cell:not(:last-child) {
-
-    border-right:
-        1px solid
-        var(--border-soft);
-
-}
-
-
-.recommendation-insight {
+.insight-recommendation p {
 
     color:
         var(--text-primary);
-
-    font-weight:
-        600;
-
-}
-
-
-.recommendation-action {
-
-    color:
-        var(--accent-blue-dark);
 
     font-weight:
         500;
@@ -1343,69 +1042,25 @@ img {
 }
 
 
-.recommendation-impact {
-
-    color:
-        var(--text-primary);
-
-    font-weight:
-        600;
-
-    background:
-        #F8FBFD;
-
-}
-
-
 /* =================================================
-   BUSINESS IMPACT READING FLOW
+   RECOMMENDATIONS
 ================================================= */
 
-.impact-reading-flow {
+#recommendations {
 
-    display:
-        flex;
+    min-height:
+        auto;
 
-    align-items:
-        center;
-
-    flex-wrap:
-        wrap;
-
-    gap:
+    padding-top:
         10px;
 
-    margin-bottom:
-        24px;
-
-    color:
-        var(--text-muted);
-
-    font-size:
-        0.78rem;
-
-    font-weight:
-        600;
-
 }
 
 
-.impact-reading-flow span:nth-child(even) {
+.recommendation-matrix {
 
-    color:
-        var(--accent-blue);
-
-    font-size:
-        1.05rem;
-
-}
-
-
-/* =================================================
-   BUSINESS IMPACT GRID
-================================================= */
-
-.business-impact-grid {
+    width:
+        100%;
 
     overflow:
         hidden;
@@ -1415,35 +1070,31 @@ img {
         var(--border-color);
 
     border-radius:
-        12px;
+        10px;
 
     background:
         var(--bg-white);
 
-    box-shadow:
-        0 10px 28px
-        rgba(
-            28,
-            54,
-            83,
-            0.04
-        );
-
 }
 
 
-.business-impact-head {
+/* =================================================
+   RECOMMENDATION MATRIX HEADER
+================================================= */
+
+.recommendation-matrix-header {
 
     display:
         grid;
 
     grid-template-columns:
-        1.1fr
-        1.45fr
-        1.45fr;
+        0.95fr
+        1.35fr
+        1.15fr
+        1fr;
 
     background:
-        #EEF4FA;
+        var(--bg-soft);
 
     border-bottom:
         1px solid
@@ -1452,19 +1103,19 @@ img {
 }
 
 
-.business-impact-head div {
+.matrix-heading {
 
     padding:
-        15px 20px;
+        15px 18px;
 
     color:
-        var(--accent-blue-dark);
+        var(--text-muted);
 
     font-size:
-        0.68rem;
+        0.67rem;
 
     font-weight:
-        700;
+        600;
 
     letter-spacing:
         0.11em;
@@ -1475,316 +1126,181 @@ img {
 }
 
 
-.business-impact-row {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        1.1fr
-        1.45fr
-        1.45fr;
-
-}
-
-
-.business-impact-row:not(:last-child) {
-
-    border-bottom:
-        1px solid
-        var(--border-soft);
-
-}
-
-
-.business-impact-cell {
-
-    padding:
-        20px;
-
-    color:
-        var(--text-secondary);
-
-    font-size:
-        0.92rem;
-
-    line-height:
-        1.65;
-
-}
-
-
-.business-impact-cell:not(:last-child) {
-
-    border-right:
-        1px solid
-        var(--border-soft);
-
-}
-
-
-.impact-action {
-
-    color:
-        var(--text-primary);
-
-    font-weight:
-        600;
-
-}
-
-
-.impact-result {
-
-    display:
-        flex;
-
-    flex-wrap:
-        wrap;
-
-    align-content:
-        center;
-
-    gap:
-        8px;
+.matrix-heading-action {
 
     background:
-        #F7FAFD;
-
-}
-
-
-.impact-result span {
-
-    display:
-        inline-flex;
-
-    width:
-        fit-content;
-
-    padding:
-        6px 9px;
+        #EAF3FB;
 
     color:
         var(--accent-blue-dark);
 
-    font-size:
-        0.76rem;
+}
 
-    font-weight:
-        600;
 
-    border:
-        1px solid
-        #D9E4EE;
-
-    border-radius:
-        999px;
+.matrix-heading-impact {
 
     background:
-        #FFFFFF;
+        #EEF7F4;
+
+    color:
+        #4C776B;
 
 }
 
 
 /* =================================================
-   MANAGEMENT LOOP
+   RECOMMENDATION ROW
 ================================================= */
 
-.management-loop {
-
-    margin-top:
-        24px;
-
-    padding:
-        24px 26px;
-
-    border:
-        1px solid
-        #D9E4EE;
-
-    border-radius:
-        12px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #F3F8FC,
-            #FFFFFF
-        );
-
-}
-
-
-.management-loop-label {
-
-    display:
-        block;
-
-    margin-bottom:
-        8px;
-
-    color:
-        var(--accent-blue);
-
-    font-size:
-        0.67rem;
-
-    font-weight:
-        700;
-
-    letter-spacing:
-        0.15em;
-
-    text-transform:
-        uppercase;
-
-}
-
-
-.management-loop p {
-
-    margin-bottom:
-        16px;
-
-    color:
-        var(--text-secondary);
-
-    font-size:
-        0.94rem;
-
-}
-
-
-.management-loop-steps {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        10px;
-
-}
-
-
-.management-loop-steps span {
-
-    padding:
-        7px 11px;
-
-    color:
-        var(--text-primary);
-
-    font-size:
-        0.78rem;
-
-    font-weight:
-        600;
-
-    border:
-        1px solid
-        var(--border-color);
-
-    border-radius:
-        6px;
-
-    background:
-        #FFFFFF;
-
-}
-
-
-.management-loop-steps b {
-
-    color:
-        var(--accent-blue);
-
-    font-size:
-        0.9rem;
-
-    font-weight:
-        600;
-
-}
-
-
-/* =================================================
-   TECHNICAL TOOLS
-================================================= */
-
-.tools-grid {
+.recommendation-row {
 
     display:
         grid;
 
     grid-template-columns:
-        repeat(
-            2,
-            minmax(0, 1fr)
-        );
+        0.95fr
+        1.35fr
+        1.15fr
+        1fr;
 
-    gap:
-        14px;
-
-}
-
-
-.tool-card {
-
-    padding:
-        22px;
-
-    border:
+    border-bottom:
         1px solid
         var(--border-color);
 
-    border-radius:
-        10px;
+    transition:
+        background
+        0.2s ease;
+
+}
+
+
+.recommendation-row:last-child {
+
+    border-bottom:
+        none;
+
+}
+
+
+.recommendation-row:hover {
 
     background:
-        rgba(
-            255,
-            255,
-            255,
-            0.72
-        );
+        #FBFDFF;
 
 }
 
 
-.tool-card h3 {
+/* =================================================
+   RECOMMENDATION CELL
+================================================= */
 
-    margin-bottom:
-        8px;
+.recommendation-cell {
 
-    color:
-        var(--text-primary);
-
-    font-size:
-        1rem;
-
-    font-weight:
-        600;
+    padding:
+        22px 18px;
 
 }
 
 
-.tool-card p {
+.recommendation-cell p {
 
     color:
         var(--text-secondary);
 
     font-size:
-        0.9rem;
+        0.88rem;
 
     line-height:
-        1.7;
+        1.68;
+
+}
+
+
+/* =================================================
+   INSIGHT COLUMN
+================================================= */
+
+.recommendation-insight p {
+
+    color:
+        var(--text-primary);
+
+    font-weight:
+        500;
+
+}
+
+
+/* =================================================
+   RECOMMENDATION COLUMN
+================================================= */
+
+.recommendation-action {
+
+    background:
+        #EAF3FB;
+
+}
+
+
+.recommendation-action p {
+
+    color:
+        var(--accent-blue-dark);
+
+    font-weight:
+        500;
+
+}
+
+
+/* =================================================
+   WHY IT MATTERS COLUMN
+================================================= */
+
+.recommendation-why {
+
+    background:
+        var(--bg-white);
+
+}
+
+
+/* =================================================
+   EXPECTED IMPACT COLUMN
+================================================= */
+
+.recommendation-impact {
+
+    background:
+        #EEF7F4;
+
+}
+
+
+.recommendation-impact p {
+
+    color:
+        #4C776B;
+
+    font-weight:
+        500;
+
+}
+
+
+/* =================================================
+   PLACEHOLDER SECTIONS
+================================================= */
+
+#business-impact,
+#technical-tools {
+
+    min-height:
+        330px;
+
+    padding-bottom:
+        80px;
 
 }
 
@@ -1814,12 +1330,12 @@ img {
         center;
 
     padding:
-        40px;
+        32px;
 
 }
 
 
-.image-modal.active {
+.image-modal.is-open {
 
     display:
         flex;
@@ -1837,10 +1353,10 @@ img {
 
     background:
         rgba(
-            11,
-            27,
-            43,
-            0.74
+            15,
+            30,
+            50,
+            0.78
         );
 
 }
@@ -1852,36 +1368,36 @@ img {
         relative;
 
     z-index:
-        2;
+        1;
 
     width:
         min(
             1200px,
-            94vw
+            96vw
         );
 
     max-height:
-        90vh;
+        92vh;
 
     padding:
-        16px;
+        18px;
 
     overflow:
         auto;
 
     border-radius:
-        12px;
+        10px;
 
     background:
         var(--bg-white);
 
     box-shadow:
-        0 24px 70px
+        0 24px 80px
         rgba(
             0,
             0,
             0,
-            0.28
+            0.35
         );
 
 }
@@ -1889,29 +1405,20 @@ img {
 
 .image-modal-title {
 
-    padding:
-        4px 44px 14px 2px;
+    margin-bottom:
+        12px;
+
+    padding-right:
+        40px;
 
     color:
         var(--text-primary);
 
     font-size:
-        0.88rem;
+        0.9rem;
 
     font-weight:
         600;
-
-}
-
-
-.image-modal-content img {
-
-    border:
-        1px solid
-        var(--border-color);
-
-    border-radius:
-        8px;
 
 }
 
@@ -1922,40 +1429,31 @@ img {
         absolute;
 
     top:
-        12px;
+        10px;
 
     right:
         12px;
 
-    z-index:
-        3;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
     width:
-        34px;
+        32px;
 
     height:
-        34px;
+        32px;
 
-    padding:
-        0;
+    border:
+        none;
+
+    border-radius:
+        6px;
+
+    background:
+        var(--bg-soft);
 
     color:
         var(--text-primary);
 
     font-size:
-        1.6rem;
-
-    font-weight:
-        300;
+        1.4rem;
 
     line-height:
         1;
@@ -1963,42 +1461,24 @@ img {
     cursor:
         pointer;
 
-    border:
-        1px solid
-        var(--border-color);
-
-    border-radius:
-        50%;
-
-    background:
-        var(--bg-white);
-
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease,
-        background 0.2s ease;
-
 }
 
 
 .image-modal-close:hover {
 
     color:
-        #FFFFFF;
-
-    border-color:
-        var(--accent-blue);
-
-    background:
         var(--accent-blue);
 
 }
 
 
-body.modal-open {
+#imageModalPreview {
 
-    overflow:
-        hidden;
+    width:
+        100%;
+
+    height:
+        auto;
 
 }
 
@@ -2007,7 +1487,7 @@ body.modal-open {
    TABLET
 ================================================= */
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 980px) {
 
 
     .case-study {
@@ -2016,15 +1496,7 @@ body.modal-open {
             calc(100% - 56px);
 
         padding:
-            28px 0 90px;
-
-    }
-
-
-    .case-navigation {
-
-        margin-bottom:
-            46px;
+            36px 0 100px;
 
     }
 
@@ -2032,15 +1504,7 @@ body.modal-open {
     .case-navigation-inner {
 
         gap:
-            26px;
-
-    }
-
-
-    .case-study-section:not(:last-child) {
-
-        margin-bottom:
-            76px;
+            24px;
 
     }
 
@@ -2049,9 +1513,6 @@ body.modal-open {
 
         grid-template-columns:
             1fr;
-
-        gap:
-            24px;
 
     }
 
@@ -2064,44 +1525,41 @@ body.modal-open {
     }
 
 
-    .recommendation-matrix {
-
-        overflow-x:
-            auto;
-
-    }
-
-
-    .recommendation-matrix-head,
+    .recommendation-matrix-header,
     .recommendation-row {
 
-        min-width:
-            860px;
+        grid-template-columns:
+            0.9fr
+            1.2fr
+            1.1fr
+            1fr;
 
     }
 
 
-    .business-impact-grid {
-
-        overflow-x:
-            auto;
-
-    }
-
-
-    .business-impact-head,
-    .business-impact-row {
-
-        min-width:
-            720px;
-
-    }
-
-
-    .image-modal {
+    .matrix-heading {
 
         padding:
-            24px;
+            14px 14px;
+
+        font-size:
+            0.62rem;
+
+    }
+
+
+    .recommendation-cell {
+
+        padding:
+            18px 14px;
+
+    }
+
+
+    .recommendation-cell p {
+
+        font-size:
+            0.84rem;
 
     }
 
@@ -2127,51 +1585,40 @@ body.modal-open {
     }
 
 
+    /* ---------------------------------------------
+       PROJECT TOP BAR
+    --------------------------------------------- */
+
     .project-topbar {
 
         align-items:
             flex-start;
 
         gap:
-            20px;
+            18px;
 
-        padding-bottom:
-            20px;
-
-    }
-
-
-    .back-to-portfolio {
-
-        padding:
-            8px 13px;
-
-        font-size:
-            0.78rem;
+        margin-bottom:
+            24px;
 
     }
 
 
-    .project-industry span {
+    .project-industry {
 
-        font-size:
-            0.6rem;
-
-    }
-
-
-    .project-industry strong {
-
-        font-size:
-            0.8rem;
+        flex:
+            0 0 auto;
 
     }
 
+
+    /* ---------------------------------------------
+       NAVIGATION
+    --------------------------------------------- */
 
     .case-navigation {
 
         margin-bottom:
-            40px;
+            42px;
 
     }
 
@@ -2179,7 +1626,7 @@ body.modal-open {
     .case-navigation-inner {
 
         gap:
-            24px;
+            22px;
 
     }
 
@@ -2187,26 +1634,25 @@ body.modal-open {
     .case-navigation a {
 
         padding:
-            14px 0 13px;
+            13px 0;
 
         font-size:
-            0.78rem;
+            0.76rem;
 
     }
 
+
+    /* ---------------------------------------------
+       MAIN SECTIONS
+    --------------------------------------------- */
 
     .case-study-section {
 
         scroll-margin-top:
-            78px;
-
-    }
-
-
-    .case-study-section:not(:last-child) {
+            76px;
 
         margin-bottom:
-            64px;
+            78px;
 
     }
 
@@ -2214,13 +1660,13 @@ body.modal-open {
     .main-report-header {
 
         gap:
-            9px;
-
-        padding-bottom:
-            20px;
+            12px;
 
         margin-bottom:
-            30px;
+            32px;
+
+        padding-bottom:
+            15px;
 
     }
 
@@ -2228,7 +1674,7 @@ body.modal-open {
     .main-section-number {
 
         font-size:
-            0.9rem;
+            1.25rem;
 
     }
 
@@ -2236,10 +1682,14 @@ body.modal-open {
     .main-report-header h2 {
 
         font-size:
-            1.9rem;
+            1.8rem;
 
     }
 
+
+    /* ---------------------------------------------
+       REPORT ITEMS
+    --------------------------------------------- */
 
     .report-item {
 
@@ -2252,24 +1702,13 @@ body.modal-open {
     }
 
 
-    .report-project {
-
-        padding-bottom:
-            34px;
-
-        margin-bottom:
-            34px;
-
-    }
-
-
     .report-label {
 
         margin-bottom:
-            12px;
+            11px;
 
         font-size:
-            0.66rem;
+            0.67rem;
 
     }
 
@@ -2279,71 +1718,46 @@ body.modal-open {
         font-size:
             2rem;
 
-        line-height:
-            1.25;
-
     }
 
 
     .report-item p {
 
         font-size:
-            0.95rem;
+            0.96rem;
 
         line-height:
-            1.8;
+            1.78;
 
     }
 
 
-    .questions-intro {
+    /* ---------------------------------------------
+       BUSINESS QUESTIONS
+    --------------------------------------------- */
 
-        margin-bottom:
-            18px;
+    .business-question-list {
+
+        gap:
+            13px;
 
     }
 
 
     .business-question-list li {
 
-        padding:
-            16px 0 16px 18px;
-
-        font-size:
-            0.95rem;
-
-        line-height:
-            1.6;
-
-    }
-
-
-    .business-question-list li::before {
-
-        top:
-            16px;
-
-    }
-
-
-    .insights-intro {
-
-        margin-bottom:
-            26px;
-
-    }
-
-
-    .insights-intro p {
+        padding-left:
+            18px;
 
         font-size:
             0.94rem;
 
-        line-height:
-            1.75;
-
     }
 
+
+    /* ---------------------------------------------
+       KEY INSIGHTS
+    --------------------------------------------- */
 
     .insight-card {
 
@@ -2362,7 +1776,7 @@ body.modal-open {
             10px;
 
         margin-bottom:
-            18px;
+            16px;
 
     }
 
@@ -2370,7 +1784,7 @@ body.modal-open {
     .insight-number {
 
         font-size:
-            0.88rem;
+            0.92rem;
 
     }
 
@@ -2378,23 +1792,12 @@ body.modal-open {
     .insight-heading h3 {
 
         font-size:
-            1.2rem;
-
-    }
-
-
-    .insight-layout {
-
-        gap:
-            20px;
+            1.12rem;
 
     }
 
 
     .insight-flow {
-
-        grid-template-columns:
-            1fr;
 
         gap:
             10px;
@@ -2404,11 +1807,8 @@ body.modal-open {
 
     .insight-block {
 
-        min-height:
-            auto;
-
-        padding:
-            16px 17px;
+        padding-bottom:
+            10px;
 
     }
 
@@ -2421,45 +1821,71 @@ body.modal-open {
     }
 
 
-    .image-expand-label {
+    /* ---------------------------------------------
+       RECOMMENDATIONS
+    --------------------------------------------- */
 
-        opacity:
-            1;
+    #recommendations {
 
-        transform:
-            translateY(0);
+        min-height:
+            auto;
 
-    }
-
-
-    .recommendations-reading-flow,
-    .impact-reading-flow {
-
-        gap:
-            6px;
-
-        font-size:
-            0.7rem;
+        padding-top:
+            0;
 
     }
 
 
-    .recommendation-matrix-head,
+    .recommendation-matrix {
+
+        overflow:
+            visible;
+
+        border:
+            none;
+
+        background:
+            transparent;
+
+    }
+
+
+    .recommendation-matrix-header {
+
+        display:
+            none;
+
+    }
+
+
     .recommendation-row {
 
-        min-width:
-            780px;
+        display:
+            block;
+
+        margin-bottom:
+            18px;
+
+        overflow:
+            hidden;
+
+        border:
+            1px solid
+            var(--border-color);
+
+        border-radius:
+            8px;
+
+        background:
+            var(--bg-white);
 
     }
 
 
-    .recommendation-matrix-head div {
+    .recommendation-row:last-child {
 
-        padding:
-            12px;
-
-        font-size:
-            0.6rem;
+        margin-bottom:
+            0;
 
     }
 
@@ -2467,92 +1893,71 @@ body.modal-open {
     .recommendation-cell {
 
         padding:
-            15px 12px;
+            16px;
 
-        font-size:
-            0.78rem;
-
-    }
-
-
-    .business-impact-head,
-    .business-impact-row {
-
-        min-width:
-            650px;
+        border-bottom:
+            1px solid
+            var(--border-color);
 
     }
 
 
-    .business-impact-head div {
+    .recommendation-cell:last-child {
 
-        padding:
-            12px;
-
-        font-size:
-            0.6rem;
+        border-bottom:
+            none;
 
     }
 
 
-    .business-impact-cell {
+    .recommendation-cell::before {
 
-        padding:
-            16px 12px;
+        content:
+            attr(data-label);
 
-        font-size:
-            0.82rem;
+        display:
+            block;
 
-    }
-
-
-    .management-loop {
-
-        padding:
-            20px;
-
-    }
-
-
-    .management-loop-steps {
-
-        gap:
+        margin-bottom:
             7px;
 
-    }
-
-
-    .management-loop-steps span {
+        color:
+            var(--text-muted);
 
         font-size:
-            0.72rem;
+            0.64rem;
 
-        padding:
-            6px 9px;
+        font-weight:
+            600;
 
-    }
+        letter-spacing:
+            0.1em;
 
-
-    .tools-grid {
-
-        grid-template-columns:
-            1fr;
+        text-transform:
+            uppercase;
 
     }
 
 
-    .tool-card {
+    .recommendation-cell p {
 
-        padding:
-            19px;
+        font-size:
+            0.9rem;
+
+        line-height:
+            1.65;
 
     }
 
+
+    /* ---------------------------------------------
+       IMAGE MODAL
+    --------------------------------------------- */
 
     .image-modal {
 
         padding:
-            12px;
+            16px;
 
     }
 
@@ -2562,8 +1967,11 @@ body.modal-open {
         width:
             100%;
 
+        max-height:
+            90vh;
+
         padding:
-            12px;
+            14px;
 
     }
 
