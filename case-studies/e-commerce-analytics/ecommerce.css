@@ -10,18 +10,32 @@
 
 :root {
 
-    --bg-primary: #F8FBFF;
-    --bg-white: #FFFFFF;
-    --bg-soft: #F2F7FC;
+    --bg-primary:
+        #F8FBFF;
 
-    --text-primary: #1F3A5F;
-    --text-secondary: #5E6F82;
-    --text-muted: #7B8998;
+    --bg-white:
+        #FFFFFF;
 
-    --accent-blue: #2F6FAE;
-    --accent-blue-dark: #1F5A8F;
+    --bg-soft:
+        #F2F7FC;
 
-    --border-color: #E3EAF2;
+    --text-primary:
+        #1F3A5F;
+
+    --text-secondary:
+        #5E6F82;
+
+    --text-muted:
+        #7B8998;
+
+    --accent-blue:
+        #2F6FAE;
+
+    --accent-blue-dark:
+        #1F5A8F;
+
+    --border-color:
+        #E3EAF2;
 
 }
 
@@ -32,17 +46,22 @@
 
 * {
 
-    margin: 0;
-    padding: 0;
+    margin:
+        0;
 
-    box-sizing: border-box;
+    padding:
+        0;
+
+    box-sizing:
+        border-box;
 
 }
 
 
 html {
 
-    scroll-behavior: smooth;
+    scroll-behavior:
+        smooth;
 
 }
 
@@ -52,7 +71,6 @@ body {
     font-family:
         "Inter",
         Arial,
-        Helvetica,
         sans-serif;
 
     background:
@@ -61,26 +79,33 @@ body {
     color:
         var(--text-primary);
 
-    line-height: 1.6;
+    line-height:
+        1.6;
 
-    overflow-x: hidden;
-
-}
-
-
-img {
-
-    display: block;
-
-    width: 100%;
-    max-width: 100%;
+    overflow-x:
+        hidden;
 
 }
 
 
 body.modal-open {
 
-    overflow: hidden;
+    overflow:
+        hidden;
+
+}
+
+
+img {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    max-width:
+        100%;
 
 }
 
@@ -97,12 +122,11 @@ body.modal-open {
             calc(100% - 80px)
         );
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 
     padding:
-        40px
-        0
-        120px;
+        40px 0 120px;
 
 }
 
@@ -113,15 +137,20 @@ body.modal-open {
 
 .project-topbar {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: flex-start;
+    align-items:
+        flex-start;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
-    gap: 32px;
+    gap:
+        32px;
 
-    margin-bottom: 32px;
+    margin-bottom:
+        32px;
 
 }
 
@@ -132,21 +161,23 @@ body.modal-open {
 
 .back-to-portfolio {
 
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    width: fit-content;
+    width:
+        fit-content;
 
     padding:
-        9px
-        15px;
+        9px 15px;
 
     border:
-        1px solid
-        var(--border-color);
+        1px solid var(--border-color);
 
-    border-radius: 7px;
+    border-radius:
+        7px;
 
     background:
         var(--bg-white);
@@ -160,12 +191,11 @@ body.modal-open {
     font-weight:
         500;
 
-    text-decoration: none;
+    text-decoration:
+        none;
 
     transition:
-        color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
+        0.2s ease;
 
 }
 
@@ -190,17 +220,23 @@ body.modal-open {
 
 .project-industry {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    align-items: flex-end;
+    align-items:
+        flex-end;
 
-    gap: 2px;
+    gap:
+        2px;
 
-    padding-top: 3px;
+    padding-top:
+        3px;
 
-    text-align: right;
+    text-align:
+        right;
 
 }
 
@@ -241,85 +277,103 @@ body.modal-open {
 
 /* =================================================
    CASE STUDY NAVIGATION
-   ALIGNED WITH HOSPITAL ER
 ================================================= */
 
 .case-navigation {
 
-    position: sticky;
+    position:
+        sticky;
 
-    top: 0;
+    top:
+        0;
 
-    z-index: 1000;
+    z-index:
+        1000;
 
-    width: 100%;
+    width:
+        100%;
 
-    margin-bottom: 52px;
+    margin-bottom:
+        52px;
 
     background:
         var(--bg-primary);
 
     border-top:
-        1px solid
-        var(--border-color);
+        1px solid var(--border-color);
 
     border-bottom:
-        1px solid
-        var(--border-color);
+        1px solid var(--border-color);
 
 }
 
 
 .case-navigation-inner {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 32px;
+    gap:
+        32px;
 
-    width: 100%;
+    width:
+        100%;
 
-    overflow-x: auto;
+    overflow-x:
+        auto;
 
-    scrollbar-width: none;
+    scrollbar-width:
+        none;
 
 }
 
 
 .case-navigation-inner::-webkit-scrollbar {
 
-    display: none;
+    display:
+        none;
 
 }
 
 
+/* =================================================
+   NAVIGATION LINKS
+================================================= */
+
 .case-navigation a {
 
-    position: relative;
+    position:
+        relative;
 
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    flex: 0 0 auto;
+    flex:
+        0 0 auto;
 
     padding:
-        16px
-        0;
+        15px 0;
 
     color:
-        var(--text-muted);
+        var(--text-secondary);
 
     font-size:
-        0.78rem;
+        0.84rem;
 
     font-weight:
         500;
 
-    text-decoration: none;
+    text-decoration:
+        none;
 
-    white-space: nowrap;
+    white-space:
+        nowrap;
 
     transition:
         color 0.2s ease;
@@ -329,17 +383,23 @@ body.modal-open {
 
 .case-navigation a::after {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    left: 0;
+    left:
+        0;
 
-    bottom: 0;
+    right:
+        0;
 
-    width: 100%;
+    bottom:
+        0;
 
-    height: 2px;
+    height:
+        2px;
 
     background:
         var(--accent-blue);
@@ -348,7 +408,7 @@ body.modal-open {
         scaleX(0);
 
     transform-origin:
-        left;
+        center;
 
     transition:
         transform 0.2s ease;
@@ -356,21 +416,11 @@ body.modal-open {
 }
 
 
-.case-navigation a:hover {
-
-    color:
-        var(--text-primary);
-
-}
-
-
+.case-navigation a:hover,
 .case-navigation a.active {
 
     color:
         var(--accent-blue-dark);
-
-    font-weight:
-        600;
 
 }
 
@@ -384,21 +434,24 @@ body.modal-open {
 
 
 /* =================================================
-   CASE STUDY SECTIONS
+   MAIN SECTIONS
 ================================================= */
 
 .case-study-section {
 
-    scroll-margin-top: 90px;
+    scroll-margin-top:
+        92px;
 
-    margin-bottom: 96px;
+    margin-bottom:
+        110px;
 
 }
 
 
-#technical-tools {
+.case-study-section:last-child {
 
-    margin-bottom: 0;
+    margin-bottom:
+        0;
 
 }
 
@@ -409,19 +462,23 @@ body.modal-open {
 
 .main-report-header {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: baseline;
+    align-items:
+        baseline;
 
-    gap: 14px;
+    gap:
+        14px;
 
-    margin-bottom: 42px;
+    margin-bottom:
+        44px;
 
-    padding-bottom: 18px;
+    padding-bottom:
+        18px;
 
     border-bottom:
-        1px solid
-        var(--border-color);
+        1px solid var(--border-color);
 
 }
 
@@ -432,12 +489,10 @@ body.modal-open {
         var(--accent-blue);
 
     font-size:
-        1.35rem;
+        1.1rem;
 
     font-weight:
         500;
-
-    line-height: 1;
 
 }
 
@@ -449,18 +504,19 @@ body.modal-open {
 
     font-size:
         clamp(
-            1.9rem,
+            2rem,
             3vw,
-            2.4rem
+            2.6rem
         );
 
     font-weight:
         500;
 
-    line-height: 1.2;
+    line-height:
+        1.2;
 
     letter-spacing:
-        -0.02em;
+        -0.025em;
 
 }
 
@@ -471,41 +527,45 @@ body.modal-open {
 
 .report-item {
 
-    padding-bottom: 34px;
+    padding-bottom:
+        34px;
 
-    margin-bottom: 34px;
+    margin-bottom:
+        34px;
 
     border-bottom:
-        1px solid
-        var(--border-color);
+        1px solid var(--border-color);
 
 }
 
 
 .report-item:last-child {
 
-    margin-bottom: 0;
+    margin-bottom:
+        0;
 
 }
 
 
 .report-label {
 
-    display: block;
+    display:
+        block;
 
-    margin-bottom: 13px;
+    margin-bottom:
+        14px;
 
     color:
         var(--text-muted);
 
     font-size:
-        0.68rem;
+        0.7rem;
 
     font-weight:
-        600;
+        700;
 
     letter-spacing:
-        0.16em;
+        0.18em;
 
     text-transform:
         uppercase;
@@ -515,7 +575,8 @@ body.modal-open {
 
 .report-item p {
 
-    max-width: 930px;
+    max-width:
+        950px;
 
     color:
         var(--text-secondary);
@@ -524,38 +585,47 @@ body.modal-open {
         1rem;
 
     line-height:
-        1.8;
+        1.85;
 
 }
 
 
 /* =================================================
    PROJECT TITLE
-   ALIGNED WITH HOSPITAL ER
+   Matched to Hospital ER visual scale
 ================================================= */
 
-.report-project h1 {
+.report-project {
 
-    max-width: 980px;
+    padding-bottom:
+        40px;
+
+    margin-bottom:
+        40px;
+
+}
+
+
+.report-project h1 {
 
     color:
         var(--text-primary);
 
     font-size:
         clamp(
-            2.6rem,
-            5vw,
-            4rem
+            2.5rem,
+            4.5vw,
+            3.9rem
         );
 
     font-weight:
-        500;
+        400;
 
     line-height:
-        1.1;
+        1.15;
 
     letter-spacing:
-        -0.035em;
+        -0.04em;
 
 }
 
@@ -566,78 +636,76 @@ body.modal-open {
 
 .questions-intro {
 
-    margin-bottom: 14px;
+    margin-bottom:
+        22px;
 
 }
 
 
 .business-question-list {
 
-    list-style: none;
-
-    margin: 0;
-
-    padding: 0;
+    list-style:
+        none;
 
 }
 
 
 .business-question-list li {
 
-    position: relative;
+    position:
+        relative;
 
     padding:
-        18px
-        0
-        18px
-        20px;
+        18px 0 18px 22px;
 
     color:
-        var(--text-primary);
+        var(--text-secondary);
 
     font-size:
-        1rem;
-
-    font-weight:
-        400;
+        0.98rem;
 
     line-height:
-        1.65;
+        1.7;
+
+    border-bottom:
+        1px solid var(--border-color);
+
+}
+
+
+.business-question-list li:first-child {
 
     border-top:
-        1px solid
-        var(--border-color);
+        1px solid var(--border-color);
 
 }
 
 
 .business-question-list li::before {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    top: 31px;
+    left:
+        0;
 
-    left: 0;
+    top:
+        31px;
 
-    width: 5px;
+    width:
+        6px;
 
-    height: 5px;
+    height:
+        6px;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
     background:
         var(--accent-blue);
-
-}
-
-
-.business-question-list li:last-child {
-
-    border-bottom:
-        1px solid
-        var(--border-color);
 
 }
 
@@ -648,33 +716,39 @@ body.modal-open {
 
 .insight-card {
 
-    padding-bottom: 36px;
+    padding-bottom:
+        44px;
 
-    margin-bottom: 36px;
+    margin-bottom:
+        44px;
 
     border-bottom:
-        1px solid
-        var(--border-color);
+        1px solid var(--border-color);
 
 }
 
 
-.insight-card-last {
+.insight-card:last-child {
 
-    margin-bottom: 0;
+    margin-bottom:
+        0;
 
 }
 
 
 .insight-heading {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: baseline;
+    align-items:
+        baseline;
 
-    gap: 14px;
+    gap:
+        12px;
 
-    margin-bottom: 22px;
+    margin-bottom:
+        22px;
 
 }
 
@@ -685,7 +759,7 @@ body.modal-open {
         var(--accent-blue);
 
     font-size:
-        0.98rem;
+        0.95rem;
 
     font-weight:
         600;
@@ -699,71 +773,89 @@ body.modal-open {
         var(--text-primary);
 
     font-size:
-        1.25rem;
+        1.3rem;
 
     font-weight:
-        500;
+        600;
 
     line-height:
-        1.45;
+        1.4;
 
 }
 
 
 .insight-layout {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
-        minmax(0, 1.08fr)
-        minmax(340px, 0.92fr);
+        minmax(0, 0.95fr)
+        minmax(0, 1.05fr);
 
-    gap: 30px;
+    gap:
+        40px;
 
-    align-items: start;
+    align-items:
+        start;
 
 }
 
 
+/* =================================================
+   INSIGHT DASHBOARD
+================================================= */
+
 .insight-dashboard {
 
-    overflow: hidden;
+    width:
+        100%;
 
-    border:
-        1px solid
-        var(--border-color);
-
-    border-radius: 9px;
-
-    background:
-        var(--bg-white);
+    margin:
+        0;
 
 }
 
 
 .insight-dashboard-trigger {
 
-    position: relative;
+    position:
+        relative;
 
-    display: block;
+    display:
+        block;
 
-    width: 100%;
+    width:
+        100%;
 
-    padding: 0;
+    padding:
+        0;
 
-    border: none;
+    overflow:
+        hidden;
 
-    background: none;
+    border:
+        1px solid var(--border-color);
 
-    cursor: zoom-in;
+    border-radius:
+        8px;
+
+    background:
+        var(--bg-white);
+
+    cursor:
+        pointer;
 
 }
 
 
 .insight-dashboard-trigger img {
 
+    width:
+        100%;
+
     transition:
-        transform 0.25s ease;
+        transform 0.3s ease;
 
 }
 
@@ -778,17 +870,20 @@ body.modal-open {
 
 .image-expand-label {
 
-    position: absolute;
+    position:
+        absolute;
 
-    right: 12px;
+    right:
+        12px;
 
-    bottom: 12px;
+    bottom:
+        12px;
 
     padding:
-        6px
-        10px;
+        6px 10px;
 
-    border-radius: 5px;
+    border-radius:
+        5px;
 
     background:
         rgba(
@@ -804,25 +899,22 @@ body.modal-open {
     font-size:
         0.68rem;
 
-    font-weight:
-        500;
-
-    opacity: 0;
+    opacity:
+        0;
 
     transform:
         translateY(4px);
 
     transition:
-        opacity 0.2s ease,
-        transform 0.2s ease;
+        0.2s ease;
 
 }
 
 
-.insight-dashboard-trigger:hover
-.image-expand-label {
+.insight-dashboard-trigger:hover .image-expand-label {
 
-    opacity: 1;
+    opacity:
+        1;
 
     transform:
         translateY(0);
@@ -830,54 +922,65 @@ body.modal-open {
 }
 
 
+/* =================================================
+   INSIGHT FLOW
+================================================= */
+
 .insight-flow {
 
-    display: grid;
+    display:
+        flex;
 
-    gap: 0;
+    flex-direction:
+        column;
+
+    gap:
+        16px;
 
 }
 
 
 .insight-block {
 
-    padding:
-        16px
-        0;
+    padding-bottom:
+        14px;
 
-    border-top:
-        1px solid
-        var(--border-color);
+    border-bottom:
+        1px solid var(--border-color);
 
 }
 
 
-.insight-block:first-child {
+.insight-block:last-child {
 
-    padding-top: 0;
+    padding-bottom:
+        0;
 
-    border-top: none;
+    border-bottom:
+        none;
 
 }
 
 
 .insight-block span {
 
-    display: block;
+    display:
+        block;
 
-    margin-bottom: 7px;
+    margin-bottom:
+        5px;
 
     color:
         var(--text-muted);
 
     font-size:
-        0.64rem;
+        0.67rem;
 
     font-weight:
-        600;
+        700;
 
     letter-spacing:
-        0.13em;
+        0.14em;
 
     text-transform:
         uppercase;
@@ -891,7 +994,7 @@ body.modal-open {
         var(--text-secondary);
 
     font-size:
-        0.93rem;
+        0.94rem;
 
     line-height:
         1.7;
@@ -899,21 +1002,27 @@ body.modal-open {
 }
 
 
-.insight-recommendation span {
+.insight-recommendation {
 
-    color:
-        var(--accent-blue-dark);
+    padding:
+        16px;
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius:
+        8px;
+
+    background:
+        var(--bg-soft);
 
 }
 
 
-.insight-recommendation p {
+.insight-recommendation span {
 
     color:
-        var(--text-primary);
-
-    font-weight:
-        500;
+        var(--accent-blue);
 
 }
 
@@ -924,13 +1033,17 @@ body.modal-open {
 
 .recommendation-matrix {
 
-    overflow: hidden;
+    width:
+        100%;
+
+    overflow:
+        hidden;
 
     border:
-        1px solid
-        var(--border-color);
+        1px solid var(--border-color);
 
-    border-radius: 9px;
+    border-radius:
+        8px;
 
     background:
         var(--bg-white);
@@ -938,22 +1051,28 @@ body.modal-open {
 }
 
 
-.recommendation-matrix-header {
+.recommendation-matrix-header,
+.recommendation-row {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         1fr
-        1.25fr
+        1.35fr
         1.15fr
         1fr;
+
+}
+
+
+.recommendation-matrix-header {
 
     background:
         var(--bg-soft);
 
     border-bottom:
-        1px solid
-        var(--border-color);
+        1px solid var(--border-color);
 
 }
 
@@ -961,17 +1080,16 @@ body.modal-open {
 .matrix-heading {
 
     padding:
-        16px
-        18px;
+        16px;
 
     color:
-        var(--text-muted);
+        var(--text-primary);
 
     font-size:
-        0.64rem;
+        0.68rem;
 
     font-weight:
-        600;
+        700;
 
     letter-spacing:
         0.1em;
@@ -979,29 +1097,32 @@ body.modal-open {
     text-transform:
         uppercase;
 
+    border-right:
+        1px solid var(--border-color);
+
+}
+
+
+.matrix-heading:last-child {
+
+    border-right:
+        none;
+
 }
 
 
 .recommendation-row {
 
-    display: grid;
-
-    grid-template-columns:
-        1fr
-        1.25fr
-        1.15fr
-        1fr;
-
     border-bottom:
-        1px solid
-        var(--border-color);
+        1px solid var(--border-color);
 
 }
 
 
 .recommendation-row:last-child {
 
-    border-bottom: none;
+    border-bottom:
+        none;
 
 }
 
@@ -1009,19 +1130,18 @@ body.modal-open {
 .recommendation-cell {
 
     padding:
-        22px
-        18px;
+        22px 18px;
 
     border-right:
-        1px solid
-        var(--border-color);
+        1px solid var(--border-color);
 
 }
 
 
 .recommendation-cell:last-child {
 
-    border-right: none;
+    border-right:
+        none;
 
 }
 
@@ -1040,21 +1160,10 @@ body.modal-open {
 }
 
 
-.recommendation-insight p {
-
-    color:
-        var(--text-primary);
-
-    font-weight:
-        500;
-
-}
-
-
 .recommendation-action p {
 
     color:
-        var(--accent-blue-dark);
+        var(--text-primary);
 
     font-weight:
         500;
@@ -1068,13 +1177,17 @@ body.modal-open {
 
 .business-impact-table {
 
-    overflow: hidden;
+    width:
+        100%;
+
+    overflow:
+        hidden;
 
     border:
-        1px solid
-        var(--border-color);
+        1px solid var(--border-color);
 
-    border-radius: 9px;
+    border-radius:
+        8px;
 
     background:
         var(--bg-white);
@@ -1082,21 +1195,27 @@ body.modal-open {
 }
 
 
-.business-impact-header {
+.business-impact-header,
+.business-impact-row {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         0.9fr
         1fr
         1.35fr;
 
+}
+
+
+.business-impact-header {
+
     background:
         var(--bg-soft);
 
     border-bottom:
-        1px solid
-        var(--border-color);
+        1px solid var(--border-color);
 
 }
 
@@ -1104,17 +1223,16 @@ body.modal-open {
 .business-impact-header div {
 
     padding:
-        16px
-        18px;
+        16px;
 
     color:
-        var(--text-muted);
+        var(--text-primary);
 
     font-size:
-        0.64rem;
+        0.68rem;
 
     font-weight:
-        600;
+        700;
 
     letter-spacing:
         0.1em;
@@ -1122,28 +1240,32 @@ body.modal-open {
     text-transform:
         uppercase;
 
+    border-right:
+        1px solid var(--border-color);
+
+}
+
+
+.business-impact-header div:last-child {
+
+    border-right:
+        none;
+
 }
 
 
 .business-impact-row {
 
-    display: grid;
-
-    grid-template-columns:
-        0.9fr
-        1fr
-        1.35fr;
-
     border-bottom:
-        1px solid
-        var(--border-color);
+        1px solid var(--border-color);
 
 }
 
 
 .business-impact-row:last-child {
 
-    border-bottom: none;
+    border-bottom:
+        none;
 
 }
 
@@ -1151,19 +1273,18 @@ body.modal-open {
 .business-impact-cell {
 
     padding:
-        22px
-        18px;
+        22px 18px;
 
     border-right:
-        1px solid
-        var(--border-color);
+        1px solid var(--border-color);
 
 }
 
 
 .business-impact-cell:last-child {
 
-    border-right: none;
+    border-right:
+        none;
 
 }
 
@@ -1174,7 +1295,7 @@ body.modal-open {
         var(--text-secondary);
 
     font-size:
-        0.9rem;
+        0.92rem;
 
     line-height:
         1.7;
@@ -1196,6 +1317,14 @@ body.modal-open {
 .impact-benefit p {
 
     color:
+        var(--text-primary);
+
+}
+
+
+.impact-outcome p {
+
+    color:
         var(--accent-blue-dark);
 
     font-weight:
@@ -1207,11 +1336,10 @@ body.modal-open {
 .impact-outcome span {
 
     margin:
-        0
-        6px;
+        0 5px;
 
     color:
-        var(--accent-blue);
+        var(--text-muted);
 
 }
 
@@ -1222,7 +1350,8 @@ body.modal-open {
 
 #technical-tools {
 
-    min-height: auto;
+    margin-bottom:
+        0;
 
 }
 
@@ -1230,54 +1359,50 @@ body.modal-open {
 .technical-tools-intro {
 
     margin:
-        -8px
-        0
-        24px;
+        -8px 0 28px;
 
     color:
         var(--text-secondary);
 
     font-size:
-        0.92rem;
-
-    line-height:
-        1.6;
+        0.98rem;
 
 }
 
 
 .technical-tools-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(
-            6,
-            1fr
+            3,
+            minmax(0, 1fr)
         );
 
-    gap: 18px;
+    gap:
+        16px;
 
 }
 
 
 .technical-tool-card {
 
-    grid-column:
-        span 2;
+    min-height:
+        180px;
 
-    min-height: 168px;
-
-    padding: 24px;
+    padding:
+        24px;
 
     border:
-        1px solid
-        #DCE7F1;
+        1px solid var(--border-color);
 
-    border-radius: 9px;
+    border-radius:
+        8px;
 
     background:
-        #F2F7FC;
+        var(--bg-white);
 
 }
 
@@ -1285,7 +1410,7 @@ body.modal-open {
 .technical-tool-card:nth-child(4) {
 
     grid-column:
-        2 / span 2;
+        1 / 2;
 
 }
 
@@ -1293,14 +1418,15 @@ body.modal-open {
 .technical-tool-card:nth-child(5) {
 
     grid-column:
-        4 / span 2;
+        2 / 4;
 
 }
 
 
 .technical-tool-card h3 {
 
-    margin-bottom: 14px;
+    margin-bottom:
+        12px;
 
     color:
         var(--text-primary);
@@ -1316,13 +1442,11 @@ body.modal-open {
 
 .technical-tool-card p {
 
-    max-width: 320px;
-
     color:
         var(--text-secondary);
 
     font-size:
-        0.88rem;
+        0.92rem;
 
     line-height:
         1.7;
@@ -1336,54 +1460,64 @@ body.modal-open {
 
 .image-modal {
 
-    position: fixed;
+    position:
+        fixed;
 
-    inset: 0;
+    inset:
+        0;
 
-    z-index: 2000;
+    z-index:
+        5000;
 
-    display: none;
+    display:
+        none;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    padding: 28px;
+    padding:
+        32px;
 
 }
 
 
 .image-modal.is-open {
 
-    display: flex;
+    display:
+        flex;
 
 }
 
 
 .image-modal-backdrop {
 
-    position: absolute;
+    position:
+        absolute;
 
-    inset: 0;
+    inset:
+        0;
 
     background:
         rgba(
-            12,
-            25,
-            42,
+            15,
+            28,
+            45,
             0.78
         );
-
-    cursor: zoom-out;
 
 }
 
 
 .image-modal-content {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 1;
+    z-index:
+        1;
 
     width:
         min(
@@ -1394,22 +1528,25 @@ body.modal-open {
     max-height:
         92vh;
 
-    padding: 20px;
+    overflow:
+        auto;
 
-    overflow: auto;
+    padding:
+        18px;
 
-    border-radius: 10px;
+    border-radius:
+        10px;
 
     background:
         var(--bg-white);
 
     box-shadow:
-        0 20px 70px
+        0 20px 60px
         rgba(
             0,
             0,
             0,
-            0.28
+            0.25
         );
 
 }
@@ -1417,9 +1554,11 @@ body.modal-open {
 
 .image-modal-title {
 
-    margin-bottom: 12px;
+    margin-bottom:
+        12px;
 
-    padding-right: 48px;
+    padding-right:
+        40px;
 
     color:
         var(--text-primary);
@@ -1435,50 +1574,41 @@ body.modal-open {
 
 .image-modal-close {
 
-    position: absolute;
+    position:
+        absolute;
 
-    top: 12px;
+    top:
+        10px;
 
-    right: 12px;
+    right:
+        12px;
 
-    display: flex;
+    width:
+        32px;
 
-    align-items: center;
+    height:
+        32px;
 
-    justify-content: center;
+    border:
+        none;
 
-    width: 34px;
+    border-radius:
+        6px;
 
-    height: 34px;
-
-    padding: 0;
+    background:
+        var(--bg-soft);
 
     color:
         var(--text-primary);
 
     font-size:
-        1.5rem;
+        1.4rem;
 
-    font-weight:
-        300;
+    line-height:
+        1;
 
-    line-height: 1;
-
-    cursor: pointer;
-
-    border:
-        1px solid
-        var(--border-color);
-
-    border-radius: 50%;
-
-    background:
-        var(--bg-white);
-
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease,
-        background 0.2s ease;
+    cursor:
+        pointer;
 
 }
 
@@ -1486,12 +1616,6 @@ body.modal-open {
 .image-modal-close:hover {
 
     color:
-        #FFFFFF;
-
-    border-color:
-        var(--accent-blue);
-
-    background:
         var(--accent-blue);
 
 }
@@ -1499,9 +1623,11 @@ body.modal-open {
 
 #imageModalPreview {
 
-    width: 100%;
+    width:
+        100%;
 
-    height: auto;
+    height:
+        auto;
 
 }
 
@@ -1519,23 +1645,15 @@ body.modal-open {
             calc(100% - 56px);
 
         padding:
-            36px
-            0
-            100px;
-
-    }
-
-
-    .case-navigation {
-
-        margin-bottom: 46px;
+            36px 0 100px;
 
     }
 
 
     .case-navigation-inner {
 
-        gap: 26px;
+        gap:
+            24px;
 
     }
 
@@ -1545,14 +1663,16 @@ body.modal-open {
         grid-template-columns:
             1fr;
 
-        gap: 24px;
+        gap:
+            28px;
 
     }
 
 
     .insight-dashboard {
 
-        max-width: 760px;
+        max-width:
+            760px;
 
     }
 
@@ -1571,7 +1691,8 @@ body.modal-open {
 
     .matrix-heading {
 
-        padding: 14px;
+        padding:
+            14px;
 
         font-size:
             0.62rem;
@@ -1582,8 +1703,7 @@ body.modal-open {
     .recommendation-cell {
 
         padding:
-            18px
-            14px;
+            18px 14px;
 
     }
 
@@ -1618,7 +1738,6 @@ body.modal-open {
     }
 
 
-    .technical-tool-card,
     .technical-tool-card:nth-child(4),
     .technical-tool-card:nth-child(5) {
 
@@ -1635,7 +1754,6 @@ body.modal-open {
 
     }
 
-
 }
 
 
@@ -1646,73 +1764,63 @@ body.modal-open {
 @media screen and (max-width: 640px) {
 
 
+    /* ---------------------------------------------
+       MAIN CONTAINER
+    --------------------------------------------- */
+
     .case-study {
 
         width:
             calc(100% - 36px);
 
         padding:
-            24px
-            0
-            80px;
+            24px 0 80px;
 
     }
 
 
-    /* PROJECT TOP BAR */
+    /* ---------------------------------------------
+       PROJECT TOP BAR
+    --------------------------------------------- */
 
     .project-topbar {
 
         align-items:
             flex-start;
 
-        gap: 20px;
+        gap:
+            18px;
 
-        margin-bottom: 24px;
-
-    }
-
-
-    .back-to-portfolio {
-
-        padding:
-            8px
-            13px;
-
-        font-size:
-            0.78rem;
+        margin-bottom:
+            24px;
 
     }
 
 
-    .project-industry span {
+    .project-industry {
 
-        font-size:
-            0.62rem;
-
-    }
-
-
-    .project-industry strong {
-
-        font-size:
-            0.82rem;
+        flex:
+            0 0 auto;
 
     }
 
 
-    /* NAVIGATION */
+    /* ---------------------------------------------
+       NAVIGATION
+    --------------------------------------------- */
 
     .case-navigation {
 
-        margin-bottom: 40px;
+        margin-bottom:
+            42px;
 
     }
 
 
     .case-navigation-inner {
 
-        gap: 24px;
+        gap:
+            22px;
 
     }
 
@@ -1720,9 +1828,7 @@ body.modal-open {
     .case-navigation a {
 
         padding:
-            14px
-            0
-            13px;
+            13px 0;
 
         font-size:
             0.76rem;
@@ -1730,12 +1836,14 @@ body.modal-open {
     }
 
 
-    /* SECTIONS */
+    /* ---------------------------------------------
+       MAIN SECTIONS
+    --------------------------------------------- */
 
     .case-study-section {
 
         scroll-margin-top:
-            78px;
+            76px;
 
         margin-bottom:
             78px;
@@ -1745,11 +1853,14 @@ body.modal-open {
 
     .main-report-header {
 
-        gap: 12px;
+        gap:
+            12px;
 
-        margin-bottom: 32px;
+        margin-bottom:
+            32px;
 
-        padding-bottom: 15px;
+        padding-bottom:
+            15px;
 
     }
 
@@ -1757,7 +1868,7 @@ body.modal-open {
     .main-section-number {
 
         font-size:
-            1.25rem;
+            0.95rem;
 
     }
 
@@ -1770,20 +1881,25 @@ body.modal-open {
     }
 
 
-    /* REPORT ITEMS */
+    /* ---------------------------------------------
+       REPORT ITEMS
+    --------------------------------------------- */
 
     .report-item {
 
-        padding-bottom: 30px;
+        padding-bottom:
+            30px;
 
-        margin-bottom: 30px;
+        margin-bottom:
+            30px;
 
     }
 
 
     .report-label {
 
-        margin-bottom: 11px;
+        margin-bottom:
+            11px;
 
         font-size:
             0.67rem;
@@ -1810,45 +1926,62 @@ body.modal-open {
     }
 
 
-    /* BUSINESS QUESTIONS */
+    /* ---------------------------------------------
+       BUSINESS QUESTIONS
+    --------------------------------------------- */
+
+    .questions-intro {
+
+        margin-bottom:
+            18px;
+
+    }
+
 
     .business-question-list li {
 
         padding:
-            16px
-            0
-            16px
-            18px;
+            16px 0 16px 18px;
 
         font-size:
             0.94rem;
+
+        line-height:
+            1.65;
 
     }
 
 
     .business-question-list li::before {
 
-        top: 27px;
+        top:
+            28px;
 
     }
 
 
-    /* KEY INSIGHTS */
+    /* ---------------------------------------------
+       KEY INSIGHTS
+    --------------------------------------------- */
 
     .insight-card {
 
-        padding-bottom: 30px;
+        padding-bottom:
+            30px;
 
-        margin-bottom: 30px;
+        margin-bottom:
+            30px;
 
     }
 
 
     .insight-heading {
 
-        gap: 10px;
+        gap:
+            10px;
 
-        margin-bottom: 16px;
+        margin-bottom:
+            16px;
 
     }
 
@@ -1856,7 +1989,7 @@ body.modal-open {
     .insight-number {
 
         font-size:
-            0.92rem;
+            0.9rem;
 
     }
 
@@ -1869,11 +2002,18 @@ body.modal-open {
     }
 
 
+    .insight-flow {
+
+        gap:
+            10px;
+
+    }
+
+
     .insight-block {
 
-        padding:
-            14px
-            0;
+        padding-bottom:
+            10px;
 
     }
 
@@ -1888,49 +2028,57 @@ body.modal-open {
 
     .image-expand-label {
 
-        opacity: 1;
+        opacity:
+            1;
 
-        transform: none;
+        transform:
+            none;
 
         font-size:
-            0.68rem;
+            0.65rem;
 
     }
 
 
-    /* RECOMMENDATIONS */
+    /* ---------------------------------------------
+       RECOMMENDATIONS
+    --------------------------------------------- */
 
     .recommendation-matrix {
 
-        overflow: visible;
+        border:
+            none;
 
-        border: none;
-
-        background: transparent;
+        background:
+            transparent;
 
     }
 
 
     .recommendation-matrix-header {
 
-        display: none;
+        display:
+            none;
 
     }
 
 
     .recommendation-row {
 
-        display: block;
+        display:
+            block;
 
-        margin-bottom: 18px;
+        margin-bottom:
+            16px;
 
-        overflow: hidden;
+        overflow:
+            hidden;
 
         border:
-            1px solid
-            var(--border-color);
+            1px solid var(--border-color);
 
-        border-radius: 8px;
+        border-radius:
+            8px;
 
         background:
             var(--bg-white);
@@ -1938,29 +2086,24 @@ body.modal-open {
     }
 
 
-    .recommendation-row:last-child {
-
-        margin-bottom: 0;
-
-    }
-
-
     .recommendation-cell {
 
-        padding: 16px;
+        padding:
+            16px;
 
-        border-right: none;
+        border-right:
+            none;
 
         border-bottom:
-            1px solid
-            var(--border-color);
+            1px solid var(--border-color);
 
     }
 
 
     .recommendation-cell:last-child {
 
-        border-bottom: none;
+        border-bottom:
+            none;
 
     }
 
@@ -1970,9 +2113,11 @@ body.modal-open {
         content:
             attr(data-label);
 
-        display: block;
+        display:
+            block;
 
-        margin-bottom: 7px;
+        margin-bottom:
+            7px;
 
         color:
             var(--text-muted);
@@ -1981,7 +2126,7 @@ body.modal-open {
             0.64rem;
 
         font-weight:
-            600;
+            700;
 
         letter-spacing:
             0.1em;
@@ -2003,39 +2148,45 @@ body.modal-open {
     }
 
 
-    /* BUSINESS IMPACT */
+    /* ---------------------------------------------
+       BUSINESS IMPACT
+    --------------------------------------------- */
 
     .business-impact-table {
 
-        overflow: visible;
+        border:
+            none;
 
-        border: none;
-
-        background: transparent;
+        background:
+            transparent;
 
     }
 
 
     .business-impact-header {
 
-        display: none;
+        display:
+            none;
 
     }
 
 
     .business-impact-row {
 
-        display: block;
+        display:
+            block;
 
-        margin-bottom: 18px;
+        margin-bottom:
+            16px;
 
-        overflow: hidden;
+        overflow:
+            hidden;
 
         border:
-            1px solid
-            var(--border-color);
+            1px solid var(--border-color);
 
-        border-radius: 8px;
+        border-radius:
+            8px;
 
         background:
             var(--bg-white);
@@ -2043,29 +2194,24 @@ body.modal-open {
     }
 
 
-    .business-impact-row:last-child {
-
-        margin-bottom: 0;
-
-    }
-
-
     .business-impact-cell {
 
-        padding: 16px;
+        padding:
+            16px;
 
-        border-right: none;
+        border-right:
+            none;
 
         border-bottom:
-            1px solid
-            var(--border-color);
+            1px solid var(--border-color);
 
     }
 
 
     .business-impact-cell:last-child {
 
-        border-bottom: none;
+        border-bottom:
+            none;
 
     }
 
@@ -2075,9 +2221,11 @@ body.modal-open {
         content:
             attr(data-label);
 
-        display: block;
+        display:
+            block;
 
-        margin-bottom: 7px;
+        margin-bottom:
+            7px;
 
         color:
             var(--text-muted);
@@ -2086,7 +2234,7 @@ body.modal-open {
             0.64rem;
 
         font-weight:
-            600;
+            700;
 
         letter-spacing:
             0.1em;
@@ -2108,11 +2256,14 @@ body.modal-open {
     }
 
 
-    /* TECHNICAL TOOLS */
+    /* ---------------------------------------------
+       TECHNICAL TOOLS
+    --------------------------------------------- */
 
     #technical-tools {
 
-        padding-bottom: 0;
+        padding-bottom:
+            0;
 
     }
 
@@ -2120,9 +2271,7 @@ body.modal-open {
     .technical-tools-intro {
 
         margin:
-            -4px
-            0
-            20px;
+            -4px 0 20px;
 
         font-size:
             0.88rem;
@@ -2135,7 +2284,8 @@ body.modal-open {
         grid-template-columns:
             1fr;
 
-        gap: 14px;
+        gap:
+            14px;
 
     }
 
@@ -2153,16 +2303,19 @@ body.modal-open {
 
     .technical-tool-card {
 
-        min-height: auto;
+        min-height:
+            auto;
 
-        padding: 20px;
+        padding:
+            20px;
 
     }
 
 
     .technical-tool-card h3 {
 
-        margin-bottom: 10px;
+        margin-bottom:
+            10px;
 
         font-size:
             0.98rem;
@@ -2181,24 +2334,29 @@ body.modal-open {
     }
 
 
-    /* IMAGE MODAL */
+    /* ---------------------------------------------
+       IMAGE MODAL
+    --------------------------------------------- */
 
     .image-modal {
 
-        padding: 16px;
+        padding:
+            16px;
 
     }
 
 
     .image-modal-content {
 
-        width: 100%;
+        width:
+            100%;
 
-        max-height: 90vh;
+        max-height:
+            90vh;
 
-        padding: 14px;
+        padding:
+            14px;
 
     }
-
 
 }
