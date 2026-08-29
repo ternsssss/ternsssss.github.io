@@ -22,8 +22,6 @@
 
     --text: #5e6f82;
     --muted: #7b8998;
-
-    --shadow: 0 8px 24px rgba(31, 58, 95, 0.06);
 }
 
 
@@ -50,6 +48,7 @@ body {
         sans-serif;
 
     background: var(--bg);
+
     color: var(--navy);
 
     line-height: 1.6;
@@ -65,6 +64,7 @@ body.modal-open {
 
 img {
     display: block;
+
     width: 100%;
 }
 
@@ -97,6 +97,7 @@ button {
     display: flex;
 
     justify-content: space-between;
+
     align-items: flex-start;
 
     gap: 32px;
@@ -164,11 +165,11 @@ button {
 
 
 .project-industry strong {
+    color: var(--navy);
+
     font-size: 0.9rem;
 
     font-weight: 500;
-
-    color: var(--navy);
 }
 
 
@@ -205,6 +206,7 @@ button {
     gap: 32px;
 
     overflow-x: auto;
+
     overflow-y: hidden;
 
     scrollbar-width: none;
@@ -244,6 +246,7 @@ button {
     position: absolute;
 
     left: 0;
+
     right: 0;
 
     bottom: -1px;
@@ -447,7 +450,7 @@ button {
 
 
 .key-questions-intro {
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 
     color: var(--text);
 
@@ -455,35 +458,52 @@ button {
 }
 
 
+/* ================================================================
+   KEY QUESTIONS — BULLET FORM
+================================================================ */
+
 .business-question-list {
     display: grid;
 
     gap: 0;
 
-    padding: 0;
+    padding-left: 22px;
 
     list-style: none;
 }
 
 
 .business-question-list li {
-    display: grid;
-
-    grid-template-columns:
-        42px
-        1fr;
-
-    gap: 14px;
-
-    align-items: start;
+    position: relative;
 
     padding:
-        18px
-        0;
+        15px
+        0
+        15px
+        18px;
 
     border-bottom:
         1px solid
         var(--line);
+}
+
+
+.business-question-list li::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 25px;
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--blue);
 }
 
 
@@ -492,34 +512,7 @@ button {
 }
 
 
-.question-bullet {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    width: 32px;
-
-    height: 32px;
-
-    border:
-        1px solid
-        var(--line);
-
-    border-radius: 50%;
-
-    background: var(--surface-soft);
-
-    color: var(--blue-dark);
-
-    font-size: 0.66rem;
-
-    font-weight: 600;
-}
-
-
-.business-question-list strong {
+.question-content strong {
     display: block;
 
     margin-bottom: 4px;
@@ -527,10 +520,12 @@ button {
     color: var(--navy);
 
     font-size: 0.95rem;
+
+    font-weight: 600;
 }
 
 
-.business-question-list p {
+.question-content p {
     color: var(--text);
 
     font-size: 0.9rem;
@@ -653,7 +648,7 @@ button {
 
 
 /* ================================================================
-   DASHBOARD IMAGES
+   DASHBOARD IMAGE
 ================================================================ */
 
 .insight-dashboard-trigger {
@@ -733,7 +728,7 @@ button {
 
 /* ================================================================
    CATEGORY IMAGE PAIR
-   IMPORTANT: TWO IMAGES STAY SIDE-BY-SIDE
+   TWO IMAGES VERTICALLY
 ================================================================ */
 
 .category-insight-layout {
@@ -746,9 +741,7 @@ button {
 .insight-image-pair {
     display: grid;
 
-    grid-template-columns:
-        1fr
-        1fr;
+    grid-template-columns: 1fr;
 
     gap: 14px;
 
@@ -764,7 +757,7 @@ button {
 
 
 /* ================================================================
-   RECOMMENDATIONS / BUSINESS IMPACT TABLES
+   RECOMMENDATIONS / BUSINESS IMPACT
 ================================================================ */
 
 .recommendation-matrix,
@@ -1036,8 +1029,47 @@ button {
 
 
 /* ================================================================
+   MANAGEMENT PRINCIPLE
+================================================================ */
+
+.management-principle {
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+
+    margin-top: 24px;
+
+    padding:
+        17px
+        20px;
+
+    border:
+        1px solid
+        var(--line);
+
+    background: var(--surface-soft);
+}
+
+
+.management-principle strong {
+    color: var(--navy);
+
+    font-size: 0.88rem;
+}
+
+
+.management-principle span {
+    color: var(--text);
+
+    font-size: 0.88rem;
+}
+
+
+/* ================================================================
    TECHNICAL TOOLS
-   Master-aligned horizontal rows
+   MASTER-ALIGNED HORIZONTAL ROW DESIGN
 ================================================================ */
 
 .technical-tools-list {
@@ -1060,6 +1092,8 @@ button {
 
     min-height: 60px;
 
+    overflow: hidden;
+
     border:
         1px solid
         var(--line);
@@ -1076,8 +1110,6 @@ button {
             95,
             0.08
         );
-
-    overflow: hidden;
 }
 
 
@@ -1121,12 +1153,16 @@ button {
 }
 
 
+/* BLUE ROW */
+
 .tool-blue .technical-tool-name {
     border-left-color: var(--blue);
 
     color: var(--blue-dark);
 }
 
+
+/* GREEN ROW */
 
 .tool-green .technical-tool-name {
     border-left-color: var(--green);
@@ -1395,19 +1431,13 @@ button {
     }
 
 
-    .business-question-list li {
-        grid-template-columns:
-            38px
-            1fr;
-
-        gap: 10px;
+    .business-question-list {
+        padding-left: 20px;
     }
 
 
-    .question-bullet {
-        width: 30px;
-
-        height: 30px;
+    .business-question-list li {
+        padding-left: 16px;
     }
 
 
@@ -1441,8 +1471,8 @@ button {
 
 
     /*
-       On mobile, the two category images can stack
-       to avoid making them too small.
+       Keep category images vertically stacked
+       on mobile as well.
     */
 
     .insight-image-pair {
@@ -1556,6 +1586,24 @@ button {
         overflow-x: auto;
     }
 
+
+    .management-principle {
+        display: block;
+
+        padding: 18px;
+    }
+
+
+    .management-principle strong {
+        display: block;
+
+        margin-bottom: 6px;
+    }
+
+
+    /* ============================================================
+       TECHNICAL TOOLS — MOBILE
+    ============================================================ */
 
     .technical-tools-list {
         gap: 14px;
