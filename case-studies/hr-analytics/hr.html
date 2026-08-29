@@ -1477,6 +1477,9 @@
 
             <div class="technical-tools-grid">
 
+
+                <!-- POWER BI -->
+
                 <article class="technical-tool-card">
 
                     <h3>
@@ -1484,12 +1487,14 @@
                     </h3>
 
                     <p>
-                        Executive dashboarding, interactive filtering,
-                        KPI reporting, and workforce visual storytelling.
+                        Dashboard development, interactive reporting,
+                        KPI and visual storytelling.
                     </p>
 
                 </article>
 
+
+                <!-- DAX -->
 
                 <article class="technical-tool-card">
 
@@ -1498,12 +1503,14 @@
                     </h3>
 
                     <p>
-                        Measures and business logic for workforce,
-                        hiring, compensation, and attrition analysis.
+                        Calculated measures and analytical logic for workforce
+                        and attrition metrics.
                     </p>
 
                 </article>
 
+
+                <!-- POWER QUERY -->
 
                 <article class="technical-tool-card">
 
@@ -1512,12 +1519,30 @@
                     </h3>
 
                     <p>
-                        Data preparation, transformation, cleaning,
-                        and shaping for HR reporting.
+                        Data preparation, transformation,
+                        and shaping.
                     </p>
 
                 </article>
 
+
+                <!-- EXCEL -->
+
+                <article class="technical-tool-card">
+
+                    <h3>
+                        Excel
+                    </h3>
+
+                    <p>
+                        Data review, validation,
+                        and supporting analysis.
+                    </p>
+
+                </article>
+
+
+                <!-- DATA MODELING -->
 
                 <article class="technical-tool-card">
 
@@ -1526,35 +1551,19 @@
                     </h3>
 
                     <p>
-                        Structured relationships and analytical tables
-                        designed for reliable workforce reporting.
+                        Structured relationships and analytical
+                        model design for scalable reporting.
                     </p>
 
                 </article>
+
 
             </div>
 
         </section>
 
 
-
-        <!-- =====================================================
-             BACK TO PORTFOLIO
-        ====================================================== -->
-
-        <div class="back-to-portfolio-wrap">
-
-            <a
-                href="https://ternsssss.github.io/#projects"
-                class="back-to-portfolio"
-            >
-                ← Back to Portfolio
-            </a>
-
-        </div>
-
-
-    </main>
+</main>
 
 
 
@@ -1617,6 +1626,125 @@
     ========================================================== -->
 
     <script>
+
+        /* =====================================================
+           SMOOTH CASE-STUDY NAVIGATION
+        ====================================================== */
+
+        const navigation =
+            document.querySelector(".case-navigation");
+
+        const navigationLinks =
+            document.querySelectorAll(".case-navigation a");
+
+        const navigationSections =
+            document.querySelectorAll(
+                ".case-study-section[id]"
+            );
+
+
+        navigationLinks.forEach((link) => {
+
+            link.addEventListener("click", (event) => {
+
+                const targetId =
+                    link.getAttribute("href");
+
+                if (!targetId || !targetId.startsWith("#")) {
+                    return;
+                }
+
+                const target =
+                    document.querySelector(targetId);
+
+                if (!target) {
+                    return;
+                }
+
+                event.preventDefault();
+
+                const navigationHeight =
+                    navigation
+                        ? navigation.offsetHeight
+                        : 0;
+
+                const targetPosition =
+                    target.getBoundingClientRect().top +
+                    window.scrollY -
+                    navigationHeight -
+                    18;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth"
+                });
+
+                history.replaceState(
+                    null,
+                    "",
+                    targetId
+                );
+
+            });
+
+        });
+
+
+        const sectionObserver =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach((entry) => {
+
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+                        navigationLinks.forEach((link) => {
+
+                            const isCurrent =
+                                link.getAttribute("href") ===
+                                `#${entry.target.id}`;
+
+                            link.classList.toggle(
+                                "active",
+                                isCurrent
+                            );
+
+                            if (isCurrent) {
+
+                                link.setAttribute(
+                                    "aria-current",
+                                    "page"
+                                );
+
+                            } else {
+
+                                link.removeAttribute(
+                                    "aria-current"
+                                );
+
+                            }
+
+                        });
+
+                    });
+
+                },
+                {
+                    rootMargin:
+                        "-110px 0px -65% 0px",
+                    threshold: 0
+                }
+            );
+
+
+        navigationSections.forEach((section) => {
+
+            sectionObserver.observe(section);
+
+        });
+
 
         const modal =
             document.getElementById("imageModal");
