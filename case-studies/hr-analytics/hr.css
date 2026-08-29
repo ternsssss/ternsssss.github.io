@@ -389,6 +389,11 @@ img {
     margin-bottom: 56px;
 }
 
+.business-problem p {
+    color: var(--text);
+}
+
+
 .key-questions {
     margin-top: 0;
 }
