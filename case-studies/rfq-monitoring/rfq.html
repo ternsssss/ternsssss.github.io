@@ -1,82 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>RFQ Monitoring Analysis | Terns Data Prism</title>
 
-    <title>
-        RFQ Performance & Procurement Value Analysis | Terns Data Prism
-    </title>
-
-    <meta
-        name="description"
-        content="RFQ Performance and Procurement Value Analysis case study covering RFQ conversion, procurement savings, quotation turnaround, aging, and category concentration."
-    >
-
-    <link
-        rel="stylesheet"
-        href="rfq.css"
-    >
-
+    <link rel="stylesheet" href="rfq.css">
 </head>
-
 
 <body>
 
     <main class="case-study">
 
-
         <!-- =========================================================
-             PROJECT TOPBAR
+             PROJECT TOP BAR
         ========================================================== -->
 
-        <header class="project-topbar">
+        <div class="project-topbar">
 
-            <a
-                href="../../index.html"
-                class="back-to-portfolio"
-            >
-                Back to Portfolio ←
+            <a href="../../index.html" class="back-to-portfolio">
+                ← Back to Portfolio
             </a>
 
             <div class="project-industry">
-
-                <span>
-                    Industry
-                </span>
-
-                <strong>
-                    Project Management
-                </strong>
-
+                <span>Industry</span>
+                <strong>Project Management</strong>
             </div>
 
-        </header>
+        </div>
 
 
         <!-- =========================================================
-             CASE STUDY NAVIGATION
+             NAVIGATION
         ========================================================== -->
 
-        <nav
-            class="case-navigation"
-            aria-label="Case study navigation"
-        >
+        <nav class="case-navigation" aria-label="Case study navigation">
 
             <div class="case-navigation-inner">
 
-                <a
-                    href="#overview"
-                    class="active"
-                >
-                    Overview
-                </a>
+                <a href="#overview" class="active">Overview</a>
 
                 <a href="#business-questions">
                     Business Questions
@@ -108,373 +71,231 @@
 
 
         <!-- =========================================================
-             01 — OVERVIEW
+             1. OVERVIEW
         ========================================================== -->
 
-        <section
-            id="overview"
-            class="case-study-section"
-        >
+        <section id="overview" class="case-study-section">
 
-            <header class="main-report-header">
+            <div class="main-report-header">
 
-                <span class="main-section-number">
-                    1.
-                </span>
+                <span class="main-section-number">1.</span>
 
-                <h2>
-                    Overview
-                </h2>
-
-            </header>
-
-
-            <article class="report-item report-project">
-
-                <span class="report-label">
-                    Project Title
-                </span>
-
-                <h1>
-                    RFQ Performance & Procurement Value Analysis
-                </h1>
-
-            </article>
-
-
-            <article class="report-item">
-
-                <span class="report-label">
-                    Business Case
-                </span>
-
-                <p>
-                    Procurement leaders need more than an RFQ count.
-                    They need to know how sourcing activity converts into
-                    awards, how much financial value is captured, and
-                    where execution requires attention.
-                </p>
-
-            </article>
-
-
-            <article class="report-item">
-
-                <span class="report-label">
-                    Business Objective
-                </span>
-
-                <p>
-                    Enable leaders to identify conversion gaps,
-                    quantify sourcing value, and improve RFQ execution
-                    through outcome, savings, turnaround, aging,
-                    and category analysis.
-                </p>
-
-            </article>
-
-
-            <div class="management-view">
-
-                <div class="management-view-label">
-                    Management View
-                </div>
-
-                <div class="management-view-content">
-
-                    <strong>
-                        RFQ Pipeline
-                    </strong>
-
-                    <span>
-                        →
-                    </span>
-
-                    <strong>
-                        Conversion
-                    </strong>
-
-                    <span>
-                        →
-                    </span>
-
-                    <strong>
-                        Financial Value
-                    </strong>
-
-                    <span>
-                        →
-                    </span>
-
-                    <strong>
-                        Control
-                    </strong>
-
-                </div>
+                <h2>Overview</h2>
 
             </div>
 
 
-            <div class="dashboard-showcase">
+            <div class="overview-grid">
 
-                <button
-                    class="dashboard-trigger"
-                    type="button"
-                    aria-label="Expand RFQ performance dashboard"
-                >
+                <div class="overview-copy">
 
-                    <img
-                        src="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-01.png"
-                        alt="RFQ performance and procurement value dashboard"
+                    <div class="report-item">
+
+                        <span class="report-label">
+                            Project Title
+                        </span>
+
+                        <h1>
+                            RFQ Performance &amp;<br>
+                            Procurement Value Analysis
+                        </h1>
+
+                    </div>
+
+
+                    <div class="report-item">
+
+                        <span class="report-label">
+                            Business Case
+                        </span>
+
+                        <p>
+                            Procurement leaders need more than an RFQ count.
+                            They need to understand how sourcing activity converts
+                            into awards, how much financial value is captured,
+                            and where execution requires attention.
+                        </p>
+
+                    </div>
+
+
+                    <div class="report-item">
+
+                        <span class="report-label">
+                            Business Objective
+                        </span>
+
+                        <p>
+                            Enable leaders to identify RFQ conversion gaps,
+                            quantify sourcing value, and improve RFQ execution
+                            through outcome, savings, turnaround, aging, and
+                            category analysis.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="overview-dashboard">
+
+                    <button
+                        class="dashboard-trigger"
+                        data-image="assets/projects/previews/rfq-monitoring/rfq-monitoring-01.png"
+                        data-title="RFQ Performance Dashboard"
                     >
 
-                    <span class="image-expand-label">
-                        Click to expand
-                    </span>
+                        <img
+                            src="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-01.png"
+                            alt="RFQ Performance Dashboard"
+                        >
 
-                </button>
+                        <span class="image-expand-label">
+                            Click to expand ↗
+                        </span>
 
-            </div>
-
-
-            <div class="baseline-grid">
-
-                <div class="baseline-item">
-
-                    <strong>
-                        37
-                    </strong>
-
-                    <span>
-                        Total RFQs
-                    </span>
-
-                </div>
+                    </button>
 
 
-                <div class="baseline-item">
-
-                    <strong>
-                        ₱82.3M
-                    </strong>
-
-                    <span>
-                        Approved Value
-                    </span>
-
-                </div>
-
-
-                <div class="baseline-item">
-
-                    <strong>
-                        ₱10.7M
-                    </strong>
-
-                    <span>
-                        Procurement Savings
-                    </span>
-
-                </div>
-
-
-                <div class="baseline-item">
-
-                    <strong>
-                        13.0%
-                    </strong>
-
-                    <span>
-                        Savings Rate
-                    </span>
-
-                </div>
-
-
-                <div class="baseline-item">
-
-                    <strong>
-                        9.65
-                    </strong>
-
-                    <span>
-                        Avg. Quotation Turnaround
-                    </span>
-
-                </div>
-
-
-                <div class="baseline-item">
-
-                    <strong>
-                        24.16
-                    </strong>
-
-                    <span>
-                        Avg. Aging Days
-                    </span>
+                    <div class="dashboard-caption">
+                        Dashboard updated June 13, 2026.
+                    </div>
 
                 </div>
 
             </div>
 
 
-            <p class="dashboard-update">
-                Dashboard updated June 13, 2026.
+            <div class="overview-kpis">
+
+                <div class="overview-kpi">
+                    <strong>37</strong>
+                    <span>Total RFQs</span>
+                </div>
+
+                <div class="overview-kpi">
+                    <strong>₱82.3 M</strong>
+                    <span>Approved Value</span>
+                </div>
+
+                <div class="overview-kpi">
+                    <strong>₱10.7 M</strong>
+                    <span>Procurement Savings</span>
+                </div>
+
+                <div class="overview-kpi">
+                    <strong>13.0%</strong>
+                    <span>Savings Rate</span>
+                </div>
+
+                <div class="overview-kpi">
+                    <strong>9.65</strong>
+                    <span>Avg. Turnaround Days</span>
+                </div>
+
+                <div class="overview-kpi">
+                    <strong>24.16</strong>
+                    <span>Avg. Aging Days</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             2. BUSINESS QUESTIONS
+        ========================================================== -->
+
+        <section id="business-questions" class="case-study-section">
+
+            <div class="main-report-header">
+
+                <span class="main-section-number">2.</span>
+
+                <h2>Business Questions</h2>
+
+            </div>
+
+            <p class="section-intro">
+                Each question links directly to a procurement decision.
             </p>
 
-        </section>
+
+            <div class="business-question-layout">
+
+                <ol class="business-question-list">
+
+                    <li>
+                        <span>01</span>
+
+                        <div>
+                            <strong>RFQ Conversion</strong>
+
+                            <p>
+                                How effectively are RFQs converting into
+                                awarded business?
+                            </p>
+                        </div>
+                    </li>
 
 
-        <!-- =========================================================
-             02 — BUSINESS QUESTIONS
-        ========================================================== -->
+                    <li>
+                        <span>02</span>
 
-        <section
-            id="business-questions"
-            class="case-study-section"
-        >
+                        <div>
+                            <strong>Procurement Value</strong>
 
-            <header class="main-report-header">
-
-                <span class="main-section-number">
-                    2.
-                </span>
-
-                <h2>
-                    Business Questions
-                </h2>
-
-            </header>
+                            <p>
+                                How much approved value and savings are
+                                being generated?
+                            </p>
+                        </div>
+                    </li>
 
 
-            <article class="report-item">
+                    <li>
+                        <span>03</span>
 
-                <span class="report-label">
-                    Management Focus
-                </span>
+                        <div>
+                            <strong>Operational Efficiency</strong>
 
-                <p>
-                    Each question links directly to a procurement decision,
-                    connecting RFQ activity with conversion, financial value,
-                    operational efficiency, control, and category exposure.
-                </p>
-
-            </article>
-
-
-            <div class="question-list">
+                            <p>
+                                How efficiently are RFQs progressing through
+                                quotation?
+                            </p>
+                        </div>
+                    </li>
 
 
-                <article class="question-item">
+                    <li>
+                        <span>04</span>
 
-                    <div class="question-number">
-                        01
-                    </div>
+                        <div>
+                            <strong>Aging &amp; Control</strong>
 
-                    <div class="question-content">
-
-                        <span>
-                            RFQ Conversion
-                        </span>
-
-                        <p>
-                            How effectively are RFQs converting into
-                            awarded business?
-                        </p>
-
-                    </div>
-
-                </article>
+                            <p>
+                                Where does the RFQ pipeline require
+                                management attention?
+                            </p>
+                        </div>
+                    </li>
 
 
-                <article class="question-item">
+                    <li>
+                        <span>05</span>
 
-                    <div class="question-number">
-                        02
-                    </div>
+                        <div>
+                            <strong>Category Concentration</strong>
 
-                    <div class="question-content">
+                            <p>
+                                Where are RFQ volume and financial exposure
+                                concentrated?
+                            </p>
+                        </div>
+                    </li>
 
-                        <span>
-                            Procurement Value
-                        </span>
-
-                        <p>
-                            How much approved value and savings are
-                            being generated?
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="question-item">
-
-                    <div class="question-number">
-                        03
-                    </div>
-
-                    <div class="question-content">
-
-                        <span>
-                            Operational Efficiency
-                        </span>
-
-                        <p>
-                            How efficiently are RFQs progressing
-                            through quotation?
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="question-item">
-
-                    <div class="question-number">
-                        04
-                    </div>
-
-                    <div class="question-content">
-
-                        <span>
-                            Aging & Control
-                        </span>
-
-                        <p>
-                            Where does the pipeline require
-                            management attention?
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="question-item">
-
-                    <div class="question-number">
-                        05
-                    </div>
-
-                    <div class="question-content">
-
-                        <span>
-                            Category Concentration
-                        </span>
-
-                        <p>
-                            Where are RFQ volume and financial exposure
-                            concentrated?
-                        </p>
-
-                    </div>
-
-                </article>
-
+                </ol>
 
             </div>
 
@@ -482,40 +303,22 @@
 
 
         <!-- =========================================================
-             03 — KEY INSIGHTS
+             3. KEY INSIGHTS
         ========================================================== -->
 
-        <section
-            id="key-insights"
-            class="case-study-section"
-        >
+        <section id="key-insights" class="case-study-section">
 
-            <header class="main-report-header">
+            <div class="main-report-header">
 
-                <span class="main-section-number">
-                    3.
-                </span>
+                <span class="main-section-number">3.</span>
 
-                <h2>
-                    Key Insights
-                </h2>
-
-            </header>
-
-
-            <div class="insights-intro">
-
-                <span class="report-label">
-                    What the Data Reveals
-                </span>
-
-                <p>
-                    The analysis connects RFQ conversion, procurement value,
-                    category performance, quotation consistency, and aging
-                    to management action.
-                </p>
+                <h2>Key Insights</h2>
 
             </div>
+
+            <p class="section-intro">
+                What the data reveals about RFQ conversion, value and performance.
+            </p>
 
 
             <!-- INSIGHT 01 -->
@@ -524,9 +327,7 @@
 
                 <div class="insight-heading">
 
-                    <span class="insight-number">
-                        01
-                    </span>
+                    <span class="insight-number">01</span>
 
                     <h3>
                         Conversion is the largest gap
@@ -537,39 +338,33 @@
 
                 <div class="insight-layout">
 
-                    <div class="insight-dashboard">
+                    <button
+                        class="insight-dashboard-trigger"
+                        data-image="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-01.png"
+                        data-title="RFQ Conversion"
+                    >
 
-                        <button
-                            class="insight-dashboard-trigger"
-                            type="button"
-                            aria-label="Expand RFQ outcome dashboard"
+                        <img
+                            src="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-01.png"
+                            alt="RFQ Conversion Dashboard"
                         >
 
-                            <img
-                                src="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-01.png"
-                                alt="RFQ dashboard showing awarded and non-awarded outcomes"
-                            >
+                        <span class="image-expand-label">
+                            Click to expand ↗
+                        </span>
 
-                            <span class="image-expand-label">
-                                Click to expand
-                            </span>
-
-                        </button>
-
-                    </div>
+                    </button>
 
 
-                    <div class="insight-details">
+                    <div class="insight-content">
 
                         <div class="insight-block">
 
-                            <span>
-                                Observation
-                            </span>
+                            <span>Observation</span>
 
                             <p>
                                 43% of RFQs are Not Awarded:
-                                16 of 37 versus 13 Awarded.
+                                16 of 37 RFQs.
                             </p>
 
                         </div>
@@ -577,13 +372,12 @@
 
                         <div class="insight-block">
 
-                            <span>
-                                Analysis
-                            </span>
+                            <span>Analysis</span>
 
                             <p>
-                                Not Awarded is the largest single
-                                outcome category.
+                                Not Awarded is the largest RFQ outcome
+                                category, indicating a significant gap between
+                                sourcing activity and commercial conversion.
                             </p>
 
                         </div>
@@ -591,13 +385,11 @@
 
                         <div class="insight-block">
 
-                            <span>
-                                Impact
-                            </span>
+                            <span>Impact</span>
 
                             <p>
-                                A significant share of sourcing activity
-                                is not converting.
+                                A significant share of sourcing activity is not
+                                converting into awarded business.
                             </p>
 
                         </div>
@@ -605,13 +397,11 @@
 
                         <div class="insight-block">
 
-                            <span>
-                                Recommendation
-                            </span>
+                            <span>Recommendation</span>
 
                             <p>
                                 Create a loss-reason framework by outcome,
-                                buyer, category, and supplier.
+                                buyer, category and supplier.
                             </p>
 
                         </div>
@@ -629,9 +419,7 @@
 
                 <div class="insight-heading">
 
-                    <span class="insight-number">
-                        02
-                    </span>
+                    <span class="insight-number">02</span>
 
                     <h3>
                         Procurement creates measurable value
@@ -642,39 +430,33 @@
 
                 <div class="insight-layout">
 
-                    <div class="insight-dashboard">
+                    <button
+                        class="insight-dashboard-trigger"
+                        data-image="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-01.png"
+                        data-title="Procurement Value"
+                    >
 
-                        <button
-                            class="insight-dashboard-trigger"
-                            type="button"
-                            aria-label="Expand procurement value dashboard"
+                        <img
+                            src="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-01.png"
+                            alt="Procurement Value Dashboard"
                         >
 
-                            <img
-                                src="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-02.png"
-                                alt="RFQ dashboard showing approved value and procurement savings"
-                            >
+                        <span class="image-expand-label">
+                            Click to expand ↗
+                        </span>
 
-                            <span class="image-expand-label">
-                                Click to expand
-                            </span>
-
-                        </button>
-
-                    </div>
+                    </button>
 
 
-                    <div class="insight-details">
+                    <div class="insight-content">
 
                         <div class="insight-block">
 
-                            <span>
-                                Observation
-                            </span>
+                            <span>Observation</span>
 
                             <p>
-                                ₱82.3M approved value generated ₱10.7M
-                                savings at a 13.0% savings rate.
+                                ₱82.3M approved value generated
+                                ₱10.7M in procurement savings.
                             </p>
 
                         </div>
@@ -682,13 +464,12 @@
 
                         <div class="insight-block">
 
-                            <span>
-                                Analysis
-                            </span>
+                            <span>Analysis</span>
 
                             <p>
-                                Electrical contributes ₱68.5M approved
-                                value and ₱8.9M savings.
+                                The sourcing pipeline is producing meaningful
+                                financial value, with savings reaching a
+                                13.0% rate.
                             </p>
 
                         </div>
@@ -696,13 +477,11 @@
 
                         <div class="insight-block">
 
-                            <span>
-                                Impact
-                            </span>
+                            <span>Impact</span>
 
                             <p>
-                                Procurement is creating material
-                                commercial value at scale.
+                                Procurement is creating material commercial
+                                value at scale.
                             </p>
 
                         </div>
@@ -710,13 +489,12 @@
 
                         <div class="insight-block">
 
-                            <span>
-                                Recommendation
-                            </span>
+                            <span>Recommendation</span>
 
                             <p>
-                                Prioritize high-value categories and
-                                replicate strong sourcing practices.
+                                Prioritize high-value categories and replicate
+                                sourcing practices associated with stronger
+                                savings.
                             </p>
 
                         </div>
@@ -734,34 +512,50 @@
 
                 <div class="insight-heading">
 
-                    <span class="insight-number">
-                        03
-                    </span>
+                    <span class="insight-number">03</span>
 
                     <h3>
-                        Savings performance differs by category
+                        Category savings vary materially
                     </h3>
 
                 </div>
 
 
-                <div class="insight-layout">
+                <div class="insight-layout category-insight-layout">
 
-                    <div class="insight-dashboard">
+                    <div class="insight-image-pair">
 
                         <button
                             class="insight-dashboard-trigger"
-                            type="button"
-                            aria-label="Expand category savings dashboard"
+                            data-image="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-03.png"
+                            data-title="Category Savings — CSA and Electrical"
                         >
 
                             <img
                                 src="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-03.png"
-                                alt="RFQ category savings performance dashboard"
+                                alt="Category Savings Dashboard"
                             >
 
                             <span class="image-expand-label">
-                                Click to expand
+                                Click to expand ↗
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="insight-dashboard-trigger"
+                            data-image="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-04.png"
+                            data-title="Category Savings — Mechanical"
+                        >
+
+                            <img
+                                src="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-04.png"
+                                alt="Mechanical Category Savings Dashboard"
+                            >
+
+                            <span class="image-expand-label">
+                                Click to expand ↗
                             </span>
 
                         </button>
@@ -769,17 +563,16 @@
                     </div>
 
 
-                    <div class="insight-details">
+                    <div class="insight-content">
 
                         <div class="insight-block">
 
-                            <span>
-                                Observation
-                            </span>
+                            <span>Observation</span>
 
                             <p>
-                                CSA 5.7% • Electrical 12.9% •
-                                Mechanical 17.6%.
+                                Savings rates vary by category, with
+                                CSA at 5.7%, Electrical at 12.9%,
+                                and Mechanical at 17.6%.
                             </p>
 
                         </div>
@@ -787,13 +580,11 @@
 
                         <div class="insight-block">
 
-                            <span>
-                                Analysis
-                            </span>
+                            <span>Analysis</span>
 
                             <p>
-                                Electrical leads absolute savings;
-                                Mechanical leads savings rate.
+                                Mechanical demonstrates the strongest savings
+                                rate, while CSA trails the other categories.
                             </p>
 
                         </div>
@@ -801,13 +592,11 @@
 
                         <div class="insight-block">
 
-                            <span>
-                                Impact
-                            </span>
+                            <span>Impact</span>
 
                             <p>
-                                Scale and efficiency point to different
-                                management opportunities.
+                                Category-level performance points to different
+                                sourcing efficiency opportunities.
                             </p>
 
                         </div>
@@ -815,13 +604,11 @@
 
                         <div class="insight-block">
 
-                            <span>
-                                Recommendation
-                            </span>
+                            <span>Recommendation</span>
 
                             <p>
-                                Benchmark categories using both savings
-                                amount and savings rate.
+                                Benchmark categories using both savings amount
+                                and savings rate to identify scalable practices.
                             </p>
 
                         </div>
@@ -839,9 +626,7 @@
 
                 <div class="insight-heading">
 
-                    <span class="insight-number">
-                        04
-                    </span>
+                    <span class="insight-number">04</span>
 
                     <h3>
                         Quotation turnaround is inconsistent
@@ -852,40 +637,34 @@
 
                 <div class="insight-layout">
 
-                    <div class="insight-dashboard">
+                    <button
+                        class="insight-dashboard-trigger"
+                        data-image="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-01.png"
+                        data-title="Quotation Turnaround"
+                    >
 
-                        <button
-                            class="insight-dashboard-trigger"
-                            type="button"
-                            aria-label="Expand quotation turnaround dashboard"
+                        <img
+                            src="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-01.png"
+                            alt="Quotation Turnaround Dashboard"
                         >
 
-                            <img
-                                src="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-04.png"
-                                alt="RFQ dashboard showing quotation turnaround"
-                            >
+                        <span class="image-expand-label">
+                            Click to expand ↗
+                        </span>
 
-                            <span class="image-expand-label">
-                                Click to expand
-                            </span>
-
-                        </button>
-
-                    </div>
+                    </button>
 
 
-                    <div class="insight-details">
+                    <div class="insight-content">
 
                         <div class="insight-block">
 
-                            <span>
-                                Observation
-                            </span>
+                            <span>Observation</span>
 
                             <p>
-                                Average turnaround is 9.65 days,
-                                with monthly observations near
-                                2.8 to 20 days.
+                                Average quotation turnaround is
+                                9.65 days, with visible month-to-month
+                                variation.
                             </p>
 
                         </div>
@@ -893,13 +672,12 @@
 
                         <div class="insight-block">
 
-                            <span>
-                                Analysis
-                            </span>
+                            <span>Analysis</span>
 
                             <p>
-                                The average masks substantial
-                                cycle-time variation.
+                                Peaks in turnaround indicate inconsistent
+                                supplier response and quotation-cycle
+                                performance.
                             </p>
 
                         </div>
@@ -907,13 +685,11 @@
 
                         <div class="insight-block">
 
-                            <span>
-                                Impact
-                            </span>
+                            <span>Impact</span>
 
                             <p>
-                                Unpredictable quotation cycles can delay
-                                commercial decisions.
+                                Slower quotation cycles can delay sourcing
+                                decisions and purchasing execution.
                             </p>
 
                         </div>
@@ -921,13 +697,11 @@
 
                         <div class="insight-block">
 
-                            <span>
-                                Recommendation
-                            </span>
+                            <span>Recommendation</span>
 
                             <p>
-                                Set quotation SLAs and escalate RFQs
-                                approaching the threshold.
+                                Set cycle-time targets with exception monitoring
+                                for quotations exceeding the agreed SLA.
                             </p>
 
                         </div>
@@ -945,12 +719,10 @@
 
                 <div class="insight-heading">
 
-                    <span class="insight-number">
-                        05
-                    </span>
+                    <span class="insight-number">05</span>
 
                     <h3>
-                        Aging requires exception control
+                        RFQ aging requires exception control
                     </h3>
 
                 </div>
@@ -958,39 +730,33 @@
 
                 <div class="insight-layout">
 
-                    <div class="insight-dashboard">
+                    <button
+                        class="insight-dashboard-trigger"
+                        data-image="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-01.png"
+                        data-title="RFQ Aging"
+                    >
 
-                        <button
-                            class="insight-dashboard-trigger"
-                            type="button"
-                            aria-label="Expand RFQ aging dashboard"
+                        <img
+                            src="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-01.png"
+                            alt="RFQ Aging Dashboard"
                         >
 
-                            <img
-                                src="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-05.png"
-                                alt="RFQ dashboard showing aging performance"
-                            >
+                        <span class="image-expand-label">
+                            Click to expand ↗
+                        </span>
 
-                            <span class="image-expand-label">
-                                Click to expand
-                            </span>
-
-                        </button>
-
-                    </div>
+                    </button>
 
 
-                    <div class="insight-details">
+                    <div class="insight-content">
 
                         <div class="insight-block">
 
-                            <span>
-                                Observation
-                            </span>
+                            <span>Observation</span>
 
                             <p>
                                 Average aging is 24.16 days, with periods
-                                near 45 days; 35 of 37 RFQs are closed.
+                                reaching as high as 45 days.
                             </p>
 
                         </div>
@@ -998,13 +764,11 @@
 
                         <div class="insight-block">
 
-                            <span>
-                                Analysis
-                            </span>
+                            <span>Analysis</span>
 
                             <p>
-                                The portfolio is largely closed, but
-                                individual cases can age materially.
+                                The portfolio is largely closed, but individual
+                                RFQs can age materially before resolution.
                             </p>
 
                         </div>
@@ -1012,13 +776,11 @@
 
                         <div class="insight-block">
 
-                            <span>
-                                Impact
-                            </span>
+                            <span>Impact</span>
 
                             <p>
-                                The risk is concentrated in prolonged
-                                exceptions—not a large open backlog.
+                                Prolonged RFQs increase execution risk and
+                                reduce visibility over the active pipeline.
                             </p>
 
                         </div>
@@ -1026,13 +788,11 @@
 
                         <div class="insight-block">
 
-                            <span>
-                                Recommendation
-                            </span>
+                            <span>Recommendation</span>
 
                             <p>
-                                Use 7 / 14 / 30+ day aging buckets
-                                and exception-based escalation.
+                                Use 7 / 14 / 30+ day aging buckets with
+                                exception-based escalation.
                             </p>
 
                         </div>
@@ -1046,9 +806,9 @@
 
             <div class="executive-takeaway">
 
-                <span>
-                    Executive Takeaway
-                </span>
+                <span class="takeaway-icon">↗</span>
+
+                <strong>Executive Takeaway</strong>
 
                 <p>
                     Improve conversion while making RFQ execution
@@ -1061,330 +821,195 @@
 
 
         <!-- =========================================================
-             04 — RECOMMENDATIONS
+             4. RECOMMENDATIONS
         ========================================================== -->
 
-        <section
-            id="recommendations"
-            class="case-study-section"
-        >
+        <section id="recommendations" class="case-study-section">
 
-            <header class="main-report-header">
+            <div class="main-report-header">
 
-                <span class="main-section-number">
-                    4.
-                </span>
+                <span class="main-section-number">4.</span>
 
-                <h2>
-                    Recommendations
-                </h2>
+                <h2>Recommendations</h2>
 
-            </header>
+            </div>
+
+            <p class="section-intro">
+                Five management actions derived directly from the analysis.
+            </p>
 
 
             <div class="recommendation-matrix">
 
-
                 <div class="recommendation-matrix-header">
 
-                    <div class="matrix-heading">
-                        Insight
-                    </div>
+                    <div class="matrix-heading">Insight</div>
 
-                    <div class="matrix-heading">
-                        Recommendation
-                    </div>
+                    <div class="matrix-heading">Recommendation</div>
 
-                    <div class="matrix-heading">
-                        Why It Matters
-                    </div>
+                    <div class="matrix-heading">Why It Matters</div>
 
-                    <div class="matrix-heading">
-                        Expected Impact
-                    </div>
+                    <div class="matrix-heading">Expected Impact</div>
 
                 </div>
 
 
-                <!-- ACTION 01 -->
-
                 <div class="recommendation-row">
 
-                    <div
-                        class="recommendation-cell recommendation-insight"
-                        data-label="Insight"
-                    >
-
-                        <p>
-                            Improve RFQ conversion
-                        </p>
-
+                    <div class="recommendation-cell recommendation-insight"
+                         data-label="Insight">
+                        <p>Improve RFQ conversion</p>
                     </div>
 
-
-                    <div
-                        class="recommendation-cell recommendation-action"
-                        data-label="Recommendation"
-                    >
-
+                    <div class="recommendation-cell"
+                         data-label="Recommendation">
                         <p>
                             Standardize outcome and loss-reason analysis.
                         </p>
-
                     </div>
 
-
-                    <div
-                        class="recommendation-cell"
-                        data-label="Why It Matters"
-                    >
-
+                    <div class="recommendation-cell"
+                         data-label="Why It Matters">
                         <p>
-                            Separates commercial, supplier,
-                            requirement, and process causes.
+                            Separates commercial, supplier, requirement
+                            and process causes.
                         </p>
-
                     </div>
 
-
-                    <div
-                        class="recommendation-cell recommendation-impact"
-                        data-label="Expected Impact"
-                    >
-
+                    <div class="recommendation-cell recommendation-impact"
+                         data-label="Expected Impact">
                         <p>
-                            Higher conversion and clearer
-                            sourcing-loss visibility.
+                            Higher conversion and clearer sourcing-loss
+                            visibility.
                         </p>
-
                     </div>
 
                 </div>
 
 
-                <!-- ACTION 02 -->
-
                 <div class="recommendation-row">
 
-                    <div
-                        class="recommendation-cell recommendation-insight"
-                        data-label="Insight"
-                    >
-
-                        <p>
-                            Scale high-value savings
-                        </p>
-
+                    <div class="recommendation-cell recommendation-insight"
+                         data-label="Insight">
+                        <p>Scale high-value savings</p>
                     </div>
 
-
-                    <div
-                        class="recommendation-cell recommendation-action"
-                        data-label="Recommendation"
-                    >
-
+                    <div class="recommendation-cell"
+                         data-label="Recommendation">
                         <p>
-                            Document sourcing levers behind
-                            high-performing RFQs.
+                            Document sourcing levers behind high-performing
+                            categories.
                         </p>
-
                     </div>
 
-
-                    <div
-                        class="recommendation-cell"
-                        data-label="Why It Matters"
-                    >
-
+                    <div class="recommendation-cell"
+                         data-label="Why It Matters">
                         <p>
-                            Turns successful practices into
-                            repeatable actions.
+                            Turns successful practices into repeatable
+                            actions.
                         </p>
-
                     </div>
 
-
-                    <div
-                        class="recommendation-cell recommendation-impact"
-                        data-label="Expected Impact"
-                    >
-
+                    <div class="recommendation-cell recommendation-impact"
+                         data-label="Expected Impact">
                         <p>
-                            More consistent savings across
-                            high-value procurement.
+                            More consistent savings across future procurement.
                         </p>
-
                     </div>
 
                 </div>
 
 
-                <!-- ACTION 03 -->
-
                 <div class="recommendation-row">
 
-                    <div
-                        class="recommendation-cell recommendation-insight"
-                        data-label="Insight"
-                    >
-
-                        <p>
-                            Benchmark categories
-                        </p>
-
+                    <div class="recommendation-cell recommendation-insight"
+                         data-label="Insight">
+                        <p>Benchmark categories</p>
                     </div>
 
-
-                    <div
-                        class="recommendation-cell recommendation-action"
-                        data-label="Recommendation"
-                    >
-
+                    <div class="recommendation-cell"
+                         data-label="Recommendation">
                         <p>
-                            Compare savings rate, savings amount,
-                            and RFQ volume.
+                            Compare savings rate, savings amount and RFQ volume.
                         </p>
-
                     </div>
 
-
-                    <div
-                        class="recommendation-cell"
-                        data-label="Why It Matters"
-                    >
-
+                    <div class="recommendation-cell"
+                         data-label="Why It Matters">
                         <p>
-                            Distinguishes scale opportunities
-                            from efficiency opportunities.
+                            Distinguishes scale from genuine sourcing efficiency.
                         </p>
-
                     </div>
 
-
-                    <div
-                        class="recommendation-cell recommendation-impact"
-                        data-label="Expected Impact"
-                    >
-
+                    <div class="recommendation-cell recommendation-impact"
+                         data-label="Expected Impact">
                         <p>
-                            Better allocation of procurement
-                            improvement effort.
+                            Better allocation of procurement improvement effort.
                         </p>
-
                     </div>
 
                 </div>
 
 
-                <!-- ACTION 04 -->
-
                 <div class="recommendation-row">
 
-                    <div
-                        class="recommendation-cell recommendation-insight"
-                        data-label="Insight"
-                    >
-
-                        <p>
-                            Introduce turnaround SLAs
-                        </p>
-
+                    <div class="recommendation-cell recommendation-insight"
+                         data-label="Insight">
+                        <p>Introduce turnaround SLAs</p>
                     </div>
 
-
-                    <div
-                        class="recommendation-cell recommendation-action"
-                        data-label="Recommendation"
-                    >
-
+                    <div class="recommendation-cell"
+                         data-label="Recommendation">
                         <p>
-                            Set cycle-time targets with
-                            exception monitoring.
+                            Set cycle-time targets with exception monitoring.
                         </p>
-
                     </div>
 
-
-                    <div
-                        class="recommendation-cell"
-                        data-label="Why It Matters"
-                    >
-
+                    <div class="recommendation-cell"
+                         data-label="Why It Matters">
                         <p>
-                            Enables intervention before delays
+                            Enables intervention before quotation delays
                             affect decisions.
                         </p>
-
                     </div>
 
-
-                    <div
-                        class="recommendation-cell recommendation-impact"
-                        data-label="Expected Impact"
-                    >
-
+                    <div class="recommendation-cell recommendation-impact"
+                         data-label="Expected Impact">
                         <p>
-                            Faster and more predictable
-                            RFQ execution.
+                            Faster and more predictable RFQ execution.
                         </p>
-
                     </div>
 
                 </div>
 
 
-                <!-- ACTION 05 -->
-
                 <div class="recommendation-row">
 
-                    <div
-                        class="recommendation-cell recommendation-insight"
-                        data-label="Insight"
-                    >
-
-                        <p>
-                            Manage aging by exception
-                        </p>
-
+                    <div class="recommendation-cell recommendation-insight"
+                         data-label="Insight">
+                        <p>Manage aging exceptions</p>
                     </div>
 
-
-                    <div
-                        class="recommendation-cell recommendation-action"
-                        data-label="Recommendation"
-                    >
-
+                    <div class="recommendation-cell"
+                         data-label="Recommendation">
                         <p>
-                            Create 7 / 14 / 30+ day
-                            escalation buckets.
+                            Create 7 / 14 / 30+ day escalation buckets.
                         </p>
-
                     </div>
 
-
-                    <div
-                        class="recommendation-cell"
-                        data-label="Why It Matters"
-                    >
-
+                    <div class="recommendation-cell"
+                         data-label="Why It Matters">
                         <p>
-                            Focuses leaders on RFQs that
-                            genuinely need intervention.
+                            Focuses leaders on RFQs that genuinely need
+                            intervention.
                         </p>
-
                     </div>
 
-
-                    <div
-                        class="recommendation-cell recommendation-impact"
-                        data-label="Expected Impact"
-                    >
-
+                    <div class="recommendation-cell recommendation-impact"
+                         data-label="Expected Impact">
                         <p>
-                            Faster closure and lower
-                            prolonged-RFQ exposure.
+                            Faster closure and lower prolonged-RFQ exposure.
                         </p>
-
                     </div>
 
                 </div>
@@ -1395,44 +1020,25 @@
 
 
         <!-- =========================================================
-             05 — BUSINESS IMPACT
+             5. BUSINESS IMPACT
         ========================================================== -->
 
-        <section
-            id="business-impact"
-            class="case-study-section"
-        >
+        <section id="business-impact" class="case-study-section">
 
-            <header class="main-report-header">
+            <div class="main-report-header">
 
-                <span class="main-section-number">
-                    5.
-                </span>
+                <span class="main-section-number">5.</span>
 
-                <h2>
-                    Business Impact
-                </h2>
-
-            </header>
-
-
-            <div class="business-impact-intro">
-
-                <span class="report-label">
-                    Translate Recommendations into Executive Value
-                </span>
-
-                <p>
-                    The recommended actions connect operational improvements
-                    with stronger procurement effectiveness, financial value,
-                    resource allocation, purchasing speed, and execution control.
-                </p>
+                <h2>Business Impact</h2>
 
             </div>
 
+            <p class="section-intro">
+                Translate procurement recommendations into executive value.
+            </p>
+
 
             <div class="business-impact-matrix">
-
 
                 <div class="business-impact-header">
 
@@ -1451,211 +1057,121 @@
                 </div>
 
 
-                <!-- IMPACT 01 -->
-
                 <div class="business-impact-row">
 
-                    <div
-                        class="business-impact-cell impact-recommendation"
-                        data-label="Recommendation"
-                    >
-
-                        <p>
-                            Improve RFQ conversion
-                        </p>
-
+                    <div class="business-impact-cell impact-recommendation"
+                         data-label="Recommendation">
+                        <p>Improve RFQ conversion</p>
                     </div>
 
-
-                    <div
-                        class="business-impact-cell impact-benefit"
-                        data-label="Business Benefit"
-                    >
-
+                    <div class="business-impact-cell impact-benefit"
+                         data-label="Business Benefit">
                         <p>
-                            More effective sourcing decisions
+                            More effective sourcing decisions.
                         </p>
-
                     </div>
 
-
-                    <div
-                        class="business-impact-cell impact-outcome"
-                        data-label="Business Impact"
-                    >
-
+                    <div class="business-impact-cell impact-outcome"
+                         data-label="Business Impact">
                         <p>
-                            Greater procurement effectiveness
+                            Greater procurement effectiveness.
                         </p>
-
                     </div>
 
                 </div>
 
 
-                <!-- IMPACT 02 -->
-
                 <div class="business-impact-row">
 
-                    <div
-                        class="business-impact-cell impact-recommendation"
-                        data-label="Recommendation"
-                    >
-
-                        <p>
-                            Scale savings practices
-                        </p>
-
+                    <div class="business-impact-cell impact-recommendation"
+                         data-label="Recommendation">
+                        <p>Scale savings practices</p>
                     </div>
 
-
-                    <div
-                        class="business-impact-cell impact-benefit"
-                        data-label="Business Benefit"
-                    >
-
+                    <div class="business-impact-cell impact-benefit"
+                         data-label="Business Benefit">
                         <p>
-                            More consistent value capture
+                            More consistent value capture.
                         </p>
-
                     </div>
 
-
-                    <div
-                        class="business-impact-cell impact-outcome"
-                        data-label="Business Impact"
-                    >
-
+                    <div class="business-impact-cell impact-outcome"
+                         data-label="Business Impact">
                         <p>
-                            Stronger financial contribution
+                            Stronger financial contribution.
                         </p>
-
                     </div>
 
                 </div>
 
 
-                <!-- IMPACT 03 -->
-
                 <div class="business-impact-row">
 
-                    <div
-                        class="business-impact-cell impact-recommendation"
-                        data-label="Recommendation"
-                    >
-
-                        <p>
-                            Benchmark categories
-                        </p>
-
+                    <div class="business-impact-cell impact-recommendation"
+                         data-label="Recommendation">
+                        <p>Benchmark categories</p>
                     </div>
 
-
-                    <div
-                        class="business-impact-cell impact-benefit"
-                        data-label="Business Benefit"
-                    >
-
+                    <div class="business-impact-cell impact-benefit"
+                         data-label="Business Benefit">
                         <p>
-                            Sharper prioritization of improvement effort
+                            Sharper prioritization of improvement effort.
                         </p>
-
                     </div>
 
-
-                    <div
-                        class="business-impact-cell impact-outcome"
-                        data-label="Business Impact"
-                    >
-
+                    <div class="business-impact-cell impact-outcome"
+                         data-label="Business Impact">
                         <p>
-                            Better resource allocation
+                            Better resource allocation.
                         </p>
-
                     </div>
 
                 </div>
 
 
-                <!-- IMPACT 04 -->
-
                 <div class="business-impact-row">
 
-                    <div
-                        class="business-impact-cell impact-recommendation"
-                        data-label="Recommendation"
-                    >
-
-                        <p>
-                            Tighten quotation SLAs
-                        </p>
-
+                    <div class="business-impact-cell impact-recommendation"
+                         data-label="Recommendation">
+                        <p>Tighten quotation SLAs</p>
                     </div>
 
-
-                    <div
-                        class="business-impact-cell impact-benefit"
-                        data-label="Business Benefit"
-                    >
-
+                    <div class="business-impact-cell impact-benefit"
+                         data-label="Business Benefit">
                         <p>
-                            More predictable quotation cycles
+                            More predictable quotation cycles.
                         </p>
-
                     </div>
 
-
-                    <div
-                        class="business-impact-cell impact-outcome"
-                        data-label="Business Impact"
-                    >
-
+                    <div class="business-impact-cell impact-outcome"
+                         data-label="Business Impact">
                         <p>
-                            Faster purchasing decisions
+                            Faster purchasing decisions.
                         </p>
-
                     </div>
 
                 </div>
 
 
-                <!-- IMPACT 05 -->
-
                 <div class="business-impact-row">
 
-                    <div
-                        class="business-impact-cell impact-recommendation"
-                        data-label="Recommendation"
-                    >
-
-                        <p>
-                            Manage aging exceptions
-                        </p>
-
+                    <div class="business-impact-cell impact-recommendation"
+                         data-label="Recommendation">
+                        <p>Manage aging exceptions</p>
                     </div>
 
-
-                    <div
-                        class="business-impact-cell impact-benefit"
-                        data-label="Business Benefit"
-                    >
-
+                    <div class="business-impact-cell impact-benefit"
+                         data-label="Business Benefit">
                         <p>
-                            Earlier intervention on prolonged RFQs
+                            Earlier intervention for prolonged RFQs.
                         </p>
-
                     </div>
 
-
-                    <div
-                        class="business-impact-cell impact-outcome"
-                        data-label="Business Impact"
-                    >
-
+                    <div class="business-impact-cell impact-outcome"
+                         data-label="Business Impact">
                         <p>
-                            Lower operational execution risk
+                            Lower operational execution risk.
                         </p>
-
                     </div>
 
                 </div>
@@ -1663,46 +1179,26 @@
             </div>
 
 
-            <div class="impact-baseline">
+            <div class="impact-kpis">
 
-                <div>
-                    <strong>
-                        ₱10.7M
-                    </strong>
-
-                    <span>
-                        Savings
-                    </span>
+                <div class="impact-kpi">
+                    <strong>₱10.7 M</strong>
+                    <span>Savings</span>
                 </div>
 
-                <div>
-                    <strong>
-                        13.0%
-                    </strong>
-
-                    <span>
-                        Savings Rate
-                    </span>
+                <div class="impact-kpi">
+                    <strong>13.0%</strong>
+                    <span>Savings Rate</span>
                 </div>
 
-                <div>
-                    <strong>
-                        9.65
-                    </strong>
-
-                    <span>
-                        Day Turnaround
-                    </span>
+                <div class="impact-kpi">
+                    <strong>9.65 Days</strong>
+                    <span>Avg. Turnaround</span>
                 </div>
 
-                <div>
-                    <strong>
-                        24.16
-                    </strong>
-
-                    <span>
-                        Day Aging
-                    </span>
+                <div class="impact-kpi">
+                    <strong>24.16 Days</strong>
+                    <span>Avg. Aging</span>
                 </div>
 
             </div>
@@ -1711,264 +1207,140 @@
 
 
         <!-- =========================================================
-             06 — EXECUTIVE LENS
+             6. EXECUTIVE LENS
         ========================================================== -->
 
-        <section
-            id="executive-lens"
-            class="case-study-section"
-        >
+        <section id="executive-lens" class="case-study-section">
 
-            <header class="main-report-header">
+            <div class="main-report-header">
 
-                <span class="main-section-number">
-                    6.
-                </span>
+                <span class="main-section-number">6.</span>
 
-                <h2>
-                    Executive Lens
-                </h2>
-
-            </header>
-
-
-            <div class="executive-lens-intro">
-
-                <span class="report-label">
-                    Scale and Efficiency Tell Different Stories
-                </span>
-
-                <p>
-                    Category benchmarking helps management decide where
-                    to pursue leverage and where to replicate best practice.
-                </p>
+                <h2>Executive Lens</h2>
 
             </div>
 
-
-            <div class="category-table">
-
-                <div class="category-table-header">
-
-                    <div>
-                        Category
-                    </div>
-
-                    <div>
-                        RFQs
-                    </div>
-
-                    <div>
-                        Approved Value
-                    </div>
-
-                    <div>
-                        Savings
-                    </div>
-
-                    <div>
-                        Savings Rate
-                    </div>
-
-                    <div>
-                        Management Lens
-                    </div>
-
-                </div>
+            <p class="section-intro">
+                Scale and efficiency tell different stories.
+            </p>
 
 
-                <div class="category-table-row">
+            <div class="executive-layout">
 
-                    <div
-                        data-label="Category"
-                        class="category-name"
-                    >
-                        CSA
-                    </div>
+                <div class="executive-table-wrap">
 
-                    <div data-label="RFQs">
-                        6
-                    </div>
+                    <table class="executive-table">
 
-                    <div data-label="Approved Value">
-                        ₱5.3M
-                    </div>
+                        <thead>
 
-                    <div data-label="Savings">
-                        ₱0.3M
-                    </div>
+                            <tr>
+                                <th>Category</th>
+                                <th>RFQs</th>
+                                <th>Approved Value</th>
+                                <th>Savings</th>
+                                <th>Savings Rate</th>
+                                <th>Management Lens</th>
+                            </tr>
 
-                    <div data-label="Savings Rate">
-                        5.7%
-                    </div>
+                        </thead>
 
-                    <div
-                        data-label="Management Lens"
-                        class="management-lens"
-                    >
-                        Improve efficiency
-                    </div>
+                        <tbody>
+
+                            <tr>
+                                <td>CSA</td>
+                                <td>6</td>
+                                <td>₱5.3 M</td>
+                                <td>₱0.3 M</td>
+                                <td>5.7%</td>
+                                <td>Improve efficiency</td>
+                            </tr>
+
+                            <tr>
+                                <td>Electrical</td>
+                                <td>29</td>
+                                <td>₱68.5 M</td>
+                                <td>₱8.9 M</td>
+                                <td>12.9%</td>
+                                <td>Protect scale &amp; leverage</td>
+                            </tr>
+
+                            <tr>
+                                <td>Mechanical</td>
+                                <td>2</td>
+                                <td>₱8.5 M</td>
+                                <td>₱1.5 M</td>
+                                <td>17.6%</td>
+                                <td>Study best practice</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
 
                 </div>
 
-
-                <div class="category-table-row">
-
-                    <div
-                        data-label="Category"
-                        class="category-name"
-                    >
-                        Electrical
-                    </div>
-
-                    <div data-label="RFQs">
-                        29
-                    </div>
-
-                    <div data-label="Approved Value">
-                        ₱68.5M
-                    </div>
-
-                    <div data-label="Savings">
-                        ₱8.9M
-                    </div>
-
-                    <div data-label="Savings Rate">
-                        12.9%
-                    </div>
-
-                    <div
-                        data-label="Management Lens"
-                        class="management-lens"
-                    >
-                        Protect scale & leverage
-                    </div>
-
-                </div>
-
-
-                <div class="category-table-row">
-
-                    <div
-                        data-label="Category"
-                        class="category-name"
-                    >
-                        Mechanical
-                    </div>
-
-                    <div data-label="RFQs">
-                        2
-                    </div>
-
-                    <div data-label="Approved Value">
-                        ₱8.5M
-                    </div>
-
-                    <div data-label="Savings">
-                        ₱1.5M
-                    </div>
-
-                    <div data-label="Savings Rate">
-                        17.6%
-                    </div>
-
-                    <div
-                        data-label="Management Lens"
-                        class="management-lens"
-                    >
-                        Study best practice
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="executive-lens-takeaway">
-
-                <span>
-                    Management Principle
-                </span>
-
-                <p>
-                    Best opportunity = financial scale × savings efficiency
-                </p>
-
-            </div>
-
-
-            <div class="executive-lens-dashboard">
 
                 <button
-                    class="dashboard-trigger"
-                    type="button"
-                    aria-label="Expand category benchmarking dashboard"
+                    class="executive-image-trigger"
+                    data-image="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-01.png"
+                    data-title="RFQ Performance Dashboard"
                 >
 
                     <img
-                        src="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-06.png"
-                        alt="RFQ category benchmarking dashboard"
+                        src="../../assets/projects/previews/rfq-monitoring/rfq-monitoring-01.png"
+                        alt="RFQ Performance Dashboard"
                     >
 
                     <span class="image-expand-label">
-                        Click to expand
+                        Click to expand ↗
                     </span>
 
                 </button>
 
             </div>
 
+
+            <div class="management-principle">
+
+                <strong>Management Principle</strong>
+
+                <span>
+                    Best opportunity = financial scale × savings efficiency
+                </span>
+
+            </div>
+
         </section>
 
 
         <!-- =========================================================
-             07 — TECHNICAL TOOLS
+             7. TECHNICAL TOOLS
         ========================================================== -->
 
-        <section
-            id="technical-tools"
-            class="case-study-section"
-        >
+        <section id="technical-tools" class="case-study-section">
 
-            <header class="main-report-header">
+            <div class="main-report-header">
 
-                <span class="main-section-number">
-                    7.
-                </span>
+                <span class="main-section-number">7.</span>
 
-                <h2>
-                    Technical Tools
-                </h2>
-
-            </header>
-
-
-            <div class="technical-tools-intro">
-
-                <span class="report-label">
-                    Analytics Workflow
-                </span>
-
-                <p>
-                    A repeatable Excel-based model for transformation,
-                    calculation, and executive reporting.
-                </p>
+                <h2>Technical Tools</h2>
 
             </div>
+
+            <p class="section-intro">
+                The analytical workflow supporting the RFQ management view.
+            </p>
 
 
             <div class="technical-tools-grid">
 
-
                 <article class="technical-tool-card">
 
-                    <h3>
-                        Power Query
-                    </h3>
+                    <h3>Power Query</h3>
 
                     <p>
-                        Clean, transform, and standardize RFQ source
-                        data before analysis.
+                        Data cleaning, transformation, standardization,
+                        and preparation of RFQ source data.
                     </p>
 
                 </article>
@@ -1976,13 +1348,11 @@
 
                 <article class="technical-tool-card">
 
-                    <h3>
-                        Data Modeling
-                    </h3>
+                    <h3>Data Modeling</h3>
 
                     <p>
-                        Connect RFQ attributes, dates, categories,
-                        and buyers for reliable analysis.
+                        Structured RFQ attributes, category relationships,
+                        and buyer-level analytical dimensions.
                     </p>
 
                 </article>
@@ -1990,13 +1360,11 @@
 
                 <article class="technical-tool-card">
 
-                    <h3>
-                        DAX
-                    </h3>
+                    <h3>DAX</h3>
 
                     <p>
-                        Calculate outcomes, savings, savings rate,
-                        quotation turnaround, and aging.
+                        Calculate outcomes, savings, savings rates,
+                        turnaround and aging measures.
                     </p>
 
                 </article>
@@ -2004,13 +1372,11 @@
 
                 <article class="technical-tool-card">
 
-                    <h3>
-                        Power Pivot
-                    </h3>
+                    <h3>Power BI</h3>
 
                     <p>
-                        Build reusable measures and the analytical
-                        model within Excel.
+                        Executive dashboarding, interactive filtering,
+                        KPI reporting, and decision-focused storytelling.
                     </p>
 
                 </article>
@@ -2018,13 +1384,11 @@
 
                 <article class="technical-tool-card">
 
-                    <h3>
-                        Excel
-                    </h3>
+                    <h3>Excel</h3>
 
                     <p>
-                        Deliver interactive filtering and executive
-                        reporting through the management dashboard.
+                        Source-data review, validation, reconciliation,
+                        and supporting analysis.
                     </p>
 
                 </article>
@@ -2034,49 +1398,23 @@
 
             <div class="analytics-flow">
 
-                <span>
-                    Analytics Flow
-                </span>
+                <span>Source Data</span>
 
-                <div class="analytics-flow-steps">
+                <i>→</i>
 
-                    <strong>
-                        Source
-                    </strong>
+                <span>Power Query</span>
 
-                    <i>
-                        →
-                    </i>
+                <i>→</i>
 
-                    <strong>
-                        Power Query
-                    </strong>
+                <span>Data Model</span>
 
-                    <i>
-                        →
-                    </i>
+                <i>→</i>
 
-                    <strong>
-                        Data Model
-                    </strong>
+                <span>DAX</span>
 
-                    <i>
-                        →
-                    </i>
+                <i>→</i>
 
-                    <strong>
-                        DAX
-                    </strong>
-
-                    <i>
-                        →
-                    </i>
-
-                    <strong>
-                        Executive Dashboard
-                    </strong>
-
-                </div>
+                <span>Executive Dashboard</span>
 
             </div>
 
@@ -2089,36 +1427,25 @@
          IMAGE MODAL
     ============================================================= -->
 
-    <div
-        class="image-modal"
-        aria-hidden="true"
-    >
+    <div class="image-modal" aria-hidden="true">
 
         <div class="image-modal-backdrop"></div>
 
-        <div
-            class="image-modal-content"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Expanded dashboard"
-        >
+        <div class="image-modal-content">
 
             <button
-                type="button"
                 class="image-modal-close"
-                aria-label="Close dashboard"
+                aria-label="Close image"
             >
                 ×
             </button>
 
-            <div class="image-modal-title">
-                RFQ Performance & Procurement Value Dashboard
-            </div>
+            <div class="image-modal-title"></div>
 
             <img
+                class="image-modal-image"
                 src=""
                 alt=""
-                class="modal-image"
             >
 
         </div>
@@ -2132,158 +1459,71 @@
 
     <script>
 
-        const navigationLinks =
+        const imageTriggers =
             document.querySelectorAll(
-                ".case-navigation a"
+                ".dashboard-trigger, .insight-dashboard-trigger, .executive-image-trigger"
             );
 
+        const imageModal =
+            document.querySelector(".image-modal");
 
-        const sections =
-            document.querySelectorAll(
-                ".case-study-section"
-            );
+        const imageModalImage =
+            document.querySelector(".image-modal-image");
 
+        const imageModalTitle =
+            document.querySelector(".image-modal-title");
 
-        function updateActiveNavigation() {
+        const imageModalClose =
+            document.querySelector(".image-modal-close");
 
-            let currentSection = "overview";
-
-
-            sections.forEach((section) => {
-
-                const sectionTop =
-                    section.offsetTop - 160;
+        const imageModalBackdrop =
+            document.querySelector(".image-modal-backdrop");
 
 
-                if (window.scrollY >= sectionTop) {
+        imageTriggers.forEach(trigger => {
 
-                    currentSection =
-                        section.id;
+            trigger.addEventListener("click", () => {
 
-                }
+                const image =
+                    trigger.dataset.image;
 
-            });
+                const title =
+                    trigger.dataset.title || "Dashboard Preview";
 
+                imageModalImage.src = image;
 
-            navigationLinks.forEach((link) => {
+                imageModalImage.alt = title;
 
-                link.classList.remove(
-                    "active"
+                imageModalTitle.textContent = title;
+
+                imageModal.classList.add("is-open");
+
+                imageModal.setAttribute(
+                    "aria-hidden",
+                    "false"
                 );
 
-
-                if (
-                    link.getAttribute("href") ===
-                    `#${currentSection}`
-                ) {
-
-                    link.classList.add(
-                        "active"
-                    );
-
-                }
+                document.body.classList.add(
+                    "modal-open"
+                );
 
             });
-
-        }
-
-
-        window.addEventListener(
-            "scroll",
-            updateActiveNavigation
-        );
-
-
-        updateActiveNavigation();
-
-
-        const modal =
-            document.querySelector(
-                ".image-modal"
-            );
-
-
-        const modalImage =
-            document.querySelector(
-                ".modal-image"
-            );
-
-
-        const modalClose =
-            document.querySelector(
-                ".image-modal-close"
-            );
-
-
-        const modalBackdrop =
-            document.querySelector(
-                ".image-modal-backdrop"
-            );
-
-
-        const dashboardTriggers =
-            document.querySelectorAll(
-                ".dashboard-trigger, .insight-dashboard-trigger"
-            );
-
-
-        dashboardTriggers.forEach((trigger) => {
-
-            trigger.addEventListener(
-                "click",
-                () => {
-
-                    const image =
-                        trigger.querySelector(
-                            "img"
-                        );
-
-
-                    modalImage.src =
-                        image.src;
-
-
-                    modalImage.alt =
-                        image.alt;
-
-
-                    modal.classList.add(
-                        "is-open"
-                    );
-
-
-                    modal.setAttribute(
-                        "aria-hidden",
-                        "false"
-                    );
-
-
-                    document.body.classList.add(
-                        "modal-open"
-                    );
-
-                }
-            );
 
         });
 
 
-        function closeModal() {
+        function closeImageModal() {
 
-            modal.classList.remove(
+            imageModal.classList.remove(
                 "is-open"
             );
 
-
-            modal.setAttribute(
+            imageModal.setAttribute(
                 "aria-hidden",
                 "true"
             );
 
-
-            modalImage.src =
-                "";
-
+            imageModalImage.src = "";
 
             document.body.classList.remove(
                 "modal-open"
@@ -2292,35 +1532,83 @@
         }
 
 
-        modalClose.addEventListener(
+        imageModalClose.addEventListener(
             "click",
-            closeModal
+            closeImageModal
         );
 
 
-        modalBackdrop.addEventListener(
+        imageModalBackdrop.addEventListener(
             "click",
-            closeModal
+            closeImageModal
         );
 
 
         document.addEventListener(
             "keydown",
-            (event) => {
+            event => {
 
                 if (
-                    event.key === "Escape"
+                    event.key === "Escape" &&
+                    imageModal.classList.contains("is-open")
                 ) {
-
-                    closeModal();
-
+                    closeImageModal();
                 }
 
             }
         );
 
+
+        const sections =
+            document.querySelectorAll(
+                ".case-study-section"
+            );
+
+        const navigationLinks =
+            document.querySelectorAll(
+                ".case-navigation a"
+            );
+
+
+        const observer =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+                        const currentId =
+                            entry.target.id;
+
+                        navigationLinks.forEach(link => {
+
+                            link.classList.toggle(
+                                "active",
+                                link.getAttribute("href") ===
+                                `#${currentId}`
+                            );
+
+                        });
+
+                    });
+
+                },
+                {
+                    rootMargin:
+                        "-110px 0px -65% 0px",
+                    threshold: 0
+                }
+            );
+
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
     </script>
 
 </body>
-
 </html>
