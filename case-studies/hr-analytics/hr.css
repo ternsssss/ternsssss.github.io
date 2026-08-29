@@ -381,6 +381,26 @@ img {
     line-height: 1.75;
 }
 
+/* =========================================================
+   BUSINESS PROBLEM → KEY QUESTIONS SPACING
+========================================================= */
+
+.business-problem {
+    margin-bottom: 42px;
+}
+
+.key-questions {
+    margin-top: 0;
+}
+
+.key-questions .report-label {
+    margin-bottom: 12px;
+}
+
+.key-questions > p {
+    margin-bottom: 26px;
+}
+
 
 /* =========================================================
    BUSINESS QUESTIONS
