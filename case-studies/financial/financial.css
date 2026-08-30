@@ -96,9 +96,9 @@ img {
  font-weight: 500;
  text-decoration: none;
  transition:
- color .2s ease,
- border-color .2s ease,
- transform .2s ease;
+  color .2s ease,
+  border-color .2s ease,
+  transform .2s ease;
 }
 
 .back-to-portfolio:hover {
@@ -170,6 +170,7 @@ img {
  font-weight: 400;
  text-decoration: none;
  white-space: nowrap;
+ cursor: pointer;
 }
 
 .case-navigation a::after {
@@ -182,7 +183,8 @@ img {
  background: var(--blue);
  transform: scaleX(0);
  transform-origin: center;
- transition: transform .2s ease;
+ transition:
+  transform .2s ease;
 }
 
 .case-navigation a:hover,
@@ -322,13 +324,23 @@ img {
 .business-question-list li {
  position: relative;
  display: grid;
+
+ /*
+  FIX:
+  Give the question column substantially more room
+  so desktop questions remain on one line.
+ */
  grid-template-columns:
- minmax(220px, .48fr)
- 1fr;
+ 220px
+ minmax(0, 1fr);
+
  gap: 28px;
+
  padding: 18px 0 18px 25px;
+
  color: var(--text);
  font-size: .94rem;
+
  border-bottom: 1px solid var(--line);
 }
 
@@ -346,10 +358,16 @@ img {
 .business-question-list li strong {
  color: var(--navy);
  font-weight: 600;
+ white-space: nowrap;
 }
 
 .business-question-list li span {
  color: var(--text);
+
+ /*
+  Desktop one-line treatment.
+ */
+ white-space: nowrap;
 }
 
 .decision-objective {
@@ -651,7 +669,6 @@ img {
 
 /* =========================================================
  TECHNICAL TOOLS
- 3 cards first row + 2 centered second row.
 ========================================================= */
 
 .technical-tools-grid {
@@ -714,11 +731,11 @@ img {
  font-weight: 500;
  text-decoration: none;
  transition:
- color .2s ease,
- border-color .2s ease,
- background .2s ease,
- transform .2s ease,
- box-shadow .2s ease;
+  color .2s ease,
+  border-color .2s ease,
+  background .2s ease,
+  transform .2s ease,
+  box-shadow .2s ease;
 }
 
 .back-to-project-library:hover {
@@ -847,6 +864,21 @@ img {
   grid-column: 1 / -1;
  }
 
+ /*
+  Allow business questions to wrap once the screen
+  becomes too narrow for the desktop one-line layout.
+ */
+
+ .business-question-list li {
+  grid-template-columns:
+   190px
+   minmax(0, 1fr);
+ }
+
+ .business-question-list li span {
+  white-space: normal;
+ }
+
 }
 
 
@@ -949,6 +981,7 @@ img {
 
  .business-question-list li span {
   margin-top: 5px;
+  white-space: normal;
  }
 
  .decision-objective {
