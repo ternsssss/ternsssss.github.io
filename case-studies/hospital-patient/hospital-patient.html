@@ -16,7 +16,7 @@
 
     <meta
         name="description"
-        content="Hospital Patient Analysis — executive analytics covering patient demand, clinical utilization, healthcare costs, and operational performance."
+        content="Hospital Patient Analysis case study covering patient demand, clinical utilization, healthcare costs, documentation quality, and management action."
     >
 
     <link
@@ -29,1294 +29,1969 @@
 
 <body>
 
-    <main class="case-study">
 
-        <!-- =================================================
-             STICKY NAVIGATION
-        ================================================== -->
-
-        <nav class="case-nav">
-
-            <div class="nav-inner">
-
-                <a
-                    href="#overview"
-                    class="nav-link active"
-                >
-                    Overview
-                </a>
-
-                <a
-                    href="#business-questions"
-                    class="nav-link"
-                >
-                    Business Questions
-                </a>
-
-                <a
-                    href="#key-insights"
-                    class="nav-link"
-                >
-                    Key Insights
-                </a>
-
-                <a
-                    href="#recommendations"
-                    class="nav-link"
-                >
-                    Recommendations
-                </a>
-
-                <a
-                    href="#business-impact"
-                    class="nav-link"
-                >
-                    Business Impact
-                </a>
-
-                <a
-                    href="#technical-tools"
-                    class="nav-link"
-                >
-                    Technical Tools
-                </a>
-
-            </div>
-
-        </nav>
+<main class="case-study">
 
 
-        <!-- =================================================
-             01 — BUSINESS CASE
-        ================================================== -->
+    <!-- =========================================================
+         PROJECT TOP BAR
+    ========================================================== -->
 
-        <section
-            id="overview"
-            class="case-section"
+    <div class="project-topbar">
+
+        <a
+            href="../../#projects"
+            class="back-to-portfolio"
         >
+            Back to Portfolio ←
+        </a>
 
-            <div class="section-heading">
 
-                <span class="section-number">
-                    1.
-                </span>
+        <div class="project-industry">
 
-                <h1>
-                    Business Case
-                </h1>
+            <span>
+                Industry
+            </span>
 
-            </div>
+            <strong>
+                Healthcare
+            </strong>
 
+        </div>
 
-            <div class="section-divider"></div>
+    </div>
 
 
-            <div class="section-intro">
 
-                <p>
-                    A single executive view connecting patient demand,
-                    care delivery, and financial performance.
-                </p>
+    <!-- =========================================================
+         CASE STUDY NAVIGATION
+    ========================================================== -->
 
-            </div>
+    <nav
+        class="case-navigation"
+        aria-label="Case study navigation"
+    >
 
-
-            <div class="business-case-grid">
-
-                <div class="business-case-content">
-
-                    <span class="eyebrow">
-                        PROJECT TITLE
-                    </span>
-
-                    <h2>
-                        Hospital Patient Analysis
-                    </h2>
-
-                    <p class="lead">
-                        An executive analytics portfolio for understanding
-                        patient utilization, clinical services, and
-                        healthcare cost drivers.
-                    </p>
-
-
-                    <div class="case-objective">
-
-                        <span class="eyebrow">
-                            BUSINESS CASE → OBJECTIVE
-                        </span>
-
-                        <p>
-                            Hospital leaders need a unified view of demand,
-                            clinical utilization, and financial burden to
-                            identify priorities and cost drivers.
-                        </p>
-
-                        <p>
-                            <strong>Objective:</strong>
-                            turn patient, encounter, procedure, and cost
-                            data into actionable insights that support
-                            better care delivery, resource allocation,
-                            documentation, and financial decisions.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="overview-dashboard">
-
-                    <img
-                        src="../../assets/projects/previews/hospital-patient/hospital-patient-01-overview.png"
-                        alt="Hospital Patient Analysis executive dashboard overview"
-                    >
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             02 — BUSINESS PROBLEM & KEY QUESTIONS
-        ================================================== -->
-
-        <section
-            id="business-questions"
-            class="case-section"
-        >
-
-            <div class="section-heading">
-
-                <span class="section-number">
-                    2.
-                </span>
-
-                <h1>
-                    Business Problem &amp; Key Questions
-                </h1>
-
-            </div>
-
-
-            <div class="section-divider"></div>
-
-
-            <div class="section-intro">
-
-                <p>
-                    Define the decision problem first, then frame the
-                    questions the dashboard must answer.
-                </p>
-
-            </div>
-
-
-            <div class="business-problem">
-
-                <span class="eyebrow">
-                    BUSINESS PROBLEM
-                </span>
-
-                <p>
-                    Hospital leaders lack a single decision view connecting
-                    patient demand, clinical utilization, documentation
-                    quality, and financial burden. This makes it harder to
-                    identify cost drivers, prioritize resources, and target
-                    operational improvement.
-                </p>
-
-            </div>
-
-
-            <div class="questions-intro">
-
-                <p>
-                    The analysis was designed around five management decisions:
-                </p>
-
-            </div>
-
-
-            <div class="question-list">
-
-                <div class="question-row">
-
-                    <div class="question-label">
-                        <span>•</span>
-                        <strong>Patient demand</strong>
-                    </div>
-
-                    <p>
-                        Which patient segments and encounter types drive
-                        hospital utilization?
-                    </p>
-
-                </div>
-
-
-                <div class="question-row">
-
-                    <div class="question-label">
-                        <span>•</span>
-                        <strong>Clinical activity</strong>
-                    </div>
-
-                    <p>
-                        Which procedures, diagnoses, and service lines
-                        account for the greatest activity?
-                    </p>
-
-                </div>
-
-
-                <div class="question-row">
-
-                    <div class="question-label">
-                        <span>•</span>
-                        <strong>Cost drivers</strong>
-                    </div>
-
-                    <p>
-                        Which encounter classes and procedures contribute
-                        most to healthcare costs?
-                    </p>
-
-                </div>
-
-
-                <div class="question-row">
-
-                    <div class="question-label">
-                        <span>•</span>
-                        <strong>Patient burden</strong>
-                    </div>
-
-                    <p>
-                        How are healthcare costs shared between payers
-                        and patients?
-                    </p>
-
-                </div>
-
-
-                <div class="question-row">
-
-                    <div class="question-label">
-                        <span>•</span>
-                        <strong>Operational gaps</strong>
-                    </div>
-
-                    <p>
-                        Where do documentation and resource-utilization
-                        issues create improvement opportunities?
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             03 — KEY INSIGHTS
-        ================================================== -->
-
-        <section
-            id="key-insights"
-            class="case-section"
-        >
-
-            <div class="section-heading">
-
-                <span class="section-number">
-                    3.
-                </span>
-
-                <h1>
-                    Key Insights
-                </h1>
-
-            </div>
-
-
-            <div class="section-divider"></div>
-
-
-            <div class="section-intro">
-
-                <p>
-                    Dashboard evidence → Observation → Analysis →
-                    Impact → Recommendation
-                </p>
-
-            </div>
-
-
-            <!-- INSIGHT 1 -->
-
-            <article class="insight-card">
-
-                <div class="insight-content">
-
-                    <span class="insight-number">
-                        KEY INSIGHT 1 OF 5
-                    </span>
-
-                    <h2>
-                        Financial burden is concentrated on patients
-                    </h2>
-
-
-                    <div class="insight-flow">
-
-                        <div>
-                            <span>Observation</span>
-
-                            <p>
-                                Patients carry <strong>$70.42M</strong>
-                                of the <strong>$101.5M</strong>
-                                total claim cost.
-                            </p>
-                        </div>
-
-
-                        <div>
-                            <span>Analysis</span>
-
-                            <p>
-                                69% of costs are out-of-pocket, while
-                                payer coverage is 31%.
-                            </p>
-                        </div>
-
-
-                        <div>
-                            <span>Impact</span>
-
-                            <p>
-                                Patient affordability and access may
-                                be under pressure.
-                            </p>
-                        </div>
-
-
-                        <div>
-                            <span>Recommendation</span>
-
-                            <p>
-                                Expand payer partnerships and patient
-                                financial-assistance pathways.
-                            </p>
-                        </div>
-
-                    </div>
-
-
-                    <p class="evidence">
-                        <strong>Evidence:</strong>
-                        $101.5M total claim cost • $31.10M payer coverage •
-                        $70.42M patient out-of-pocket
-                    </p>
-
-                    <p class="dashboard-source">
-                        Dashboard Page 4 — Financial &amp; Operational
-                    </p>
-
-                </div>
-
-
-                <div class="insight-image">
-
-                    <img
-                        src="../../assets/projects/previews/hospital-patient/hospital-patient-04-financial.png"
-                        alt="Hospital financial and operational dashboard"
-                        loading="lazy"
-                    >
-
-                </div>
-
-            </article>
-
-
-
-            <!-- INSIGHT 2 -->
-
-            <article class="insight-card">
-
-                <div class="insight-content">
-
-                    <span class="insight-number">
-                        KEY INSIGHT 2 OF 5
-                    </span>
-
-                    <h2>
-                        An aging population shapes hospital demand
-                    </h2>
-
-
-                    <div class="insight-flow">
-
-                        <div>
-                            <span>Observation</span>
-
-                            <p>
-                                645 of 974 patients are seniors, with
-                                an average age of 70.24.
-                            </p>
-                        </div>
-
-
-                        <div>
-                            <span>Analysis</span>
-
-                            <p>
-                                Older adults represent the dominant
-                                patient segment.
-                            </p>
-                        </div>
-
-
-                        <div>
-                            <span>Impact</span>
-
-                            <p>
-                                Chronic-disease and geriatric-care demand
-                                is structurally important.
-                            </p>
-                        </div>
-
-
-                        <div>
-                            <span>Recommendation</span>
-
-                            <p>
-                                Strengthen preventive care, follow-up,
-                                and care coordination.
-                            </p>
-                        </div>
-
-                    </div>
-
-
-                    <p class="evidence">
-                        <strong>Evidence:</strong>
-                        Average age 70.24 • 645 senior patients •
-                        974 total patients
-                    </p>
-
-                    <p class="dashboard-source">
-                        Dashboard Page 2 — Patient Demographics
-                    </p>
-
-                </div>
-
-
-                <div class="insight-image">
-
-                    <img
-                        src="../../assets/projects/previews/hospital-patient/hospital-patient-02-patient.png"
-                        alt="Hospital patient demographics dashboard"
-                        loading="lazy"
-                    >
-
-                </div>
-
-            </article>
-
-
-
-            <!-- INSIGHT 3 -->
-
-            <article class="insight-card">
-
-                <div class="insight-content">
-
-                    <span class="insight-number">
-                        KEY INSIGHT 3 OF 5
-                    </span>
-
-                    <h2>
-                        Ambulatory care is the largest activity and cost pool
-                    </h2>
-
-
-                    <div class="insight-flow">
-
-                        <div>
-                            <span>Observation</span>
-
-                            <p>
-                                Ambulatory encounters total
-                                <strong>12.5K</strong> and generate
-                                <strong>$36.3M</strong> in costs.
-                            </p>
-                        </div>
-
-
-                        <div>
-                            <span>Analysis</span>
-
-                            <p>
-                                Ambulatory care leads both encounter
-                                volume and total cost.
-                            </p>
-                        </div>
-
-
-                        <div>
-                            <span>Impact</span>
-
-                            <p>
-                                It is a major capacity, throughput,
-                                and resource-allocation lever.
-                            </p>
-                        </div>
-
-
-                        <div>
-                            <span>Recommendation</span>
-
-                            <p>
-                                Expand ambulatory capacity and
-                                preventive-service pathways.
-                            </p>
-                        </div>
-
-                    </div>
-
-
-                    <p class="evidence">
-                        <strong>Evidence:</strong>
-                        12.5K ambulatory encounters •
-                        $36.3M ambulatory cost
-                    </p>
-
-                    <p class="dashboard-source">
-                        Dashboard Page 4 — Financial &amp; Operational
-                    </p>
-
-                </div>
-
-
-                <div class="insight-image">
-
-                    <img
-                        src="../../assets/projects/previews/hospital-patient/hospital-patient-04-financial.png"
-                        alt="Hospital financial and operational dashboard showing ambulatory activity and costs"
-                        loading="lazy"
-                    >
-
-                </div>
-
-            </article>
-
-
-
-            <!-- INSIGHT 4 -->
-
-            <article class="insight-card">
-
-                <div class="insight-content">
-
-                    <span class="insight-number">
-                        KEY INSIGHT 4 OF 5
-                    </span>
-
-                    <h2>
-                        Clinical costs are concentrated in high-cost procedures
-                    </h2>
-
-
-                    <div class="insight-flow">
-
-                        <div>
-                            <span>Observation</span>
-
-                            <p>
-                                Electrical cardioversion contributes
-                                <strong>$35.8M</strong> in procedure cost.
-                            </p>
-                        </div>
-
-
-                        <div>
-                            <span>Analysis</span>
-
-                            <p>
-                                It accounts for more than half of the
-                                <strong>$69.2M</strong> shown across the
-                                leading procedure-cost list.
-                            </p>
-                        </div>
-
-
-                        <div>
-                            <span>Impact</span>
-
-                            <p>
-                                A small number of high-cost procedures
-                                can materially influence clinical spend.
-                            </p>
-                        </div>
-
-
-                        <div>
-                            <span>Recommendation</span>
-
-                            <p>
-                                Review high-cost pathways, resource
-                                utilization, and length of stay.
-                            </p>
-                        </div>
-
-                    </div>
-
-
-                    <p class="evidence">
-                        <strong>Evidence:</strong>
-                        Electrical cardioversion $35.82M •
-                        Top procedure-cost list $69.18M
-                    </p>
-
-                    <p class="dashboard-source">
-                        Dashboard Page 3 — Clinical Services &amp; Utilization
-                    </p>
-
-                </div>
-
-
-                <div class="insight-image">
-
-                    <img
-                        src="../../assets/projects/previews/hospital-patient/hospital-patient-03-clinical.png"
-                        alt="Hospital clinical services and utilization dashboard"
-                        loading="lazy"
-                    >
-
-                </div>
-
-            </article>
-
-
-
-            <!-- INSIGHT 5 -->
-
-            <article class="insight-card">
-
-                <div class="insight-content">
-
-                    <span class="insight-number">
-                        KEY INSIGHT 5 OF 5
-                    </span>
-
-                    <h2>
-                        Clinical documentation is a major data-quality gap
-                    </h2>
-
-
-                    <div class="insight-flow">
-
-                        <div>
-                            <span>Observation</span>
-
-                            <p>
-                                19,541 of 27,891 encounters are recorded
-                                as <strong>“No diagnosis.”</strong>
-                            </p>
-                        </div>
-
-
-                        <div>
-                            <span>Analysis</span>
-
-                            <p>
-                                Approximately 70% of encounters lack
-                                a recorded diagnosis in the dashboard.
-                            </p>
-                        </div>
-
-
-                        <div>
-                            <span>Impact</span>
-
-                            <p>
-                                This constrains clinical reporting,
-                                analytical insight, and reimbursement accuracy.
-                            </p>
-                        </div>
-
-
-                        <div>
-                            <span>Recommendation</span>
-
-                            <p>
-                                Strengthen physician documentation,
-                                coding accuracy, and CDI.
-                            </p>
-                        </div>
-
-                    </div>
-
-
-                    <p class="evidence">
-                        <strong>Evidence:</strong>
-                        “No diagnosis” 19,541 •
-                        Total clinical encounters 27,891
-                    </p>
-
-                    <p class="dashboard-source">
-                        Dashboard Page 3 — Clinical Services &amp; Utilization
-                    </p>
-
-                </div>
-
-
-                <div class="insight-image">
-
-                    <img
-                        src="../../assets/projects/previews/hospital-patient/hospital-patient-03-clinical.png"
-                        alt="Hospital clinical services dashboard showing diagnosis and procedure information"
-                        loading="lazy"
-                    >
-
-                </div>
-
-            </article>
-
-        </section>
-
-
-
-        <!-- =================================================
-             04 — RECOMMENDATIONS
-        ================================================== -->
-
-        <section
-            id="recommendations"
-            class="case-section"
-        >
-
-            <div class="section-heading">
-
-                <span class="section-number">
-                    4.
-                </span>
-
-                <h1>
-                    Recommendations
-                </h1>
-
-            </div>
-
-
-            <div class="section-divider"></div>
-
-
-            <div class="section-intro">
-
-                <p>
-                    Insight → Recommendation → Why It Matters →
-                    Expected Impact
-                </p>
-
-            </div>
-
-
-            <div class="recommendation-table">
-
-                <div class="recommendation-header">
-
-                    <span>Insight</span>
-                    <span>Recommendation</span>
-                    <span>Why It Matters</span>
-                    <span>Expected Impact</span>
-
-                </div>
-
-
-                <div class="recommendation-row">
-
-                    <div>
-                        <strong>
-                            Reduce patient financial burden
-                        </strong>
-                    </div>
-
-                    <div>
-                        Expand payer partnerships and patient
-                        financial assistance.
-                    </div>
-
-                    <div>
-                        Improves affordability and protects access
-                        to care.
-                    </div>
-
-                    <div>
-                        Higher coverage and lower patient burden.
-                    </div>
-
-                </div>
-
-
-                <div class="recommendation-row">
-
-                    <div>
-                        <strong>
-                            Build around the aging population
-                        </strong>
-                    </div>
-
-                    <div>
-                        Invest in chronic-disease, geriatric,
-                        preventive, and follow-up programs.
-                    </div>
-
-                    <div>
-                        Matches services to the dominant
-                        patient segment.
-                    </div>
-
-                    <div>
-                        Better continuity of care and demand management.
-                    </div>
-
-                </div>
-
-
-                <div class="recommendation-row">
-
-                    <div>
-                        <strong>
-                            Optimize ambulatory capacity
-                        </strong>
-                    </div>
-
-                    <div>
-                        Increase ambulatory capacity and
-                        preventive-service pathways.
-                    </div>
-
-                    <div>
-                        Targets the largest encounter volume
-                        and cost pool.
-                    </div>
-
-                    <div>
-                        Improved throughput and fewer
-                        avoidable admissions.
-                    </div>
-
-                </div>
-
-
-                <div class="recommendation-row">
-
-                    <div>
-                        <strong>
-                            Control high-cost clinical activity
-                        </strong>
-                    </div>
-
-                    <div>
-                        Monitor high-cost procedures, length of stay,
-                        and standardized pathways.
-                    </div>
-
-                    <div>
-                        Focuses management attention on major
-                        cost drivers.
-                    </div>
-
-                    <div>
-                        More disciplined resource utilization
-                        and cost control.
-                    </div>
-
-                </div>
-
-
-                <div class="recommendation-row">
-
-                    <div>
-                        <strong>
-                            Strengthen clinical documentation
-                        </strong>
-                    </div>
-
-                    <div>
-                        Implement physician education and
-                        Clinical Documentation Improvement (CDI).
-                    </div>
-
-                    <div>
-                        Improves data quality, coding, reporting,
-                        and reimbursement.
-                    </div>
-
-                    <div>
-                        Stronger revenue-cycle performance
-                        and decision quality.
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             05 — BUSINESS IMPACT
-        ================================================== -->
-
-        <section
-            id="business-impact"
-            class="case-section"
-        >
-
-            <div class="section-heading">
-
-                <span class="section-number">
-                    5.
-                </span>
-
-                <h1>
-                    Business Impact
-                </h1>
-
-            </div>
-
-
-            <div class="section-divider"></div>
-
-
-            <div class="section-intro">
-
-                <p>
-                    Recommendation → Business Benefit → Business Impact
-                </p>
-
-            </div>
-
-
-            <div class="impact-grid">
-
-                <article class="impact-card">
-
-                    <span class="impact-label">
-                        FINANCIAL ACCESS
-                    </span>
-
-                    <h2>
-                        More payer coverage + assistance
-                    </h2>
-
-                    <p>
-                        Lower out-of-pocket burden and stronger
-                        patient access.
-                    </p>
-
-                </article>
-
-
-                <article class="impact-card">
-
-                    <span class="impact-label">
-                        CARE DELIVERY
-                    </span>
-
-                    <h2>
-                        Geriatric + chronic-care programs
-                    </h2>
-
-                    <p>
-                        Better continuity, prevention,
-                        and care coordination.
-                    </p>
-
-                </article>
-
-
-                <article class="impact-card">
-
-                    <span class="impact-label">
-                        OPERATIONS
-                    </span>
-
-                    <h2>
-                        Ambulatory capacity optimization
-                    </h2>
-
-                    <p>
-                        Better throughput and more efficient
-                        use of hospital resources.
-                    </p>
-
-                </article>
-
-
-                <article class="impact-card">
-
-                    <span class="impact-label">
-                        COST MANAGEMENT
-                    </span>
-
-                    <h2>
-                        High-cost procedure + LOS controls
-                    </h2>
-
-                    <p>
-                        Improved cost discipline and
-                        service-line visibility.
-                    </p>
-
-                </article>
-
-
-                <article class="impact-card">
-
-                    <span class="impact-label">
-                        REVENUE CYCLE
-                    </span>
-
-                    <h2>
-                        Documentation + coding improvement
-                    </h2>
-
-                    <p>
-                        More complete data and stronger
-                        reimbursement opportunities.
-                    </p>
-
-                </article>
-
-            </div>
-
-
-            <div class="impact-note">
-
-                Value should be tracked through payer mix,
-                patient cost, service-line cost, length of stay,
-                documentation completeness, and reimbursement performance.
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             06 — TECHNICAL TOOLS
-        ================================================== -->
-
-        <section
-            id="technical-tools"
-            class="case-section"
-        >
-
-            <div class="section-heading">
-
-                <span class="section-number">
-                    6.
-                </span>
-
-                <h1>
-                    Technical Tools
-                </h1>
-
-            </div>
-
-
-            <div class="section-divider"></div>
-
-
-            <div class="section-intro">
-
-                <p>
-                    A business-first analytics workflow from raw records
-                    to executive decision support.
-                </p>
-
-            </div>
-
-
-            <div class="tools-grid">
-
-                <article class="tool-card">
-
-                    <h2>
-                        Power BI
-                    </h2>
-
-                    <p>
-                        Executive dashboards, interactive analysis,
-                        KPI reporting
-                    </p>
-
-                </article>
-
-
-                <article class="tool-card">
-
-                    <h2>
-                        DAX
-                    </h2>
-
-                    <p>
-                        Measures, calculated metrics, time intelligence,
-                        business logic
-                    </p>
-
-                </article>
-
-
-                <article class="tool-card">
-
-                    <h2>
-                        Power Query
-                    </h2>
-
-                    <p>
-                        Data cleaning, transformation, shaping,
-                        and preparation
-                    </p>
-
-                </article>
-
-
-                <article class="tool-card">
-
-                    <h2>
-                        Excel
-                    </h2>
-
-                    <p>
-                        Data validation, supporting analysis,
-                        and business checks
-                    </p>
-
-                </article>
-
-
-                <article class="tool-card">
-
-                    <h2>
-                        Data Modeling
-                    </h2>
-
-                    <p>
-                        Structured relationships, dimensions,
-                        and reusable analytical logic
-                    </p>
-
-                </article>
-
-            </div>
-
-
-            <div class="tools-outcome">
-
-                <strong>
-                    Outcome:
-                </strong>
-
-                a repeatable analytical model that connects patient,
-                encounter, clinical, and financial views in one
-                executive reporting layer.
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             BACK TO PROJECT LIBRARY
-        ================================================== -->
-
-        <div class="back-to-library">
+        <div class="case-navigation-inner">
 
             <a
-                href="../../projects/project-library.html"
-                class="back-link"
+                href="#overview"
+                class="active"
+                data-section="overview"
             >
-                <span>←</span>
-                Back to Project Library
+                Overview
+            </a>
+
+            <a
+                href="#business-questions"
+                data-section="business-questions"
+            >
+                Business Questions
+            </a>
+
+            <a
+                href="#key-insights"
+                data-section="key-insights"
+            >
+                Key Insights
+            </a>
+
+            <a
+                href="#recommendations"
+                data-section="recommendations"
+            >
+                Recommendations
+            </a>
+
+            <a
+                href="#business-impact"
+                data-section="business-impact"
+            >
+                Business Impact
+            </a>
+
+            <a
+                href="#technical-tools"
+                data-section="technical-tools"
+            >
+                Technical Tools
             </a>
 
         </div>
 
-    </main>
+    </nav>
 
 
 
-    <!-- =================================================
-         SIMPLE NAVIGATION SCRIPT
-    ================================================== -->
+    <!-- =========================================================
+         1. OVERVIEW
+    ========================================================== -->
 
-    <script>
+    <section
+        id="overview"
+        class="case-study-section"
+    >
 
-        const navLinks =
-            document.querySelectorAll(".nav-link");
+        <header class="main-report-header">
 
-        const sections =
-            document.querySelectorAll(".case-section");
+            <span class="main-section-number">
+                1.
+            </span>
 
+            <h2>
+                Overview
+            </h2>
 
-        function updateActiveNav() {
-
-            let currentSection = "";
-
-            sections.forEach(section => {
-
-                const sectionTop =
-                    section.offsetTop - 150;
-
-                if (window.scrollY >= sectionTop) {
-
-                    currentSection =
-                        section.getAttribute("id");
-
-                }
-
-            });
+        </header>
 
 
-            navLinks.forEach(link => {
+        <article class="report-item report-project">
 
-                link.classList.remove("active");
+            <span class="report-label">
+                Project Title
+            </span>
 
-                if (
-                    link.getAttribute("href") ===
-                    "#" + currentSection
-                ) {
+            <h1>
+                Hospital Patient Analysis
+            </h1>
 
-                    link.classList.add("active");
+        </article>
 
-                }
 
-            });
+        <article class="report-item">
+
+            <span class="report-label">
+                Business Case
+            </span>
+
+            <p>
+                Hospital leaders need a unified view of patient demand,
+                clinical utilization, and financial burden to identify
+                where resources are concentrated, where costs are rising,
+                and where operational improvement is most needed.
+            </p>
+
+        </article>
+
+
+        <article class="report-item">
+
+            <span class="report-label">
+                Business Objective
+            </span>
+
+            <p>
+                Turn patient, encounter, procedure, and cost data into
+                actionable insights that support better care delivery,
+                resource allocation, documentation, and financial decisions.
+            </p>
+
+        </article>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         2. BUSINESS QUESTIONS
+    ========================================================== -->
+
+    <section
+        id="business-questions"
+        class="case-study-section"
+    >
+
+        <header class="main-report-header">
+
+            <span class="main-section-number">
+                2.
+            </span>
+
+            <h2>
+                Business Questions
+            </h2>
+
+        </header>
+
+
+        <article class="business-problem">
+
+            <span class="report-label">
+                Business Problem
+            </span>
+
+            <p>
+                Hospital leaders lack a single decision view connecting
+                patient demand, clinical utilization, documentation quality,
+                and financial burden. This makes it harder to identify cost
+                drivers, prioritize resources, and target operational
+                improvement.
+            </p>
+
+        </article>
+
+
+        <div class="questions-block">
+
+            <span class="report-label">
+                Key Questions
+            </span>
+
+            <p class="questions-intro">
+                Five questions guide the analysis and management discussion.
+            </p>
+
+
+            <ul class="business-question-list">
+
+                <li>
+
+                    <strong>
+                        Patient Demand
+                    </strong>
+
+                    <span>
+                        Which patient segments and encounter types drive hospital utilization?
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <strong>
+                        Clinical Activity
+                    </strong>
+
+                    <span>
+                        Which procedures, diagnoses, and service lines account for the greatest activity?
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <strong>
+                        Cost Drivers
+                    </strong>
+
+                    <span>
+                        Which encounter classes and procedures contribute most to healthcare costs?
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <strong>
+                        Patient Burden
+                    </strong>
+
+                    <span>
+                        How are healthcare costs shared between payers and patients?
+                    </span>
+
+                </li>
+
+
+                <li>
+
+                    <strong>
+                        Operational Gaps
+                    </strong>
+
+                    <span>
+                        Where do documentation and resource-utilization issues create improvement opportunities?
+                    </span>
+
+                </li>
+
+            </ul>
+
+
+            <div class="decision-objective">
+
+                <strong>
+                    Decision Objective
+                </strong>
+
+                <span>
+                    Turn healthcare evidence into focused care, capacity,
+                    cost-management, and data-quality actions.
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         3. KEY INSIGHTS
+    ========================================================== -->
+
+    <section
+        id="key-insights"
+        class="case-study-section"
+    >
+
+        <header class="main-report-header">
+
+            <span class="main-section-number">
+                3.
+            </span>
+
+            <h2>
+                Key Insights
+            </h2>
+
+        </header>
+
+
+        <p class="section-intro">
+            What the dashboard evidence reveals about patient demand,
+            clinical utilization, financial pressure, and data quality.
+        </p>
+
+
+
+        <!-- =====================================================
+             INSIGHT 01
+        ====================================================== -->
+
+        <article class="insight-card">
+
+            <div class="insight-heading">
+
+                <span class="insight-number">
+                    01
+                </span>
+
+                <h3>
+                    Financial burden is concentrated on patients
+                </h3>
+
+            </div>
+
+
+            <div class="insight-layout">
+
+                <figure class="insight-image-wrap">
+
+                    <button
+                        type="button"
+                        class="insight-dashboard-trigger"
+                        data-image="../../assets/projects/previews/hospital-patient-analysis/hospital-patient-analysis-page-04.png"
+                        data-title="Hospital Patient Analysis — Financial & Operational Overview"
+                        aria-label="Expand financial and operational dashboard"
+                    >
+
+                        <img
+                            src="../../assets/projects/previews/hospital-patient-analysis/hospital-patient-analysis-page-04.png"
+                            alt="Hospital Patient Analysis financial and operational dashboard"
+                        >
+
+                        <span class="image-expand-label">
+                            Click to expand
+                        </span>
+
+                    </button>
+
+                </figure>
+
+
+                <div class="insight-flow">
+
+                    <div class="insight-block">
+
+                        <span>
+                            Observation
+                        </span>
+
+                        <p>
+                            Patients carry $70.42M of the $101.5M total
+                            claim cost, while payer coverage is $31.10M.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-block">
+
+                        <span>
+                            Analysis
+                        </span>
+
+                        <p>
+                            Approximately 69% of total claim cost is
+                            patient out-of-pocket, compared with 31%
+                            covered by payers.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-block">
+
+                        <span>
+                            Impact
+                        </span>
+
+                        <p>
+                            High patient cost exposure may create
+                            affordability and access pressure.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-block insight-recommendation">
+
+                        <span>
+                            Recommendation
+                        </span>
+
+                        <p>
+                            Expand payer partnerships and patient
+                            financial-assistance pathways.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =====================================================
+             INSIGHT 02
+        ====================================================== -->
+
+        <article class="insight-card">
+
+            <div class="insight-heading">
+
+                <span class="insight-number">
+                    02
+                </span>
+
+                <h3>
+                    An aging population shapes hospital demand
+                </h3>
+
+            </div>
+
+
+            <div class="insight-layout">
+
+                <figure class="insight-image-wrap">
+
+                    <button
+                        type="button"
+                        class="insight-dashboard-trigger"
+                        data-image="../../assets/projects/previews/hospital-patient-analysis/hospital-patient-analysis-page-02.png"
+                        data-title="Hospital Patient Analysis — Patient Demographics Overview"
+                        aria-label="Expand patient demographics dashboard"
+                    >
+
+                        <img
+                            src="../../assets/projects/previews/hospital-patient-analysis/hospital-patient-analysis-page-02.png"
+                            alt="Hospital Patient Analysis patient demographics dashboard"
+                        >
+
+                        <span class="image-expand-label">
+                            Click to expand
+                        </span>
+
+                    </button>
+
+                </figure>
+
+
+                <div class="insight-flow">
+
+                    <div class="insight-block">
+
+                        <span>
+                            Observation
+                        </span>
+
+                        <p>
+                            645 of 974 patients are seniors, with an
+                            average patient age of 70.24 years.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-block">
+
+                        <span>
+                            Analysis
+                        </span>
+
+                        <p>
+                            Older adults represent the dominant
+                            patient segment in the analyzed population.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-block">
+
+                        <span>
+                            Impact
+                        </span>
+
+                        <p>
+                            Chronic-disease, geriatric, preventive,
+                            and follow-up demand is structurally important.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-block insight-recommendation">
+
+                        <span>
+                            Recommendation
+                        </span>
+
+                        <p>
+                            Strengthen preventive care, follow-up,
+                            chronic-care, and care-coordination programs.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =====================================================
+             INSIGHT 03
+        ====================================================== -->
+
+        <article class="insight-card">
+
+            <div class="insight-heading">
+
+                <span class="insight-number">
+                    03
+                </span>
+
+                <h3>
+                    Ambulatory care is the largest activity and cost pool
+                </h3>
+
+            </div>
+
+
+            <div class="insight-layout">
+
+                <figure class="insight-image-wrap">
+
+                    <button
+                        type="button"
+                        class="insight-dashboard-trigger"
+                        data-image="../../assets/projects/previews/hospital-patient-analysis/hospital-patient-analysis-page-04.png"
+                        data-title="Hospital Patient Analysis — Financial & Operational Overview"
+                        aria-label="Expand ambulatory cost dashboard"
+                    >
+
+                        <img
+                            src="../../assets/projects/previews/hospital-patient-analysis/hospital-patient-analysis-page-04.png"
+                            alt="Hospital Patient Analysis financial and operational dashboard"
+                        >
+
+                        <span class="image-expand-label">
+                            Click to expand
+                        </span>
+
+                    </button>
+
+                </figure>
+
+
+                <div class="insight-flow">
+
+                    <div class="insight-block">
+
+                        <span>
+                            Observation
+                        </span>
+
+                        <p>
+                            Ambulatory encounters total 12.5K and
+                            generate $36.3M in total claim cost.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-block">
+
+                        <span>
+                            Analysis
+                        </span>
+
+                        <p>
+                            Ambulatory care leads both encounter volume
+                            and total cost among the encounter classes.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-block">
+
+                        <span>
+                            Impact
+                        </span>
+
+                        <p>
+                            It is a major capacity, throughput, and
+                            resource-allocation lever.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-block insight-recommendation">
+
+                        <span>
+                            Recommendation
+                        </span>
+
+                        <p>
+                            Optimize ambulatory capacity and expand
+                            preventive-service pathways.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =====================================================
+             INSIGHT 04
+        ====================================================== -->
+
+        <article class="insight-card">
+
+            <div class="insight-heading">
+
+                <span class="insight-number">
+                    04
+                </span>
+
+                <h3>
+                    Clinical costs are concentrated in high-cost procedures
+                </h3>
+
+            </div>
+
+
+            <div class="insight-layout">
+
+                <figure class="insight-image-wrap">
+
+                    <button
+                        type="button"
+                        class="insight-dashboard-trigger"
+                        data-image="../../assets/projects/previews/hospital-patient-analysis/hospital-patient-analysis-page-03.png"
+                        data-title="Hospital Patient Analysis — Clinical Services & Utilization"
+                        aria-label="Expand clinical services dashboard"
+                    >
+
+                        <img
+                            src="../../assets/projects/previews/hospital-patient-analysis/hospital-patient-analysis-page-03.png"
+                            alt="Hospital Patient Analysis clinical services and utilization dashboard"
+                        >
+
+                        <span class="image-expand-label">
+                            Click to expand
+                        </span>
+
+                    </button>
+
+                </figure>
+
+
+                <div class="insight-flow">
+
+                    <div class="insight-block">
+
+                        <span>
+                            Observation
+                        </span>
+
+                        <p>
+                            Electrical cardioversion contributes
+                            approximately $35.82M in procedure cost.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-block">
+
+                        <span>
+                            Analysis
+                        </span>
+
+                        <p>
+                            It represents more than half of the
+                            $69.18M shown across the leading
+                            procedure-cost list.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-block">
+
+                        <span>
+                            Impact
+                        </span>
+
+                        <p>
+                            A small number of high-cost procedures
+                            can materially influence clinical spend.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-block insight-recommendation">
+
+                        <span>
+                            Recommendation
+                        </span>
+
+                        <p>
+                            Review high-cost pathways, resource
+                            utilization, and length-of-stay patterns.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =====================================================
+             INSIGHT 05
+        ====================================================== -->
+
+        <article class="insight-card insight-card-last">
+
+            <div class="insight-heading">
+
+                <span class="insight-number">
+                    05
+                </span>
+
+                <h3>
+                    Clinical documentation is a major data-quality gap
+                </h3>
+
+            </div>
+
+
+            <div class="insight-layout">
+
+                <figure class="insight-image-wrap">
+
+                    <button
+                        type="button"
+                        class="insight-dashboard-trigger"
+                        data-image="../../assets/projects/previews/hospital-patient-analysis/hospital-patient-analysis-page-03.png"
+                        data-title="Hospital Patient Analysis — Clinical Services & Utilization"
+                        aria-label="Expand clinical documentation dashboard"
+                    >
+
+                        <img
+                            src="../../assets/projects/previews/hospital-patient-analysis/hospital-patient-analysis-page-03.png"
+                            alt="Hospital Patient Analysis clinical services and utilization dashboard"
+                        >
+
+                        <span class="image-expand-label">
+                            Click to expand
+                        </span>
+
+                    </button>
+
+                </figure>
+
+
+                <div class="insight-flow">
+
+                    <div class="insight-block">
+
+                        <span>
+                            Observation
+                        </span>
+
+                        <p>
+                            19,541 of 27,891 encounters are recorded
+                            as “No diagnosis.”
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-block">
+
+                        <span>
+                            Analysis
+                        </span>
+
+                        <p>
+                            Approximately 70% of encounters lack a
+                            recorded diagnosis in the dashboard.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-block">
+
+                        <span>
+                            Impact
+                        </span>
+
+                        <p>
+                            Incomplete documentation constrains clinical
+                            reporting, analytical insight, and reimbursement.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-block insight-recommendation">
+
+                        <span>
+                            Recommendation
+                        </span>
+
+                        <p>
+                            Strengthen physician documentation,
+                            coding accuracy, and Clinical Documentation Improvement.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         4. RECOMMENDATIONS
+    ========================================================== -->
+
+    <section
+        id="recommendations"
+        class="case-study-section"
+    >
+
+        <header class="main-report-header">
+
+            <span class="main-section-number">
+                4.
+            </span>
+
+            <h2>
+                Recommendations
+            </h2>
+
+        </header>
+
+
+        <p class="section-intro">
+            Translate each healthcare finding into a focused management action.
+        </p>
+
+
+        <div class="recommendation-matrix">
+
+
+            <div class="recommendation-matrix-header">
+
+                <div class="matrix-heading">
+                    Insight
+                </div>
+
+                <div class="matrix-heading">
+                    Recommendation
+                </div>
+
+                <div class="matrix-heading">
+                    Why It Matters
+                </div>
+
+                <div class="matrix-heading">
+                    Expected Impact
+                </div>
+
+            </div>
+
+
+
+            <!-- RECOMMENDATION 01 -->
+
+            <article class="recommendation-row">
+
+                <div
+                    class="recommendation-cell recommendation-insight"
+                    data-label="Insight"
+                >
+
+                    <p>
+                        Patients carry 69% of total claim cost
+                        out-of-pocket.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="recommendation-cell recommendation-action"
+                    data-label="Recommendation"
+                >
+
+                    <p>
+                        Expand payer partnerships and patient
+                        financial-assistance pathways.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="recommendation-cell recommendation-why"
+                    data-label="Why It Matters"
+                >
+
+                    <p>
+                        Reducing patient financial exposure can
+                        support affordability and access to care.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="recommendation-cell recommendation-impact"
+                    data-label="Expected Impact"
+                >
+
+                    <p>
+                        Higher coverage and lower
+                        patient financial burden.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- RECOMMENDATION 02 -->
+
+            <article class="recommendation-row">
+
+                <div
+                    class="recommendation-cell recommendation-insight"
+                    data-label="Insight"
+                >
+
+                    <p>
+                        Seniors represent 645 of 974 patients.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="recommendation-cell recommendation-action"
+                    data-label="Recommendation"
+                >
+
+                    <p>
+                        Invest in chronic-disease, geriatric,
+                        preventive, and follow-up programs.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="recommendation-cell recommendation-why"
+                    data-label="Why It Matters"
+                >
+
+                    <p>
+                        Service design should reflect the
+                        dominant patient segment.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="recommendation-cell recommendation-impact"
+                    data-label="Expected Impact"
+                >
+
+                    <p>
+                        Better continuity of care and
+                        demand management.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- RECOMMENDATION 03 -->
+
+            <article class="recommendation-row">
+
+                <div
+                    class="recommendation-cell recommendation-insight"
+                    data-label="Insight"
+                >
+
+                    <p>
+                        Ambulatory care leads volume and
+                        total encounter cost.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="recommendation-cell recommendation-action"
+                    data-label="Recommendation"
+                >
+
+                    <p>
+                        Increase ambulatory capacity and
+                        preventive-service pathways.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="recommendation-cell recommendation-why"
+                    data-label="Why It Matters"
+                >
+
+                    <p>
+                        Improvements in the largest activity
+                        pool can affect system-wide throughput.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="recommendation-cell recommendation-impact"
+                    data-label="Expected Impact"
+                >
+
+                    <p>
+                        Improved throughput and more
+                        efficient resource utilization.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- RECOMMENDATION 04 -->
+
+            <article class="recommendation-row">
+
+                <div
+                    class="recommendation-cell recommendation-insight"
+                    data-label="Insight"
+                >
+
+                    <p>
+                        Electrical cardioversion contributes
+                        $35.82M in procedure cost.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="recommendation-cell recommendation-action"
+                    data-label="Recommendation"
+                >
+
+                    <p>
+                        Monitor high-cost procedures,
+                        resource utilization, and length of stay.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="recommendation-cell recommendation-why"
+                    data-label="Why It Matters"
+                >
+
+                    <p>
+                        Concentrated clinical spend deserves
+                        focused pathway-level review.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="recommendation-cell recommendation-impact"
+                    data-label="Expected Impact"
+                >
+
+                    <p>
+                        More disciplined resource utilization
+                        and cost control.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- RECOMMENDATION 05 -->
+
+            <article class="recommendation-row">
+
+                <div
+                    class="recommendation-cell recommendation-insight"
+                    data-label="Insight"
+                >
+
+                    <p>
+                        19,541 encounters show “No diagnosis.”
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="recommendation-cell recommendation-action"
+                    data-label="Recommendation"
+                >
+
+                    <p>
+                        Implement physician education and
+                        Clinical Documentation Improvement.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="recommendation-cell recommendation-why"
+                    data-label="Why It Matters"
+                >
+
+                    <p>
+                        Complete documentation improves data
+                        quality, coding, reporting, and reimbursement.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="recommendation-cell recommendation-impact"
+                    data-label="Expected Impact"
+                >
+
+                    <p>
+                        Stronger revenue-cycle performance
+                        and decision quality.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <div class="management-principle">
+
+            <strong>
+                Management Principle
+            </strong>
+
+            <span>
+                Focus improvement effort where patient burden,
+                utilization, clinical cost, and data-quality exposure
+                are most concentrated.
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         5. BUSINESS IMPACT
+    ========================================================== -->
+
+    <section
+        id="business-impact"
+        class="case-study-section"
+    >
+
+        <header class="main-report-header">
+
+            <span class="main-section-number">
+                5.
+            </span>
+
+            <h2>
+                Business Impact
+            </h2>
+
+        </header>
+
+
+        <p class="section-intro">
+            Translate the recommendations into measurable healthcare and
+            management outcomes.
+        </p>
+
+
+        <div class="business-impact-matrix">
+
+
+            <div class="business-impact-header">
+
+                <div class="impact-heading">
+                    Recommendation
+                </div>
+
+                <div class="impact-heading">
+                    Business Benefit
+                </div>
+
+                <div class="impact-heading">
+                    Business Impact
+                </div>
+
+            </div>
+
+
+
+            <!-- IMPACT 01 -->
+
+            <article class="business-impact-row">
+
+                <div
+                    class="business-impact-cell impact-recommendation"
+                    data-label="Recommendation"
+                >
+
+                    <p>
+                        Financial access
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="business-impact-cell impact-benefit"
+                    data-label="Business Benefit"
+                >
+
+                    <p>
+                        More payer coverage and
+                        patient assistance.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="business-impact-cell impact-outcome"
+                    data-label="Business Impact"
+                >
+
+                    <p>
+                        Lower out-of-pocket burden
+                        <span>•</span>
+                        Stronger patient access
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- IMPACT 02 -->
+
+            <article class="business-impact-row">
+
+                <div
+                    class="business-impact-cell impact-recommendation"
+                    data-label="Recommendation"
+                >
+
+                    <p>
+                        Aging-population care
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="business-impact-cell impact-benefit"
+                    data-label="Business Benefit"
+                >
+
+                    <p>
+                        Geriatric, chronic-care,
+                        and preventive programs.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="business-impact-cell impact-outcome"
+                    data-label="Business Impact"
+                >
+
+                    <p>
+                        Better continuity
+                        <span>•</span>
+                        Better care coordination
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- IMPACT 03 -->
+
+            <article class="business-impact-row">
+
+                <div
+                    class="business-impact-cell impact-recommendation"
+                    data-label="Recommendation"
+                >
+
+                    <p>
+                        Ambulatory capacity
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="business-impact-cell impact-benefit"
+                    data-label="Business Benefit"
+                >
+
+                    <p>
+                        Capacity aligned to the
+                        largest encounter pool.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="business-impact-cell impact-outcome"
+                    data-label="Business Impact"
+                >
+
+                    <p>
+                        Improved throughput
+                        <span>•</span>
+                        Better resource utilization
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- IMPACT 04 -->
+
+            <article class="business-impact-row">
+
+                <div
+                    class="business-impact-cell impact-recommendation"
+                    data-label="Recommendation"
+                >
+
+                    <p>
+                        Clinical cost management
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="business-impact-cell impact-benefit"
+                    data-label="Business Benefit"
+                >
+
+                    <p>
+                        High-cost procedure and
+                        length-of-stay controls.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="business-impact-cell impact-outcome"
+                    data-label="Business Impact"
+                >
+
+                    <p>
+                        Improved cost discipline
+                        <span>•</span>
+                        Service-line visibility
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- IMPACT 05 -->
+
+            <article class="business-impact-row">
+
+                <div
+                    class="business-impact-cell impact-recommendation"
+                    data-label="Recommendation"
+                >
+
+                    <p>
+                        Documentation quality
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="business-impact-cell impact-benefit"
+                    data-label="Business Benefit"
+                >
+
+                    <p>
+                        Better documentation,
+                        coding, and clinical data.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="business-impact-cell impact-outcome"
+                    data-label="Business Impact"
+                >
+
+                    <p>
+                        Stronger reimbursement
+                        <span>•</span>
+                        Better decision quality
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <div class="management-principle">
+
+            <strong>
+                Value Tracking
+            </strong>
+
+            <span>
+                Track payer mix, patient cost, service-line cost,
+                length of stay, documentation completeness, and
+                reimbursement performance.
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         6. TECHNICAL TOOLS
+    ========================================================== -->
+
+    <section
+        id="technical-tools"
+        class="case-study-section"
+    >
+
+        <header class="main-report-header">
+
+            <span class="main-section-number">
+                6.
+            </span>
+
+            <h2>
+                Technical Tools
+            </h2>
+
+        </header>
+
+
+        <p class="technical-tools-intro">
+            A business-first analytics workflow from raw healthcare
+            records to executive decision support.
+        </p>
+
+
+        <div class="technical-tools-grid">
+
+
+            <article class="technical-tool-card">
+
+                <h3>
+                    Power BI
+                </h3>
+
+                <p>
+                    Executive dashboards, interactive analysis,
+                    KPI reporting, and visual storytelling.
+                </p>
+
+            </article>
+
+
+            <article class="technical-tool-card">
+
+                <h3>
+                    DAX
+                </h3>
+
+                <p>
+                    Measures, calculated metrics, time intelligence,
+                    and healthcare business logic.
+                </p>
+
+            </article>
+
+
+            <article class="technical-tool-card">
+
+                <h3>
+                    Power Query
+                </h3>
+
+                <p>
+                    Data cleaning, transformation, shaping,
+                    and preparation.
+                </p>
+
+            </article>
+
+
+            <article class="technical-tool-card">
+
+                <h3>
+                    Excel
+                </h3>
+
+                <p>
+                    Data validation, supporting analysis,
+                    and business checks.
+                </p>
+
+            </article>
+
+
+            <article class="technical-tool-card">
+
+                <h3>
+                    Data Modeling
+                </h3>
+
+                <p>
+                    Structured relationships, dimensions,
+                    measures, and reusable analytical logic.
+                </p>
+
+            </article>
+
+        </div>
+
+
+        <div class="management-principle">
+
+            <strong>
+                Analytical Outcome
+            </strong>
+
+            <span>
+                A repeatable analytical model connecting patient,
+                encounter, clinical, and financial views in one
+                executive reporting layer.
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         BACK TO PROJECT LIBRARY
+    ========================================================== -->
+
+    <div class="back-to-project-library-wrap">
+
+        <a
+            href="../../project-library/"
+            class="back-to-project-library"
+        >
+            ← Back to Project Library
+        </a>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     IMAGE MODAL
+========================================================== -->
+
+<div
+    class="image-modal"
+    id="imageModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="image-modal-backdrop"
+        data-modal-close
+    ></div>
+
+
+    <div
+        class="image-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="imageModalTitle"
+    >
+
+        <button
+            type="button"
+            class="image-modal-close"
+            id="imageModalClose"
+            aria-label="Close image preview"
+        >
+            ×
+        </button>
+
+
+        <div
+            class="image-modal-title"
+            id="imageModalTitle"
+        >
+        </div>
+
+
+        <img
+            class="image-modal-image"
+            id="imageModalPreview"
+            src=""
+            alt=""
+        >
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        /* =====================================================
+           IMAGE MODAL
+        ====================================================== */
+
+        const modal =
+            document.getElementById("imageModal");
+
+        const modalPreview =
+            document.getElementById("imageModalPreview");
+
+        const modalTitle =
+            document.getElementById("imageModalTitle");
+
+        const modalClose =
+            document.getElementById("imageModalClose");
+
+        const dashboardTriggers =
+            document.querySelectorAll(
+                ".insight-dashboard-trigger"
+            );
+
+        function openModal(button) {
+
+            const image =
+                button.dataset.image;
+
+            const title =
+                button.dataset.title || "";
+
+            const imageElement =
+                button.querySelector("img");
+
+            const alt =
+                imageElement
+                    ? imageElement.alt
+                    : title;
+
+            modalPreview.src =
+                image;
+
+            modalPreview.alt =
+                alt;
+
+            modalTitle.textContent =
+                title;
+
+            modal.classList.add("is-open");
+
+            modal.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.classList.add(
+                "modal-open"
+            );
+
+            modalClose.focus();
 
         }
 
 
-        window.addEventListener(
-            "scroll",
-            updateActiveNav
+        function closeModal() {
+
+            modal.classList.remove(
+                "is-open"
+            );
+
+            modal.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            modalPreview.src =
+                "";
+
+            modalPreview.alt =
+                "";
+
+            modalTitle.textContent =
+                "";
+
+            document.body.classList.remove(
+                "modal-open"
+            );
+
+        }
+
+
+        dashboardTriggers.forEach(
+            function (button) {
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        openModal(button);
+
+                    }
+                );
+
+            }
         );
 
 
-        updateActiveNav();
+        modalClose.addEventListener(
+            "click",
+            closeModal
+        );
 
-    </script>
+
+        modal.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target.hasAttribute(
+                        "data-modal-close"
+                    )
+                ) {
+
+                    closeModal();
+
+                }
+
+            }
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape" &&
+                    modal.classList.contains("is-open")
+                ) {
+
+                    closeModal();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           ACTIVE CASE-STUDY NAVIGATION
+        ====================================================== */
+
+        const navigationLinks =
+            document.querySelectorAll(
+                ".case-navigation a[data-section]"
+            );
+
+        const sections =
+            document.querySelectorAll(
+                ".case-study-section"
+            );
+
+
+        const sectionObserver =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                const id =
+                                    entry.target.id;
+
+                                navigationLinks.forEach(
+                                    function (link) {
+
+                                        link.classList.toggle(
+                                            "active",
+                                            link.dataset.section === id
+                                        );
+
+                                    }
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    rootMargin:
+                        "-25% 0px -65% 0px",
+                    threshold:
+                        0
+                }
+            );
+
+
+        sections.forEach(
+            function (section) {
+
+                sectionObserver.observe(
+                    section
+                );
+
+            }
+        );
+
+    }
+);
+
+</script>
+
 
 </body>
 
