@@ -3018,10 +3018,12 @@ img {
     text-decoration:
         none;
 
-    transition:
-        color .2s ease,
-        border-color .2s ease,
-        background .2s ease;
+   transition:
+       color .2s ease,
+       border-color .2s ease,
+       background .2s ease,
+       transform .2s ease,
+       box-shadow .2s ease;
 
 }
 
@@ -3036,6 +3038,13 @@ img {
 
     background:
         var(--surface-soft);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 6px 16px
+        rgba(31, 58, 95, .08);
 
 }
 
