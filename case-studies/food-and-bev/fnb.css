@@ -1197,7 +1197,7 @@ img {
 .recommendation-cell {
 
     padding:
-        22px 18px;
+        27px 20px;
 
 }
 
@@ -1211,7 +1211,7 @@ img {
         0.88rem;
 
     line-height:
-        1.68;
+        1.72;
 
 }
 
@@ -2283,7 +2283,7 @@ img {
 .business-impact-intro {
 
     margin:
-        0 0 24px;
+        0 0 18px;
 
     max-width:
         760px;
@@ -2400,10 +2400,10 @@ img {
         center;
 
     min-height:
-        100px;
+        82px;
 
     padding:
-        20px;
+        16px 20px;
 
 }
 
@@ -2417,10 +2417,10 @@ img {
         var(--text-secondary);
 
     font-size:
-        0.88rem;
+        0.86rem;
 
     line-height:
-        1.65;
+        1.55;
 
 }
 
@@ -2685,10 +2685,10 @@ img {
     .business-impact-cell {
 
         min-height:
-            94px;
+            82px;
 
         padding:
-            18px 14px;
+            15px 14px;
 
     }
 
