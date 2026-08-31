@@ -143,239 +143,558 @@ nav {
 
 
 /* =========================================================
-   HERO
-   Final direction:
-   - Clean split composition
-   - 54px / 600 desktop headline
-   - Real prism artwork on the right
-   - Compact premium CTAs
+   HERO — FINAL REFINED VERSION
 ========================================================= */
 
 .hero {
-    position: relative;
 
-    width: 100%;
-    max-width: var(--content-max-width);
+    position:
+        relative;
 
-    min-height: 720px;
+    width:
+        100%;
 
-    margin: 0 auto;
+    max-width:
+        var(--content-max-width);
 
-    padding: 92px var(--site-gutter) 86px;
+    min-height:
+        720px;
 
-    display: grid;
-    grid-template-columns: minmax(0, 0.95fr) minmax(480px, 1.05fr);
+    margin:
+        0 auto;
 
-    align-items: center;
+    padding:
+        105px
+        var(--site-gutter);
 
-    overflow: hidden;
-}
+    display:
+        flex;
 
-.hero-content {
-    position: relative;
-    z-index: 2;
+    align-items:
+        center;
 
-    max-width: 760px;
-}
+    overflow:
+        hidden;
 
-.eyebrow {
-    color: var(--primary);
-
-    font-size: 14px;
-    font-weight: 700;
-
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    max-width: 760px;
-
-    color: var(--heading);
-
-    font-size: 54px;
-    font-weight: 600;
-
-    line-height: 1.08;
-    letter-spacing: -0.022em;
-
-    margin: 0 0 24px;
-}
-
-.hero h1 span {
-    color: var(--heading);
-}
-
-.hero-description {
-    max-width: 680px;
-
-    color: var(--text);
-
-    font-size: 17px;
-    line-height: 1.65;
-
-    margin: 0 0 32px;
 }
 
 
 /* =========================================================
-   HERO ACTIONS
+   HERO CONTENT
 ========================================================= */
 
-.hero-actions {
-    display: flex;
+.hero-content {
 
-    align-items: center;
+    position:
+        relative;
 
-    gap: 14px;
+    z-index:
+        5;
 
-    flex-wrap: wrap;
+    width:
+        58%;
+
+    max-width:
+        760px;
+
 }
 
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.hero .eyebrow {
+
+    color:
+        var(--primary);
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+    text-transform:
+        uppercase;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+/* =========================================================
+   MAIN HEADLINE
+========================================================= */
+
+.hero h1 {
+
+    max-width:
+        760px;
+
+    color:
+        var(--heading);
+
+   font-size:
+       54px;
+   
+   font-weight:
+       600;
+
+    line-height:
+        1.10;
+
+    letter-spacing:
+        -0.022em;
+
+    margin:
+        0 0 22px;
+
+}
+
+
+.hero h1 span {
+
+    color:
+        var(--heading);
+
+}
+
+
+/* =========================================================
+   SUPPORTING STATEMENT
+========================================================= */
+
+.hero .hero-description {
+
+    max-width:
+        650px;
+
+    color:
+        var(--text);
+
+    font-size:
+        17px;
+
+    font-weight:
+        400;
+
+    line-height:
+        1.7;
+
+    margin:
+        0 0 32px;
+
+}
+
+
+/* =========================================================
+   CTA CONTAINER
+========================================================= */
+
+.hero .buttons {
+
+    position:
+        relative;
+
+    z-index:
+        10;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    flex-wrap:
+        wrap;
+
+}
+
+
+/* =========================================================
+   CTA BASE
+========================================================= */
+
 .hero-btn {
-    position: relative;
 
-    display: inline-flex;
+    position:
+        relative;
 
-    align-items: center;
-    justify-content: flex-start;
+    display:
+        inline-flex;
 
-    min-height: 58px;
+    align-items:
+        center;
 
-    padding: 0 18px 0 14px;
+    justify-content:
+        center;
 
-    border-radius: 10px;
+    gap:
+        11px;
 
-    text-decoration: none;
+    min-height:
+        50px;
 
-    font-size: 14px;
-    font-weight: 700;
+    padding:
+        11px 16px;
 
-    overflow: hidden;
+    border-radius:
+        9px;
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    line-height:
+        1;
+
+    text-decoration:
+        none;
+
+    overflow:
+        hidden;
 
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease,
         border-color 0.25s ease,
-        background 0.25s ease,
-        color 0.25s ease;
+        background 0.25s ease;
+
 }
 
-.hero-btn:hover {
-    transform: translateY(-2px);
+
+/* =========================================================
+   CTA SHINE
+========================================================= */
+
+.hero-btn::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        -100%;
+
+    left:
+        -80%;
+
+    width:
+        45%;
+
+    height:
+        300%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.28),
+            transparent
+        );
+
+    transform:
+        rotate(18deg);
+
+    transition:
+        left 0.65s ease;
+
 }
 
-.hero-btn-icon {
-    width: 32px;
-    height: 32px;
 
-    display: inline-flex;
+.hero-btn:hover::before {
 
-    align-items: center;
-    justify-content: center;
+    left:
+        140%;
 
-    flex: 0 0 32px;
-
-    margin-right: 11px;
-
-    border-radius: 50%;
 }
 
-.hero-btn-icon svg,
-.hero-btn-arrow svg {
-    width: 100%;
-    height: 100%;
-}
 
-.hero-btn-icon svg {
-    stroke: currentColor;
-
-    stroke-width: 1.45;
-
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.hero-btn-arrow {
-    width: 22px;
-    height: 22px;
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin-left: 18px;
-
-    flex: 0 0 22px;
-
-    transition: transform 0.25s ease;
-}
-
-.hero-btn-arrow svg {
-    stroke: currentColor;
-
-    stroke-width: 1.7;
-
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.hero-btn:hover .hero-btn-arrow {
-    transform: translateX(4px);
-}
+/* =========================================================
+   PRIMARY CTA
+========================================================= */
 
 .hero-btn-primary {
-    color: #ffffff;
+
+    color:
+        #ffffff;
 
     background:
         linear-gradient(
             135deg,
-            #1769aa 0%,
-            #0f62b5 100%
+            #1769aa,
+            #1266d5
         );
 
-    border: 1px solid rgba(23, 105, 170, 0.7);
+    border:
+        1px solid
+        rgba(23,105,170,0.55);
 
     box-shadow:
-        0 10px 24px rgba(23, 105, 170, 0.18);
+        0 7px 18px
+        rgba(23,105,170,0.18);
+
 }
+
 
 .hero-btn-primary:hover {
-    box-shadow:
-        0 14px 30px rgba(23, 105, 170, 0.24);
-}
 
-.hero-btn-primary .hero-btn-icon {
-    border: 1px solid rgba(255, 255, 255, 0.78);
+    transform:
+        translateY(-2px);
 
     box-shadow:
-        inset 0 0 0 3px rgba(255, 255, 255, 0.07);
+        0 10px 24px
+        rgba(23,105,170,0.25);
+
 }
+
+
+/* =========================================================
+   SECONDARY CTA
+========================================================= */
 
 .hero-btn-secondary {
-    color: #0f5f9f;
+
+    color:
+        var(--primary);
 
     background:
-        rgba(255, 255, 255, 0.92);
+        rgba(255,255,255,0.92);
 
-    border: 1px solid #c9dff1;
+    border:
+        1px solid
+        #b9cfe4;
 
     box-shadow:
-        0 8px 22px rgba(25, 76, 116, 0.08);
+        0 7px 18px
+        rgba(30,80,120,0.08);
+
 }
+
 
 .hero-btn-secondary:hover {
-    border-color: #7db6df;
+
+    transform:
+        translateY(-2px);
+
+    background:
+        #ffffff;
+
+    border-color:
+        var(--primary);
 
     box-shadow:
-        0 12px 26px rgba(25, 76, 116, 0.12);
+        0 10px 24px
+        rgba(23,105,170,0.16);
+
 }
 
-.hero-btn-secondary .hero-btn-icon {
-    color: var(--primary);
+
+/* =========================================================
+   BUTTON LABEL
+========================================================= */
+
+.btn-label {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    white-space:
+        nowrap;
+
+}
+
+
+/* =========================================================
+   BUTTON ARROW
+========================================================= */
+
+.btn-arrow {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    font-size:
+        20px;
+
+    line-height:
+        1;
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+.hero-btn:hover .btn-arrow {
+
+    transform:
+        translateX(4px);
+
+}
+
+
+/* =========================================================
+   BUTTON ICON
+========================================================= */
+
+.btn-icon {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        25px;
+
+    height:
+        25px;
+
+    flex:
+        0 0 25px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+}
+
+
+/* =========================================================
+   TARGET ICON
+========================================================= */
+
+.target-icon {
+
+    border:
+        1.4px solid
+        currentColor;
+
+    border-radius:
+        50%;
+
+}
+
+
+.target-icon::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        13px;
+
+    height:
+        13px;
+
+    border:
+        1px solid
+        currentColor;
+
+    border-radius:
+        50%;
+
+}
+
+
+.target-icon span {
+
+    width:
+        4px;
+
+    height:
+        4px;
+
+    border-radius:
+        50%;
+
+    background:
+        currentColor;
+
+}
+
+
+.target-icon::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        31px;
+
+    height:
+        1px;
+
+    background:
+        currentColor;
+
+    opacity:
+        0.55;
+
+}
+
+
+/* =========================================================
+   PAPER PLANE
+========================================================= */
+
+.plane-icon {
+
+    font-size:
+        23px;
+
+    font-weight:
+        400;
+
+    transform:
+        rotate(-8deg);
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+.hero-btn-secondary:hover .plane-icon {
+
+    transform:
+        translate(
+            2px,
+            -2px
+        )
+        rotate(-8deg);
+
 }
 
 
@@ -384,96 +703,746 @@ nav {
 ========================================================= */
 
 .hero-visual {
-    position: absolute;
 
-    z-index: 1;
+    position:
+        absolute;
 
-    top: 0;
-    right: -3%;
+    top:
+        0;
 
-    width: 62%;
-    height: 100%;
+    right:
+        0;
 
-    display: flex;
+    width:
+        58%;
 
-    align-items: center;
-    justify-content: flex-end;
+    height:
+        100%;
 
-    pointer-events: none;
-}
+    z-index:
+        1;
 
-.hero-visual::before {
-    content: "";
+    pointer-events:
+        none;
 
-    position: absolute;
-
-    inset: 8% 2% 8% 4%;
-
-    background:
-        radial-gradient(
-            circle at 60% 48%,
-            rgba(99, 169, 242, 0.22) 0%,
-            rgba(99, 169, 242, 0.10) 30%,
-            rgba(99, 169, 242, 0.00) 68%
-        );
-
-    filter: blur(10px);
-
-    pointer-events: none;
-}
-
-.hero-visual img {
-    position: relative;
-
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-    object-position: 62% center;
-
-    opacity: 0.96;
-
-    mix-blend-mode: multiply;
-
-    transform: scale(1.04);
-
-    filter:
-        saturate(0.98)
-        contrast(0.98);
 }
 
 
 /* =========================================================
-   HERO RESPONSIVE
+   BLUE GLOW
 ========================================================= */
 
-@media (max-width: 1100px) {
+.hero-visual-glow {
 
-    .hero {
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(380px, 0.85fr);
+    position:
+        absolute;
 
-        min-height: 680px;
+    top:
+        50%;
 
-        padding-top: 82px;
-        padding-bottom: 76px;
-    }
+    right:
+        19%;
 
-    .hero h1 {
-        font-size: 50px;
-    }
+    width:
+        540px;
 
-    .hero-visual {
-        width: 57%;
-        right: -5%;
-    }
+    height:
+        540px;
 
-    .hero-visual img {
-        object-position: 65% center;
-    }
+    transform:
+        translate(
+            50%,
+            -50%
+        );
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(96,165,250,0.20)
+            0%,
+            rgba(96,165,250,0.09)
+            38%,
+            rgba(96,165,250,0.03)
+            60%,
+            transparent
+            75%
+        );
+
+    filter:
+        blur(8px);
+
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.hero-grid {
+
+    position:
+        absolute;
+
+    inset:
+        9% 0 4% 5%;
+
+    opacity:
+        0.48;
+
+    background-image:
+
+        linear-gradient(
+            rgba(23,105,170,0.075)
+            1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(23,105,170,0.075)
+            1px,
+            transparent 1px
+        );
+
+    background-size:
+        42px 42px;
+
+    mask-image:
+        linear-gradient(
+            to right,
+            transparent,
+            black 28%,
+            black 78%,
+            transparent
+        );
+
+}
+
+
+/* =========================================================
+   DATA CONNECTION LINES
+========================================================= */
+
+.hero-data-lines {
+
+    position:
+        absolute;
+
+    top:
+        30%;
+
+    right:
+        0;
+
+    width:
+        78%;
+
+    height:
+        44%;
+
+}
+
+
+.hero-data-lines span {
+
+    position:
+        absolute;
+
+    right:
+        0;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(50,140,225,0.08),
+            rgba(50,140,225,0.28)
+        );
+
+    transform-origin:
+        right center;
+
+}
+
+
+.hero-data-lines span:nth-child(1) {
+
+    top:
+        10%;
+
+    width:
+        90%;
+
+    transform:
+        rotate(-8deg);
+
+}
+
+
+.hero-data-lines span:nth-child(2) {
+
+    top:
+        30%;
+
+    width:
+        70%;
+
+    transform:
+        rotate(2deg);
+
+}
+
+
+.hero-data-lines span:nth-child(3) {
+
+    top:
+        51%;
+
+    width:
+        85%;
+
+    transform:
+        rotate(-3deg);
+
+}
+
+
+.hero-data-lines span:nth-child(4) {
+
+    top:
+        70%;
+
+    width:
+        65%;
+
+    transform:
+        rotate(5deg);
+
+}
+
+
+.hero-data-lines span:nth-child(5) {
+
+    top:
+        89%;
+
+    width:
+        76%;
+
+    transform:
+        rotate(-2deg);
+
+}
+
+
+/* =========================================================
+   DATA PRISM
+========================================================= */
+
+.data-prism {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    right:
+        22%;
+
+    width:
+        310px;
+
+    height:
+        390px;
+
+    transform:
+        translate(
+            50%,
+            -50%
+        );
+
+    filter:
+        drop-shadow(
+            0
+            0
+            18px
+            rgba(65,155,235,0.16)
+        );
+
+}
+
+
+/* =========================================================
+   PRISM EDGES
+========================================================= */
+
+.prism-edge {
+
+    position:
+        absolute;
+
+    display:
+        block;
+
+    height:
+        1.5px;
+
+    transform-origin:
+        left center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(80,165,245,0.35),
+            rgba(255,255,255,0.85),
+            rgba(80,165,245,0.35)
+        );
+
+}
+
+
+/* Top */
+.edge-top {
+
+    top:
+        7%;
+
+    left:
+        25%;
+
+    width:
+        230px;
+
+    transform:
+        rotate(35deg);
+
+}
+
+
+/* Left */
+.edge-left {
+
+    top:
+        50%;
+
+    left:
+        5%;
+
+    width:
+        255px;
+
+    transform:
+        rotate(-35deg);
+
+}
+
+
+/* Right */
+.edge-right {
+
+    top:
+        50%;
+
+    left:
+        49%;
+
+    width:
+        245px;
+
+    transform:
+        rotate(35deg);
+
+}
+
+
+/* Bottom */
+.edge-bottom {
+
+    top:
+        93%;
+
+    left:
+        25%;
+
+    width:
+        230px;
+
+    transform:
+        rotate(-35deg);
+
+}
+
+
+/* Inner left */
+.edge-center-left {
+
+    top:
+        50%;
+
+    left:
+        25%;
+
+    width:
+        175px;
+
+    transform:
+        rotate(90deg);
+
+}
+
+
+/* Inner right */
+.edge-center-right {
+
+    top:
+        50%;
+
+    left:
+        25%;
+
+    width:
+        175px;
+
+    transform:
+        rotate(0deg);
+
+    opacity:
+        0.55;
+
+}
+
+
+/* =========================================================
+   PRISM NODES
+========================================================= */
+
+.prism-node {
+
+    position:
+        absolute;
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0
+        0
+        11px
+        rgba(50,145,245,0.65);
+
+}
+
+
+.node-top {
+
+    top:
+        7%;
+
+    left:
+        49%;
+
+}
+
+
+.node-left {
+
+    top:
+        50%;
+
+    left:
+        5%;
+
+}
+
+
+.node-right {
+
+    top:
+        50%;
+
+    right:
+        4%;
+
+}
+
+
+.node-center {
+
+    top:
+        50%;
+
+    left:
+        49%;
+
+    width:
+        9px;
+
+    height:
+        9px;
+
+    box-shadow:
+        0
+        0
+        18px
+        rgba(50,145,245,0.85);
+
+}
+
+
+.node-bottom {
+
+    bottom:
+        7%;
+
+    left:
+        49%;
+
+}
+
+
+/* =========================================================
+   PRISM LIGHT RAYS
+========================================================= */
+
+.prism-rays {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    right:
+        3%;
+
+    width:
+        390px;
+
+    height:
+        190px;
+
+    transform:
+        translateY(-50%);
+
+}
+
+
+.prism-rays span {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        50%;
+
+    width:
+        100%;
+
+    height:
+        1px;
+
+    transform-origin:
+        left center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(65,155,245,0.28),
+            rgba(65,155,245,0.03),
+            transparent
+        );
+
+}
+
+
+.prism-rays span:nth-child(1) {
+
+    transform:
+        rotate(-20deg);
+
+}
+
+
+.prism-rays span:nth-child(2) {
+
+    transform:
+        rotate(-7deg);
+
+}
+
+
+.prism-rays span:nth-child(3) {
+
+    transform:
+        rotate(8deg);
+
+}
+
+
+.prism-rays span:nth-child(4) {
+
+    transform:
+        rotate(20deg);
+
+}
+
+
+/* =========================================================
+   DATA BARS
+========================================================= */
+
+.hero-bars {
+
+    position:
+        absolute;
+
+    right:
+        5%;
+
+    bottom:
+        15%;
+
+    height:
+        125px;
+
+    display:
+        flex;
+
+    align-items:
+        flex-end;
+
+    gap:
+        7px;
+
+    opacity:
+        0.42;
+
+}
+
+
+.hero-bars span {
+
+    width:
+        8px;
+
+    border-radius:
+        3px 3px 0 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(23,105,170,0.04),
+            rgba(23,105,170,0.28)
+        );
+
+}
+
+
+.hero-bars span:nth-child(1) {
+    height: 25%;
+}
+
+.hero-bars span:nth-child(2) {
+    height: 40%;
+}
+
+.hero-bars span:nth-child(3) {
+    height: 34%;
+}
+
+.hero-bars span:nth-child(4) {
+    height: 55%;
+}
+
+.hero-bars span:nth-child(5) {
+    height: 69%;
+}
+
+.hero-bars span:nth-child(6) {
+    height: 84%;
+}
+
+.hero-bars span:nth-child(7) {
+    height: 100%;
+}
+
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+.buttons,
+.about-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 13px 24px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    color: #ffffff;
+    background: var(--primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-secondary {
+    color: var(--heading-soft);
+    background: #ffffff;
+
+    border: 1px solid #cbd8e6;
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
 }
 
 
@@ -703,12 +1672,9 @@ section {
 
 .project-card:nth-child(1) .project-preview,
 .project-card:nth-child(2) .project-preview,
+.project-card:nth-child(3) .project-preview,
 .project-card:nth-child(4) .project-preview {
     height: clamp(360px, 26vw, 430px);
-}
-
-.project-card:nth-child(3) .project-preview {
-    height: 330px;
 }
 
 .project-preview img {
@@ -833,7 +1799,7 @@ section {
 }
 
 .service-card {
-    min-height: 220px;
+    min-height: 250px;
 
     padding: 28px;
 
@@ -859,33 +1825,29 @@ section {
         rgba(25, 61, 100, 0.10);
 }
 
-.service-number {
-    display: block;
-
-    color: var(--primary);
-
-    font-size: 12px;
-    font-weight: 700;
-
-    letter-spacing: 1.5px;
-
-    margin-bottom: 18px;
-}
-
 .service-card h3 {
     color: var(--heading-soft);
 
     font-size: 19px;
     line-height: 1.35;
 
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
-.service-card p {
-    color: var(--text);
+.service-card ul {
+    margin: 0;
+    padding-left: 20px;
 
+    color: var(--text);
+}
+
+.service-card li {
     font-size: 14px;
-    line-height: 1.65;
+    line-height: 1.6;
+}
+
+.service-card li + li {
+    margin-top: 10px;
 }
 
 
@@ -1603,6 +2565,7 @@ footer {
 
     .project-card:nth-child(1) .project-preview,
     .project-card:nth-child(2) .project-preview,
+    .project-card:nth-child(3) .project-preview,
     .project-card:nth-child(4) .project-preview {
         height: 360px;
     }
@@ -1643,41 +2606,14 @@ footer {
     }
 
     .hero {
-        min-height: 650px;
+        min-height: 600px;
 
-        padding-top: 76px;
-        padding-bottom: 76px;
+        padding-top: 80px;
+        padding-bottom: 80px;
     }
 
     .hero h1 {
-        font-size: 48px;
-    }
-
-    .hero-visual {
-        width: 58%;
-        right: -8%;
-        opacity: 0.82;
-    }
-
-    .hero-visual img {
-        object-position: 68% center;
-    }
-
-    .hero-btn {
-        min-height: 54px;
-        padding-left: 12px;
-        padding-right: 15px;
-    }
-
-    .hero-btn-icon {
-        width: 30px;
-        height: 30px;
-        flex-basis: 30px;
-        margin-right: 9px;
-    }
-
-    .hero-btn-arrow {
-        margin-left: 14px;
+        font-size: 52px;
     }
 
     .about-main-card {
@@ -1757,20 +2693,11 @@ footer {
 
     .hero {
         width: 100%;
-        min-height: 700px;
+        min-height: 540px;
 
         padding:
             70px
             7%;
-
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-    }
-
-    .hero-content {
-        width: 100%;
-        max-width: none;
     }
 
     section:not(.contact) {
@@ -1782,36 +2709,11 @@ footer {
     }
 
     .hero h1 {
-        font-size: 40px;
-        line-height: 1.10;
+        font-size: 44px;
     }
 
-    .hero-description {
-        font-size: 16px;
-        margin-bottom: 28px;
-    }
-
-    .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-    }
-
-    .hero-btn {
-        width: 100%;
-        min-width: 0;
-    }
-
-    .hero-visual {
-        top: 40%;
-        right: -12%;
-        width: 112%;
-        height: 60%;
-        opacity: 0.48;
-    }
-
-    .hero-visual img {
-        object-position: 68% center;
+    .hero-subtitle {
+        font-size: 18px;
     }
 
     .section-title {
