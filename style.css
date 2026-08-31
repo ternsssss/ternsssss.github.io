@@ -143,14 +143,16 @@ nav {
 
 
 /* =========================================================
-   HERO — FINAL VISUAL VERSION
+   HERO — FINAL REFINED VERSION
 ========================================================= */
 
 .hero {
 
-    position: relative;
+    position:
+        relative;
 
-    width: 100%;
+    width:
+        100%;
 
     max-width:
         var(--content-max-width);
@@ -162,7 +164,7 @@ nav {
         0 auto;
 
     padding:
-        110px
+        105px
         var(--site-gutter);
 
     display:
@@ -202,7 +204,7 @@ nav {
    EYEBROW
 ========================================================= */
 
-.eyebrow {
+.hero .eyebrow {
 
     color:
         var(--primary);
@@ -220,13 +222,13 @@ nav {
         uppercase;
 
     margin-bottom:
-        20px;
+        18px;
 
 }
 
 
 /* =========================================================
-   HERO HEADLINE
+   MAIN HEADLINE
 ========================================================= */
 
 .hero h1 {
@@ -239,19 +241,22 @@ nav {
 
     font-size:
         clamp(
-            48px,
-            5.2vw,
-            68px
+            46px,
+            4.8vw,
+            62px
         );
 
+    font-weight:
+        600;
+
     line-height:
-        1.08;
+        1.10;
 
     letter-spacing:
-        -0.025em;
+        -0.022em;
 
-    margin-bottom:
-        24px;
+    margin:
+        0 0 22px;
 
 }
 
@@ -265,13 +270,13 @@ nav {
 
 
 /* =========================================================
-   HERO DESCRIPTION
+   SUPPORTING STATEMENT
 ========================================================= */
 
-.hero-description {
+.hero .hero-description {
 
     max-width:
-        660px;
+        650px;
 
     color:
         var(--text);
@@ -279,20 +284,23 @@ nav {
     font-size:
         17px;
 
+    font-weight:
+        400;
+
     line-height:
         1.7;
 
-    margin-bottom:
-        36px;
+    margin:
+        0 0 32px;
 
 }
 
 
 /* =========================================================
-   CTA GROUP
+   CTA CONTAINER
 ========================================================= */
 
-.buttons {
+.hero .buttons {
 
     position:
         relative;
@@ -307,7 +315,7 @@ nav {
         center;
 
     gap:
-        18px;
+        14px;
 
     flex-wrap:
         wrap;
@@ -316,16 +324,13 @@ nav {
 
 
 /* =========================================================
-   HERO BUTTON BASE
+   CTA BASE
 ========================================================= */
 
 .hero-btn {
 
     position:
         relative;
-
-    isolation:
-        isolate;
 
     display:
         inline-flex;
@@ -337,32 +342,31 @@ nav {
         center;
 
     gap:
-        14px;
+        11px;
 
     min-height:
-        56px;
+        50px;
 
     padding:
-        14px
-        18px;
+        11px 16px;
 
     border-radius:
-        10px;
+        9px;
 
     font-size:
-        15px;
+        14px;
 
     font-weight:
         700;
+
+    line-height:
+        1;
 
     text-decoration:
         none;
 
     overflow:
         hidden;
-
-    transform:
-        translateY(0);
 
     transition:
         transform 0.25s ease,
@@ -374,7 +378,7 @@ nav {
 
 
 /* =========================================================
-   BUTTON SHINE EFFECT
+   CTA SHINE
 ========================================================= */
 
 .hero-btn::before {
@@ -386,64 +390,47 @@ nav {
         absolute;
 
     top:
-        -120%;
+        -100%;
 
     left:
-        -35%;
+        -80%;
 
     width:
-        35%;
+        45%;
 
     height:
-        340%;
+        300%;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,255,255,0.35),
+            rgba(255,255,255,0.28),
             transparent
         );
 
     transform:
-        rotate(18deg)
-        translateX(-180%);
+        rotate(18deg);
 
     transition:
-        transform 0.65s ease;
-
-    z-index:
-        -1;
-
-}
-
-
-/* =========================================================
-   BUTTON HOVER
-========================================================= */
-
-.hero-btn:hover {
-
-    transform:
-        translateY(-3px);
+        left 0.65s ease;
 
 }
 
 
 .hero-btn:hover::before {
 
-    transform:
-        rotate(18deg)
-        translateX(650%);
+    left:
+        140%;
 
 }
 
 
 /* =========================================================
-   PRIMARY BUTTON
+   PRIMARY CTA
 ========================================================= */
 
-.btn-primary {
+.hero-btn-primary {
 
     color:
         #ffffff;
@@ -460,61 +447,51 @@ nav {
         rgba(23,105,170,0.55);
 
     box-shadow:
-        0
-        8px
-        22px
-        rgba(23,105,170,0.20);
+        0 7px 18px
+        rgba(23,105,170,0.18);
 
 }
 
 
-.btn-primary:hover {
+.hero-btn-primary:hover {
 
-    background:
-        linear-gradient(
-            135deg,
-            #12578e,
-            #075bc7
-        );
+    transform:
+        translateY(-2px);
 
     box-shadow:
-        0
-        12px
-        30px
-        rgba(23,105,170,0.30);
+        0 10px 24px
+        rgba(23,105,170,0.25);
 
 }
 
 
 /* =========================================================
-   SECONDARY BUTTON
+   SECONDARY CTA
 ========================================================= */
 
-.btn-secondary {
+.hero-btn-secondary {
 
     color:
         var(--primary);
 
     background:
-        rgba(255,255,255,0.94);
+        rgba(255,255,255,0.92);
 
     border:
         1px solid
-        #b8d0e8;
+        #b9cfe4;
 
     box-shadow:
-        0
-        8px
-        22px
-        rgba(50,100,150,0.10);
+        0 7px 18px
+        rgba(30,80,120,0.08);
 
 }
 
 
-.btn-secondary:hover {
+.hero-btn-secondary:hover {
 
-    color:
-        var(--primary-dark);
+    transform:
+        translateY(-2px);
 
     background:
         #ffffff;
@@ -523,10 +500,8 @@ nav {
         var(--primary);
 
     box-shadow:
-        0
-        12px
-        30px
-        rgba(23,105,170,0.18);
+        0 10px 24px
+        rgba(23,105,170,0.16);
 
 }
 
@@ -561,23 +536,11 @@ nav {
     z-index:
         2;
 
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
     font-size:
-        23px;
+        20px;
 
     line-height:
         1;
-
-    transform:
-        translateX(0);
 
     transition:
         transform 0.25s ease;
@@ -588,7 +551,7 @@ nav {
 .hero-btn:hover .btn-arrow {
 
     transform:
-        translateX(5px);
+        translateX(4px);
 
 }
 
@@ -606,10 +569,13 @@ nav {
         2;
 
     width:
-        28px;
+        25px;
 
     height:
-        28px;
+        25px;
+
+    flex:
+        0 0 25px;
 
     display:
         inline-flex;
@@ -620,9 +586,6 @@ nav {
     justify-content:
         center;
 
-    flex:
-        0 0 28px;
-
 }
 
 
@@ -630,10 +593,10 @@ nav {
    TARGET ICON
 ========================================================= */
 
-.btn-icon-target {
+.target-icon {
 
     border:
-        1.5px solid
+        1.4px solid
         currentColor;
 
     border-radius:
@@ -642,7 +605,7 @@ nav {
 }
 
 
-.btn-icon-target::before {
+.target-icon::before {
 
     content:
         "";
@@ -651,10 +614,10 @@ nav {
         absolute;
 
     width:
-        14px;
+        13px;
 
     height:
-        14px;
+        13px;
 
     border:
         1px solid
@@ -666,13 +629,13 @@ nav {
 }
 
 
-.btn-icon-target span {
+.target-icon span {
 
     width:
-        5px;
+        4px;
 
     height:
-        5px;
+        4px;
 
     border-radius:
         50%;
@@ -683,7 +646,7 @@ nav {
 }
 
 
-.btn-icon-target::after {
+.target-icon::after {
 
     content:
         "";
@@ -692,7 +655,7 @@ nav {
         absolute;
 
     width:
-        34px;
+        31px;
 
     height:
         1px;
@@ -701,19 +664,19 @@ nav {
         currentColor;
 
     opacity:
-        0.65;
+        0.55;
 
 }
 
 
 /* =========================================================
-   PAPER PLANE ICON
+   PAPER PLANE
 ========================================================= */
 
-.btn-icon-plane {
+.plane-icon {
 
     font-size:
-        26px;
+        23px;
 
     font-weight:
         400;
@@ -721,17 +684,20 @@ nav {
     transform:
         rotate(-8deg);
 
+    transition:
+        transform 0.25s ease;
+
 }
 
 
-.btn-secondary:hover .btn-icon-plane {
+.hero-btn-secondary:hover .plane-icon {
 
     transform:
-        translate(2px,-2px)
+        translate(
+            2px,
+            -2px
+        )
         rotate(-8deg);
-
-    transition:
-        transform 0.25s ease;
 
 }
 
@@ -757,17 +723,17 @@ nav {
     height:
         100%;
 
-    pointer-events:
-        none;
-
     z-index:
         1;
+
+    pointer-events:
+        none;
 
 }
 
 
 /* =========================================================
-   SOFT BLUE GLOW
+   BLUE GLOW
 ========================================================= */
 
 .hero-visual-glow {
@@ -779,13 +745,13 @@ nav {
         50%;
 
     right:
-        20%;
+        19%;
 
     width:
-        560px;
+        540px;
 
     height:
-        560px;
+        540px;
 
     transform:
         translate(
@@ -799,10 +765,10 @@ nav {
     background:
         radial-gradient(
             circle,
-            rgba(96,165,250,0.23)
+            rgba(96,165,250,0.20)
             0%,
-            rgba(96,165,250,0.10)
-            35%,
+            rgba(96,165,250,0.09)
+            38%,
             rgba(96,165,250,0.03)
             60%,
             transparent
@@ -816,7 +782,7 @@ nav {
 
 
 /* =========================================================
-   DATA GRID
+   GRID
 ========================================================= */
 
 .hero-grid {
@@ -825,22 +791,22 @@ nav {
         absolute;
 
     inset:
-        10% 0 5% 8%;
+        9% 0 4% 5%;
 
     opacity:
-        0.45;
+        0.48;
 
     background-image:
 
         linear-gradient(
-            rgba(23,105,170,0.08)
+            rgba(23,105,170,0.075)
             1px,
             transparent 1px
         ),
 
         linear-gradient(
             90deg,
-            rgba(23,105,170,0.08)
+            rgba(23,105,170,0.075)
             1px,
             transparent 1px
         );
@@ -852,8 +818,8 @@ nav {
         linear-gradient(
             to right,
             transparent,
-            black 30%,
-            black 75%,
+            black 28%,
+            black 78%,
             transparent
         );
 
@@ -861,7 +827,7 @@ nav {
 
 
 /* =========================================================
-   DATA LINES
+   DATA CONNECTION LINES
 ========================================================= */
 
 .hero-data-lines {
@@ -879,7 +845,7 @@ nav {
         78%;
 
     height:
-        45%;
+        44%;
 
 }
 
@@ -899,8 +865,8 @@ nav {
         linear-gradient(
             90deg,
             transparent,
-            rgba(23,105,170,0.12),
-            rgba(23,105,170,0.32)
+            rgba(50,140,225,0.08),
+            rgba(50,140,225,0.28)
         );
 
     transform-origin:
@@ -912,10 +878,10 @@ nav {
 .hero-data-lines span:nth-child(1) {
 
     top:
-        8%;
+        10%;
 
     width:
-        88%;
+        90%;
 
     transform:
         rotate(-8deg);
@@ -929,7 +895,7 @@ nav {
         30%;
 
     width:
-        72%;
+        70%;
 
     transform:
         rotate(2deg);
@@ -940,10 +906,10 @@ nav {
 .hero-data-lines span:nth-child(3) {
 
     top:
-        52%;
+        51%;
 
     width:
-        84%;
+        85%;
 
     transform:
         rotate(-3deg);
@@ -957,10 +923,10 @@ nav {
         70%;
 
     width:
-        66%;
+        65%;
 
     transform:
-        rotate(6deg);
+        rotate(5deg);
 
 }
 
@@ -968,10 +934,10 @@ nav {
 .hero-data-lines span:nth-child(5) {
 
     top:
-        88%;
+        89%;
 
     width:
-        75%;
+        76%;
 
     transform:
         rotate(-2deg);
@@ -980,10 +946,10 @@ nav {
 
 
 /* =========================================================
-   PRISM
+   DATA PRISM
 ========================================================= */
 
-.hero-prism {
+.data-prism {
 
     position:
         absolute;
@@ -995,7 +961,7 @@ nav {
         22%;
 
     width:
-        300px;
+        310px;
 
     height:
         390px;
@@ -1004,25 +970,24 @@ nav {
         translate(
             50%,
             -50%
-        )
-        rotate(-9deg);
+        );
 
     filter:
         drop-shadow(
             0
             0
-            20px
-            rgba(55,145,235,0.16)
+            18px
+            rgba(65,155,235,0.16)
         );
 
 }
 
 
 /* =========================================================
-   PRISM LINES
+   PRISM EDGES
 ========================================================= */
 
-.prism-line {
+.prism-edge {
 
     position:
         absolute;
@@ -1031,84 +996,105 @@ nav {
         block;
 
     height:
-        1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(90,170,255,0.25),
-            rgba(255,255,255,0.85),
-            rgba(90,170,255,0.30)
-        );
+        1.5px;
 
     transform-origin:
         left center;
 
+    background:
+        linear-gradient(
+            90deg,
+            rgba(80,165,245,0.35),
+            rgba(255,255,255,0.85),
+            rgba(80,165,245,0.35)
+        );
+
 }
 
 
-/* Main diamond */
-.prism-line-1 {
-
-    width:
-        390px;
+/* Top */
+.edge-top {
 
     top:
-        8%;
+        7%;
 
     left:
-        18%;
+        25%;
+
+    width:
+        230px;
 
     transform:
-        rotate(34deg);
+        rotate(35deg);
 
 }
 
 
-.prism-line-2 {
-
-    width:
-        350px;
-
-    top:
-        50%;
-
-    left:
-        0;
-
-    transform:
-        rotate(-34deg);
-
-}
-
-
-.prism-line-3 {
-
-    width:
-        330px;
-
-    top:
-        92%;
-
-    left:
-        19%;
-
-    transform:
-        rotate(-34deg);
-
-}
-
-
-.prism-line-4 {
-
-    width:
-        300px;
+/* Left */
+.edge-left {
 
     top:
         50%;
 
     left:
-        18%;
+        5%;
+
+    width:
+        255px;
+
+    transform:
+        rotate(-35deg);
+
+}
+
+
+/* Right */
+.edge-right {
+
+    top:
+        50%;
+
+    left:
+        49%;
+
+    width:
+        245px;
+
+    transform:
+        rotate(35deg);
+
+}
+
+
+/* Bottom */
+.edge-bottom {
+
+    top:
+        93%;
+
+    left:
+        25%;
+
+    width:
+        230px;
+
+    transform:
+        rotate(-35deg);
+
+}
+
+
+/* Inner left */
+.edge-center-left {
+
+    top:
+        50%;
+
+    left:
+        25%;
+
+    width:
+        175px;
 
     transform:
         rotate(90deg);
@@ -1116,36 +1102,23 @@ nav {
 }
 
 
-.prism-line-5 {
-
-    width:
-        260px;
+/* Inner right */
+.edge-center-right {
 
     top:
-        27%;
+        50%;
 
     left:
-        29%;
-
-    transform:
-        rotate(90deg);
-
-}
-
-
-.prism-line-6 {
+        25%;
 
     width:
-        300px;
-
-    top:
-        72%;
-
-    left:
-        22%;
+        175px;
 
     transform:
-        rotate(90deg);
+        rotate(0deg);
+
+    opacity:
+        0.55;
 
 }
 
@@ -1174,49 +1147,16 @@ nav {
     box-shadow:
         0
         0
-        10px
-        rgba(45,145,255,0.70);
+        11px
+        rgba(50,145,245,0.65);
 
 }
 
 
-.prism-node-1 {
+.node-top {
 
     top:
-        8%;
-
-    left:
-        48%;
-
-}
-
-
-.prism-node-2 {
-
-    top:
-        50%;
-
-    left:
-        18%;
-
-}
-
-
-.prism-node-3 {
-
-    top:
-        50%;
-
-    right:
-        8%;
-
-}
-
-
-.prism-node-4 {
-
-    bottom:
-        8%;
+        7%;
 
     left:
         49%;
@@ -1224,19 +1164,154 @@ nav {
 }
 
 
-.prism-node-5 {
+.node-left {
 
     top:
-        28%;
+        50%;
 
     left:
-        65%;
+        5%;
+
+}
+
+
+.node-right {
+
+    top:
+        50%;
+
+    right:
+        4%;
+
+}
+
+
+.node-center {
+
+    top:
+        50%;
+
+    left:
+        49%;
+
+    width:
+        9px;
+
+    height:
+        9px;
+
+    box-shadow:
+        0
+        0
+        18px
+        rgba(50,145,245,0.85);
+
+}
+
+
+.node-bottom {
+
+    bottom:
+        7%;
+
+    left:
+        49%;
 
 }
 
 
 /* =========================================================
-   BAR CHART MOTIF
+   PRISM LIGHT RAYS
+========================================================= */
+
+.prism-rays {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    right:
+        3%;
+
+    width:
+        390px;
+
+    height:
+        190px;
+
+    transform:
+        translateY(-50%);
+
+}
+
+
+.prism-rays span {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        50%;
+
+    width:
+        100%;
+
+    height:
+        1px;
+
+    transform-origin:
+        left center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(65,155,245,0.28),
+            rgba(65,155,245,0.03),
+            transparent
+        );
+
+}
+
+
+.prism-rays span:nth-child(1) {
+
+    transform:
+        rotate(-20deg);
+
+}
+
+
+.prism-rays span:nth-child(2) {
+
+    transform:
+        rotate(-7deg);
+
+}
+
+
+.prism-rays span:nth-child(3) {
+
+    transform:
+        rotate(8deg);
+
+}
+
+
+.prism-rays span:nth-child(4) {
+
+    transform:
+        rotate(20deg);
+
+}
+
+
+/* =========================================================
+   DATA BARS
 ========================================================= */
 
 .hero-bars {
@@ -1245,10 +1320,13 @@ nav {
         absolute;
 
     right:
-        4%;
+        5%;
 
     bottom:
-        16%;
+        15%;
+
+    height:
+        125px;
 
     display:
         flex;
@@ -1259,11 +1337,8 @@ nav {
     gap:
         7px;
 
-    height:
-        130px;
-
     opacity:
-        0.45;
+        0.42;
 
 }
 
@@ -1279,40 +1354,42 @@ nav {
     background:
         linear-gradient(
             to top,
-            rgba(23,105,170,0.05),
-            rgba(23,105,170,0.30)
+            rgba(23,105,170,0.04),
+            rgba(23,105,170,0.28)
         );
 
 }
 
 
 .hero-bars span:nth-child(1) {
-    height: 28%;
+    height: 25%;
 }
 
 .hero-bars span:nth-child(2) {
-    height: 42%;
+    height: 40%;
 }
 
 .hero-bars span:nth-child(3) {
-    height: 35%;
+    height: 34%;
 }
 
 .hero-bars span:nth-child(4) {
-    height: 58%;
+    height: 55%;
 }
 
 .hero-bars span:nth-child(5) {
-    height: 72%;
+    height: 69%;
 }
 
 .hero-bars span:nth-child(6) {
-    height: 88%;
+    height: 84%;
 }
 
 .hero-bars span:nth-child(7) {
     height: 100%;
 }
+
+
 
 /* =========================================================
    BUTTONS
