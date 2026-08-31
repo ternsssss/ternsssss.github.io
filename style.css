@@ -152,7 +152,7 @@ nav {
         relative;
 
     min-height:
-        620px;
+        700px;
 
     display:
         flex;
@@ -182,7 +182,7 @@ nav {
         relative;
 
     z-index:
-        5;
+        10;
 
     width:
         58%;
@@ -192,6 +192,10 @@ nav {
 
 }
 
+
+/* =========================================================
+   EYEBROW
+========================================================= */
 
 .eyebrow {
 
@@ -219,25 +223,29 @@ nav {
 }
 
 
+/* =========================================================
+   HERO HEADLINE
+========================================================= */
+
 .hero h1 {
 
     max-width:
         900px;
 
     margin:
-        0 0 24px;
+        0 0 26px;
 
     color:
         var(--heading);
 
     font-size:
-        clamp(38px, 3.8vw, 52px);
+        clamp(42px, 4vw, 56px);
 
     font-weight:
         700;
 
     line-height:
-        1.15;
+        1.13;
 
     letter-spacing:
         -0.025em;
@@ -245,13 +253,17 @@ nav {
 }
 
 
+/* =========================================================
+   HERO SUPPORTING STATEMENT
+========================================================= */
+
 .hero-description {
 
     max-width:
         760px;
 
     margin:
-        0 0 34px;
+        0 0 38px;
 
     color:
         var(--text);
@@ -266,10 +278,10 @@ nav {
 
 
 /* =========================================================
-   HERO BUTTONS
+   HERO ACTIONS
 ========================================================= */
 
-.hero .buttons {
+.hero-actions {
 
     display:
         flex;
@@ -278,12 +290,19 @@ nav {
         center;
 
     gap:
-        16px;
+        18px;
 
 }
 
 
-.hero .btn {
+/* =========================================================
+   HERO BUTTON — BASE
+========================================================= */
+
+.hero-btn {
+
+    position:
+        relative;
 
     display:
         inline-flex;
@@ -294,14 +313,20 @@ nav {
     justify-content:
         center;
 
+    gap:
+        13px;
+
+    min-width:
+        245px;
+
     min-height:
-        54px;
+        60px;
 
     padding:
-        0 25px;
+        0 20px;
 
     border-radius:
-        8px;
+        10px;
 
     text-decoration:
         none;
@@ -310,12 +335,20 @@ nav {
         15px;
 
     font-weight:
-        600;
+        700;
+
+    letter-spacing:
+        -0.01em;
+
+    overflow:
+        hidden;
 
     transition:
         transform
         0.25s ease,
         box-shadow
+        0.25s ease,
+        border-color
         0.25s ease,
         background
         0.25s ease;
@@ -323,51 +356,365 @@ nav {
 }
 
 
-.hero .btn-primary {
+/* =========================================================
+   BUTTON ICON
+========================================================= */
 
-    background:
-        var(--accent-blue);
+.hero-btn-icon {
 
-    color:
-        #ffffff;
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        25px;
+
+    height:
+        25px;
+
+    flex:
+        0 0 25px;
 
 }
 
 
-.hero .btn-primary:hover {
+.hero-btn-icon svg {
 
-    transform:
-        translateY(-2px);
+    width:
+        22px;
 
-    box-shadow:
-        0 10px 24px
-        rgba(25, 111, 180, 0.18);
+    height:
+        22px;
+
+    stroke:
+        currentColor;
+
+    stroke-width:
+        1.8;
+
+    stroke-linecap:
+        round;
+
+    stroke-linejoin:
+        round;
 
 }
 
 
-.hero .btn-secondary {
+/* =========================================================
+   BUTTON TEXT
+========================================================= */
 
-    background:
-        #ffffff;
+.hero-btn-text {
+
+    white-space:
+        nowrap;
+
+}
+
+
+/* =========================================================
+   BUTTON ARROW
+========================================================= */
+
+.hero-btn-arrow {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        24px;
+
+    height:
+        24px;
+
+    margin-left:
+        auto;
+
+}
+
+
+.hero-btn-arrow svg {
+
+    width:
+        22px;
+
+    height:
+        22px;
+
+    stroke:
+        currentColor;
+
+    stroke-width:
+        1.8;
+
+    stroke-linecap:
+        round;
+
+    stroke-linejoin:
+        round;
+
+    transition:
+        transform
+        0.25s ease;
+
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.hero-btn-primary {
 
     color:
-        var(--heading);
+        #ffffff;
 
     border:
         1px solid
-        #d5e1ec;
+        var(--accent-blue);
+
+    background:
+        linear-gradient(
+            135deg,
+            #1477c9 0%,
+            #0d66b3 100%
+        );
+
+    box-shadow:
+        0 8px 22px
+        rgba(20, 119, 201, 0.18);
 
 }
 
 
-.hero .btn-secondary:hover {
+/* =========================================================
+   PRIMARY BUTTON — SHINE
+========================================================= */
+
+.hero-btn-primary::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -120%;
+
+    width:
+        70%;
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.20),
+            transparent
+        );
 
     transform:
-        translateY(-2px);
+        skewX(-20deg);
+
+    transition:
+        left
+        0.55s ease;
+
+}
+
+
+.hero-btn-primary:hover::before {
+
+    left:
+        140%;
+
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON — HOVER
+========================================================= */
+
+.hero-btn-primary:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 14px 32px
+        rgba(20, 119, 201, 0.30);
+
+}
+
+
+.hero-btn-primary:hover
+.hero-btn-arrow svg {
+
+    transform:
+        translateX(4px);
+
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON — ICON
+========================================================= */
+
+.hero-btn-primary .hero-btn-icon {
+
+    position:
+        relative;
+
+}
+
+
+.hero-btn-primary:hover
+.hero-btn-icon {
+
+    transform:
+        scale(1.08);
+
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.hero-btn-secondary {
+
+    color:
+        var(--accent-blue-dark);
+
+    border:
+        1px solid
+        #b9d4ea;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    box-shadow:
+        0 7px 18px
+        rgba(38, 111, 170, 0.08);
+
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON — GLOW
+========================================================= */
+
+.hero-btn-secondary::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -2px;
+
+    border-radius:
+        11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(70, 160, 225, 0.25),
+            transparent 45%,
+            rgba(70, 160, 225, 0.18)
+        );
+
+    opacity:
+        0;
+
+    transition:
+        opacity
+        0.25s ease;
+
+    pointer-events:
+        none;
+
+}
+
+
+.hero-btn-secondary:hover::before {
+
+    opacity:
+        1;
+
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON — HOVER
+========================================================= */
+
+.hero-btn-secondary:hover {
+
+    transform:
+        translateY(-3px);
 
     border-color:
         var(--accent-blue);
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 12px 28px
+        rgba(38, 111, 170, 0.16);
+
+}
+
+
+.hero-btn-secondary:hover
+.hero-btn-arrow svg {
+
+    transform:
+        translateX(4px);
+
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON — ICON
+========================================================= */
+
+.hero-btn-secondary
+.hero-btn-icon {
+
+    color:
+        var(--accent-blue);
+
+}
+
+
+.hero-btn-secondary:hover
+.hero-btn-icon {
+
+    transform:
+        translateX(2px)
+        rotate(-3deg);
 
 }
 
@@ -391,7 +738,7 @@ nav {
         0;
 
     width:
-        48%;
+        52%;
 
     height:
         100%;
@@ -412,16 +759,16 @@ nav {
         absolute;
 
     top:
-        50%;
+        48%;
 
     left:
-        52%;
+        53%;
 
     width:
-        520px;
+        600px;
 
     height:
-        520px;
+        600px;
 
     transform:
         translate(-50%, -50%);
@@ -432,22 +779,20 @@ nav {
     background:
         radial-gradient(
             circle,
-            rgba(91, 169, 229, 0.18)
-            0%,
-            rgba(91, 169, 229, 0.08)
-            38%,
-            rgba(91, 169, 229, 0)
-            72%
+            rgba(78, 157, 226, 0.20) 0%,
+            rgba(78, 157, 226, 0.10) 32%,
+            rgba(78, 157, 226, 0.04) 55%,
+            transparent 72%
         );
 
     filter:
-        blur(12px);
+        blur(16px);
 
 }
 
 
 /* =========================================================
-   SUBTLE DATA GRID
+   DATA GRID
 ========================================================= */
 
 .hero-grid {
@@ -456,33 +801,31 @@ nav {
         absolute;
 
     inset:
-        10% 0 5% 8%;
+        8% 0 4% 4%;
 
     opacity:
-        0.28;
+        0.38;
 
     background-image:
         linear-gradient(
-            rgba(62, 145, 207, 0.08)
-            1px,
+            rgba(49, 139, 211, 0.08) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(62, 145, 207, 0.08)
-            1px,
+            rgba(49, 139, 211, 0.08) 1px,
             transparent 1px
         );
 
     background-size:
-        42px 42px;
+        44px 44px;
 
     mask-image:
         linear-gradient(
             to right,
             transparent,
             black 20%,
-            black 80%,
+            black 82%,
             transparent
         );
 
@@ -490,76 +833,140 @@ nav {
 
 
 /* =========================================================
-   DATA LINES
+   FLOWING DATA LINES
 ========================================================= */
 
-.hero-data-line {
+.hero-data-flow {
 
     position:
         absolute;
 
+    left:
+        -2%;
+
+    top:
+        57%;
+
     width:
-        420px;
+        700px;
+
+    height:
+        220px;
+
+    opacity:
+        0.40;
+
+    transform:
+        rotate(-5deg);
+
+}
+
+
+.hero-data-flow span {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    width:
+        100%;
 
     height:
         1px;
 
+    border-radius:
+        100%;
+
     background:
         linear-gradient(
             90deg,
-            transparent,
-            rgba(42, 139, 207, 0.28),
-            transparent
+            transparent 0%,
+            rgba(72, 157, 223, 0.15) 15%,
+            rgba(72, 157, 223, 0.55) 55%,
+            rgba(72, 157, 223, 0.10) 100%
         );
 
-    transform-origin:
-        center;
+    transform:
+        rotate(
+            calc(
+                var(--line-angle, 0deg)
+            )
+        );
 
 }
 
 
-.hero-data-line-one {
+.hero-data-flow span:nth-child(1) {
 
     top:
-        42%;
-
-    right:
-        2%;
+        22%;
 
     transform:
-        rotate(-18deg);
+        rotate(-7deg);
 
 }
 
 
-.hero-data-line-two {
+.hero-data-flow span:nth-child(2) {
 
     top:
-        60%;
-
-    right:
-        7%;
+        35%;
 
     transform:
-        rotate(16deg);
+        rotate(-5deg);
+
+}
+
+
+.hero-data-flow span:nth-child(3) {
+
+    top:
+        48%;
+
+    transform:
+        rotate(-3deg);
+
+}
+
+
+.hero-data-flow span:nth-child(4) {
+
+    top:
+        61%;
+
+    transform:
+        rotate(-1deg);
+
+}
+
+
+.hero-data-flow span:nth-child(5) {
+
+    top:
+        74%;
+
+    transform:
+        rotate(1deg);
 
 }
 
 
 /* =========================================================
-   DATA DOTS
+   DATA NODES
 ========================================================= */
 
-.hero-dots {
+.hero-data-nodes {
 
     position:
         absolute;
 
     top:
-        24%;
+        27%;
 
     right:
-        15%;
+        18%;
 
     display:
         grid;
@@ -568,27 +975,31 @@ nav {
         repeat(3, 7px);
 
     gap:
-        13px;
+        15px;
 
     opacity:
-        0.35;
+        0.42;
 
 }
 
 
-.hero-dots span {
+.hero-data-nodes span {
 
     width:
-        5px;
+        6px;
 
     height:
-        5px;
+        6px;
 
     border-radius:
         50%;
 
     background:
-        var(--accent-blue);
+        #4c9ee0;
+
+    box-shadow:
+        0 0 8px
+        rgba(76, 158, 224, 0.25);
 
 }
 
@@ -603,26 +1014,28 @@ nav {
         absolute;
 
     top:
-        50%;
+        48%;
 
     left:
-        55%;
+        59%;
 
     width:
-        250px;
+        280px;
 
     height:
-        250px;
+        280px;
 
     transform:
         translate(-50%, -50%)
         rotate(30deg);
 
     opacity:
-        0.55;
+        0.56;
 
 }
 
+
+/* OUTER PRISM */
 
 .hero-prism::before {
 
@@ -637,13 +1050,15 @@ nav {
 
     border:
         1px solid
-        rgba(42, 139, 207, 0.45);
+        rgba(55, 151, 220, 0.42);
 
     transform:
         rotate(45deg);
 
 }
 
+
+/* INNER PRISM */
 
 .hero-prism::after {
 
@@ -654,11 +1069,11 @@ nav {
         absolute;
 
     inset:
-        55px;
+        64px;
 
     border:
         1px solid
-        rgba(42, 139, 207, 0.30);
+        rgba(55, 151, 220, 0.32);
 
     transform:
         rotate(45deg);
@@ -667,7 +1082,7 @@ nav {
 
 
 /* =========================================================
-   PRISM INTERNAL LINES
+   PRISM LINES
 ========================================================= */
 
 .prism-line {
@@ -675,23 +1090,23 @@ nav {
     position:
         absolute;
 
-    display:
-        block;
-
-    width:
-        180px;
-
-    height:
-        1px;
-
     top:
         50%;
 
     left:
         50%;
 
+    display:
+        block;
+
+    width:
+        205px;
+
+    height:
+        1px;
+
     background:
-        rgba(42, 139, 207, 0.35);
+        rgba(55, 151, 220, 0.38);
 
     transform-origin:
         center;
@@ -738,7 +1153,7 @@ nav {
 .prism-line-five {
 
     width:
-        120px;
+        135px;
 
     transform:
         translate(-50%, -50%)
@@ -757,10 +1172,10 @@ nav {
         absolute;
 
     right:
-        8%;
+        7%;
 
     bottom:
-        17%;
+        15%;
 
     display:
         flex;
@@ -769,13 +1184,13 @@ nav {
         flex-end;
 
     gap:
-        9px;
+        10px;
 
     height:
-        125px;
+        145px;
 
     opacity:
-        0.25;
+        0.28;
 
 }
 
@@ -786,7 +1201,7 @@ nav {
         block;
 
     width:
-        9px;
+        10px;
 
     border-radius:
         2px 2px 0 0;
@@ -794,8 +1209,8 @@ nav {
     background:
         linear-gradient(
             to top,
-            rgba(42, 139, 207, 0.18),
-            rgba(42, 139, 207, 0.42)
+            rgba(49, 139, 211, 0.12),
+            rgba(49, 139, 211, 0.38)
         );
 
 }
@@ -804,7 +1219,7 @@ nav {
 .hero-bars span:nth-child(1) {
 
     height:
-        28px;
+        25px;
 
 }
 
@@ -812,7 +1227,7 @@ nav {
 .hero-bars span:nth-child(2) {
 
     height:
-        46px;
+        42px;
 
 }
 
@@ -820,7 +1235,7 @@ nav {
 .hero-bars span:nth-child(3) {
 
     height:
-        62px;
+        58px;
 
 }
 
@@ -836,7 +1251,7 @@ nav {
 .hero-bars span:nth-child(5) {
 
     height:
-        96px;
+        98px;
 
 }
 
@@ -844,16 +1259,24 @@ nav {
 .hero-bars span:nth-child(6) {
 
     height:
-        116px;
+        120px;
+
+}
+
+
+.hero-bars span:nth-child(7) {
+
+    height:
+        140px;
 
 }
 
 
 /* =========================================================
-   HERO RESPONSIVE — TABLET
+   TABLET
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
     .hero {
 
@@ -869,7 +1292,15 @@ nav {
     .hero-content {
 
         width:
-            72%;
+            68%;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(40px, 5vw, 52px);
 
     }
 
@@ -880,7 +1311,7 @@ nav {
             55%;
 
         opacity:
-            0.65;
+            0.72;
 
     }
 
@@ -888,21 +1319,21 @@ nav {
     .hero-prism {
 
         left:
-            58%;
+            60%;
 
         width:
-            210px;
+            240px;
 
         height:
-            210px;
+            240px;
 
     }
 
 
-    .hero h1 {
+    .hero-data-flow {
 
-        font-size:
-            clamp(38px, 5vw, 48px);
+        width:
+            600px;
 
     }
 
@@ -910,18 +1341,21 @@ nav {
 
 
 /* =========================================================
-   HERO RESPONSIVE — MOBILE
+   MOBILE
 ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
     .hero {
 
         min-height:
-            650px;
+            720px;
 
         padding:
             80px 7%;
+
+        align-items:
+            flex-start;
 
     }
 
@@ -934,10 +1368,27 @@ nav {
         max-width:
             100%;
 
+        padding-top:
+            40px;
+
+    }
+
+
+    .eyebrow {
+
+        margin-bottom:
+            22px;
+
+        font-size:
+            13px;
+
     }
 
 
     .hero h1 {
+
+        max-width:
+            100%;
 
         font-size:
             38px;
@@ -953,10 +1404,15 @@ nav {
         font-size:
             16px;
 
+        margin-bottom:
+            30px;
+
     }
 
 
-    .hero .buttons {
+    /* BUTTONS STACK */
+
+    .hero-actions {
 
         flex-direction:
             column;
@@ -964,18 +1420,32 @@ nav {
         align-items:
             stretch;
 
+        gap:
+            12px;
+
+        max-width:
+            360px;
+
     }
 
 
-    .hero .btn {
+    .hero-btn {
 
         width:
             100%;
 
+        min-width:
+            0;
+
     }
 
 
+    /* VISUAL */
+
     .hero-visual {
+
+        top:
+            45%;
 
         width:
             100%;
@@ -983,11 +1453,8 @@ nav {
         height:
             55%;
 
-        top:
-            45%;
-
         opacity:
-            0.35;
+            0.38;
 
     }
 
@@ -995,10 +1462,10 @@ nav {
     .hero-glow {
 
         width:
-            360px;
+            400px;
 
         height:
-            360px;
+            400px;
 
     }
 
@@ -1006,21 +1473,27 @@ nav {
     .hero-prism {
 
         left:
-            68%;
+            67%;
 
         width:
-            170px;
+            190px;
 
         height:
-            170px;
+            190px;
 
     }
 
 
-    .hero-grid {
+    .hero-data-flow {
 
-        inset:
-            0;
+        left:
+            5%;
+
+        top:
+            42%;
+
+        width:
+            500px;
 
     }
 
@@ -1028,137 +1501,19 @@ nav {
     .hero-bars {
 
         right:
-            4%;
+            3%;
 
         bottom:
-            12%;
+            8%;
 
         transform:
-            scale(0.75);
+            scale(0.72);
 
         transform-origin:
             bottom right;
 
     }
 
-}
-
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-.buttons,
-.about-actions {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 46px;
-
-    padding: 13px 24px;
-
-    border-radius: 8px;
-
-    font-size: 14px;
-    font-weight: 700;
-
-    text-decoration: none;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.btn:hover {
-    transform: translateY(-1px);
-}
-
-.btn-primary {
-    color: #ffffff;
-    background: var(--primary);
-}
-
-.btn-primary:hover {
-    background: var(--primary-dark);
-}
-
-.btn-secondary {
-    color: var(--heading-soft);
-    background: #ffffff;
-
-    border: 1px solid #cbd8e6;
-}
-
-.btn-secondary:hover {
-    border-color: var(--primary);
-    color: var(--primary);
-}
-
-
-/* =========================================================
-   GLOBAL SECTIONS
-========================================================= */
-section {
-    width: 100%;
-    max-width: var(--content-max-width);
-
-    margin: 0 auto;
-
-    padding:
-        100px
-        var(--site-gutter);
-
-    scroll-margin-top: 100px;
-}
-
-.section-label,
-.about-label {
-    color: var(--primary);
-
-    font-size: 13px;
-    font-weight: 700;
-
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    margin-bottom: 12px;
-}
-
-/* Explicit ABOUT ME normalization */
-.about-label {
-    display: inline-block;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    line-height: 1.4;
-}
-
-.section-title {
-    color: var(--heading);
-
-    font-size: 42px;
-    line-height: 1.2;
-
-    margin-bottom: 20px;
-}
-
-.section-description,
-.about-description {
-    max-width: 760px;
-
-    color: var(--text);
-
-    font-size: 17px;
-
-    margin-bottom: 50px;
 }
 
 
