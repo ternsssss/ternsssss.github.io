@@ -239,15 +239,11 @@ nav {
     color:
         var(--heading);
 
-    font-size:
-        clamp(
-            46px,
-            4.8vw,
-            62px
-        );
-
-    font-weight:
-        600;
+   font-size:
+       54px;
+   
+   font-weight:
+       500;
 
     line-height:
         1.10;
