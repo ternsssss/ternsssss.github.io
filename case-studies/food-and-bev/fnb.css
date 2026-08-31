@@ -1062,8 +1062,12 @@ img {
     width:
         100%;
 
+    /*
+       Breathing room between the
+       introductory sentence and table.
+    */
     margin-top:
-        32px;
+        38px;
 
     overflow:
         hidden;
@@ -1309,8 +1313,12 @@ img {
 
 .business-impact-intro {
 
+    /*
+       Adds breathing room below
+       the Business Impact intro.
+    */
     margin:
-        0;
+        0 0 30px;
 
     max-width:
         760px;
@@ -1331,10 +1339,15 @@ img {
 
 }
 
+
 .business-impact-matrix {
 
+    /*
+       Keep an explicit gap between
+       intro and matrix.
+    */
     margin-top:
-        28px;
+        0;
 
 }
 
@@ -1538,20 +1551,40 @@ img {
 
 .management-loop {
 
+    /*
+       IMPORTANT:
+       This controls the breathing room
+       ABOVE the Management Principle.
+    */
     margin-top:
-        32px;
+        38px !important;
 
     padding:
         24px 28px;
 
     border:
-        1px solid var(--border-color);
+        1px solid
+        var(--border-color);
 
     border-radius:
         10px;
 
     background:
         var(--bg-white);
+
+}
+
+
+/*
+   Explicit Business Impact selector.
+   This prevents another generic rule
+   from collapsing the spacing.
+*/
+
+#business-impact .management-loop {
+
+    margin-top:
+        38px !important;
 
 }
 
@@ -2519,8 +2552,12 @@ img {
 
     .recommendation-matrix {
 
+        /*
+           Slightly tighter on mobile while
+           retaining visible breathing room.
+        */
         margin-top:
-            26px;
+            28px;
 
         overflow:
             visible;
@@ -2641,7 +2678,7 @@ img {
     .business-impact-intro {
 
         margin-bottom:
-            20px;
+            24px;
 
     }
 
@@ -2655,6 +2692,9 @@ img {
 
 
     .business-impact-matrix {
+
+        margin-top:
+            0;
 
         overflow:
             visible;
@@ -2774,16 +2814,28 @@ img {
     }
 
 
+    /*
+       FINAL MOBILE MANAGEMENT PRINCIPLE SPACING
+    */
+
     .management-loop {
 
         display:
             block;
 
         margin-top:
-            28px;
+            34px !important;
 
         padding:
             20px;
+
+    }
+
+
+    #business-impact .management-loop {
+
+        margin-top:
+            34px !important;
 
     }
 
