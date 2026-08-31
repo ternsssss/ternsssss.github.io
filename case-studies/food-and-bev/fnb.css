@@ -2329,7 +2329,7 @@ img {
 }
 
 
-.business-impact-matrix-header {
+.business-impact-header {
 
     display:
         grid;
@@ -2349,7 +2349,7 @@ img {
 .impact-heading {
 
     padding:
-        15px 20px;
+        13px 18px;
 
     color:
         var(--text-muted);
@@ -2400,10 +2400,10 @@ img {
         center;
 
     min-height:
-        100px;
+        78px;
 
     padding:
-        20px;
+        14px 18px;
 
 }
 
@@ -2420,7 +2420,7 @@ img {
         0.88rem;
 
     line-height:
-        1.65;
+        1.5;
 
 }
 
@@ -2662,7 +2662,7 @@ img {
 
 @media screen and (max-width: 980px) {
 
-    .business-impact-matrix-header,
+    .business-impact-header,
     .business-impact-row {
 
         grid-template-columns:
@@ -2685,10 +2685,10 @@ img {
     .business-impact-cell {
 
         min-height:
-            94px;
+            72px;
 
         padding:
-            18px 14px;
+            14px;
 
     }
 
@@ -2697,6 +2697,9 @@ img {
 
         font-size:
             0.82rem;
+
+        line-height:
+            1.5;
 
     }
 
@@ -2780,7 +2783,7 @@ img {
     }
 
 
-    .business-impact-matrix-header {
+    .business-impact-header {
 
         display:
             none;
@@ -2828,7 +2831,7 @@ img {
             auto;
 
         padding:
-            16px;
+            14px 16px;
 
         border-bottom:
             1px solid var(--border-color);
@@ -2879,7 +2882,7 @@ img {
             0.88rem;
 
         line-height:
-            1.65;
+            1.55;
 
     }
 
@@ -3076,8 +3079,7 @@ img {
 
 
 /* =========================================================
-   PROJECT 9 FINAL SPACING FIXES
-   Targets the actual HTML classes in fnb.html.
+   PROJECT 9 — FINAL TABLE & SPACING FIXES
 ========================================================= */
 
 /* ---------------------------------------------
@@ -3196,3 +3198,4 @@ img {
     }
 
 }
+
