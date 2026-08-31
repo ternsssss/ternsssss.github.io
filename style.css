@@ -1,6 +1,7 @@
 /* =========================================================
    GLOBAL RESET
 ========================================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +24,7 @@ body {
 /* =========================================================
    GLOBAL WIDTH SYSTEM
 ========================================================= */
+
 :root {
     --nav-max-width: 1600px;
     --content-max-width: 1350px;
@@ -46,6 +48,7 @@ body {
 /* =========================================================
    NAVIGATION
 ========================================================= */
+
 nav {
     position: sticky;
     top: 0;
@@ -147,52 +150,29 @@ nav {
 ========================================================= */
 
 .hero {
+    position: relative;
 
-    position:
-        relative;
+    width: 100%;
+    max-width: var(--content-max-width);
 
-    width:
-        100%;
+    min-height: 720px;
 
-    max-width:
-        var(--content-max-width);
+    margin: 0 auto;
 
-    min-height:
-        720px;
+    padding: 100px var(--site-gutter);
 
-    margin:
-        0 auto;
+    display: flex;
+    align-items: center;
 
-    padding:
-        100px
-        var(--site-gutter);
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    overflow:
-        hidden;
-
+    overflow: hidden;
 }
 
-
 .hero-content {
+    position: relative;
+    z-index: 10;
 
-    position:
-        relative;
-
-    z-index:
-        10;
-
-    width:
-        58%;
-
-    max-width:
-        900px;
-
+    width: 58%;
+    max-width: 900px;
 }
 
 
@@ -201,28 +181,17 @@ nav {
 ========================================================= */
 
 .eyebrow {
+    margin-bottom: 26px;
 
-    margin-bottom:
-        26px;
+    color: var(--primary);
 
-    color:
-        var(--primary);
+    font-size: 15px;
+    font-weight: 700;
 
-    font-size:
-        15px;
+    letter-spacing: 0.16em;
+    line-height: 1.4;
 
-    font-weight:
-        700;
-
-    letter-spacing:
-        0.16em;
-
-    line-height:
-        1.4;
-
-    text-transform:
-        uppercase;
-
+    text-transform: uppercase;
 }
 
 
@@ -231,28 +200,24 @@ nav {
 ========================================================= */
 
 .hero h1 {
+    max-width: 850px;
 
-    max-width:
-        900px;
+    margin: 0 0 26px;
 
-    margin:
-        0 0 26px;
+    color: var(--heading);
 
-    color:
-        var(--heading);
+    /*
+       Slightly controlled headline size.
+       Large enough for impact without dominating
+       the entire viewport.
+    */
+    font-size: clamp(42px, 3.8vw, 54px);
 
-    font-size:
-        clamp(42px, 4vw, 56px);
+    font-weight: 700;
 
-    font-weight:
-        700;
+    line-height: 1.13;
 
-    line-height:
-        1.13;
-
-    letter-spacing:
-        -0.025em;
-
+    letter-spacing: -0.025em;
 }
 
 
@@ -261,22 +226,15 @@ nav {
 ========================================================= */
 
 .hero-description {
+    max-width: 760px;
 
-    max-width:
-        760px;
+    margin: 0 0 38px;
 
-    margin:
-        0 0 38px;
+    color: var(--text);
 
-    color:
-        var(--text);
+    font-size: 17px;
 
-    font-size:
-        17px;
-
-    line-height:
-        1.65;
-
+    line-height: 1.65;
 }
 
 
@@ -285,16 +243,11 @@ nav {
 ========================================================= */
 
 .hero-actions {
+    display: flex;
 
-    display:
-        flex;
+    align-items: center;
 
-    align-items:
-        center;
-
-    gap:
-        18px;
-
+    gap: 18px;
 }
 
 
@@ -303,56 +256,41 @@ nav {
 ========================================================= */
 
 .hero-btn {
+    position: relative;
 
-    position:
-        relative;
+    display: inline-flex;
 
-    display:
-        inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    align-items:
-        center;
+    gap: 13px;
 
-    justify-content:
-        center;
+    min-width: 245px;
+    min-height: 60px;
 
-    gap:
-        13px;
+    padding: 0 20px;
 
-    min-width:
-        245px;
+    border-radius: 10px;
 
-    min-height:
-        60px;
+    text-decoration: none;
 
-    padding:
-        0 20px;
+    font-size: 15px;
+    font-weight: 700;
 
-    border-radius:
-        10px;
+    overflow: hidden;
 
-    text-decoration:
-        none;
-
-    font-size:
-        15px;
-
-    font-weight:
-        700;
-
-    overflow:
-        hidden;
+    isolation: isolate;
 
     transition:
-        transform
-        0.25s ease,
-        box-shadow
-        0.25s ease,
-        border-color
-        0.25s ease,
-        background
-        0.25s ease;
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
 
+.hero-btn:focus-visible {
+    outline: 3px solid rgba(23, 105, 170, 0.22);
+    outline-offset: 4px;
 }
 
 
@@ -361,48 +299,33 @@ nav {
 ========================================================= */
 
 .hero-btn-icon {
+    position: relative;
+    z-index: 2;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
+    justify-content: center;
 
-    justify-content:
-        center;
+    width: 25px;
+    height: 25px;
 
-    width:
-        25px;
-
-    height:
-        25px;
-
-    flex:
-        0 0 25px;
-
+    flex: 0 0 25px;
 }
 
-
 .hero-btn-icon svg {
+    width: 22px;
+    height: 22px;
 
-    width:
-        22px;
+    stroke: currentColor;
 
-    height:
-        22px;
+    stroke-width: 1.8;
 
-    stroke:
-        currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 
-    stroke-width:
-        1.8;
-
-    stroke-linecap:
-        round;
-
-    stroke-linejoin:
-        round;
-
+    transition:
+        transform 0.25s ease;
 }
 
 
@@ -411,10 +334,10 @@ nav {
 ========================================================= */
 
 .hero-btn-text {
+    position: relative;
+    z-index: 2;
 
-    white-space:
-        nowrap;
-
+    white-space: nowrap;
 }
 
 
@@ -423,52 +346,33 @@ nav {
 ========================================================= */
 
 .hero-btn-arrow {
+    position: relative;
+    z-index: 2;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
+    justify-content: center;
 
-    justify-content:
-        center;
+    width: 24px;
+    height: 24px;
 
-    width:
-        24px;
-
-    height:
-        24px;
-
-    margin-left:
-        auto;
-
+    margin-left: auto;
 }
 
-
 .hero-btn-arrow svg {
+    width: 22px;
+    height: 22px;
 
-    width:
-        22px;
+    stroke: currentColor;
 
-    height:
-        22px;
+    stroke-width: 1.8;
 
-    stroke:
-        currentColor;
-
-    stroke-width:
-        1.8;
-
-    stroke-linecap:
-        round;
-
-    stroke-linejoin:
-        round;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 
     transition:
-        transform
-        0.25s ease;
-
+        transform 0.28s ease;
 }
 
 
@@ -477,13 +381,9 @@ nav {
 ========================================================= */
 
 .hero-btn-primary {
+    color: #ffffff;
 
-    color:
-        #ffffff;
-
-    border:
-        1px solid
-        var(--primary);
+    border: 1px solid var(--primary);
 
     background:
         linear-gradient(
@@ -495,74 +395,61 @@ nav {
     box-shadow:
         0 8px 22px
         rgba(20, 119, 201, 0.18);
-
 }
 
 
+/*
+   Soft shine effect.
+   This stays subtle and never hides the button.
+*/
+
 .hero-btn-primary::before {
+    content: "";
 
-    content:
-        "";
+    position: absolute;
 
-    position:
-        absolute;
+    z-index: 1;
 
-    top:
-        0;
+    top: 0;
+    left: -120%;
 
-    left:
-        -120%;
-
-    width:
-        70%;
-
-    height:
-        100%;
+    width: 70%;
+    height: 100%;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,255,255,0.20),
+            rgba(255, 255, 255, 0.24),
             transparent
         );
 
-    transform:
-        skewX(-20deg);
+    transform: skewX(-20deg);
 
     transition:
-        left
-        0.55s ease;
+        left 0.6s ease;
 
+    pointer-events: none;
 }
-
 
 .hero-btn-primary:hover::before {
-
-    left:
-        140%;
-
+    left: 140%;
 }
-
 
 .hero-btn-primary:hover {
-
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 
     box-shadow:
-        0 14px 32px
+        0 15px 34px
         rgba(20, 119, 201, 0.30);
-
 }
 
+.hero-btn-primary:hover .hero-btn-icon svg {
+    transform: scale(1.08);
+}
 
-.hero-btn-primary:hover
-.hero-btn-arrow svg {
-
-    transform:
-        translateX(4px);
-
+.hero-btn-primary:hover .hero-btn-arrow svg {
+    transform: translateX(5px);
 }
 
 
@@ -571,48 +458,64 @@ nav {
 ========================================================= */
 
 .hero-btn-secondary {
+    color: var(--primary);
 
-    color:
-        var(--primary);
-
-    border:
-        1px solid
-        #b9d4ea;
+    border: 1px solid #b9d4ea;
 
     background:
-        rgba(255, 255, 255, 0.95);
+        rgba(255, 255, 255, 0.96);
 
     box-shadow:
         0 7px 18px
         rgba(38, 111, 170, 0.08);
-
 }
 
+.hero-btn-secondary::before {
+    content: "";
 
-.hero-btn-secondary:hover {
+    position: absolute;
 
-    transform:
-        translateY(-3px);
+    z-index: 0;
 
-    border-color:
-        var(--primary);
+    inset: 0;
 
     background:
-        #ffffff;
+        linear-gradient(
+            135deg,
+            rgba(23, 105, 170, 0.05),
+            transparent 55%
+        );
 
-    box-shadow:
-        0 12px 28px
-        rgba(38, 111, 170, 0.16);
+    opacity: 0;
 
+    transition:
+        opacity 0.25s ease;
+
+    pointer-events: none;
 }
 
+.hero-btn-secondary:hover {
+    transform: translateY(-3px);
 
-.hero-btn-secondary:hover
-.hero-btn-arrow svg {
+    border-color: var(--primary);
 
-    transform:
-        translateX(4px);
+    background: #ffffff;
 
+    box-shadow:
+        0 13px 30px
+        rgba(38, 111, 170, 0.16);
+}
+
+.hero-btn-secondary:hover::before {
+    opacity: 1;
+}
+
+.hero-btn-secondary:hover .hero-btn-icon svg {
+    transform: translateY(-1px) rotate(-3deg);
+}
+
+.hero-btn-secondary:hover .hero-btn-arrow svg {
+    transform: translateX(5px);
 }
 
 
@@ -621,28 +524,17 @@ nav {
 ========================================================= */
 
 .hero-visual {
+    position: absolute;
 
-    position:
-        absolute;
+    z-index: 1;
 
-    z-index:
-        1;
+    top: 0;
+    right: 0;
 
-    top:
-        0;
+    width: 52%;
+    height: 100%;
 
-    right:
-        0;
-
-    width:
-        52%;
-
-    height:
-        100%;
-
-    pointer-events:
-        none;
-
+    pointer-events: none;
 }
 
 
@@ -651,27 +543,18 @@ nav {
 ========================================================= */
 
 .hero-glow {
+    position: absolute;
 
-    position:
-        absolute;
+    top: 48%;
+    left: 53%;
 
-    top:
-        48%;
-
-    left:
-        53%;
-
-    width:
-        600px;
-
-    height:
-        600px;
+    width: 600px;
+    height: 600px;
 
     transform:
         translate(-50%, -50%);
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
     background:
         radial-gradient(
@@ -682,9 +565,7 @@ nav {
             transparent 72%
         );
 
-    filter:
-        blur(16px);
-
+    filter: blur(16px);
 }
 
 
@@ -693,15 +574,11 @@ nav {
 ========================================================= */
 
 .hero-grid {
+    position: absolute;
 
-    position:
-        absolute;
+    inset: 8% 0 4% 4%;
 
-    inset:
-        8% 0 4% 4%;
-
-    opacity:
-        0.38;
+    opacity: 0.38;
 
     background-image:
         linear-gradient(
@@ -714,8 +591,7 @@ nav {
             transparent 1px
         );
 
-    background-size:
-        44px 44px;
+    background-size: 44px 44px;
 
     mask-image:
         linear-gradient(
@@ -725,7 +601,6 @@ nav {
             black 82%,
             transparent
         );
-
 }
 
 
@@ -734,44 +609,26 @@ nav {
 ========================================================= */
 
 .hero-data-flow {
+    position: absolute;
 
-    position:
-        absolute;
+    left: -2%;
+    top: 57%;
 
-    left:
-        -2%;
+    width: 700px;
+    height: 220px;
 
-    top:
-        57%;
+    opacity: 0.40;
 
-    width:
-        700px;
-
-    height:
-        220px;
-
-    opacity:
-        0.40;
-
-    transform:
-        rotate(-5deg);
-
+    transform: rotate(-5deg);
 }
 
-
 .hero-data-flow span {
+    position: absolute;
 
-    position:
-        absolute;
+    left: 0;
 
-    left:
-        0;
-
-    width:
-        100%;
-
-    height:
-        1px;
+    width: 100%;
+    height: 1px;
 
     background:
         linear-gradient(
@@ -781,62 +638,31 @@ nav {
             rgba(72, 157, 223, 0.55) 55%,
             rgba(72, 157, 223, 0.10) 100%
         );
-
 }
-
 
 .hero-data-flow span:nth-child(1) {
-
-    top:
-        22%;
-
-    transform:
-        rotate(-7deg);
-
+    top: 22%;
+    transform: rotate(-7deg);
 }
-
 
 .hero-data-flow span:nth-child(2) {
-
-    top:
-        35%;
-
-    transform:
-        rotate(-5deg);
-
+    top: 35%;
+    transform: rotate(-5deg);
 }
-
 
 .hero-data-flow span:nth-child(3) {
-
-    top:
-        48%;
-
-    transform:
-        rotate(-3deg);
-
+    top: 48%;
+    transform: rotate(-3deg);
 }
-
 
 .hero-data-flow span:nth-child(4) {
-
-    top:
-        61%;
-
-    transform:
-        rotate(-1deg);
-
+    top: 61%;
+    transform: rotate(-1deg);
 }
 
-
 .hero-data-flow span:nth-child(5) {
-
-    top:
-        74%;
-
-    transform:
-        rotate(1deg);
-
+    top: 74%;
+    transform: rotate(1deg);
 }
 
 
@@ -845,45 +671,28 @@ nav {
 ========================================================= */
 
 .hero-data-nodes {
+    position: absolute;
 
-    position:
-        absolute;
+    top: 27%;
+    right: 18%;
 
-    top:
-        27%;
-
-    right:
-        18%;
-
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         repeat(3, 7px);
 
-    gap:
-        15px;
+    gap: 15px;
 
-    opacity:
-        0.42;
-
+    opacity: 0.42;
 }
 
-
 .hero-data-nodes span {
+    width: 6px;
+    height: 6px;
 
-    width:
-        6px;
+    border-radius: 50%;
 
-    height:
-        6px;
-
-    border-radius:
-        50%;
-
-    background:
-        #4c9ee0;
-
+    background: #4c9ee0;
 }
 
 
@@ -892,145 +701,94 @@ nav {
 ========================================================= */
 
 .hero-prism {
+    position: absolute;
 
-    position:
-        absolute;
+    top: 48%;
+    left: 59%;
 
-    top:
-        48%;
-
-    left:
-        59%;
-
-    width:
-        280px;
-
-    height:
-        280px;
+    width: 280px;
+    height: 280px;
 
     transform:
         translate(-50%, -50%)
         rotate(30deg);
 
-    opacity:
-        0.56;
-
+    opacity: 0.56;
 }
 
-
 .hero-prism::before {
+    content: "";
 
-    content:
-        "";
+    position: absolute;
 
-    position:
-        absolute;
-
-    inset:
-        20px;
+    inset: 20px;
 
     border:
         1px solid
         rgba(55, 151, 220, 0.42);
 
-    transform:
-        rotate(45deg);
-
+    transform: rotate(45deg);
 }
 
-
 .hero-prism::after {
+    content: "";
 
-    content:
-        "";
+    position: absolute;
 
-    position:
-        absolute;
-
-    inset:
-        64px;
+    inset: 64px;
 
     border:
         1px solid
         rgba(55, 151, 220, 0.32);
 
-    transform:
-        rotate(45deg);
-
+    transform: rotate(45deg);
 }
 
-
 .prism-line {
+    position: absolute;
 
-    position:
-        absolute;
+    top: 50%;
+    left: 50%;
 
-    top:
-        50%;
-
-    left:
-        50%;
-
-    width:
-        205px;
-
-    height:
-        1px;
+    width: 205px;
+    height: 1px;
 
     background:
         rgba(55, 151, 220, 0.38);
 
-    transform-origin:
-        center;
-
+    transform-origin: center;
 }
 
-
 .prism-line-one {
-
     transform:
         translate(-50%, -50%)
         rotate(0deg);
-
 }
 
-
 .prism-line-two {
-
     transform:
         translate(-50%, -50%)
         rotate(45deg);
-
 }
 
-
 .prism-line-three {
-
     transform:
         translate(-50%, -50%)
         rotate(90deg);
-
 }
 
-
 .prism-line-four {
-
     transform:
         translate(-50%, -50%)
         rotate(135deg);
-
 }
 
-
 .prism-line-five {
-
-    width:
-        135px;
+    width: 135px;
 
     transform:
         translate(-50%, -50%)
         rotate(30deg);
-
 }
 
 
@@ -1039,44 +797,28 @@ nav {
 ========================================================= */
 
 .hero-bars {
+    position: absolute;
 
-    position:
-        absolute;
+    right: 7%;
+    bottom: 15%;
 
-    right:
-        7%;
+    display: flex;
 
-    bottom:
-        15%;
+    align-items: flex-end;
 
-    display:
-        flex;
+    gap: 10px;
 
-    align-items:
-        flex-end;
+    height: 145px;
 
-    gap:
-        10px;
-
-    height:
-        145px;
-
-    opacity:
-        0.28;
-
+    opacity: 0.28;
 }
 
-
 .hero-bars span {
+    display: block;
 
-    display:
-        block;
+    width: 10px;
 
-    width:
-        10px;
-
-    border-radius:
-        2px 2px 0 0;
+    border-radius: 2px 2px 0 0;
 
     background:
         linear-gradient(
@@ -1084,193 +826,41 @@ nav {
             rgba(49, 139, 211, 0.12),
             rgba(49, 139, 211, 0.38)
         );
-
 }
 
-
-.hero-bars span:nth-child(1) { height: 25px; }
-.hero-bars span:nth-child(2) { height: 42px; }
-.hero-bars span:nth-child(3) { height: 58px; }
-.hero-bars span:nth-child(4) { height: 78px; }
-.hero-bars span:nth-child(5) { height: 98px; }
-.hero-bars span:nth-child(6) { height: 120px; }
-.hero-bars span:nth-child(7) { height: 140px; }
-
-
-/* =========================================================
-   RESPONSIVE — 850px
-========================================================= */
-
-@media (max-width: 850px) {
-
-    .hero {
-
-        min-height:
-            650px;
-
-        padding-top:
-            80px;
-
-        padding-bottom:
-            80px;
-
-    }
-
-
-    .hero-content {
-
-        width:
-            72%;
-
-    }
-
-
-    .hero h1 {
-
-        font-size:
-            52px;
-
-    }
-
-
-    .hero-visual {
-
-        width:
-            55%;
-
-        opacity:
-            0.65;
-
-    }
-
+.hero-bars span:nth-child(1) {
+    height: 25px;
 }
 
+.hero-bars span:nth-child(2) {
+    height: 42px;
+}
 
-/* =========================================================
-   RESPONSIVE — 500px
-========================================================= */
+.hero-bars span:nth-child(3) {
+    height: 58px;
+}
 
-@media (max-width: 500px) {
+.hero-bars span:nth-child(4) {
+    height: 78px;
+}
 
-    .hero {
+.hero-bars span:nth-child(5) {
+    height: 98px;
+}
 
-        width:
-            100%;
+.hero-bars span:nth-child(6) {
+    height: 120px;
+}
 
-        min-height:
-            700px;
-
-        padding:
-            70px
-            7%;
-
-    }
-
-
-    .hero-content {
-
-        width:
-            100%;
-
-    }
-
-
-    .hero h1 {
-
-        font-size:
-            40px;
-
-    }
-
-
-    .hero-description {
-
-        font-size:
-            16px;
-
-    }
-
-
-    .hero-actions {
-
-        flex-direction:
-            column;
-
-        align-items:
-            stretch;
-
-        gap:
-            12px;
-
-    }
-
-
-    .hero-btn {
-
-        width:
-            100%;
-
-        min-width:
-            0;
-
-    }
-
-
-    .hero-visual {
-
-        top:
-            45%;
-
-        width:
-            100%;
-
-        height:
-            55%;
-
-        opacity:
-            0.35;
-
-    }
-
-
-    .hero-prism {
-
-        left:
-            67%;
-
-        width:
-            190px;
-
-        height:
-            190px;
-
-    }
-
-
-    .hero-data-flow {
-
-        width:
-            500px;
-
-    }
-
-
-    .hero-bars {
-
-        transform:
-            scale(0.72);
-
-        transform-origin:
-            bottom right;
-
-    }
-
+.hero-bars span:nth-child(7) {
+    height: 140px;
 }
 
 
 /* =========================================================
    ABOUT
 ========================================================= */
+
 #about {
     max-width: var(--content-max-width);
 }
@@ -1370,6 +960,7 @@ nav {
 /* =========================================================
    PROJECTS
 ========================================================= */
+
 #projects {
     max-width: var(--content-max-width);
 }
@@ -1412,13 +1003,6 @@ nav {
         rgba(25, 61, 100, 0.12);
 }
 
-
-/* PROJECT DASHBOARD PREVIEWS
-   1 = Hospital       enlarged
-   2 = E-Commerce     enlarged
-   3 = RFQ            unchanged
-   4 = HR             enlarged
-*/
 .project-preview {
     height: 330px;
 
@@ -1548,6 +1132,7 @@ nav {
 /* =========================================================
    SERVICES
 ========================================================= */
+
 #services {
     max-width: var(--content-max-width);
 }
@@ -1617,6 +1202,7 @@ nav {
 /* =========================================================
    TECH STACK
 ========================================================= */
+
 #tech-stack {
     max-width: var(--content-max-width);
 }
@@ -1682,9 +1268,11 @@ nav {
     transform: scale(1.05);
 }
 
+
 /* =========================================================
    CREDENTIALS
 ========================================================= */
+
 #certifications {
     max-width: var(--content-max-width);
 
@@ -1867,6 +1455,7 @@ nav {
 /* =========================================================
    CERTIFICATE CAROUSEL
 ========================================================= */
+
 .certificate-scroll {
     display: flex;
 
@@ -2008,6 +1597,7 @@ nav {
 
 
 /* INDIVIDUAL CERTIFICATE BACKGROUNDS */
+
 .certificate-dsa {
     background:
         linear-gradient(
@@ -2066,6 +1656,7 @@ nav {
 /* =========================================================
    ACHIEVEMENTS
 ========================================================= */
+
 .achievements-section {
     margin-top: 70px;
 }
@@ -2200,6 +1791,7 @@ nav {
 /* =========================================================
    CONTACT
 ========================================================= */
+
 .contact {
     width: 100%;
     max-width: none;
@@ -2233,6 +1825,7 @@ nav {
 /* =========================================================
    FOOTER
 ========================================================= */
+
 footer {
     background: #ffffff;
 
@@ -2273,7 +1866,9 @@ footer {
 /* =========================================================
    RESPONSIVE — 1400px
 ========================================================= */
+
 @media (max-width: 1400px) {
+
     .hero,
     section:not(.contact),
     .footer-inner {
@@ -2290,6 +1885,7 @@ footer {
 /* =========================================================
    RESPONSIVE — 1100px
 ========================================================= */
+
 @media (max-width: 1100px) {
 
     .about-main-card {
@@ -2324,6 +1920,7 @@ footer {
 /* =========================================================
    RESPONSIVE — 1000px
 ========================================================= */
+
 @media (max-width: 1000px) {
 
     .project-card:nth-child(1) .project-preview,
@@ -2348,8 +1945,9 @@ footer {
 
 
 /* =========================================================
-   TABLET / MOBILE — 850px
+   TABLET — 850px
 ========================================================= */
+
 @media (max-width: 850px) {
 
     nav {
@@ -2364,7 +1962,6 @@ footer {
 
     .logo img {
         height: 52px;
-
         max-width: 320px;
     }
 
@@ -2375,8 +1972,17 @@ footer {
         padding-bottom: 80px;
     }
 
+    .hero-content {
+        width: 72%;
+    }
+
     .hero h1 {
-        font-size: 52px;
+        font-size: 48px;
+    }
+
+    .hero-visual {
+        width: 55%;
+        opacity: 0.65;
     }
 
     .about-main-card {
@@ -2419,6 +2025,7 @@ footer {
 
         gap: 50px 25px;
     }
+
     .footer-inner {
         flex-direction: column;
 
@@ -2440,6 +2047,7 @@ footer {
 /* =========================================================
    MOBILE — 500px
 ========================================================= */
+
 @media (max-width: 500px) {
 
     nav {
@@ -2450,7 +2058,6 @@ footer {
 
     .logo img {
         height: 44px;
-
         max-width: 280px;
     }
 
@@ -2471,21 +2078,55 @@ footer {
             7%;
     }
 
+    .hero-content {
+        width: 100%;
+    }
+
     .hero h1 {
-        font-size: 44px;
+        font-size: 40px;
     }
 
-    .hero-subtitle {
-        font-size: 18px;
-    }
-
-    .section-title {
-        font-size: 30px;
-    }
-
-    .section-description,
-    .about-description {
+    .hero-description {
         font-size: 16px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 12px;
+    }
+
+    .hero-btn {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hero-visual {
+        top: 45%;
+
+        width: 100%;
+        height: 55%;
+
+        opacity: 0.35;
+    }
+
+    .hero-prism {
+        left: 67%;
+
+        width: 190px;
+        height: 190px;
+    }
+
+    .hero-data-flow {
+        width: 500px;
+    }
+
+    .hero-bars {
+        transform: scale(0.72);
+
+        transform-origin: bottom right;
     }
 
     .about-photo-card {
@@ -2535,6 +2176,7 @@ footer {
     .tech-logo span {
         font-size: 12px;
     }
+
     .featured-credential {
         padding: 22px;
     }
@@ -2568,5 +2210,25 @@ footer {
         padding:
             24px
             7%;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
     }
 }
