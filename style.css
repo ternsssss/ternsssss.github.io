@@ -204,42 +204,20 @@ nav {
 
 
 .hero h1 {
-
-    max-width:
-        1120px;
-
-    color:
-        var(--heading);
-
-    font-size:
-        clamp(46px, 5.4vw, 72px);
-
-    line-height:
-        1.08;
-
-    margin-bottom:
-        24px;
-
+    max-width: 1050px;
+    color: var(--heading);
+    font-size: clamp(40px, 4.5vw, 60px);
+    line-height: 1.12;
+    margin-bottom: 22px;
 }
 
 
 .hero-description {
-
-    max-width:
-        900px;
-
-    color:
-        var(--text);
-
-    font-size:
-        18px;
-
-    line-height:
-        1.7;
-
-    margin-bottom:
-        35px;
-
+    max-width: 850px;
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.65;
+    margin-bottom: 32px;
 }
 
 
