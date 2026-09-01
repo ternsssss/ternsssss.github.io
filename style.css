@@ -441,37 +441,46 @@ nav {
  HERO PRISM IMAGE
 ========================================================= */
 .hero-prism-image {
- position: relative;
- z-index: 2;
- display: block;
- width: min(760px, 112%);
- max-width: none;
- height: auto;
- max-height: 88%;
- object-fit: contain;
- object-position: center;
- border: none;
- outline: none;
- box-shadow: none;
- background: transparent;
+    position: relative;
+    z-index: 2;
 
- /* Lighter prism treatment */
- opacity: 0.76;
+    display: block;
 
- filter:
-  brightness(1.10)
-  saturate(0.68)
-  contrast(0.90)
-  drop-shadow(
-   0
-   18px
-   34px
-   rgba(50,145,225,0.08)
-  );
+    width: min(760px, 112%);
+    max-width: none;
 
- mix-blend-mode: multiply;
+    height: auto;
+    max-height: 88%;
 
- user-select: none;
+    object-fit: contain;
+    object-position: center;
+
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    background: transparent;
+
+    /*
+     * The image itself now contains the correct
+     * #F8FBFF background, so no blend mode is needed.
+     */
+    opacity: 1;
+
+    /*
+     * Very subtle brightness adjustment only.
+     * The artwork has already been lightened.
+     */
+    filter:
+        brightness(1.02)
+        drop-shadow(
+            0
+            18px
+            34px
+            rgba(50,145,225,0.06)
+        );
+
+    user-select: none;
 }
 
 /* =========================================================
