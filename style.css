@@ -438,53 +438,470 @@ nav {
 }
 
 /* =========================================================
- HERO PRISM IMAGE
+ HERO — FINAL PRISM INTEGRATION
 ========================================================= */
-.hero-prism-image {
-    position: relative;
-    z-index: 2;
-
-    display: block;
-
-    width: min(760px, 112%);
-    max-width: none;
-
-    height: auto;
-    max-height: 88%;
-
-    object-fit: contain;
-    object-position: center;
-
-    border: none;
-    outline: none;
-    box-shadow: none;
-
-    background: transparent;
-
-    /*
-     * The image itself now contains the correct
-     * #F8FBFF background, so no blend mode is needed.
-     */
-    opacity: 1;
-
-    /*
-     * Very subtle brightness adjustment only.
-     * The artwork has already been lightened.
-     */
-    filter:
-        brightness(1.02)
-        drop-shadow(
-            0
-            18px
-            34px
-            rgba(50,145,225,0.06)
-        );
-
-    user-select: none;
+.hero {
+ position: relative;
+ width: 100%;
+ max-width: var(--content-max-width);
+ min-height: 720px;
+ margin: 0 auto;
+ padding: 105px var(--site-gutter);
+ display: flex;
+ align-items: center;
+ overflow: hidden;
 }
 
 /* =========================================================
- BUTTONS
+ HERO CONTENT
+========================================================= */
+.hero-content {
+ position: relative;
+ z-index: 5;
+ width: 58%;
+ max-width: 760px;
+}
+
+/* =========================================================
+ EYEBROW
+========================================================= */
+.hero .eyebrow {
+ color: var(--primary);
+ font-size: 14px;
+ font-weight: 700;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ margin-bottom: 18px;
+}
+
+/* =========================================================
+ MAIN HEADLINE
+========================================================= */
+.hero h1 {
+ max-width: 760px;
+ color: var(--heading);
+ font-size: 54px;
+ font-weight: 600;
+ line-height: 1.10;
+ letter-spacing: -0.022em;
+ margin: 0 0 22px;
+}
+
+.hero h1 span {
+ color: var(--heading);
+}
+
+/* =========================================================
+ SUPPORTING STATEMENT
+========================================================= */
+.hero .hero-description {
+ max-width: 650px;
+ color: var(--text);
+ font-size: 17px;
+ font-weight: 400;
+ line-height: 1.7;
+ margin: 0 0 32px;
+}
+
+/* =========================================================
+ CTA CONTAINER
+========================================================= */
+.hero .buttons {
+ position: relative;
+ z-index: 10;
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ flex-wrap: wrap;
+}
+
+/* =========================================================
+ CTA — COMPACT FINAL SIZE
+========================================================= */
+.hero-btn {
+ position: relative;
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ gap: 9px;
+
+ min-height: 44px;
+ padding: 9px 14px;
+
+ border-radius: 8px;
+
+ font-size: 13px;
+ font-weight: 700;
+ line-height: 1;
+
+ text-decoration: none;
+
+ overflow: hidden;
+
+ transition:
+  transform 0.25s ease,
+  box-shadow 0.25s ease,
+  border-color 0.25s ease,
+  background 0.25s ease;
+}
+
+/* =========================================================
+ CTA SHINE
+========================================================= */
+.hero-btn::before {
+ content: "";
+ position: absolute;
+
+ top: -100%;
+ left: -80%;
+
+ width: 45%;
+ height: 300%;
+
+ background:
+  linear-gradient(
+   90deg,
+   transparent,
+   rgba(255,255,255,0.28),
+   transparent
+  );
+
+ transform: rotate(18deg);
+
+ transition:
+  left 0.65s ease;
+}
+
+.hero-btn:hover::before {
+ left: 140%;
+}
+
+/* =========================================================
+ PRIMARY CTA
+========================================================= */
+.hero-btn-primary {
+ color: #ffffff;
+
+ background:
+  linear-gradient(
+   135deg,
+   #1769aa,
+   #1266d5
+  );
+
+ border:
+  1px solid
+  rgba(23,105,170,0.55);
+
+ box-shadow:
+  0 7px 18px
+  rgba(23,105,170,0.18);
+}
+
+.hero-btn-primary:hover {
+ transform: translateY(-2px);
+
+ box-shadow:
+  0 10px 24px
+  rgba(23,105,170,0.25);
+}
+
+/* =========================================================
+ SECONDARY CTA
+========================================================= */
+.hero-btn-secondary {
+ color: var(--primary);
+
+ background:
+  rgba(255,255,255,0.92);
+
+ border:
+  1px solid
+  #b9cfe4;
+
+ box-shadow:
+  0 7px 18px
+  rgba(30,80,120,0.08);
+}
+
+.hero-btn-secondary:hover {
+ transform: translateY(-2px);
+
+ background: #ffffff;
+
+ border-color:
+  var(--primary);
+
+ box-shadow:
+  0 10px 24px
+  rgba(23,105,170,0.16);
+}
+
+/* =========================================================
+ BUTTON LABEL
+========================================================= */
+.btn-label {
+ position: relative;
+ z-index: 2;
+ white-space: nowrap;
+}
+
+/* =========================================================
+ BUTTON ARROW
+========================================================= */
+.btn-arrow {
+ position: relative;
+ z-index: 2;
+
+ font-size: 17px;
+ line-height: 1;
+
+ transition:
+  transform 0.25s ease;
+}
+
+.hero-btn:hover .btn-arrow {
+ transform: translateX(4px);
+}
+
+/* =========================================================
+ BUTTON ICON
+========================================================= */
+.btn-icon {
+ position: relative;
+ z-index: 2;
+
+ width: 21px;
+ height: 21px;
+
+ flex: 0 0 21px;
+
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+}
+
+/* =========================================================
+ TARGET ICON
+========================================================= */
+.target-icon {
+ border:
+  1.4px solid
+  currentColor;
+
+ border-radius: 50%;
+}
+
+.target-icon::before {
+ content: "";
+
+ position: absolute;
+
+ width: 11px;
+ height: 11px;
+
+ border:
+  1px solid
+  currentColor;
+
+ border-radius: 50%;
+}
+
+.target-icon span {
+ width: 4px;
+ height: 4px;
+
+ border-radius: 50%;
+
+ background:
+  currentColor;
+}
+
+.target-icon::after {
+ content: "";
+
+ position: absolute;
+
+ width: 27px;
+ height: 1px;
+
+ background:
+  currentColor;
+
+ opacity: 0.55;
+}
+
+/* =========================================================
+ PAPER PLANE
+========================================================= */
+.plane-icon {
+ font-size: 20px;
+ font-weight: 400;
+
+ transform:
+  rotate(-8deg);
+
+ transition:
+  transform 0.25s ease;
+}
+
+.hero-btn-secondary:hover .plane-icon {
+ transform:
+  translate(
+   2px,
+   -2px
+  )
+  rotate(-8deg);
+}
+
+/* =========================================================
+ HERO VISUAL
+========================================================= */
+.hero-visual {
+ position: absolute;
+
+ top: 0;
+ right: -4%;
+
+ width: 61%;
+ height: 100%;
+
+ z-index: 1;
+
+ pointer-events: none;
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+/* =========================================================
+ SUBTLE BLUE ATMOSPHERE
+========================================================= */
+.hero-visual-glow {
+ position: absolute;
+
+ top: 50%;
+ right: 21%;
+
+ width: 570px;
+ height: 570px;
+
+ transform:
+  translate(
+   50%,
+   -50%
+  );
+
+ border-radius: 50%;
+
+ background:
+  radial-gradient(
+   circle,
+   rgba(96,165,250,0.12) 0%,
+   rgba(96,165,250,0.052) 38%,
+   rgba(96,165,250,0.018) 60%,
+   transparent 75%
+  );
+
+ filter:
+  blur(12px);
+}
+
+/* =========================================================
+ HERO IMAGE WRAPPER
+========================================================= */
+.hero-image-wrap {
+ position: relative;
+
+ width: 100%;
+ height: 100%;
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+ /*
+  Allows the image to visually extend into
+  the available right-side space.
+ */
+ overflow: visible;
+}
+
+/* =========================================================
+ HERO PRISM IMAGE
+========================================================= */
+.hero-prism-image {
+ position: relative;
+ z-index: 2;
+
+ display: block;
+
+ /*
+  Larger than the previous version so the
+  right side feels intentional rather than empty.
+ */
+ width: min(820px, 125%);
+
+ max-width: none;
+
+ height: auto;
+
+ max-height: 94%;
+
+ object-fit: contain;
+ object-position: center;
+
+ border: none;
+ outline: none;
+ box-shadow: none;
+
+ background: transparent;
+
+ /*
+  Keep the prism light and airy.
+ */
+ opacity: 0.94;
+
+ filter:
+  brightness(1.07)
+  saturate(0.82)
+  drop-shadow(
+   0
+   18px
+   34px
+   rgba(50,145,225,0.055)
+  );
+
+ /*
+  IMPORTANT:
+  The fade removes the visible rectangular
+  image boundary and lets the artwork visually
+  dissolve into #F8FBFF.
+ */
+ -webkit-mask-image:
+  radial-gradient(
+   ellipse 72% 72% at center,
+   #000000 42%,
+   rgba(0,0,0,0.92) 57%,
+   rgba(0,0,0,0.55) 72%,
+   transparent 100%
+  );
+
+ mask-image:
+  radial-gradient(
+   ellipse 72% 72% at center,
+   #000000 42%,
+   rgba(0,0,0,0.92) 57%,
+   rgba(0,0,0,0.55) 72%,
+   transparent 100%
+  );
+
+ user-select: none;
+}
+
+/* =========================================================
+ GLOBAL BUTTONS
 ========================================================= */
 .buttons,
 .about-actions {
@@ -497,12 +914,17 @@ nav {
  display: inline-flex;
  align-items: center;
  justify-content: center;
+
  min-height: 46px;
  padding: 13px 24px;
+
  border-radius: 8px;
+
  font-size: 14px;
  font-weight: 700;
+
  text-decoration: none;
+
  transition:
   background 0.2s ease,
   color 0.2s ease,
@@ -1412,15 +1834,325 @@ footer {
   grid-template-columns: 1fr;
  }
 
- /* HERO */
+ /* =====================================================
+ HERO
+===================================================== */
  .hero-visual {
-  width: 57%;
-  right: -5%;
+  width: 59%;
+  right: -7%;
  }
 
  .hero-prism-image {
-  width: 110%;
+  width: 120%;
+  max-height: 90%;
+  opacity: 0.92;
+ }
+
+}
+
+/* =========================================================
+ RESPONSIVE — 1000px
+========================================================= */
+@media (max-width: 1000px) {
+
+ .project-card:nth-child(1) .project-preview,
+ .project-card:nth-child(2) .project-preview,
+ .project-card:nth-child(3) .project-preview,
+ .project-card:nth-child(4) .project-preview {
+  height: 360px;
+ }
+
+ .featured-credential {
+  grid-template-columns: 1fr;
+ }
+
+ .featured-credential-content {
+  max-width: none;
+ }
+
+ .certificate-preview {
+  max-width: 520px;
+ }
+
+ /* =====================================================
+ HERO
+===================================================== */
+ .hero-content {
+  width: 62%;
+ }
+
+ .hero-visual {
+  width: 57%;
+  right: -9%;
+ }
+
+ .hero-prism-image {
+  width: 120%;
+  max-height: 88%;
+  opacity: 0.88;
+ }
+
+}
+
+/* =========================================================
+ TABLET / MOBILE — 850px
+========================================================= */
+@media (max-width: 850px) {
+
+ nav {
+  padding:
+   12px
+   var(--site-gutter);
+ }
+
+ .nav-links {
+  display: none;
+ }
+
+ .logo img {
+  height: 52px;
+  max-width: 320px;
+ }
+
+ .hero {
+  min-height: 600px;
+
+  padding-top:
+   80px;
+
+  padding-bottom:
+   80px;
+ }
+
+ .hero h1 {
+  font-size: 52px;
+ }
+
+ /* =====================================================
+ HERO VISUAL
+===================================================== */
+ .hero-content {
+  width: 100%;
+  max-width: 720px;
+  z-index: 5;
+ }
+
+ .hero-visual {
+  width: 78%;
+  height: 100%;
+  right: -23%;
+  opacity: 0.32;
+ }
+
+ .hero-prism-image {
+  width: 118%;
   max-height: 84%;
+  opacity: 0.86;
+ }
+
+ .hero-visual-glow {
+  right: 30%;
+  width: 500px;
+  height: 500px;
+ }
+
+ .about-main-card {
+  grid-template-columns: 1fr;
+ }
+
+ .about-photo {
+  justify-content: center;
+  background: #ffffff;
+ }
+
+ .about-photo-card {
+  min-height: 0;
+  height: 520px;
+ }
+
+ .about-profile-main {
+  padding: 34px 30px;
+ }
+
+ .projects-grid {
+  grid-template-columns: 1fr;
+ }
+
+ .project-card:nth-child(1) .project-preview,
+ .project-card:nth-child(2) .project-preview,
+ .project-card:nth-child(4) .project-preview,
+ .project-card:nth-child(3) .project-preview {
+  height: auto;
+  aspect-ratio: 16 / 9;
+ }
+
+ .services-grid {
+  grid-template-columns: 1fr 1fr;
+ }
+
+ .tech-stack-logos {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 25px;
+ }
+
+ .footer-inner {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+ }
+
+ .section-title {
+  font-size: 34px;
+ }
+
+ .certificate-card {
+  flex-basis: 260px;
+ }
+
+}
+
+/* =========================================================
+ MOBILE — 500px
+========================================================= */
+@media (max-width: 500px) {
+
+ nav {
+  padding:
+   10px
+   6%;
+ }
+
+ .logo img {
+  height: 44px;
+  max-width: 280px;
+ }
+
+ .hero {
+  width: 100%;
+  min-height: 540px;
+
+  padding:
+   70px
+   7%;
+ }
+
+ /* =====================================================
+ HERO VISUAL
+===================================================== */
+ .hero-visual {
+  width: 92%;
+  height: 100%;
+  right: -40%;
+  opacity: 0.18;
+ }
+
+ .hero-prism-image {
+  width: 122%;
+  max-height: 76%;
+  opacity: 0.82;
+ }
+
+ .hero-visual-glow {
+  right: 31%;
+  width: 400px;
+  height: 400px;
+ }
+
+ .hero h1 {
+  font-size: 44px;
+ }
+
+ .hero-subtitle {
+  font-size: 18px;
+ }
+
+ .section-title {
+  font-size: 30px;
+ }
+
+ .section-description,
+ .about-description {
+  font-size: 16px;
+ }
+
+ .about-photo-card {
+  height: 380px;
+ }
+
+ .about-profile-main {
+  padding: 28px 22px;
+ }
+
+ .about-block h3 {
+  font-size: 26px;
+ }
+
+ .about-block p {
+  font-size: 15px;
+ }
+
+ .about-actions {
+  flex-direction: column;
+ }
+
+ .about-actions .btn {
+  width: 100%;
+ }
+
+ .project-content {
+  padding: 26px 22px;
+ }
+
+ .services-grid {
+  grid-template-columns: 1fr;
+ }
+
+ .tech-stack-logos {
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 15px;
+  row-gap: 42px;
+ }
+
+ .tech-logo img {
+  width: 68px;
+  height: 68px;
+ }
+
+ .tech-logo span {
+  font-size: 12px;
+ }
+
+ .featured-credential {
+  padding: 22px;
+ }
+
+ .featured-credential-content h3 {
+  font-size: 24px;
+ }
+
+ .credentials-subsection-header h3 {
+  font-size: 23px;
+ }
+
+ .certificate-card {
+  flex-basis: 240px;
+ }
+
+ .achievement-card {
+  min-height: 110px;
+  padding: 16px;
+ }
+
+ .achievement-badge.achievement-preview {
+  width: 90px;
+  height: 68px;
+ }
+
+ .footer-inner {
+  width: 100%;
+  padding:
+   24px
+   7%;
  }
 
 }
