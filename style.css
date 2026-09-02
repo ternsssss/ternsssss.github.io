@@ -1762,157 +1762,64 @@ section {
 }
 
 /* =========================================================
-   FINAL CONTACT SECTION
-   Centered two-column layout
-   No white card
-   No icons
-   Compact professional spacing
+   FINAL CONTACT LAYOUT FIX
+   Center the two-column content as one balanced group
 ========================================================= */
 
-section#contact.contact {
+#contact.contact {
     width: 100%;
-    max-width: none;
-
-    margin: 0;
-
     padding: 58px 0;
-
     background: #edf5fc;
-
-    text-align: left;
-
-    scroll-margin-top: 100px;
 }
 
 
-/* =========================================================
-   CENTERED CONTENT AREA
-========================================================= */
+/* Main two-column container */
+#contact.contact .contact-card {
+    width: calc(100% - 268px);
+    max-width: 1380px;
+    min-height: 0;
 
-/* FINAL FIX — CENTER THE CONTACT BOX ONLY */
+    margin: 0 auto !important;
+    padding: 0 !important;
 
-section#contact.contact .contact-card {
-    width: min(1180px, calc(100% - 80px)) !important;
-    max-width: 1180px !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    column-gap: 90px;
 
-    margin-left: auto !important;
-    margin-right: auto !important;
+    align-items: center;
 
-    position: relative;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    position: static !important;
     left: auto !important;
     right: auto !important;
     transform: none !important;
+
+    box-sizing: border-box;
 }
+
 
 /* =========================================================
    LEFT COLUMN
 ========================================================= */
 
-section#contact.contact .contact-left {
-    width: 100%;
-    max-width: 520px;
+#contact.contact .contact-left {
+    width: 100% !important;
+    max-width: 560px !important;
 
-    margin: 0;
+    margin: 0 !important;
+    padding: 0 !important;
 
-    padding: 0;
-
-    display: flex;
+    display: flex !important;
     flex-direction: column;
 
     align-items: flex-start;
     justify-content: center;
 
     text-align: left;
-}
-
-
-/* CONTACT LABEL */
-
-section#contact.contact .contact-left .section-label {
-    margin: 0 0 12px;
-
-    color: var(--primary);
-
-    font-size: 13px;
-    font-weight: 700;
-
-    line-height: 1.4;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-}
-
-
-/* MAIN TITLE */
-
-section#contact.contact .contact-left h2 {
-    margin: 0 0 16px;
-
-    color: var(--heading-soft);
-
-    font-size: 38px;
-    font-weight: 700;
-
-    line-height: 1.12;
-
-    letter-spacing: -0.7px;
-}
-
-
-/* BLUE ACCENT */
-
-section#contact.contact .contact-accent {
-    width: 58px;
-    height: 3px;
-
-    margin: 0 0 20px;
-
-    background: var(--primary);
-
-    border-radius: 999px;
-}
-
-
-/* DESCRIPTION */
-
-section#contact.contact .contact-message {
-    width: 100%;
-    max-width: 500px;
-
-    margin: 0 0 24px;
-
-    color: var(--text);
-
-    font-size: 15px;
-
-    line-height: 1.65;
-
-    text-align: left;
-}
-
-
-/* =========================================================
-   GET IN TOUCH BUTTON
-========================================================= */
-
-section#contact.contact .contact-cta {
-    min-height: 44px;
-
-    padding: 10px 20px;
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 10px;
-
-    border-radius: 8px;
-
-    box-shadow:
-        0 8px 20px
-        rgba(23, 105, 170, 0.16);
 }
 
 
@@ -1920,234 +1827,114 @@ section#contact.contact .contact-cta {
    RIGHT COLUMN
 ========================================================= */
 
-section#contact.contact .contact-right {
-    width: 100%;
-    max-width: 500px;
+#contact.contact .contact-right {
+    width: 100% !important;
+    max-width: 560px !important;
 
-    margin: 0 auto;
+    margin: 0 !important;
+    padding: 0 !important;
 
-    padding: 0;
-
-    display: flex;
+    display: flex !important;
     flex-direction: column;
 
-    justify-content: center;
     align-items: flex-start;
-
-    text-align: left;
-}
-
-
-/* =========================================================
-   AVAILABLE FOR / EMAIL HEADINGS
-   Same styling as CONTACT
-========================================================= */
-
-section#contact.contact .contact-panel-label {
-    display: block;
-
-    margin: 0;
-
-    color: var(--primary);
-
-    font-size: 13px;
-    font-weight: 700;
-
-    line-height: 1.4;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-}
-
-
-/* =========================================================
-   REMOVE ICONS COMPLETELY
-========================================================= */
-
-section#contact.contact .contact-icon,
-section#contact.contact .contact-icon-briefcase,
-section#contact.contact .contact-icon-mail {
-    display: none !important;
-}
-
-
-/* =========================================================
-   AVAILABLE FOR
-========================================================= */
-
-section#contact.contact .contact-detail {
-    width: 100%;
-
-    margin: 0;
-    padding: 0;
-}
-
-
-/* Remove flex positioning from old heading wrapper */
-
-section#contact.contact .contact-detail-heading {
-    width: 100%;
-
-    margin: 0;
-    padding: 0;
-
-    display: block;
-
-    text-align: left;
-}
-
-
-/* SERVICES LIST */
-
-section#contact.contact .contact-services {
-    width: 100%;
-
-    margin: 14px 0 0;
-    padding: 0;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 12px;
-
-    list-style: none;
-}
-
-
-/* SERVICE ITEM */
-
-section#contact.contact .contact-services li {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    margin: 0;
-    padding: 0;
-
-    color: var(--heading-soft);
-
-    font-size: 15px;
-    font-weight: 400;
-
-    line-height: 1.4;
-
-    text-align: left;
-}
-
-
-/* CHECK MARK */
-
-section#contact.contact .contact-check {
-    width: 24px;
-    height: 24px;
-
-    flex: 0 0 24px;
-
-    display: inline-flex;
-
-    align-items: center;
     justify-content: center;
 
-    color: var(--primary);
-
-    background: #eaf4ff;
-
-    border-radius: 50%;
-
-    font-size: 15px;
-    font-weight: 800;
-
-    line-height: 1;
+    text-align: left;
 }
 
 
 /* =========================================================
-   EMAIL
+   RIGHT COLUMN CONTENT
 ========================================================= */
 
-section#contact.contact .contact-email-detail {
-    width: 100%;
+#contact.contact .contact-detail,
+#contact.contact .contact-email-detail {
+    width: 100% !important;
 
-    margin: 28px 0 0;
-    padding: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    text-align: left;
 }
 
 
-/* EMAIL ADDRESS */
+/* AVAILABLE FOR */
 
-section#contact.contact .contact-email {
-    display: inline-block;
+#contact.contact .contact-detail-heading {
+    width: 100% !important;
 
-    margin: 14px 0 0;
+    margin: 0 !important;
+    padding: 0 !important;
 
-    color: var(--heading-soft);
+    display: block !important;
 
-    font-size: 16px;
-    font-weight: 700;
-
-    line-height: 1.4;
-
-    text-decoration: none;
-}
-
-section#contact.contact .contact-email:hover {
-    color: var(--primary);
+    text-align: left !important;
 }
 
 
-/* =========================================================
-   REMOVE ANY OLD DIVIDERS
-========================================================= */
+/* EMAIL */
 
-section#contact.contact .contact-divider {
+#contact.contact .contact-email-detail {
+    margin-top: 28px !important;
+}
+
+
+/* Remove old icons */
+#contact.contact .contact-icon,
+#contact.contact .contact-icon-briefcase,
+#contact.contact .contact-icon-mail {
+    display: none !important;
+}
+
+
+/* Remove old divider */
+#contact.contact .contact-divider {
     display: none !important;
 }
 
 
 /* =========================================================
-   IMPORTANT:
-   REMOVE OLD CARD / BOX EFFECTS
+   RESPONSIVE
 ========================================================= */
 
-section#contact.contact .contact-card {
-    background: transparent !important;
+@media (max-width: 1100px) {
 
-    border: none !important;
-    border-radius: 0 !important;
-
-    box-shadow: none !important;
+    #contact.contact .contact-card {
+        width: calc(100% - 120px);
+        column-gap: 60px;
+    }
 }
 
 
-/* =========================================================
-   TABLET
-========================================================= */
+@media (max-width: 800px) {
 
-@media (max-width: 1000px) {
-
-    section#contact.contact {
-        padding: 52px 0;
+    #contact.contact {
+        padding: 48px 0;
     }
 
-    section#contact.contact .contact-card {
-        width: min(900px, calc(100% - 64px));
+    #contact.contact .contact-card {
+        width: calc(100% - 48px);
 
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(0, 1fr);
-
-        column-gap: 50px;
+        grid-template-columns: 1fr !important;
+        row-gap: 40px;
     }
 
-    section#contact.contact .contact-left h2 {
-        font-size: 36px;
+    #contact.contact .contact-left,
+    #contact.contact .contact-right {
+        max-width: 100% !important;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    #contact.contact {
+        padding: 42px 0;
     }
 
-    section#contact.contact .contact-message {
-        font-size: 15px;
+    #contact.contact .contact-card {
+        width: calc(100% - 32px);
     }
 }
 
