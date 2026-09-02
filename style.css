@@ -1780,16 +1780,15 @@ section {
 ========================================================= */
 
 .contact-card {
-    width: min(900px, 100%);
-    max-width: 900px;
+    width: min(1000px, 100%);
+    max-width: 1000px;
 
     margin: 0 auto;
     padding: 0;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-
-    column-gap: 24px;
+    column-gap: 60px;
 
     align-items: center;
 
