@@ -1774,29 +1774,33 @@ section {
 }
 
 .contact-card {
- width: min(1200px, calc(100% - 48px));
- max-width: 1200px;
- margin-left: auto;
- margin-right: auto;
- padding: 0;
+    width: 1200px;
+    max-width: calc(100% - 80px);
 
- display: grid;
- grid-template-columns: repeat(2, minmax(0, 1fr));
- column-gap: 72px;
- align-items: center;
+    margin: 0 auto;
+    padding: 0;
 
- background: transparent;
- border: 0;
- border-radius: 0;
- box-shadow: none;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    column-gap: 80px;
+
+    align-items: center;
+
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .contact-left {
- min-width: 0;
- display: flex;
- flex-direction: column;
- align-items: flex-start;
- justify-content: center;
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .contact-left .section-label {
@@ -1856,11 +1860,14 @@ section {
 }
 
 .contact-right {
- min-width: 0;
- padding: 0;
- display: flex;
- flex-direction: column;
- justify-content: center;
+    width: 100%;
+    min-width: 0;
+
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .contact-detail-heading {
