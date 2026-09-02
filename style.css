@@ -1762,31 +1762,56 @@ section {
 }
 
 /* =========================================================
-   CONTACT SECTION
-   Final centered two-column layout
+   FINAL CONTACT SECTION
+   Centered two-column layout
+   No white card
+   No icons
+   Compact professional spacing
 ========================================================= */
 
-.contact {
+section#contact.contact {
     width: 100%;
+    max-width: none;
+
+    margin: 0;
+
     padding: 58px 0;
+
     background: #edf5fc;
+
+    text-align: left;
+
     scroll-margin-top: 100px;
 }
 
 
 /* =========================================================
-   CONTACT CONTENT WRAPPER
+   CENTERED CONTENT AREA
 ========================================================= */
 
-.contact-card {
+section#contact.contact .contact-card {
     width: min(1180px, calc(100% - 80px));
+
+    max-width: 1180px;
+
     margin: 0 auto;
+    padding: 0;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 80px;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    column-gap: 90px;
 
     align-items: center;
+
+    background: transparent;
+
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 
@@ -1794,45 +1819,87 @@ section {
    LEFT COLUMN
 ========================================================= */
 
-.contact-left {
+section#contact.contact .contact-left {
+    width: 100%;
+    max-width: 520px;
+
+    margin: 0;
+
+    padding: 0;
+
     display: flex;
     flex-direction: column;
+
     align-items: flex-start;
     justify-content: center;
 
-    min-width: 0;
+    text-align: left;
 }
 
-.contact-left .section-label {
-    margin-bottom: 12px;
+
+/* CONTACT LABEL */
+
+section#contact.contact .contact-left .section-label {
+    margin: 0 0 12px;
+
+    color: var(--primary);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
 }
 
-.contact-left h2 {
+
+/* MAIN TITLE */
+
+section#contact.contact .contact-left h2 {
     margin: 0 0 16px;
 
     color: var(--heading-soft);
+
     font-size: 38px;
     font-weight: 700;
+
     line-height: 1.12;
+
     letter-spacing: -0.7px;
 }
 
-.contact-accent {
+
+/* BLUE ACCENT */
+
+section#contact.contact .contact-accent {
     width: 58px;
     height: 3px;
-    margin-bottom: 20px;
+
+    margin: 0 0 20px;
 
     background: var(--primary);
+
     border-radius: 999px;
 }
 
-.contact-message {
+
+/* DESCRIPTION */
+
+section#contact.contact .contact-message {
+    width: 100%;
     max-width: 500px;
+
     margin: 0 0 24px;
 
     color: var(--text);
+
     font-size: 15px;
+
     line-height: 1.65;
+
+    text-align: left;
 }
 
 
@@ -1840,19 +1907,23 @@ section {
    GET IN TOUCH BUTTON
 ========================================================= */
 
-.contact-cta {
+section#contact.contact .contact-cta {
     min-height: 44px;
+
     padding: 10px 20px;
 
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
+
     gap: 10px;
 
     border-radius: 8px;
 
     box-shadow:
-        0 8px 20px rgba(23, 105, 170, 0.16);
+        0 8px 20px
+        rgba(23, 105, 170, 0.16);
 }
 
 
@@ -1860,36 +1931,55 @@ section {
    RIGHT COLUMN
 ========================================================= */
 
-.contact-right {
+section#contact.contact .contact-right {
     width: 100%;
-    max-width: 460px;
+    max-width: 500px;
 
     margin: 0 auto;
+
     padding: 0;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
 
-    min-width: 0;
+    justify-content: center;
+    align-items: flex-start;
+
+    text-align: left;
 }
 
 
 /* =========================================================
-   CONTACT LABELS
-   CONTACT / AVAILABLE FOR / EMAIL
-   All intentionally matched
+   AVAILABLE FOR / EMAIL HEADINGS
+   Same styling as CONTACT
 ========================================================= */
 
-.contact-panel-label {
+section#contact.contact .contact-panel-label {
+    display: block;
+
+    margin: 0;
+
     color: var(--primary);
 
     font-size: 13px;
     font-weight: 700;
+
     line-height: 1.4;
 
     letter-spacing: 2px;
+
     text-transform: uppercase;
+}
+
+
+/* =========================================================
+   REMOVE ICONS COMPLETELY
+========================================================= */
+
+section#contact.contact .contact-icon,
+section#contact.contact .contact-icon-briefcase,
+section#contact.contact .contact-icon-mail {
+    display: none !important;
 }
 
 
@@ -1897,49 +1987,90 @@ section {
    AVAILABLE FOR
 ========================================================= */
 
-.contact-services {
-    list-style: none;
+section#contact.contact .contact-detail {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Remove flex positioning from old heading wrapper */
+
+section#contact.contact .contact-detail-heading {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    display: block;
+
+    text-align: left;
+}
+
+
+/* SERVICES LIST */
+
+section#contact.contact .contact-services {
+    width: 100%;
 
     margin: 14px 0 0;
     padding: 0;
 
     display: flex;
     flex-direction: column;
+
     gap: 12px;
+
+    list-style: none;
 }
 
-.contact-services li {
+
+/* SERVICE ITEM */
+
+section#contact.contact .contact-services li {
     display: flex;
+
     align-items: center;
+
     gap: 12px;
+
+    margin: 0;
+    padding: 0;
 
     color: var(--heading-soft);
 
     font-size: 15px;
     font-weight: 400;
+
     line-height: 1.4;
+
+    text-align: left;
 }
 
 
-/* Check marks */
+/* CHECK MARK */
 
-.contact-check {
+section#contact.contact .contact-check {
     width: 24px;
     height: 24px;
 
     flex: 0 0 24px;
 
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
     color: var(--primary);
+
     background: #eaf4ff;
 
     border-radius: 50%;
 
     font-size: 15px;
     font-weight: 800;
+
     line-height: 1;
 }
 
@@ -1948,28 +2079,149 @@ section {
    EMAIL
 ========================================================= */
 
-.contact-email-detail {
-    margin-top: 28px;
+section#contact.contact .contact-email-detail {
+    width: 100%;
+
+    margin: 28px 0 0;
+    padding: 0;
 }
 
-.contact-email {
+
+/* EMAIL ADDRESS */
+
+section#contact.contact .contact-email {
     display: inline-block;
 
-    margin-top: 14px;
+    margin: 14px 0 0;
 
     color: var(--heading-soft);
 
     font-size: 16px;
     font-weight: 700;
+
     line-height: 1.4;
 
     text-decoration: none;
-
-    transition: color 0.2s ease;
 }
 
-.contact-email:hover {
+section#contact.contact .contact-email:hover {
     color: var(--primary);
+}
+
+
+/* =========================================================
+   REMOVE ANY OLD DIVIDERS
+========================================================= */
+
+section#contact.contact .contact-divider {
+    display: none !important;
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   REMOVE OLD CARD / BOX EFFECTS
+========================================================= */
+
+section#contact.contact .contact-card {
+    background: transparent !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    section#contact.contact {
+        padding: 52px 0;
+    }
+
+    section#contact.contact .contact-card {
+        width: min(900px, calc(100% - 64px));
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+
+        column-gap: 50px;
+    }
+
+    section#contact.contact .contact-left h2 {
+        font-size: 36px;
+    }
+
+    section#contact.contact .contact-message {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    section#contact.contact {
+        padding: 52px 0;
+    }
+
+    section#contact.contact .contact-card {
+        width: calc(100% - 48px);
+
+        grid-template-columns: 1fr;
+
+        row-gap: 36px;
+    }
+
+    section#contact.contact .contact-left,
+    section#contact.contact .contact-right {
+        max-width: 100%;
+    }
+
+    section#contact.contact .contact-left h2 {
+        font-size: 34px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    section#contact.contact {
+        padding: 44px 0;
+    }
+
+    section#contact.contact .contact-card {
+        width: calc(100% - 32px);
+    }
+
+    section#contact.contact .contact-left h2 {
+        font-size: 30px;
+    }
+
+    section#contact.contact .contact-message {
+        font-size: 14px;
+    }
+
+    section#contact.contact .contact-panel-label {
+        font-size: 12px;
+        letter-spacing: 1.8px;
+    }
+
+    section#contact.contact .contact-services li {
+        font-size: 14px;
+    }
 }
 
 
