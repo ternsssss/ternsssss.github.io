@@ -1051,6 +1051,42 @@ section {
  background: #ffffff;
 }
 
+/* =========================================================
+ ABOUT IDENTITY
+========================================================= */
+.about-identity {
+ margin-bottom: 30px;
+}
+
+.about-name {
+ margin: 0 0 8px;
+ color: var(--heading);
+ font-size: 42px;
+ font-weight: 700;
+ line-height: 1.12;
+ letter-spacing: -0.02em;
+}
+
+.about-role {
+ margin: 0;
+ color: var(--primary);
+ font-size: 18px;
+ font-weight: 600;
+ line-height: 1.5;
+}
+
+.about-role span {
+ color: #9aabc0;
+ margin: 0 7px;
+}
+
+.about-divider {
+ width: 100%;
+ height: 1px;
+ margin-top: 24px;
+ background: #dce7f1;
+}
+
 .about-block h3 {
  margin: 0 0 14px;
  color: var(--heading-soft);
@@ -1817,6 +1853,14 @@ footer {
   padding: 40px;
  }
 
+ .about-name {
+  font-size: 36px;
+ }
+
+ .about-role {
+  font-size: 17px;
+ }
+
  .about-block h3 {
   font-size: 28px;
  }
@@ -1974,6 +2018,14 @@ footer {
   padding: 34px 30px;
  }
 
+ .about-name {
+  font-size: 34px;
+ }
+
+ .about-role {
+  font-size: 16px;
+ }
+
  .projects-grid {
   grid-template-columns: 1fr;
  }
@@ -2081,6 +2133,22 @@ footer {
 
  .about-profile-main {
   padding: 28px 22px;
+ }
+
+ .about-name {
+  font-size: 30px;
+ }
+
+ .about-role {
+  font-size: 15px;
+ }
+
+ .about-role span {
+  margin: 0 4px;
+ }
+
+ .about-divider {
+  margin-top: 18px;
  }
 
  .about-block h3 {
