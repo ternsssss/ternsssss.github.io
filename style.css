@@ -1789,31 +1789,20 @@ section#contact.contact {
    CENTERED CONTENT AREA
 ========================================================= */
 
+/* FINAL FIX — CENTER THE CONTACT BOX ONLY */
+
 section#contact.contact .contact-card {
-    width: min(1180px, calc(100% - 80px));
+    width: min(1180px, calc(100% - 80px)) !important;
+    max-width: 1180px !important;
 
-    max-width: 1180px;
+    margin-left: auto !important;
+    margin-right: auto !important;
 
-    margin: 0 auto;
-    padding: 0;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
-
-    column-gap: 90px;
-
-    align-items: center;
-
-    background: transparent;
-
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
+    position: relative;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
 }
-
 
 /* =========================================================
    LEFT COLUMN
