@@ -1,2902 +1,1605 @@
-/* =========================================================
- GLOBAL RESET
-========================================================= */
-* {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Terns Data Prism | Portfolio</title>
+ <meta
+ name="description"
+ content="Terence Tiongson — Data Analyst, Power BI Developer, and 
+Engineer. Explore data analytics projects, dashboards, business insights, and case 
+studies."
+ >
+ <link rel="stylesheet" href="style.css">
+ <link
+ rel="icon"
+ type="image/png"
+ href="assets/logos/terns-prism-icon.png"
+ >
+</head>
+<body>
 
-html {
- scroll-behavior: smooth;
-}
-
-body {
- font-family: Arial, Helvetica, sans-serif;
- background: #f8fbff;
- color: #172033;
- line-height: 1.6;
- overflow-x: hidden;
-}
-
-/* =========================================================
- GLOBAL WIDTH SYSTEM
-========================================================= */
-:root {
- --nav-max-width: 1600px;
- --content-max-width: 1350px;
- --site-gutter: clamp(24px, 2.5vw, 48px);
- --primary: #1769aa;
- --primary-dark: #12578e;
- --heading: #142b45;
- --heading-soft: #173b67;
- --text: #66758a;
- --text-dark: #4f6175;
- --surface: #ffffff;
- --surface-soft: #f5f9fd;
-}
-
-/* =========================================================
+<!-- =========================================================
  NAVIGATION
-========================================================= */
-nav {
- position: sticky;
- top: 0;
- z-index: 1000;
- width: 100%;
- background: rgba(255, 255, 255, 0.96);
- border-bottom: 1px solid #e6edf5;
- padding: 14px var(--site-gutter);
- backdrop-filter: blur(10px);
-}
-
-.nav-container {
- width: 100%;
- max-width: var(--nav-max-width);
- margin: 0 auto;
- display: flex;
- align-items: center;
- justify-content: space-between;
-}
-
-.logo {
- display: inline-flex;
- align-items: center;
- text-decoration: none;
- line-height: 0;
-}
-
-.logo img {
- display: block;
- height: 64px;
- width: auto;
- max-width: 300px;
-}
-
-.nav-links {
- display: flex;
- gap: 30px;
- list-style: none;
-}
-
-.nav-links a {
- position: relative;
- display: inline-block;
- color: #46546a;
- font-size: 14px;
- font-weight: 600;
- text-decoration: none;
- padding: 4px 0;
- transition: color 0.2s ease;
-}
-
-.nav-links a::after {
- content: "";
- position: absolute;
- left: 0;
- right: 0;
- bottom: -7px;
- height: 2px;
- background: var(--primary);
- transform: scaleX(0);
- transform-origin: center;
- transition: transform 0.2s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
- color: var(--primary);
-}
-
-.nav-links a.active::after {
- transform: scaleX(1);
-}
-
-/* =========================================================
- HERO — FINAL REFINED VERSION
-========================================================= */
-.hero {
- position: relative;
- width: 100%;
- max-width: var(--content-max-width);
- min-height: 720px;
- margin: 0 auto;
- padding: 105px var(--site-gutter);
- display: flex;
- align-items: center;
- overflow: hidden;
-}
-
-/* =========================================================
- HERO CONTENT
-========================================================= */
-.hero-content {
- position: relative;
- z-index: 5;
- width: 58%;
- max-width: 760px;
-}
-
-/* =========================================================
- EYEBROW
-========================================================= */
-.hero .eyebrow {
- color: var(--primary);
- font-size: 14px;
- font-weight: 700;
- letter-spacing: 2px;
- text-transform: uppercase;
- margin-bottom: 18px;
-}
-
-/* =========================================================
- MAIN HEADLINE
-========================================================= */
-.hero h1 {
- max-width: 760px;
- color: var(--heading);
- font-size: 54px;
- font-weight: 600;
- line-height: 1.10;
- letter-spacing: -0.022em;
- margin: 0 0 22px;
-}
-
-.hero h1 span {
- color: var(--heading);
-}
-
-/* =========================================================
- SUPPORTING STATEMENT
-========================================================= */
-.hero .hero-description {
- max-width: 650px;
- color: var(--text);
- font-size: 17px;
- font-weight: 400;
- line-height: 1.7;
- margin: 0 0 32px;
-}
-
-/* =========================================================
- CTA CONTAINER
-========================================================= */
-.hero .buttons {
- position: relative;
- z-index: 10;
- display: flex;
- align-items: center;
- gap: 12px;
- flex-wrap: wrap;
-}
-
-/* =========================================================
- CTA BASE — REDUCED DIMENSIONS
-========================================================= */
-.hero-btn {
- position: relative;
- display: inline-flex;
- align-items: center;
- justify-content: center;
- gap: 9px;
- min-height: 44px;
- padding: 9px 14px;
- border-radius: 8px;
- font-size: 13px;
- font-weight: 700;
- line-height: 1;
- text-decoration: none;
- overflow: hidden;
- transition:
-  transform 0.25s ease,
-  box-shadow 0.25s ease,
-  border-color 0.25s ease,
-  background 0.25s ease;
-}
-
-/* =========================================================
- CTA SHINE
-========================================================= */
-.hero-btn::before {
- content: "";
- position: absolute;
- top: -100%;
- left: -80%;
- width: 45%;
- height: 300%;
- background:
-  linear-gradient(
-   90deg,
-   transparent,
-   rgba(255,255,255,0.28),
-   transparent
-  );
- transform: rotate(18deg);
- transition: left 0.65s ease;
-}
-
-.hero-btn:hover::before {
- left: 140%;
-}
-
-/* =========================================================
- PRIMARY CTA
-========================================================= */
-.hero-btn-primary {
- color: #ffffff;
- background:
-  linear-gradient(
-   135deg,
-   #1769aa,
-   #1266d5
-  );
- border:
-  1px solid
-  rgba(23,105,170,0.55);
- box-shadow:
-  0 7px 18px
-  rgba(23,105,170,0.18);
-}
-
-.hero-btn-primary:hover {
- transform: translateY(-2px);
- box-shadow:
-  0 10px 24px
-  rgba(23,105,170,0.25);
-}
-
-/* =========================================================
- SECONDARY CTA
-========================================================= */
-.hero-btn-secondary {
- color: var(--primary);
- background:
-  rgba(255,255,255,0.92);
- border:
-  1px solid
-  #b9cfe4;
- box-shadow:
-  0 7px 18px
-  rgba(30,80,120,0.08);
-}
-
-.hero-btn-secondary:hover {
- transform: translateY(-2px);
- background: #ffffff;
- border-color: var(--primary);
- box-shadow:
-  0 10px 24px
-  rgba(23,105,170,0.16);
-}
-
-/* =========================================================
- BUTTON LABEL
-========================================================= */
-.btn-label {
- position: relative;
- z-index: 2;
- white-space: nowrap;
-}
-
-/* =========================================================
- BUTTON ARROW
-========================================================= */
-.btn-arrow {
- position: relative;
- z-index: 2;
- font-size: 17px;
- line-height: 1;
- transition: transform 0.25s ease;
-}
-
-.hero-btn:hover .btn-arrow {
- transform: translateX(4px);
-}
-
-/* =========================================================
- BUTTON ICON
-========================================================= */
-.btn-icon {
- position: relative;
- z-index: 2;
- width: 21px;
- height: 21px;
- flex: 0 0 21px;
- display: inline-flex;
- align-items: center;
- justify-content: center;
-}
-
-/* =========================================================
- TARGET ICON
-========================================================= */
-.target-icon {
- border:
-  1.4px solid
-  currentColor;
- border-radius: 50%;
-}
-
-.target-icon::before {
- content: "";
- position: absolute;
- width: 11px;
- height: 11px;
- border:
-  1px solid
-  currentColor;
- border-radius: 50%;
-}
-
-.target-icon span {
- width: 4px;
- height: 4px;
- border-radius: 50%;
- background: currentColor;
-}
-
-.target-icon::after {
- content: "";
- position: absolute;
- width: 27px;
- height: 1px;
- background: currentColor;
- opacity: 0.55;
-}
-
-/* =========================================================
- PAPER PLANE
-========================================================= */
-.plane-icon {
- font-size: 20px;
- font-weight: 400;
- transform: rotate(-8deg);
- transition: transform 0.25s ease;
-}
-
-.hero-btn-secondary:hover .plane-icon {
- transform:
-  translate(
-   2px,
-   -2px
-  )
-  rotate(-8deg);
-}
-
-/* =========================================================
- HERO VISUAL
-========================================================= */
-.hero-visual {
- position: absolute;
- top: 0;
- right: -2%;
- width: 59%;
- height: 100%;
- z-index: 1;
- pointer-events: none;
- display: flex;
- align-items: center;
- justify-content: center;
-}
-
-/* =========================================================
- BLUE GLOW
-========================================================= */
-.hero-visual-glow {
- position: absolute;
- top: 50%;
- right: 22%;
- width: 560px;
- height: 560px;
- transform:
-  translate(
-   50%,
-   -50%
-  );
- border-radius: 50%;
- background:
-  radial-gradient(
-   circle,
-   rgba(96,165,250,0.15) 0%,
-   rgba(96,165,250,0.065) 38%,
-   rgba(96,165,250,0.022) 60%,
-   transparent 75%
-  );
- filter: blur(10px);
-}
-
-/* =========================================================
- HERO IMAGE WRAPPER
-========================================================= */
-.hero-image-wrap {
- position: relative;
- width: 100%;
- height: 100%;
- display: flex;
- align-items: center;
- justify-content: center;
-}
-
-/* =========================================================
- HERO — FINAL PRISM INTEGRATION
-========================================================= */
-.hero {
- position: relative;
- width: 100%;
- max-width: var(--content-max-width);
- min-height: 720px;
- margin: 0 auto;
- padding: 105px var(--site-gutter);
- display: flex;
- align-items: center;
- overflow: hidden;
-}
-
-/* =========================================================
- HERO CONTENT
-========================================================= */
-.hero-content {
- position: relative;
- z-index: 5;
- width: 58%;
- max-width: 760px;
-}
-
-/* =========================================================
- EYEBROW
-========================================================= */
-.hero .eyebrow {
- color: var(--primary);
- font-size: 14px;
- font-weight: 700;
- letter-spacing: 2px;
- text-transform: uppercase;
- margin-bottom: 18px;
-}
-
-/* =========================================================
- MAIN HEADLINE
-========================================================= */
-.hero h1 {
- max-width: 760px;
- color: var(--heading);
- font-size: 54px;
- font-weight: 600;
- line-height: 1.10;
- letter-spacing: -0.022em;
- margin: 0 0 22px;
-}
-
-.hero h1 span {
- color: var(--heading);
-}
-
-/* =========================================================
- SUPPORTING STATEMENT
-========================================================= */
-.hero .hero-description {
- max-width: 650px;
- color: var(--text);
- font-size: 17px;
- font-weight: 400;
- line-height: 1.7;
- margin: 0 0 32px;
-}
-
-/* =========================================================
- CTA CONTAINER
-========================================================= */
-.hero .buttons {
- position: relative;
- z-index: 10;
- display: flex;
- align-items: center;
- gap: 12px;
- flex-wrap: wrap;
-}
-
-/* =========================================================
- CTA — COMPACT FINAL SIZE
-========================================================= */
-.hero-btn {
- position: relative;
- display: inline-flex;
- align-items: center;
- justify-content: center;
- gap: 9px;
-
- min-height: 44px;
- padding: 9px 14px;
-
- border-radius: 8px;
-
- font-size: 13px;
- font-weight: 700;
- line-height: 1;
-
- text-decoration: none;
-
- overflow: hidden;
-
- transition:
-  transform 0.25s ease,
-  box-shadow 0.25s ease,
-  border-color 0.25s ease,
-  background 0.25s ease;
-}
-
-/* =========================================================
- CTA SHINE
-========================================================= */
-.hero-btn::before {
- content: "";
- position: absolute;
-
- top: -100%;
- left: -80%;
-
- width: 45%;
- height: 300%;
-
- background:
-  linear-gradient(
-   90deg,
-   transparent,
-   rgba(255,255,255,0.28),
-   transparent
-  );
-
- transform: rotate(18deg);
-
- transition:
-  left 0.65s ease;
-}
-
-.hero-btn:hover::before {
- left: 140%;
-}
-
-/* =========================================================
- PRIMARY CTA
-========================================================= */
-.hero-btn-primary {
- color: #ffffff;
-
- background:
-  linear-gradient(
-   135deg,
-   #1769aa,
-   #1266d5
-  );
-
- border:
-  1px solid
-  rgba(23,105,170,0.55);
-
- box-shadow:
-  0 7px 18px
-  rgba(23,105,170,0.18);
-}
-
-.hero-btn-primary:hover {
- transform: translateY(-2px);
-
- box-shadow:
-  0 10px 24px
-  rgba(23,105,170,0.25);
-}
-
-/* =========================================================
- SECONDARY CTA
-========================================================= */
-.hero-btn-secondary {
- color: var(--primary);
-
- background:
-  rgba(255,255,255,0.92);
-
- border:
-  1px solid
-  #b9cfe4;
-
- box-shadow:
-  0 7px 18px
-  rgba(30,80,120,0.08);
-}
-
-.hero-btn-secondary:hover {
- transform: translateY(-2px);
-
- background: #ffffff;
-
- border-color:
-  var(--primary);
-
- box-shadow:
-  0 10px 24px
-  rgba(23,105,170,0.16);
-}
-
-/* =========================================================
- BUTTON LABEL
-========================================================= */
-.btn-label {
- position: relative;
- z-index: 2;
- white-space: nowrap;
-}
-
-/* =========================================================
- BUTTON ARROW
-========================================================= */
-.btn-arrow {
- position: relative;
- z-index: 2;
-
- font-size: 17px;
- line-height: 1;
-
- transition:
-  transform 0.25s ease;
-}
-
-.hero-btn:hover .btn-arrow {
- transform: translateX(4px);
-}
-
-/* =========================================================
- BUTTON ICON
-========================================================= */
-.btn-icon {
- position: relative;
- z-index: 2;
-
- width: 21px;
- height: 21px;
-
- flex: 0 0 21px;
-
- display: inline-flex;
- align-items: center;
- justify-content: center;
-}
-
-/* =========================================================
- TARGET ICON
-========================================================= */
-.target-icon {
- border:
-  1.4px solid
-  currentColor;
-
- border-radius: 50%;
-}
-
-.target-icon::before {
- content: "";
-
- position: absolute;
-
- width: 11px;
- height: 11px;
-
- border:
-  1px solid
-  currentColor;
-
- border-radius: 50%;
-}
-
-.target-icon span {
- width: 4px;
- height: 4px;
-
- border-radius: 50%;
-
- background:
-  currentColor;
-}
-
-.target-icon::after {
- content: "";
-
- position: absolute;
-
- width: 27px;
- height: 1px;
-
- background:
-  currentColor;
-
- opacity: 0.55;
-}
-
-/* =========================================================
- PAPER PLANE
-========================================================= */
-.plane-icon {
- font-size: 20px;
- font-weight: 400;
-
- transform:
-  rotate(-8deg);
-
- transition:
-  transform 0.25s ease;
-}
-
-.hero-btn-secondary:hover .plane-icon {
- transform:
-  translate(
-   2px,
-   -2px
-  )
-  rotate(-8deg);
-}
-
-/* =========================================================
- HERO VISUAL
-========================================================= */
-.hero-visual {
- position: absolute;
-
- top: 0;
- right: -4%;
-
- width: 61%;
- height: 100%;
-
- z-index: 1;
-
- pointer-events: none;
-
- display: flex;
- align-items: center;
- justify-content: center;
-}
-
-/* =========================================================
- SUBTLE BLUE ATMOSPHERE
-========================================================= */
-.hero-visual-glow {
- position: absolute;
-
- top: 50%;
- right: 21%;
-
- width: 570px;
- height: 570px;
-
- transform:
-  translate(
-   50%,
-   -50%
-  );
-
- border-radius: 50%;
-
- background:
-  radial-gradient(
-   circle,
-   rgba(96,165,250,0.12) 0%,
-   rgba(96,165,250,0.052) 38%,
-   rgba(96,165,250,0.018) 60%,
-   transparent 75%
-  );
-
- filter:
-  blur(12px);
-}
-
-/* =========================================================
- HERO IMAGE WRAPPER
-========================================================= */
-.hero-image-wrap {
- position: relative;
-
- width: 100%;
- height: 100%;
-
- display: flex;
- align-items: center;
- justify-content: center;
-
- /*
-  Allows the image to visually extend into
-  the available right-side space.
- */
- overflow: visible;
-}
-
-/* =========================================================
+========================================================= -->
+<nav id="site-nav">
+ <div class="nav-container">
+  <a href="#about" class="logo">
+   <img
+    src="assets/logos/terns-data-prism.png"
+    alt="Terns Data Prism"
+   >
+  </a>
+
+  <div class="nav-menu">
+   <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Portfolio</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#tech-stack">Tech Stack</a></li>
+    <li><a href="#certifications">Credentials</a></li>
+    <li><a href="#contact">Contact</a></li>
+   </ul>
+
+   <span
+    class="nav-indicator"
+    aria-hidden="true"
+   ></span>
+  </div>
+ </div>
+</nav>
+
+<!-- =========================================================
+ HERO
+========================================================= -->
+<header class="hero">
+
+ <div class="hero-content">
+
+  <div class="eyebrow">
+   Data Analytics &amp; Business Intelligence
+  </div>
+
+  <h1>
+   Turning Business Data Into Clear
+   <span>Insights and Better Decisions.</span>
+  </h1>
+
+  <p class="hero-description">
+   Connecting data, business context, and analytical thinking
+   to uncover clear, actionable insights.
+  </p>
+
+  <div class="buttons">
+
+   <a
+    href="#projects"
+    class="hero-btn hero-btn-primary"
+   >
+    <span class="btn-icon target-icon" aria-hidden="true">
+     <span></span>
+    </span>
+
+    <span class="btn-label">
+     Explore My Projects
+    </span>
+
+    <span class="btn-arrow" aria-hidden="true">
+     →
+    </span>
+   </a>
+
+   <a
+    href="#contact"
+    class="hero-btn hero-btn-secondary"
+   >
+    <span class="btn-icon plane-icon" aria-hidden="true">
+     ↗
+    </span>
+
+    <span class="btn-label">
+     Get In Touch
+    </span>
+
+    <span class="btn-arrow" aria-hidden="true">
+     →
+    </span>
+   </a>
+
+  </div>
+
+ </div>
+
+ <!-- =====================================================
  HERO PRISM IMAGE
-========================================================= */
-.hero-prism-image {
- position: relative;
- z-index: 2;
+====================================================== -->
+ <div class="hero-visual" aria-hidden="true">
 
- display: block;
+  <div class="hero-visual-glow"></div>
 
- /*
-  Larger than the previous version so the
-  right side feels intentional rather than empty.
- */
- width: min(820px, 125%);
+  <div class="hero-image-wrap">
+  <img
+      src="assets/logos/hero-prism.png"
+      alt=""
+      class="hero-prism-image"
+  >
+  </div>
 
- max-width: none;
+ </div>
 
- height: auto;
+</header>
 
- max-height: 94%;
-
- object-fit: contain;
- object-position: center;
-
- border: none;
- outline: none;
- box-shadow: none;
-
- background: transparent;
-
- /*
-  Keep the prism light and airy.
- */
- opacity: 0.94;
-
- filter:
-  brightness(1.07)
-  saturate(0.82)
-  drop-shadow(
-   0
-   18px
-   34px
-   rgba(50,145,225,0.055)
-  );
-
- /*
-  IMPORTANT:
-  The fade removes the visible rectangular
-  image boundary and lets the artwork visually
-  dissolve into #F8FBFF.
- */
- -webkit-mask-image:
-  radial-gradient(
-   ellipse 72% 72% at center,
-   #000000 42%,
-   rgba(0,0,0,0.92) 57%,
-   rgba(0,0,0,0.55) 72%,
-   transparent 100%
-  );
-
- mask-image:
-  radial-gradient(
-   ellipse 72% 72% at center,
-   #000000 42%,
-   rgba(0,0,0,0.92) 57%,
-   rgba(0,0,0,0.55) 72%,
-   transparent 100%
-  );
-
- user-select: none;
-}
-
-/* =========================================================
- GLOBAL BUTTONS
-========================================================= */
-.buttons,
-.about-actions {
- display: flex;
- gap: 15px;
- flex-wrap: wrap;
-}
-
-.btn {
- display: inline-flex;
- align-items: center;
- justify-content: center;
-
- min-height: 46px;
- padding: 13px 24px;
-
- border-radius: 8px;
-
- font-size: 14px;
- font-weight: 700;
-
- text-decoration: none;
-
- transition:
-  background 0.2s ease,
-  color 0.2s ease,
-  border-color 0.2s ease,
-  transform 0.2s ease;
-}
-
-.btn:hover {
- transform: translateY(-1px);
-}
-
-.btn-primary {
- color: #ffffff;
- background: var(--primary);
-}
-
-.btn-primary:hover {
- background: var(--primary-dark);
-}
-
-.btn-secondary {
- color: var(--heading-soft);
- background: #ffffff;
- border: 1px solid #cbd8e6;
-}
-
-.btn-secondary:hover {
- border-color: var(--primary);
- color: var(--primary);
-}
-
-/* =========================================================
- GLOBAL SECTIONS
-========================================================= */
-section {
- width: 100%;
- max-width: var(--content-max-width);
- margin: 0 auto;
- padding:
- 100px
- var(--site-gutter);
- scroll-margin-top: 100px;
-}
-
-.section-label,
-.about-label {
- color: var(--primary);
- font-size: 13px;
- font-weight: 700;
- letter-spacing: 2px;
- text-transform: uppercase;
- margin-bottom: 12px;
-}
-
-.about-label {
- display: inline-block;
- font-family: Arial, Helvetica, sans-serif;
- line-height: 1.4;
-}
-
-.section-title {
- color: var(--heading);
- font-size: 42px;
- line-height: 1.2;
- margin-bottom: 20px;
-}
-
-.section-description,
-.about-description {
- max-width: 760px;
- color: var(--text);
- font-size: 17px;
- margin-bottom: 50px;
-}
-
-/* =========================================================
+<!-- =========================================================
  ABOUT
-========================================================= */
-#about {
- max-width: var(--content-max-width);
-}
+========================================================= -->
+<section id="about">
 
- .about-main-card {
- display: grid;
- grid-template-columns:
-  minmax(380px, 0.90fr)
-  minmax(0, 1.10fr);
- align-items: stretch;
- overflow: hidden;
- background: var(--surface);
- border: 1px solid #dce7f1;
- border-radius: 16px;
-}
+ <div class="about-label">
+  ABOUT ME
+ </div>
 
-.about-photo {
- min-width: 0;
- display: flex;
- align-items: stretch;
-}
+ <h2 class="section-title">
+  Engineering experience. Analytical thinking.
+  Data-driven direction.
+ </h2>
 
-.about-photo-card {
- width: 100%;
- height: 100%;
- min-height: 440px;
- overflow: hidden;
- background: #ffffff;
-}
+ <p class="about-description">
+  I combine engineering experience, analytical thinking,
+  and business understanding to turn complex data into
+  clear insights and practical solutions for better
+  decision-making.
+ </p>
 
-.about-photo-card img {
- width: 100%;
- height: 100%;
- display: block;
- object-fit: contain;
- object-position: center bottom;
- background: #ffffff;
-}
+ <div class="about-main-card">
 
-.about-profile-main {
- min-width: 0;
- padding: 38px 46px;
- display: flex;
- flex-direction: column;
- justify-content: flex-start;
- background: #ffffff;
-}
+  <div class="about-photo">
+   <div class="about-photo-card">
+    <img
+     src="assets/logos/profile-photo.jpg"
+     alt="Terence Tiongson"
+    >
+   </div>
+  </div>
 
-/* =========================================================
- ABOUT IDENTITY
-========================================================= */
-.about-identity {
- margin-bottom: 22px;
-}
+  <div class="about-profile-main">
 
-.about-name {
- margin: 0 0 6px;
- color: var(--heading);
- font-size: 32px;
- font-weight: 700;
- line-height: 1.15;
- letter-spacing: -0.018em;
-}
+   <div class="about-identity">
 
-.about-role {
- margin: 0;
- color: var(--primary);
- font-size: 15px;
- font-weight: 600;
- line-height: 1.45;
-}
+    <h2 class="about-name">Terence Tiongson</h2>
 
-.about-role span {
- color: #9aabc0;
- margin: 0 5px;
-}
+    <p class="about-role">Data Analyst <span>|</span> Power BI Developer <span>|</span> Engineer</p>
 
-.about-divider {
- width: 100%;
- height: 1px;
- margin-top: 18px;
- background: #dce7f1;
-}
+    <div class="about-divider" aria-hidden="true"></div>
 
-.about-block h3 {
- margin: 0 0 10px;
- color: var(--heading-soft);
- font-size: 26px;
- font-weight: 700;
- line-height: 1.25;
-}
+   </div>
 
-.about-block p {
- margin: 0;
- color: var(--text-dark);
- font-size: 15px;
- line-height: 1.62;
-}
+   <div class="about-block">
 
-.about-block p + p {
- margin-top: 12px;
-}
+    <h3>Professional Background</h3>
 
-.about-block + .about-block {
- margin-top: 22px;
-}
+    <p>
+     My professional foundation is rooted in engineering,
+     where I developed a structured approach to
+     problem-solving, project coordination, cost analysis,
+     and decision-making.
+    </p>
 
-.about-actions {
- margin-top: 28px;
-}
+    <p>
+     I am now applying that same analytical mindset to
+     data analytics and business intelligence — building
+     dashboards, analyzing performance, and translating
+     data into insights that support better business
+     decisions.
+    </p>
 
-/* =========================================================
+   </div>
+
+   <div class="about-block">
+
+    <h3>How I Work</h3>
+
+    <p>
+     I start with the business problem first — asking the
+     right questions, analyzing the evidence, and
+     communicating the findings through clear,
+     executive-friendly solutions.
+    </p>
+
+   </div>
+
+   <div class="about-actions">
+
+    <a
+     href="assets/resume/terence-tiongson-resume.pdf"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="btn btn-primary"
+    >
+     View Resume
+    </a>
+
+    <a
+     href="assets/resume/terence-tiongson-resume.pdf"
+     download="terence-tiongson-resume.pdf"
+     class="btn btn-secondary"
+    >
+     Download Resume
+    </a>
+
+   </div>
+
+  </div>
+ </div>
+
+</section>
+
+<!-- =========================================================
  PROJECTS
-========================================================= */
-#projects {
- max-width: var(--content-max-width);
-}
+========================================================= -->
+<section id="projects">
 
-.projects-grid {
- display: grid;
- grid-template-columns:
-  repeat(2, minmax(0, 1fr));
- gap: 25px;
- margin-top: 50px;
-}
+ <div class="section-label">
+  PORTFOLIO
+ </div>
 
-.project-card {
- display: block;
- overflow: hidden;
- color: inherit;
- background: #ffffff;
- border: 1px solid #e5edf5;
- border-radius: 16px;
- text-decoration: none;
- transition:
-  transform 0.2s ease,
-  box-shadow 0.2s ease;
-}
+ <h2 class="section-title">
+  Projects
+ </h2>
 
-.project-card:hover {
- transform: translateY(-4px);
- box-shadow:
- 0 18px 40px
-  rgba(25, 61, 100, 0.12);
-}
+ <p class="section-description">
+  Business-focused analytics projects that turn data into
+  actionable insights and better decisions.
+ </p>
 
-.project-preview {
- height: 330px;
- display: flex;
- align-items: center;
- justify-content: center;
- overflow: hidden;
- background: var(--surface-soft);
- border-bottom: 1px solid #e5edf5;
-}
+ <div class="projects-grid">
 
-.project-card:nth-child(1) .project-preview,
-.project-card:nth-child(2) .project-preview,
-.project-card:nth-child(3) .project-preview,
-.project-card:nth-child(4) .project-preview {
- height: clamp(360px, 26vw, 430px);
-}
+  <!-- 01 HOSPITAL ER ANALYSIS -->
+  <a
+   href="case-studies/hospital-er-analysis/"
+   class="project-card"
+  >
 
-.project-preview img {
- width: 100%;
- height: 100%;
- display: block;
- object-fit: contain;
- object-position: center;
-}
+   <div class="project-preview">
+    <img
+     src="assets/projects/previews/hospital-er-analysis.png"
+     alt="Hospital ER Analysis dashboard preview"
+    >
+   </div>
 
-.project-content {
- padding: 32px 36px 34px;
-}
+   <div class="project-content">
 
-.project-content h3 {
- color: var(--heading-soft);
- font-size: 22px;
- line-height: 1.3;
- margin-bottom: 12px;
-}
+    <h3>Hospital ER Analysis</h3>
 
-.project-content p {
- color: var(--text);
- font-size: 15px;
- line-height: 1.65;
- margin-bottom: 22px;
-}
+    <p>
+     Healthcare analytics focused on emergency department
+     operations, patient experience, and clinical performance.
+    </p>
 
-.project-tags {
- display: flex;
- flex-wrap: wrap;
- gap: 7px;
-}
+    <div class="project-tags">
+     <span class="tag">Power BI</span>
+     <span class="tag">DAX</span>
+     <span class="tag">Power Query</span>
+     <span class="tag">Excel</span>
+     <span class="tag">Data Modeling</span>
+    </div>
 
-.tag {
- display: inline-flex;
- align-items: center;
- color: var(--primary);
- background: #f0f6fb;
- padding: 5px 9px;
- border: 1px solid #e1ebf4;
- border-radius: 5px;
- font-size: 11px;
- font-weight: 700;
- line-height: 1.3;
- white-space: nowrap;
-}
+    <div class="project-action">
+     View Project →
+    </div>
 
-.project-action {
- margin-top: 20px;
- color: var(--primary);
- font-size: 14px;
- font-weight: 700;
- transition:
-  color 0.2s ease,
-  transform 0.2s ease;
-}
+   </div>
+  </a>
 
-.project-card:hover .project-action {
- color: var(--primary-dark);
- transform: translateX(4px);
-}
+  <!-- 02 E-COMMERCE ANALYTICS -->
+  <a
+   href="case-studies/e-commerce-analytics/ecommerce.html"
+   class="project-card"
+  >
 
-.projects-more {
- display: flex;
- justify-content: center;
- margin-top: 36px;
-}
+   <div class="project-preview">
+    <img
+     src="assets/projects/previews/ecommerce-analytics.png"
+     alt="E-Commerce Analytics dashboard preview"
+    >
+   </div>
 
-.projects-more a {
- color: var(--primary);
- font-size: 14px;
- font-weight: 700;
- text-decoration: none;
- transition:
-  color 0.2s ease,
-  transform 0.2s ease;
-}
+   <div class="project-content">
 
-.projects-more a:hover {
- color: var(--primary-dark);
- transform: translateX(4px);
-}
+    <h3>E-Commerce Analytics</h3>
 
-/* =========================================================
+    <p>
+     Revenue, customer loyalty, subscriptions, promotions,
+     refunds, and repeat-purchase analysis.
+    </p>
+
+    <div class="project-tags">
+     <span class="tag">Power BI</span>
+     <span class="tag">DAX</span>
+     <span class="tag">Power Query</span>
+     <span class="tag">Excel</span>
+     <span class="tag">Data Modeling</span>
+    </div>
+
+    <div class="project-action">
+     View Project →
+    </div>
+
+   </div>
+  </a>
+
+  <!-- 03 RFQ MONITORING ANALYSIS -->
+  <a
+   href="case-studies/rfq-monitoring/rfq.html"
+   class="project-card"
+  >
+
+   <div class="project-preview">
+    <img
+     src="assets/projects/previews/rfq-monitoring-analysis.png"
+     alt="RFQ Monitoring Analysis dashboard preview"
+    >
+   </div>
+
+   <div class="project-content">
+
+    <h3>RFQ Monitoring Analysis</h3>
+
+    <p>
+     Procurement performance monitoring focused on RFQ outcomes,
+     commercial value, savings, turnaround time, and aging.
+    </p>
+
+    <div class="project-tags">
+     <span class="tag">Excel</span>
+     <span class="tag">Power Query</span>
+     <span class="tag">Power Pivot</span>
+     <span class="tag">DAX</span>
+     <span class="tag">Data Modeling</span>
+    </div>
+
+    <div class="project-action">
+     View Project →
+    </div>
+
+   </div>
+  </a>
+
+  <!-- 04 HR ANALYTICS -->
+  <a
+   href="case-studies/hr-analytics/hr.html"
+   class="project-card"
+  >
+
+   <div class="project-preview">
+    <img
+     src="assets/projects/previews/hr-analytics.png"
+     alt="HR Analytics dashboard preview"
+    >
+   </div>
+
+   <div class="project-content">
+
+    <h3>HR Analytics</h3>
+
+    <p>
+     Workforce, hiring, attrition, compensation, and employee
+     analytics designed to support HR decision-making.
+    </p>
+
+    <div class="project-tags">
+     <span class="tag">Power BI</span>
+     <span class="tag">DAX</span>
+     <span class="tag">Power Query</span>
+     <span class="tag">Excel</span>
+     <span class="tag">Data Modeling</span>
+    </div>
+
+    <div class="project-action">
+     View Project →
+    </div>
+
+   </div>
+  </a>
+
+ </div>
+
+ <div class="projects-more">
+  <a href="projects/project-library.html">
+   Explore More Projects →
+  </a>
+ </div>
+
+</section>
+
+<!-- =========================================================
  SERVICES
-========================================================= */
-#services {
- max-width: var(--content-max-width);
-}
+========================================================= -->
+<section id="services">
 
-.services-grid {
- display: grid;
- grid-template-columns:
-  repeat(4, minmax(0, 1fr));
- gap: 18px;
-}
+ <div class="section-label">
+  SERVICES
+ </div>
 
-.service-card {
- min-height: 250px;
- padding: 28px;
- background: #ffffff;
- border: 1px solid #e3ebf3;
- border-radius: 14px;
- box-shadow:
- 0 8px 25px
- rgba(25, 61, 100, 0.04);
- transition:
-  transform 0.25s ease,
-  box-shadow 0.25s ease;
-}
+ <h2 class="section-title">
+  How I can support your data and business decisions.
+ </h2>
 
-.service-card:hover {
- transform: translateY(-4px);
- box-shadow:
- 0 14px 32px
-  rgba(25, 61, 100, 0.10);
-}
+ <p class="section-description">
+  I combine structured problem-solving, business understanding,
+  and data visualization to create practical, decision-ready solutions.
+ </p>
 
-.service-card h3 {
- color: var(--heading-soft);
- font-size: 19px;
- line-height: 1.35;
- margin-bottom: 16px;
-}
+ <div class="services-grid">
 
-.service-card ul {
- margin: 0;
- padding-left: 20px;
- color: var(--text);
-}
+  <div class="service-card">
+   <h3>Data Analytics</h3>
+   <ul>
+    <li>Clean, transform, and analyze data.</li>
+    <li>Identify trends, patterns, and key insights.</li>
+    <li>Turn findings into actionable recommendations.</li>
+   </ul>
+  </div>
 
-.service-card li {
- font-size: 14px;
- line-height: 1.6;
-}
+  <div class="service-card">
+   <h3>Business Intelligence</h3>
+   <ul>
+    <li>Translate business questions into analysis.</li>
+    <li>Track performance through meaningful KPIs.</li>
+    <li>Support data-driven decision-making.</li>
+   </ul>
+  </div>
 
-.service-card li + li {
- margin-top: 10px;
-}
+  <div class="service-card">
+   <h3>Data Visualization</h3>
+   <ul>
+    <li>Design clear and intuitive dashboards.</li>
+    <li>Present complex data in an accessible format.</li>
+    <li>Communicate insights for faster decisions.</li>
+   </ul>
+  </div>
 
-/* =========================================================
+  <div class="service-card">
+   <h3>Engineering Mindset</h3>
+   <ul>
+    <li>Apply structured and logical problem-solving.</li>
+    <li>Maintain precision and attention to detail.</li>
+    <li>Develop practical, solution-focused outcomes.</li>
+   </ul>
+  </div>
+
+ </div>
+
+</section>
+
+<!-- =========================================================
  TECH STACK
-========================================================= */
-#tech-stack {
- max-width: var(--content-max-width);
-}
+========================================================= -->
+<section id="tech-stack">
 
-.tech-stack-logos {
- width: 100%;
- display: grid;
- grid-template-columns:
-  repeat(5, minmax(120px, 1fr));
- column-gap: 40px;
- row-gap: 62px;
- align-items: start;
- justify-items: center;
- margin: 58px auto 0;
-}
+ <div class="section-label">
+  Tech Stack
+ </div>
 
-.tech-logo {
- width: 100%;
- min-height: 125px;
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: flex-start;
- gap: 14px;
- text-align: center;
- transition: transform 0.25s ease;
-}
+ <h2 class="section-title">
+  Tools I use to turn data into decisions.
+ </h2>
 
-.tech-logo img {
- width: 82px;
- height: 82px;
- display: block;
- object-fit: contain;
- transition: transform 0.25s ease;
-}
+ <p class="section-description">
+  The tools I use to analyze data, build insights,
+  and create decision-ready visualizations.
+ </p>
 
-.tech-logo span {
- color: #52647a;
- font-size: 13px;
- font-weight: 600;
- line-height: 1.4;
-}
+ <div class="tech-stack-logos">
 
-.tech-logo:hover {
- transform: translateY(-4px);
-}
+  <div class="tech-logo">
+   <img src="assets/logos/excel.svg" alt="Microsoft Excel">
+   <span>Microsoft Excel</span>
+  </div>
 
-.tech-logo:hover img {
- transform: scale(1.05);
-}
+  <div class="tech-logo">
+   <img src="assets/logos/mysql.svg" alt="MySQL">
+   <span>MySQL</span>
+  </div>
 
-/* =========================================================
+  <div class="tech-logo">
+   <img src="assets/logos/powerbi.svg" alt="Microsoft Power BI">
+   <span>Power BI</span>
+  </div>
+
+  <div class="tech-logo">
+   <img src="assets/logos/python.svg" alt="Python">
+   <span>Python</span>
+  </div>
+
+  <div class="tech-logo">
+   <img src="assets/logos/microsoft365.svg" alt="Microsoft 365">
+   <span>Microsoft 365</span>
+  </div>
+
+  <div class="tech-logo">
+   <img src="assets/logos/google-sheets.svg" alt="Google Sheets">
+   <span>Google Sheets</span>
+  </div>
+
+  <div class="tech-logo">
+   <img src="assets/logos/copilot.svg" alt="Microsoft Copilot">
+   <span>Copilot</span>
+  </div>
+
+  <div class="tech-logo">
+   <img src="assets/logos/chatgpt.svg" alt="ChatGPT">
+   <span>ChatGPT</span>
+  </div>
+
+  <div class="tech-logo">
+   <img src="assets/logos/claude.svg" alt="Claude">
+   <span>Claude</span>
+  </div>
+
+  <div class="tech-logo">
+   <img src="assets/logos/gemini.svg" alt="Google Gemini">
+   <span>Google Gemini</span>
+  </div>
+
+ </div>
+
+</section>
+
+<!-- =========================================================
  CREDENTIALS
-========================================================= */
-#certifications {
- max-width: var(--content-max-width);
- overflow: hidden;
-}
+========================================================= -->
+<section id="certifications">
 
-.featured-credential {
- display: grid;
- grid-template-columns:
-  0.9fr
-  1.1fr;
- gap: 70px;
- align-items: center;
- margin-top: 60px;
- padding: 45px;
- background: #ffffff;
- border: 1px solid #e3ebf3;
- border-radius: 18px;
- box-shadow:
- 0 12px 35px
- rgba(25, 61, 100, 0.05);
-}
+ <div class="section-label">
+  CREDENTIALS
+ </div>
 
-.featured-certificate {
- display: flex;
- align-items: center;
- justify-content: center;
-}
+ <h2 class="section-title">
+  Certifications, training, and achievements.
+ </h2>
 
-.featured-certificate a {
- display: block;
- width: 100%;
- text-decoration: none;
-}
+ <p class="section-description">
+  Professional credentials and recognition that support my work
+  across data analytics, business intelligence, and visualization.
+ </p>
 
-.certificate-preview {
- width: 100%;
- max-width: 440px;
- aspect-ratio: 1.414 / 1;
- margin: 0 auto;
- display: flex;
- align-items: center;
- justify-content: center;
- padding: 12px;
- background:
-  linear-gradient(
-   135deg,
-   #ffffff 0%,
-   #f2f7fc 100%
-  );
- border: 1px solid #d9e5f0;
- border-radius: 10px;
- box-shadow:
- 0 18px 45px
- rgba(25, 61, 100, 0.10);
- transition:
-  transform 0.25s ease,
-  box-shadow 0.25s ease;
-}
+ <div class="featured-credential">
 
-.certificate-preview:hover {
- transform: translateY(-6px);
- box-shadow:
- 0 22px 50px
- rgba(25, 61, 100, 0.15);
-}
+  <div class="featured-certificate">
 
-.certificate-preview img {
- width: 100%;
- height: 100%;
- display: block;
- object-fit: contain;
- object-position: center;
- user-select: none;
- pointer-events: none;
-}
+   <a
+    href="assets/credentials/certification/it-specialist-data-analytics.pdf"
+    target="_blank"
+    aria-label="View IT Specialist Data Analytics certification"
+   >
 
-.featured-credential-content {
- max-width: 560px;
-}
+    <div class="certificate-preview">
 
-.credential-label {
- display: inline-block;
- color: var(--primary);
- font-size: 12px;
- font-weight: 800;
- letter-spacing: 2px;
- text-transform: uppercase;
- margin-bottom: 14px;
-}
+     <img
+      src="assets/credentials/certification-preview/it-specialist-data-analytics.png"
+      alt="IT Specialist: Data Analytics certification"
+     >
 
-.featured-credential-content h3 {
- color: var(--heading);
- font-size: 32px;
- line-height: 1.2;
- margin-bottom: 10px;
-}
+    </div>
 
-.credential-provider {
- color: var(--primary) !important;
- font-size: 15px;
- font-weight: 700;
- margin-bottom: 18px !important;
-}
+   </a>
 
-.featured-credential-content p {
- color: var(--text);
- font-size: 16px;
- line-height: 1.7;
- margin-bottom: 24px;
-}
+  </div>
 
-.credential-link {
- color: var(--primary);
- font-size: 14px;
- font-weight: 700;
- text-decoration: none;
-}
+  <div class="featured-credential-content">
 
-.credential-link:hover {
- color: var(--primary-dark);
-}
+   <span class="credential-label">
+    Certification
+   </span>
 
-.credentials-subsection {
- margin-top: 85px;
-}
+   <h3>
+    IT Specialist: Data Analytics
+   </h3>
 
-.credentials-subsection-header {
- display: flex;
- align-items: center;
- justify-content: space-between;
- margin-bottom: 28px;
-}
+   <p class="credential-provider">
+    Certiport — A Pearson VUE
+   </p>
 
-.credentials-subsection-header h3 {
- color: var(--heading);
- font-size: 28px;
- line-height: 1.2;
-}
+   <p>
+    Professional certification in data analytics,
+    supporting my technical foundation in working
+    with data and analytical workflows.
+   </p>
 
-/* =========================================================
- CERTIFICATE CAROUSEL
-========================================================= */
-.certificate-scroll {
- display: flex;
- gap: 22px;
- width: 100%;
- overflow-x: auto;
- overflow-y: hidden;
- padding: 8px 4px 20px;
- cursor: grab;
- scrollbar-width: none;
- -ms-overflow-style: none;
- overscroll-behavior-x: contain;
- scroll-behavior: auto;
-}
+   <a
+    href="assets/credentials/certification/it-specialist-data-analytics.pdf"
+    target="_blank"
+    class="credential-link"
+   >
+    View Credential →
+   </a>
 
-.certificate-scroll::-webkit-scrollbar {
- display: none;
-}
+  </div>
 
-.certificate-scroll:active {
- cursor: grabbing;
-}
+ </div>
 
-.certificate-card {
- flex: 0 0 285px;
- overflow: hidden;
- background: #ffffff;
- border: 1px solid #e3ebf3;
- border-radius: 14px;
- text-decoration: none;
- box-shadow:
- 0 8px 25px
- rgba(25, 61, 100, 0.04);
- user-select: none;
- transition:
-  transform 0.25s ease,
-  box-shadow 0.25s ease;
-}
+ <div class="credentials-subsection">
 
-.certificate-card:hover {
- transform: translateY(-6px);
- box-shadow:
- 0 16px 38px
- rgba(25, 61, 100, 0.12);
-}
+  <div class="credentials-subsection-header">
+   <div>
+    <h3>Professional Certificates</h3>
+   </div>
+  </div>
 
-.certificate-image {
- position: relative;
- height: 220px;
- display: flex;
- align-items: center;
- justify-content: center;
- padding: 25px;
- overflow: hidden;
- background: var(--surface-soft);
- border-bottom: 1px solid #e3ebf3;
-}
+  <div
+   id="certificate-carousel"
+   class="certificate-scroll"
+   aria-label="Professional certificates carousel"
+  >
 
-.certificate-image::before {
- content: "";
- position: absolute;
- width: 180px;
- height: 180px;
- top: -90px;
- right: -70px;
- border-radius: 50%;
- background:
-  rgba(255, 255, 255, 0.65);
-}
+   <a
+    href="assets/credentials/certificates/dsa-certified-data-analyst-specialist.pdf"
+    target="_blank"
+    class="certificate-card"
+   >
+    <div class="certificate-image certificate-dsa">
+     <img
+      src="assets/credentials/certificate-previews/dsa-certified-data-analyst-specialist.png"
+      alt="DSA Certified Data Analyst Specialist certificate"
+     >
+    </div>
+    <div class="certificate-info">
+     <h4>
+      DSA Certified Data Analyst Specialist
+     </h4>
+     <p>DataSense Analytics</p>
+    </div>
+   </a>
 
-.certificate-image img {
- position: relative;
- z-index: 1;
- width: 100%;
- height: 100%;
- display: block;
- object-fit: contain;
- object-position: center;
- user-select: none;
- pointer-events: none;
- transition: transform 0.3s ease;
-}
+   <a
+    href="assets/credentials/certificates/ms-excel-data-analyst-professional.pdf"
+    target="_blank"
+    class="certificate-card"
+   >
+    <div class="certificate-image certificate-excel">
+     <img
+      src="assets/credentials/certificate-previews/ms-excel-data-analyst-professional.png"
+      alt="MS Excel Data Analyst Professional Certificate"
+     >
+    </div>
+    <div class="certificate-info">
+     <h4>
+      MS Excel Data Analyst Professional Certificate
+     </h4>
+     <p>DataSense Analytics</p>
+    </div>
+   </a>
 
-.certificate-card:hover .certificate-image img {
- transform: scale(1.03);
-}
+   <a
+    href="assets/credentials/certificates/ms-power-bi-data-analyst-professional.pdf"
+    target="_blank"
+    class="certificate-card"
+   >
+    <div class="certificate-image certificate-powerbi">
+     <img
+      src="assets/credentials/certificate-previews/ms-power-bi-data-analyst-professional.png"
+      alt="Microsoft Power BI Data Analytics certificate"
+     >
+    </div>
+    <div class="certificate-info">
+     <h4>
+      Microsoft Power BI Data Analytics
+     </h4>
+     <p>DataSense Analytics</p>
+    </div>
+   </a>
 
-.certificate-info {
- padding: 20px;
-}
+   <a
+    href="assets/credentials/certificates/mysql-database-professional.pdf"
+    target="_blank"
+    class="certificate-card"
+   >
+    <div class="certificate-image certificate-mysql">
+     <img
+      src="assets/credentials/certificate-previews/mysql-database-professional.png"
+      alt="MySQL Database Professional Certificate"
+     >
+    </div>
+    <div class="certificate-info">
+     <h4>
+      MySQL Database Professional Certificate
+     </h4>
+     <p>DataSense Analytics</p>
+    </div>
+   </a>
 
-.certificate-info h4 {
- color: var(--heading-soft);
- font-size: 15px;
- line-height: 1.45;
- margin-bottom: 8px;
-}
+   <a
+    href="assets/credentials/certificates/python-data-analyst-professional.pdf"
+    target="_blank"
+    class="certificate-card"
+   >
+    <div class="certificate-image certificate-python">
+     <img
+      src="assets/credentials/certificate-previews/python-data-analyst-professional.png"
+      alt="Python Programming Data Analyst Professional Certificate"
+     >
+    </div>
+    <div class="certificate-info">
+     <h4>
+      Python Programming Data Analyst Professional Certificate
+     </h4>
+     <p>DataSense Analytics</p>
+    </div>
+   </a>
 
-.certificate-info p {
- margin: 0;
- color: #7a899b;
- font-size: 13px;
-}
+   <a
+    href="assets/credentials/certificates/data-science-analytics-power-bi-workshop.pdf"
+    target="_blank"
+    class="certificate-card"
+   >
+    <div class="certificate-image certificate-workshop">
+     <img
+      src="assets/credentials/certificate-previews/data-science-analytics-power-bi-workshop.png"
+      alt="Data Science and Analytics with Power BI Workshop certificate"
+     >
+    </div>
+    <div class="certificate-info">
+     <h4>
+      Data Science and Analytics with Power BI Workshop
+     </h4>
+     <p>MSTConnect</p>
+    </div>
+   </a>
 
-.certificate-dsa {
- background:
-  linear-gradient(
-   135deg,
-   #f1f7fc,
-   #ffffff
-  );
-}
+  </div>
+ </div>
 
-.certificate-excel {
- background:
-  linear-gradient(
-   135deg,
-   #f1f8f4,
-   #ffffff
-  );
-}
+ <div class="credentials-subsection achievements-section">
 
-.certificate-powerbi {
- background:
-  linear-gradient(
-   135deg,
-   #fffaf0,
-   #ffffff
-  );
-}
+  <div class="credentials-subsection-header">
+   <div>
+    <h3>Achievements</h3>
+   </div>
+  </div>
 
-.certificate-mysql {
- background:
-  linear-gradient(
-   135deg,
-   #f1f6fa,
-   #ffffff
-  );
-}
+  <div class="achievements-grid">
 
-.certificate-python {
- background:
-  linear-gradient(
-   135deg,
-   #f8f7ef,
-   #ffffff
-  );
-}
+   <a
+    href="assets/credentials/achievements/top-2-explorer-ms-excel-bootcamp.pdf"
+    target="_blank"
+    class="achievement-card"
+   >
 
-.certificate-workshop {
- background:
-  linear-gradient(
-   135deg,
-   #f4f1fa,
-   #ffffff
-  );
-}
+    <div class="achievement-badge achievement-preview">
+     <img
+      src="assets/credentials/achievement-previews/top-2-explorer-ms-excel-bootcamp.png"
+      alt="Top 2 Explorer — Microsoft Excel Data Analyst Professional Certificate"
+     >
+    </div>
 
-/* =========================================================
- ACHIEVEMENTS
-========================================================= */
-.achievements-section {
- margin-top: 70px;
-}
+    <div class="achievement-content">
+     <span>EXPLORER</span>
+     <h4>MS Excel Data Analyst Bootcamp</h4>
+     <p>DataSense Analytics</p>
+    </div>
 
-.achievements-grid {
- display: grid;
- grid-template-columns:
-  repeat(3, minmax(0, 1fr));
- gap: 18px;
-}
+    <span class="achievement-arrow">→</span>
 
-.achievement-card {
- position: relative;
- display: flex;
- align-items: center;
- gap: 18px;
- min-height: 125px;
- padding: 20px;
- background: #ffffff;
- border: 1px solid #e3ebf3;
- border-radius: 14px;
- text-decoration: none;
- box-shadow:
- 0 8px 25px
- rgba(25, 61, 100, 0.04);
- transition:
-  transform 0.25s ease,
-  box-shadow 0.25s ease;
-}
+   </a>
 
-.achievement-card:hover {
- transform: translateY(-4px);
- box-shadow:
- 0 14px 32px
- rgba(25, 61, 100, 0.10);
-}
+   <a
+    href="assets/credentials/achievements/top-2-explorer-ms-power-bi-bootcamp.pdf"
+    target="_blank"
+    class="achievement-card"
+   >
 
-.achievement-badge.achievement-preview {
- width: 110px;
- height: 82px;
- flex-shrink: 0;
- display: flex;
- align-items: center;
- justify-content: center;
- overflow: hidden;
- background: #f8fbff;
- border: 1px solid #dce7f2;
- border-radius: 10px;
-}
+    <div class="achievement-badge achievement-preview">
+     <img
+      src="assets/credentials/achievement-previews/top-2-explorer-ms-power-bi-bootcamp.png"
+      alt="Top 2 Explorer — Microsoft Power BI Data Analyst Professional Certificate"
+     >
+    </div>
 
-.achievement-badge.achievement-preview img {
- width: 100%;
- height: 100%;
- display: block;
- object-fit: contain;
- object-position: center;
- user-select: none;
- pointer-events: none;
-}
+    <div class="achievement-content">
+     <span>EXPLORER</span>
+     <h4>MS Power BI Data Analyst Bootcamp</h4>
+     <p>DataSense Analytics</p>
+    </div>
 
-.achievement-content {
- min-width: 0;
- padding-right: 18px;
-}
+    <span class="achievement-arrow">→</span>
 
-.achievement-content > span {
- display: block;
- color: var(--primary);
- font-size: 10px;
- font-weight: 800;
- letter-spacing: 1.3px;
- margin-bottom: 5px;
-}
+   </a>
 
-.achievement-content h4 {
- color: var(--heading-soft);
- font-size: 14px;
- line-height: 1.4;
- margin-bottom: 5px;
-}
+   <a
+    href="assets/credentials/achievements/rising-star-dsa-daph-data-challenge.pdf"
+    target="_blank"
+    class="achievement-card"
+   >
 
-.achievement-content p {
- margin: 0;
- color: #7a899b;
- font-size: 12px;
-}
+    <div class="achievement-badge achievement-preview">
+     <img
+      src="assets/credentials/achievement-previews/rising-star-dsa-daph-data-challenge.png"
+      alt="Rising Star — DSA x DAPH National Data Analytics Challenge"
+     >
+    </div>
 
-.achievement-arrow {
- position: absolute;
- right: 18px;
- top: 50%;
- transform: translateY(-50%);
- color: var(--primary);
- font-size: 18px;
- font-weight: 700;
-}
+    <div class="achievement-content">
+     <span>RECOGNITION</span>
+     <h4>
+      DSA × DAPH National Data Analytics Challenge
+     </h4>
+     <p>DataSense Analytics</p>
+    </div>
 
-/* =========================================================
+    <span class="achievement-arrow">→</span>
+
+   </a>
+
+  </div>
+ </div>
+
+</section>
+
+<!-- =========================================================
  CONTACT
-========================================================= */
-.contact {
- width: 100%;
- max-width: none;
- padding:46px var(--site-gutter);
- background: #edf5fc;
- scroll-margin-top: 100px;
-}
+========================================================= -->
+<section id="contact" class="contact">
 
-.contact-card {
- width: 100%;
- max-width:1400px;
- margin: 0 auto;
- padding:30px 44px;
+ <div class="contact-card">
 
- display: grid;
- grid-template-columns:
-  minmax(0, 1fr)
-  minmax(0, 0.98fr);
+  <div class="contact-left">
 
- column-gap: 46px;
- align-items: center;
+   <div class="section-label">
+    CONTACT
+   </div>
 
- background: #ffffff;
- border: 1px solid #dce7f1;
- border-radius: 16px;
+   <h2>
+    Let's work together.
+   </h2>
 
- box-shadow:
-  0 10px 26px
-  rgba(25, 61, 100, 0.06);
-}
+   <div class="contact-accent" aria-hidden="true"></div>
 
-.contact-left {
- display: flex;
- flex-direction: column;
- align-items: flex-start;
- justify-content: center;
- min-width: 0;
-}
+   <p class="contact-message">
+    Have a data, reporting, or business intelligence
+    challenge? I bring engineering discipline and
+    analytical thinking to turn complex information
+    into clear, actionable insights.
+   </p>
 
-.contact-left .section-label {
- margin-bottom: 12px;
-}
+   <a
+    href="mailto:tiongson1994@gmail.com"
+    class="btn btn-primary contact-cta"
+   >
+    <span class="contact-cta-icon" aria-hidden="true">↗</span>
+    <span>Get In Touch</span>
+    <span class="contact-cta-arrow" aria-hidden="true">→</span>
+   </a>
 
-.contact-left h2 {
- color: var(--heading-soft);
- font-size: 38px;
- line-height: 1.12;
- letter-spacing: -0.7px;
- margin-bottom: 16px;
-}
+  </div>
 
-.contact-accent {
- width: 58px;
- height: 3px;
- margin-bottom: 20px;
- background: var(--primary);
- border-radius: 999px;
-}
+  <div class="contact-right">
 
-.contact-message {
- max-width: 500px;
- color: var(--text);
- font-size: 15px;
- line-height: 1.65;
- margin-bottom: 24px;
-}
+   <div class="contact-detail">
 
-.contact-cta {
- min-height: 44px;
- padding:
-  10px
-  20px;
- gap: 10px;
- border-radius: 8px;
- box-shadow:
-  0 8px 20px
-  rgba(23, 105, 170, 0.16);
-}
+    <div class="contact-detail-heading">
 
-.contact-cta-icon {
- width: 28px;
- height: 28px;
- display: inline-flex;
- align-items: center;
- justify-content: center;
- border: 1.5px solid currentColor;
- border-radius: 50%;
- font-size: 17px;
- font-weight: 400;
- line-height: 1;
-}
+     <span class="contact-icon contact-icon-briefcase" aria-hidden="true">
+      <span></span>
+     </span>
 
-.contact-cta-arrow {
- margin-left: 10px;
- font-size: 18px;
- font-weight: 400;
-}
+     <span class="contact-panel-label">
+      AVAILABLE FOR
+     </span>
 
-.contact-right {
- min-width: 0;
- padding-left: 2px;
- display: flex;
- flex-direction: column;
- justify-content: center;
-}
+    </div>
 
-.contact-detail-heading {
- display: flex;
- align-items: center;
- gap: 16px;
-}
+    <ul class="contact-services">
 
-.contact-panel-label {
- color: var(--primary);
- font-size: 13px;
- font-weight: 800;
- letter-spacing: 2px;
- text-transform: uppercase;
-}
+     <li>
+      <span class="contact-check" aria-hidden="true">✓</span>
+      <span>Data Analytics</span>
+     </li>
 
-.contact-icon {
- position: relative;
- width: 52px;
- height: 52px;
- flex: 0 0 52px;
- display: inline-flex;
- align-items: center;
- justify-content: center;
- border-radius: 50%;
- background: #eaf4ff;
-}
+     <li>
+      <span class="contact-check" aria-hidden="true">✓</span>
+      <span>Power BI &amp; Dashboard Development</span>
+     </li>
 
-.contact-icon-briefcase::before {
- content: "";
- position: absolute;
- width: 23px;
- height: 17px;
- border: 2px solid var(--primary);
- border-radius: 3px;
-}
+     <li>
+      <span class="contact-check" aria-hidden="true">✓</span>
+      <span>Business Intelligence</span>
+     </li>
 
-.contact-icon-briefcase::after {
- content: "";
- position: absolute;
- width: 10px;
- height: 5px;
- top: 17px;
- border:
-  2px solid var(--primary);
- border-bottom: 0;
- border-radius:
-  3px
-  3px
-  0
-  0;
-}
+    </ul>
 
-.contact-icon-briefcase span {
- position: absolute;
- width: 3px;
- height: 12px;
- background: var(--primary);
- border-radius: 2px;
-}
+   </div>
 
-.contact-icon-mail::before {
- content: "";
- position: absolute;
- width: 25px;
- height: 18px;
- border: 2px solid var(--primary);
- border-radius: 2px;
-}
+   <div class="contact-detail contact-email-detail">
 
-.contact-icon-mail::after {
- content: "";
- position: absolute;
- width: 15px;
- height: 15px;
- border-left: 2px solid var(--primary);
- border-bottom: 2px solid var(--primary);
- transform:
-  rotate(-45deg)
-  translateY(-2px);
-}
+    <div class="contact-detail-heading">
 
-.contact-services {
- list-style: none;
- margin:
-  14px
-  0
-  0;
- padding: 0;
- display: flex;
- flex-direction: column;
- gap: 12px;
-}
+     <span class="contact-icon contact-icon-mail" aria-hidden="true">
+      <span></span>
+     </span>
 
-.contact-services li {
- display: flex;
- align-items: center;
- gap: 12px;
- color: var(--heading-soft);
- font-size: 15px;
- line-height: 1.35;
-}
+     <span class="contact-panel-label">
+      EMAIL
+     </span>
 
-.contact-check {
- width: 24px;
- height: 24px;
- flex: 0 0 24px;
- display: inline-flex;
- align-items: center;
- justify-content: center;
- border-radius: 50%;
- color: var(--primary);
- background: #eaf4ff;
- font-size: 15px;
- font-weight: 800;
- line-height: 1;
-}
+    </div>
 
-.contact-divider {
- width: 100%;
- height: 1px;
- margin:
-  24px
-  0;
- background: #dfe8f1;
-}
+    <a
+     href="mailto:tiongson1994@gmail.com"
+     class="contact-email"
+    >
+     tiongson1994@gmail.com
+    </a>
 
-.contact-email {
- display: inline-block;
- margin-top: 14px;
- color: var(--heading-soft);
- font-size: 16px;
- font-weight: 700;
- line-height: 1.4;
- text-decoration: none;
- transition: color 0.2s ease;
-}
+   </div>
 
-.contact-email:hover {
- color: var(--primary);
-}
+  </div>
 
+ </div>
 
-/* =========================================================
- CONTACT RESPONSIVE
-========================================================= */
-@media (max-width: 1000px) {
+</section>
 
- .contact-card {
-  padding:
-   44px
-   42px;
-  column-gap: 38px;
- }
-
- .contact-left h2 {
-  font-size: 38px;
- }
-
- .contact-message {
-  font-size: 16px;
- }
-
- .contact-icon {
-  width: 58px;
-  height: 58px;
-  flex-basis: 58px;
- }
-
- .contact-services li {
-  font-size: 15px;
- }
-
-}
-
-@media (max-width: 850px) {
-
- .contact {
-  padding:
-   70px
-   var(--site-gutter);
- }
-
- .contact-card {
-  grid-template-columns: 1fr;
-  row-gap: 34px;
-  padding:
-   34px
-   32px;
- }
-
- .contact-right {
-  padding-left: 0;
- }
-
- .contact-left h2 {
-  font-size: 36px;
- }
-
-}
-
-@media (max-width: 500px) {
-
- .contact {
-  padding:
-   58px
-   7%;
- }
-
- .contact-card {
-  padding:
-   32px
-   24px;
-  border-radius: 14px;
- }
-
- .contact-left .section-label {
-  margin-bottom: 14px;
- }
-
- .contact-left h2 {
-  font-size: 32px;
-  letter-spacing: -0.5px;
- }
-
- .contact-accent {
-  margin-bottom: 22px;
- }
-
- .contact-message {
-  font-size: 15px;
-  line-height: 1.65;
-  margin-bottom: 26px;
- }
-
- .contact-cta {
-  width: 100%;
- }
-
- .contact-detail-heading {
-  gap: 14px;
- }
-
- .contact-panel-label {
-  font-size: 11px;
-  letter-spacing: 1.6px;
- }
-
- .contact-icon {
-  width: 52px;
-  height: 52px;
-  flex-basis: 52px;
- }
-
- .contact-services {
-  gap: 14px;
-  margin-top: 16px;
- }
-
- .contact-services li {
-  align-items: flex-start;
-  font-size: 14px;
- }
-
- .contact-check {
-  width: 26px;
-  height: 26px;
-  flex-basis: 26px;
- }
-
- .contact-divider {
-  margin:
-   26px
-   0;
- }
-
- .contact-email {
-  font-size: 15px;
-  overflow-wrap: anywhere;
- }
-
-}
-
-/* =========================================================
+<!-- =========================================================
  FOOTER
-========================================================= */
-footer {
- background: #ffffff;
- border-top: 1px solid #dce6f0;
-}
-
-.footer-inner {
- width: 100%;
- max-width: var(--content-max-width);
- margin: 0 auto;
- padding:
-  26px
-  var(--site-gutter);
- display: flex;
- align-items: center;
- justify-content: space-between;
- gap: 24px;
-}
-
-.footer-brand {
- color: var(--heading-soft);
- font-size: 15px;
- font-weight: 700;
-}
-
-.footer-copy {
- color: #71839a;
- font-size: 13px;
-}
-
-/* =========================================================
- RESPONSIVE — 1400px
-========================================================= */
-@media (max-width: 1400px) {
-
- .hero,
- section:not(.contact),
- .footer-inner {
-  width: calc(100% - 64px);
- }
+========================================================= -->
+<footer>
 
- nav {
-  padding-left: 4%;
-  padding-right: 4%;
- }
+ <div class="footer-inner">
 
-}
+  <div class="footer-brand">
+   Terns Data Prism
+  </div>
 
-/* =========================================================
- RESPONSIVE — 1100px
-========================================================= */
-@media (max-width: 1100px) {
+  <div class="footer-copy">
+   © 2026 Terns Data Prism. All rights reserved.
+  </div>
 
- .about-main-card {
-  grid-template-columns:
-   minmax(320px, 0.88fr)
-   minmax(0, 1.12fr);
- }
+ </div>
 
- .about-photo-card {
-  min-height: 420px;
- }
+</footer>
 
- .about-profile-main {
-  padding: 34px 36px;
- }
+<!-- =========================================================
+ JAVASCRIPT
+========================================================= -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
- .about-name {
-  font-size: 30px;
- }
+ const rail = document.getElementById("certificate-carousel");
 
- .about-role {
-  font-size: 15px;
- }
+ if (rail) {
 
- .about-block h3 {
-  font-size: 25px;
- }
+  const AUTO_INTERVAL = 2000;
+  const END_PAUSE = 2000;
+  const RESUME_DELAY = 2500;
+  const DRAG_THRESHOLD = 6;
 
- .about-block p {
-  font-size: 15px;
- }
+  let autoTimer = null;
+  let resumeTimer = null;
+  let isDragging = false;
+  let didDrag = false;
+  let startX = 0;
+  let startScrollLeft = 0;
 
- .services-grid {
-  grid-template-columns:
-   repeat(2, minmax(0, 1fr));
- }
+  function getGap() {
+   const styles = window.getComputedStyle(rail);
 
- .featured-credential {
-  gap: 40px;
- }
+   return parseFloat(
+    styles.columnGap || styles.gap || 0
+   );
+  }
 
- .achievements-grid {
-  grid-template-columns: 1fr;
- }
+  function getStep() {
 
- /* =====================================================
- HERO
-===================================================== */
- .hero-visual {
-  width: 59%;
-  right: -7%;
- }
+   const card = rail.querySelector(".certificate-card");
 
- .hero-prism-image {
-  width: 120%;
-  max-height: 90%;
-  opacity: 0.92;
- }
+   if (!card) {
+    return 307;
+   }
 
-}
-
-/* =========================================================
- RESPONSIVE — 1000px
-========================================================= */
-@media (max-width: 1000px) {
-
- .project-card:nth-child(1) .project-preview,
- .project-card:nth-child(2) .project-preview,
- .project-card:nth-child(3) .project-preview,
- .project-card:nth-child(4) .project-preview {
-  height: 360px;
- }
+   return (
+    card.getBoundingClientRect().width +
+    getGap()
+   );
+  }
 
- .featured-credential {
-  grid-template-columns: 1fr;
- }
+  function getMaxScroll() {
 
- .featured-credential-content {
-  max-width: none;
- }
+   return Math.max(
+    0,
+    rail.scrollWidth - rail.clientWidth
+   );
+  }
 
- .certificate-preview {
-  max-width: 520px;
- }
+  function moveForward() {
 
- /* =====================================================
- HERO
-===================================================== */
- .hero-content {
-  width: 62%;
- }
+   const maxScroll = getMaxScroll();
 
- .hero-visual {
-  width: 57%;
-  right: -9%;
- }
+   if (maxScroll <= 1 || isDragging) {
+    return;
+   }
 
- .hero-prism-image {
-  width: 120%;
-  max-height: 88%;
-  opacity: 0.88;
- }
+   const step = getStep();
+   const nextPosition = rail.scrollLeft + step;
 
-}
+   if (nextPosition >= maxScroll - 4) {
 
-/* =========================================================
- TABLET / MOBILE — 850px
-========================================================= */
-@media (max-width: 850px) {
+    window.clearInterval(autoTimer);
 
- nav {
-  padding:
-   12px
-   var(--site-gutter);
- }
+    rail.scrollTo({
+     left: maxScroll,
+     behavior: "smooth"
+    });
 
- .nav-links {
-  display: none;
- }
+    window.setTimeout(function () {
 
- .logo img {
-  height: 52px;
-  max-width: 320px;
- }
+     if (
+      !isDragging &&
+      rail.scrollLeft >= maxScroll - 8
+     ) {
 
- .hero {
-  min-height: 600px;
+      rail.scrollTo({
+       left: 0,
+       behavior: "smooth"
+      });
 
-  padding-top:
-   80px;
+      window.setTimeout(
+       startAutoScroll,
+       AUTO_INTERVAL
+      );
+     }
 
-  padding-bottom:
-   80px;
- }
+    }, END_PAUSE);
 
- .hero h1 {
-  font-size: 52px;
- }
+    return;
+   }
 
- /* =====================================================
- HERO VISUAL
-===================================================== */
- .hero-content {
-  width: 100%;
-  max-width: 720px;
-  z-index: 5;
- }
+   rail.scrollBy({
+    left: step,
+    behavior: "smooth"
+   });
+  }
 
- .hero-visual {
-  width: 78%;
-  height: 100%;
-  right: -23%;
-  opacity: 0.32;
- }
+  function startAutoScroll() {
 
- .hero-prism-image {
-  width: 118%;
-  max-height: 84%;
-  opacity: 0.86;
- }
+   window.clearInterval(autoTimer);
 
- .hero-visual-glow {
-  right: 30%;
-  width: 500px;
-  height: 500px;
- }
+   if (getMaxScroll() <= 1) {
+    return;
+   }
 
- .about-main-card {
-  grid-template-columns: 1fr;
- }
+   autoTimer = window.setInterval(
+    moveForward,
+    AUTO_INTERVAL
+   );
+  }
 
- .about-photo {
-  justify-content: center;
-  background: #ffffff;
- }
+  function pauseAutoScroll() {
 
- .about-photo-card {
-  min-height: 0;
-  height: 420px;
- }
+   window.clearInterval(autoTimer);
 
- .about-profile-main {
-  padding: 32px 28px;
- }
+   window.clearTimeout(resumeTimer);
 
- .about-name {
-  font-size: 30px;
- }
+   resumeTimer = window.setTimeout(
+    startAutoScroll,
+    RESUME_DELAY
+   );
+  }
 
- .about-role {
-  font-size: 15px;
- }
+  let suppressNextClick = false;
 
- .projects-grid {
-  grid-template-columns: 1fr;
- }
+  rail.addEventListener("dragstart", function (event) {
+   event.preventDefault();
+  });
 
- .project-card:nth-child(1) .project-preview,
- .project-card:nth-child(2) .project-preview,
- .project-card:nth-child(4) .project-preview,
- .project-card:nth-child(3) .project-preview {
-  height: auto;
-  aspect-ratio: 16 / 9;
- }
+  rail.addEventListener("pointerdown", function (event) {
 
- .services-grid {
-  grid-template-columns: 1fr 1fr;
- }
+   if (
+    event.pointerType === "mouse" &&
+    event.button !== 0
+   ) {
+    return;
+   }
 
- .tech-stack-logos {
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px 25px;
- }
+   isDragging = true;
+   didDrag = false;
+   startX = event.clientX;
+   startScrollLeft = rail.scrollLeft;
+   rail._activePointerId = event.pointerId;
 
- .footer-inner {
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
- }
+   pauseAutoScroll();
+  });
 
- .section-title {
-  font-size: 34px;
- }
+  rail.addEventListener("pointermove", function (event) {
 
- .certificate-card {
-  flex-basis: 260px;
- }
+   if (
+    !isDragging ||
+    event.pointerId !== rail._activePointerId
+   ) {
+    return;
+   }
 
-}
+   const distance = event.clientX - startX;
 
-/* =========================================================
- MOBILE — 500px
-========================================================= */
-@media (max-width: 500px) {
+   if (
+    !didDrag &&
+    Math.abs(distance) > DRAG_THRESHOLD
+   ) {
 
- nav {
-  padding:
-   10px
-   6%;
- }
+    didDrag = true;
 
- .logo img {
-  height: 44px;
-  max-width: 280px;
- }
+    rail.classList.add("is-dragging");
 
- .hero {
-  width: 100%;
-  min-height: 540px;
+    if (!rail.hasPointerCapture(event.pointerId)) {
+     rail.setPointerCapture(event.pointerId);
+    }
+   }
 
-  padding:
-   70px
-   7%;
- }
+   if (didDrag) {
 
- /* =====================================================
- HERO VISUAL
-===================================================== */
- .hero-visual {
-  width: 92%;
-  height: 100%;
-  right: -40%;
-  opacity: 0.18;
- }
+    event.preventDefault();
 
- .hero-prism-image {
-  width: 122%;
-  max-height: 76%;
-  opacity: 0.82;
- }
+    rail.scrollLeft =
+     startScrollLeft - distance;
+   }
+  });
 
- .hero-visual-glow {
-  right: 31%;
-  width: 400px;
-  height: 400px;
- }
+  rail.addEventListener("pointerup", function (event) {
 
- .hero h1 {
-  font-size: 44px;
- }
+   if (
+    event.pointerId !== rail._activePointerId
+   ) {
+    return;
+   }
 
- .hero-subtitle {
-  font-size: 18px;
- }
+   suppressNextClick = didDrag;
+   isDragging = false;
 
- .section-title {
-  font-size: 30px;
- }
+   rail.classList.remove("is-dragging");
 
- .section-description,
- .about-description {
-  font-size: 16px;
- }
+   if (rail.hasPointerCapture(event.pointerId)) {
 
- .about-photo-card {
-  height: 380px;
- }
+    try {
+     rail.releasePointerCapture(event.pointerId);
+    } catch (error) {
+     /* Pointer may already be released. */
+    }
+   }
 
- .about-profile-main {
-  padding: 28px 22px;
- }
+   pauseAutoScroll();
+  });
 
- .about-name {
-  font-size: 30px;
- }
+  rail.addEventListener("pointercancel", function (event) {
 
- .about-role {
-  font-size: 15px;
- }
+   if (
+    event.pointerId !== rail._activePointerId
+   ) {
+    return;
+   }
 
- .about-role span {
-  margin: 0 4px;
- }
+   isDragging = false;
+   didDrag = false;
 
- .about-divider {
-  margin-top: 18px;
- }
+   rail.classList.remove("is-dragging");
 
- .about-block h3 {
-  font-size: 26px;
- }
+   if (rail.hasPointerCapture(event.pointerId)) {
 
- .about-block p {
-  font-size: 15px;
- }
+    try {
+     rail.releasePointerCapture(event.pointerId);
+    } catch (error) {
+     /* Pointer may already be released. */
+    }
+   }
 
- .about-actions {
-  flex-direction: column;
- }
+   pauseAutoScroll();
+  });
 
- .about-actions .btn {
-  width: 100%;
- }
+  rail.addEventListener(
+   "click",
+   function (event) {
 
- .project-content {
-  padding: 26px 22px;
- }
+    if (suppressNextClick) {
 
- .services-grid {
-  grid-template-columns: 1fr;
- }
+     event.preventDefault();
+     event.stopPropagation();
 
- .tech-stack-logos {
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 15px;
-  row-gap: 42px;
- }
+     suppressNextClick = false;
+    }
+   },
+   true
+  );
 
- .tech-logo img {
-  width: 68px;
-  height: 68px;
- }
+  rail.addEventListener(
+   "wheel",
+   function (event) {
 
- .tech-logo span {
-  font-size: 12px;
- }
+    const delta =
+     Math.abs(event.deltaY) >=
+     Math.abs(event.deltaX)
+     ? event.deltaY
+     : event.deltaX;
 
- .featured-credential {
-  padding: 22px;
- }
+    if (delta === 0) {
+     return;
+    }
 
- .featured-credential-content h3 {
-  font-size: 24px;
- }
+    event.preventDefault();
 
- .credentials-subsection-header h3 {
-  font-size: 23px;
- }
+    rail.scrollBy({
+     left:
+      delta > 0
+       ? getStep()
+       : -getStep(),
+     behavior: "smooth"
+    });
 
- .certificate-card {
-  flex-basis: 240px;
- }
+    pauseAutoScroll();
+   },
+   { passive: false }
+  );
 
- .achievement-card {
-  min-height: 110px;
-  padding: 16px;
- }
+  rail.addEventListener("pointerenter", function () {
+   window.clearInterval(autoTimer);
+  });
 
- .achievement-badge.achievement-preview {
-  width: 90px;
-  height: 68px;
- }
+  rail.addEventListener("pointerleave", function () {
 
- .footer-inner {
-  width: 100%;
-  padding:
-   24px
-   7%;
- }
+   if (!isDragging) {
+    pauseAutoScroll();
+   }
+  });
 
-}
-
-/* =========================================================
- RESPONSIVE — 1000px
-========================================================= */
-@media (max-width: 1000px) {
-
- .project-card:nth-child(1) .project-preview,
- .project-card:nth-child(2) .project-preview,
- .project-card:nth-child(3) .project-preview,
- .project-card:nth-child(4) .project-preview {
-  height: 360px;
- }
+  rail.addEventListener("touchstart", function () {
+   window.clearInterval(autoTimer);
+  }, { passive: true });
 
- .featured-credential {
-  grid-template-columns: 1fr;
- }
+  rail.addEventListener("touchend", function () {
+   pauseAutoScroll();
+  }, { passive: true });
 
- .featured-credential-content {
-  max-width: none;
- }
+  document.addEventListener(
+   "visibilitychange",
+   function () {
 
- .certificate-preview {
-  max-width: 520px;
- }
+    if (document.hidden) {
+     window.clearInterval(autoTimer);
+     return;
+    }
 
- /* HERO */
- .hero-content {
-  width: 62%;
- }
+    if (!isDragging) {
+     pauseAutoScroll();
+    }
+   }
+  );
 
- .hero-visual {
-  width: 54%;
-  right: -6%;
- }
+  rail.style.cursor = "grab";
 
- .hero-prism-image {
-  width: 112%;
-  max-height: 82%;
-  opacity: 0.70;
+  startAutoScroll();
  }
 
-}
+ const nav = document.getElementById("site-nav");
+ const navMenu = document.querySelector(".nav-menu");
 
-/* =========================================================
- TABLET / MOBILE — 850px
-========================================================= */
-@media (max-width: 850px) {
+ const navLinks = Array.from(
+  document.querySelectorAll(".nav-links a")
+ );
 
- nav {
-  padding:
-   12px
-   var(--site-gutter);
- }
+ const navIndicator =
+  document.querySelector(".nav-indicator");
 
- .nav-links {
-  display: none;
- }
+ const sections = navLinks
+  .map(function (link) {
+   return document.querySelector(
+    link.getAttribute("href")
+   );
+  })
+  .filter(Boolean);
 
- .logo img {
-  height: 52px;
-  max-width: 320px;
- }
+ let activeLink = null;
+ let scrollTicking = false;
+ let clickedLink = null;
+ let clickScrolling = false;
+ let scrollStopTimer = null;
 
- .hero {
-  min-height: 600px;
-  padding-top: 80px;
-  padding-bottom: 80px;
- }
+ function moveIndicator(link, immediate) {
 
- .hero h1 {
-  font-size: 52px;
- }
+  if (
+   !link ||
+   !navIndicator ||
+   !navMenu
+  ) {
+   return;
+  }
 
- /* HERO VISUAL */
- .hero-content {
-  width: 100%;
-  max-width: 720px;
-  z-index: 5;
- }
+  const linkRect =
+   link.getBoundingClientRect();
 
- .hero-visual {
-  width: 72%;
-  height: 100%;
-  right: -16%;
-  opacity: 0.34;
- }
+  const menuRect =
+   navMenu.getBoundingClientRect();
 
- .hero-prism-image {
-  width: 110%;
-  max-height: 80%;
-  opacity: 0.68;
- }
+  const left =
+   linkRect.left - menuRect.left;
 
- .hero-visual-glow {
-  right: 28%;
-  width: 500px;
-  height: 500px;
- }
+  if (immediate) {
+   navIndicator.classList.add(
+    "is-instant"
+   );
+  }
 
- .about-main-card {
-  grid-template-columns: 1fr;
- }
+  navIndicator.style.width =
+   linkRect.width + "px";
 
- .about-photo {
-  justify-content: center;
-  background: #ffffff;
- }
+  navIndicator.style.transform =
+   "translate3d(" +
+   left +
+   "px, 0, 0)";
 
- .about-photo-card {
-  min-height: 0;
-  height: 520px;
- }
+  if (immediate) {
 
- .about-profile-main {
-  padding: 34px 30px;
+   requestAnimationFrame(function () {
+    navIndicator.classList.remove(
+     "is-instant"
+    );
+   });
+  }
  }
 
- .projects-grid {
-  grid-template-columns: 1fr;
- }
+ function setActiveLink(link, immediate) {
 
- .project-card:nth-child(1) .project-preview,
- .project-card:nth-child(2) .project-preview,
- .project-card:nth-child(4) .project-preview,
- .project-card:nth-child(3) .project-preview {
-  height: auto;
-  aspect-ratio: 16 / 9;
- }
+  if (!link) {
+   return;
+  }
 
- .services-grid {
-  grid-template-columns: 1fr 1fr;
- }
+  navLinks.forEach(function (navLink) {
 
- .tech-stack-logos {
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px 25px;
- }
+   const isActive =
+    navLink === link;
 
- .footer-inner {
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
- }
+   navLink.classList.toggle(
+    "active",
+    isActive
+   );
 
- .section-title {
-  font-size: 34px;
- }
+   if (isActive) {
 
- .certificate-card {
-  flex-basis: 260px;
- }
+    navLink.setAttribute(
+     "aria-current",
+     "page"
+    );
 
-}
+   } else {
 
-/* =========================================================
- MOBILE — 500px
-========================================================= */
-@media (max-width: 500px) {
+    navLink.removeAttribute(
+     "aria-current"
+    );
+   }
+  });
 
- nav {
-  padding:
-   10px
-   6%;
- }
+  activeLink = link;
 
- .logo img {
-  height: 44px;
-  max-width: 280px;
+  moveIndicator(
+   link,
+   immediate
+  );
  }
 
- .hero {
-  width: 100%;
-  min-height: 540px;
-  padding:
-   70px
-   7%;
- }
+ function getCurrentLink() {
 
- /* HERO VISUAL */
- .hero-visual {
-  width: 88%;
-  height: 100%;
-  right: -32%;
-  opacity: 0.20;
- }
+  if (!sections.length) {
+   return navLinks[0] || null;
+  }
 
- .hero-prism-image {
-  width: 115%;
-  max-height: 72%;
-  opacity: 0.64;
- }
+  const navHeight =
+   nav ? nav.offsetHeight : 0;
 
- .hero-visual-glow {
-  right: 30%;
-  width: 400px;
-  height: 400px;
- }
+  const activationLine =
+   window.scrollY +
+   navHeight +
+   16;
 
- .hero h1 {
-  font-size: 44px;
- }
+  const pageBottom =
+   window.scrollY +
+   window.innerHeight;
 
- .hero-subtitle {
-  font-size: 18px;
- }
+  const pageHeight =
+   Math.max(
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight
+   );
 
- .section-title {
-  font-size: 30px;
- }
+  if (pageBottom >= pageHeight - 2) {
 
- .section-description,
- .about-description {
-  font-size: 16px;
- }
+   return navLinks[
+    navLinks.length - 1
+   ];
+  }
 
- .about-photo-card {
-  height: 300px;
- }
+  let currentSection =
+   sections[0];
 
- .about-profile-main {
-  padding: 24px 20px;
- }
+  sections.forEach(function (section) {
 
- .about-name {
-  font-size: 26px;
- }
+   if (
+    section.offsetTop <=
+    activationLine
+   ) {
 
- .about-role {
-  font-size: 14px;
- }
+    currentSection = section;
+   }
+  });
 
- .about-block h3 {
-  font-size: 23px;
- }
+  return (
+   navLinks.find(function (link) {
 
- .about-block p {
-  font-size: 14px;
-  line-height: 1.58;
- }
+    return (
+     link.getAttribute("href") ===
+     "#" + currentSection.id
+    );
 
- .about-actions {
-  flex-direction: column;
+   }) ||
+   navLinks[0]
+  );
  }
 
- .about-actions .btn {
-  width: 100%;
- }
+ function finishClickNavigation() {
 
- .project-content {
-  padding: 26px 22px;
- }
+  window.clearTimeout(
+   scrollStopTimer
+  );
 
- .services-grid {
-  grid-template-columns: 1fr;
- }
+  if (!clickScrolling) {
+   return;
+  }
 
- .tech-stack-logos {
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 15px;
-  row-gap: 42px;
- }
+  clickScrolling = false;
+  clickedLink = null;
 
- .tech-logo img {
-  width: 68px;
-  height: 68px;
- }
+  const currentLink =
+   getCurrentLink();
 
- .tech-logo span {
-  font-size: 12px;
- }
+  if (currentLink) {
 
- .featured-credential {
-  padding: 22px;
+   setActiveLink(
+    currentLink,
+    false
+   );
+  }
  }
 
- .featured-credential-content h3 {
-  font-size: 24px;
- }
+ function updateNavigationFromScroll() {
 
- .credentials-subsection-header h3 {
-  font-size: 23px;
- }
+  scrollTicking = false;
+
+  if (!navLinks.length) {
+   return;
+  }
+
+  if (
+   clickScrolling &&
+   clickedLink
+  ) {
+   return;
+  }
+
+  const currentLink =
+   getCurrentLink();
 
- .certificate-card {
-  flex-basis: 240px;
+  if (
+   currentLink &&
+   currentLink !== activeLink
+  ) {
+
+   setActiveLink(
+    currentLink,
+    false
+   );
+  }
  }
+
+ function requestNavigationUpdate() {
 
- .achievement-card {
-  min-height: 110px;
-  padding: 16px;
+  if (scrollTicking) {
+   return;
+  }
+
+  scrollTicking = true;
+
+  requestAnimationFrame(
+   updateNavigationFromScroll
+  );
  }
+
+ navLinks.forEach(function (link) {
 
- .achievement-badge.achievement-preview {
-  width: 90px;
-  height: 68px;
+  link.addEventListener(
+   "click",
+   function () {
+
+    clickedLink = link;
+    clickScrolling = true;
+
+    setActiveLink(
+     link,
+     false
+    );
+
+    window.clearTimeout(
+     scrollStopTimer
+    );
+
+    scrollStopTimer =
+     window.setTimeout(
+      finishClickNavigation,
+      1400
+     );
+   }
+  );
+ });
+
+ window.addEventListener(
+  "scroll",
+  requestNavigationUpdate,
+  { passive: true }
+ );
+
+ window.addEventListener(
+  "resize",
+  function () {
+
+   requestAnimationFrame(
+    function () {
+
+     if (activeLink) {
+
+      moveIndicator(
+       activeLink,
+       true
+      );
+     }
+
+     if (!clickScrolling) {
+
+      const currentLink =
+       getCurrentLink();
+
+      if (currentLink) {
+
+       setActiveLink(
+        currentLink,
+        true
+       );
+      }
+     }
+    }
+   );
+  }
+ );
+
+ const initiallyActive =
+  document.querySelector(
+   ".nav-links a.active"
+  ) ||
+  navLinks[0];
+
+ if (initiallyActive) {
+
+  setActiveLink(
+   initiallyActive,
+   true
+  );
  }
 
- .footer-inner {
-  width: 100%;
-  padding:
-   24px
-   7%;
+ const initialCurrentLink =
+  getCurrentLink();
+
+ if (initialCurrentLink) {
+
+  setActiveLink(
+   initialCurrentLink,
+   true
+  );
  }
+
+});
+</script>
 
-}
+</body>
+</html>
