@@ -1007,16 +1007,16 @@ section {
  max-width: var(--content-max-width);
 }
 
-.about-main-card {
+ .about-main-card {
  display: grid;
  grid-template-columns:
-  minmax(420px, 0.92fr)
-  minmax(0, 1.08fr);
+  minmax(380px, 0.90fr)
+  minmax(0, 1.10fr);
  align-items: stretch;
  overflow: hidden;
  background: var(--surface);
  border: 1px solid #dce7f1;
- border-radius: 18px;
+ border-radius: 16px;
 }
 
 .about-photo {
@@ -1028,7 +1028,7 @@ section {
 .about-photo-card {
  width: 100%;
  height: 100%;
- min-height: 560px;
+ min-height: 440px;
  overflow: hidden;
  background: #ffffff;
 }
@@ -1044,7 +1044,7 @@ section {
 
 .about-profile-main {
  min-width: 0;
- padding: 48px 56px;
+ padding: 38px 46px;
  display: flex;
  flex-direction: column;
  justify-content: flex-start;
@@ -1055,42 +1055,42 @@ section {
  ABOUT IDENTITY
 ========================================================= */
 .about-identity {
- margin-bottom: 30px;
+ margin-bottom: 22px;
 }
 
 .about-name {
- margin: 0 0 8px;
+ margin: 0 0 6px;
  color: var(--heading);
- font-size: 42px;
+ font-size: 32px;
  font-weight: 700;
- line-height: 1.12;
- letter-spacing: -0.02em;
+ line-height: 1.15;
+ letter-spacing: -0.018em;
 }
 
 .about-role {
  margin: 0;
  color: var(--primary);
- font-size: 18px;
+ font-size: 15px;
  font-weight: 600;
- line-height: 1.5;
+ line-height: 1.45;
 }
 
 .about-role span {
  color: #9aabc0;
- margin: 0 7px;
+ margin: 0 5px;
 }
 
 .about-divider {
  width: 100%;
  height: 1px;
- margin-top: 24px;
+ margin-top: 18px;
  background: #dce7f1;
 }
 
 .about-block h3 {
- margin: 0 0 14px;
+ margin: 0 0 10px;
  color: var(--heading-soft);
- font-size: 32px;
+ font-size: 26px;
  font-weight: 700;
  line-height: 1.25;
 }
@@ -1098,20 +1098,20 @@ section {
 .about-block p {
  margin: 0;
  color: var(--text-dark);
- font-size: 16px;
- line-height: 1.75;
+ font-size: 15px;
+ line-height: 1.62;
 }
 
 .about-block p + p {
- margin-top: 16px;
+ margin-top: 12px;
 }
 
 .about-block + .about-block {
- margin-top: 30px;
+ margin-top: 22px;
 }
 
 .about-actions {
- margin-top: 44px;
+ margin-top: 28px;
 }
 
 /* =========================================================
@@ -1845,24 +1845,32 @@ footer {
 
  .about-main-card {
   grid-template-columns:
-   minmax(320px, 0.85fr)
-   minmax(0, 1.15fr);
+   minmax(320px, 0.88fr)
+   minmax(0, 1.12fr);
+ }
+
+ .about-photo-card {
+  min-height: 420px;
  }
 
  .about-profile-main {
-  padding: 40px;
+  padding: 34px 36px;
  }
 
  .about-name {
-  font-size: 36px;
+  font-size: 30px;
  }
 
  .about-role {
-  font-size: 17px;
+  font-size: 15px;
  }
 
  .about-block h3 {
-  font-size: 28px;
+  font-size: 25px;
+ }
+
+ .about-block p {
+  font-size: 15px;
  }
 
  .services-grid {
@@ -2011,19 +2019,19 @@ footer {
 
  .about-photo-card {
   min-height: 0;
-  height: 520px;
+  height: 420px;
  }
 
  .about-profile-main {
-  padding: 34px 30px;
+  padding: 32px 28px;
  }
 
  .about-name {
-  font-size: 34px;
+  font-size: 30px;
  }
 
  .about-role {
-  font-size: 16px;
+  font-size: 15px;
  }
 
  .projects-grid {
@@ -2440,19 +2448,28 @@ footer {
  }
 
  .about-photo-card {
-  height: 380px;
+  height: 300px;
  }
 
  .about-profile-main {
-  padding: 28px 22px;
+  padding: 24px 20px;
  }
 
- .about-block h3 {
+ .about-name {
   font-size: 26px;
  }
 
+ .about-role {
+  font-size: 14px;
+ }
+
+ .about-block h3 {
+  font-size: 23px;
+ }
+
  .about-block p {
-  font-size: 15px;
+  font-size: 14px;
+  line-height: 1.58;
  }
 
  .about-actions {
