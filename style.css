@@ -832,72 +832,40 @@ nav {
  HERO PRISM IMAGE
 ========================================================= */
 .hero-prism-image {
- position: relative;
- z-index: 2;
+    position: relative;
+    z-index: 2;
 
- display: block;
+    display: block;
 
- /*
-  Larger than the previous version so the
-  right side feels intentional rather than empty.
- */
- width: min(820px, 125%);
+    width: min(820px, 125%);
+    max-width: none;
 
- max-width: none;
+    height: auto;
+    max-height: 94%;
 
- height: auto;
+    object-fit: contain;
+    object-position: center;
 
- max-height: 94%;
+    border: none;
+    outline: none;
+    box-shadow: none;
 
- object-fit: contain;
- object-position: center;
+    background: transparent;
 
- border: none;
- outline: none;
- box-shadow: none;
+    /* Stronger but still clean */
+    opacity: 1;
 
- background: transparent;
+    filter:
+        brightness(1.02)
+        saturate(1.02)
+        drop-shadow(
+            0
+            18px
+            34px
+            rgba(50,145,225,0.06)
+        );
 
- /*
-  Keep the prism light and airy.
- */
- opacity: 0.94;
-
- filter:
-  brightness(1.07)
-  saturate(0.82)
-  drop-shadow(
-   0
-   18px
-   34px
-   rgba(50,145,225,0.055)
-  );
-
- /*
-  IMPORTANT:
-  The fade removes the visible rectangular
-  image boundary and lets the artwork visually
-  dissolve into #F8FBFF.
- */
- -webkit-mask-image:
-  radial-gradient(
-   ellipse 72% 72% at center,
-   #000000 42%,
-   rgba(0,0,0,0.92) 57%,
-   rgba(0,0,0,0.55) 72%,
-   transparent 100%
-  );
-
- mask-image:
-  radial-gradient(
-   ellipse 72% 72% at center,
-   #000000 42%,
-   rgba(0,0,0,0.92) 57%,
-   rgba(0,0,0,0.55) 72%,
-   transparent 100%
-  );
-
- user-select: none;
+    user-select: none;
 }
 
 /* =========================================================
@@ -1838,9 +1806,22 @@ footer {
  HERO
 ===================================================== */
  .hero-visual {
-  width: 59%;
-  right: -7%;
- }
+    position: absolute;
+
+    top: 0;
+    right: -3%;
+
+    width: 63%;
+    height: 100%;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
  .hero-prism-image {
   width: 120%;
