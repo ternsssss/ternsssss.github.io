@@ -1762,242 +1762,241 @@ section {
 }
 
 /* =========================================================
-   FINAL CONTACT LAYOUT FIX
-   Center the two-column content as one balanced group
+   CONTACT — FINAL CLEAN CENTERED LAYOUT
+   CONTACT SECTION
+   Final centered two-column layout
 ========================================================= */
 
-#contact.contact {
+.contact {
     width: 100%;
     padding: 58px 0;
     background: #edf5fc;
+    scroll-margin-top: 100px;
 }
 
 
-/* Main two-column container */
-#contact.contact .contact-card {
-    width: calc(100% - 268px);
-    max-width: 1380px;
-    min-height: 0;
+/* =========================================================
+   CONTACT CONTENT WRAPPER
+========================================================= */
 
-    margin: 0 auto !important;
-    padding: 0 !important;
+.contact-card {
+    width: min(1180px, calc(100% - 80px));
+    margin: 0 auto;
+    padding: 8px 0;
 
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     column-gap: 90px;
+    column-gap: 80px;
 
     align-items: center;
 
-    background: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-
-    position: static !important;
-    left: auto !important;
-    right: auto !important;
-    transform: none !important;
-
     box-sizing: border-box;
+
+    /* No visible card */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
 }
 
 
+/* ---------------------------------------------------------
+   LEFT SIDE
+--------------------------------------------------------- */
 /* =========================================================
    LEFT COLUMN
 ========================================================= */
 
-#contact.contact .contact-left {
-    width: 100% !important;
-    max-width: 560px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    display: flex !important;
+.contact-left {
+    display: flex;
     flex-direction: column;
-
     align-items: flex-start;
     justify-content: center;
 
-    text-align: left;
+    min-width: 0;
+}
+
+.contact-left .section-label {
+    margin-bottom: 12px;
+}
+
+.contact-left h2 {
+    margin: 0 0 16px;
+
+    color: var(--heading-soft);
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.7px;
+}
+
+.contact-accent {
+    width: 58px;
+    height: 3px;
+    margin-bottom: 20px;
+
+    background: var(--primary);
+    border-radius: 999px;
+}
+
+.contact-message {
+    max-width: 500px;
+    margin-bottom: 24px;
+    margin: 0 0 24px;
+
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.65;
 }
 
 
+/* =========================================================
+   GET IN TOUCH BUTTON
+========================================================= */
+
+.contact-cta {
+    min-height: 44px;
+    padding: 10px 20px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 8px 20px rgba(23, 105, 170, 0.16);
+}
+
+
+/* ---------------------------------------------------------
+   RIGHT SIDE
+--------------------------------------------------------- */
 /* =========================================================
    RIGHT COLUMN
 ========================================================= */
 
-#contact.contact .contact-right {
-    width: 100% !important;
-    max-width: 560px !important;
+.contact-right {
+    width: 100%;
+    max-width: 500px;
+    max-width: 460px;
 
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 0 auto;
+    padding: 0;
 
-    display: flex !important;
+    display: flex;
     flex-direction: column;
-
-    align-items: flex-start;
     justify-content: center;
 
-    text-align: left;
+    box-sizing: border-box;
+
+    padding: 0;
+    min-width: 0;
 }
 
 
+/* Same typography as CONTACT */
 /* =========================================================
-   RIGHT COLUMN CONTENT
+   CONTACT LABELS
+   CONTACT / AVAILABLE FOR / EMAIL
+   All intentionally matched
 ========================================================= */
 
-#contact.contact .contact-detail,
-#contact.contact .contact-email-detail {
-    width: 100% !important;
+.contact-panel-label {
+    color: var(--primary);
 
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.4;
 
-    text-align: left;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 
-/* AVAILABLE FOR */
-
-#contact.contact .contact-detail-heading {
-    width: 100% !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    display: block !important;
-
-    text-align: left !important;
-}
-
-
-/* EMAIL */
-
-#contact.contact .contact-email-detail {
-    margin-top: 28px !important;
-}
-
-
-/* Remove old icons */
-#contact.contact .contact-icon,
-#contact.contact .contact-icon-briefcase,
-#contact.contact .contact-icon-mail {
-    display: none !important;
-}
-
-
-/* Remove old divider */
-#contact.contact .contact-divider {
-    display: none !important;
-}
-
-
+/* Available For */
 /* =========================================================
-   RESPONSIVE
+   AVAILABLE FOR
 ========================================================= */
 
-@media (max-width: 1100px) {
+.contact-services {
+    list-style: none;
 
-    #contact.contact .contact-card {
-        width: calc(100% - 120px);
-        column-gap: 60px;
-    }
+    margin: 14px 0 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-services li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--heading-soft);
+
+    font-size: 15px;
+    line-height: 1.35;
+    font-weight: 400;
+    line-height: 1.4;
 }
 
 
-@media (max-width: 800px) {
+/* Check marks */
 
-    #contact.contact {
-        padding: 48px 0;
-    }
+.contact-check {
+    width: 24px;
+    height: 24px;
 
-    #contact.contact .contact-card {
-        width: calc(100% - 48px);
+    flex: 0 0 24px;
 
-        grid-template-columns: 1fr !important;
-        row-gap: 40px;
-    }
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    #contact.contact .contact-left,
-    #contact.contact .contact-right {
-        max-width: 100% !important;
-    }
+    color: var(--primary);
+    background: #eaf4ff;
+
+    border-radius: 50%;
+
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1;
 }
 
 
-@media (max-width: 500px) {
-
-    #contact.contact {
-        padding: 42px 0;
-    }
-
-    #contact.contact .contact-card {
-        width: calc(100% - 32px);
-    }
-}
-
-
+/* Email */
 /* =========================================================
-   MOBILE
+   EMAIL
 ========================================================= */
 
-@media (max-width: 850px) {
-
-    section#contact.contact {
-        padding: 52px 0;
-    }
-
-    section#contact.contact .contact-card {
-        width: calc(100% - 48px);
-
-        grid-template-columns: 1fr;
-
-        row-gap: 36px;
-    }
-
-    section#contact.contact .contact-left,
-    section#contact.contact .contact-right {
-        max-width: 100%;
-    }
-
-    section#contact.contact .contact-left h2 {
-        font-size: 34px;
-    }
+.contact-email-detail {
+    margin-top: 28px;
 }
 
+.contact-email {
+    display: inline-block;
 
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
+    margin-top: 14px;
 
-@media (max-width: 500px) {
+    color: var(--heading-soft);
 
-    section#contact.contact {
-        padding: 44px 0;
-    }
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
 
-    section#contact.contact .contact-card {
-        width: calc(100% - 32px);
-    }
+    text-decoration: none;
 
-    section#contact.contact .contact-left h2 {
-        font-size: 30px;
-    }
+    transition: color 0.2s ease;
+}
 
-    section#contact.contact .contact-message {
-        font-size: 14px;
-    }
-
-    section#contact.contact .contact-panel-label {
-        font-size: 12px;
-        letter-spacing: 1.8px;
-    }
-
-    section#contact.contact .contact-services li {
-        font-size: 14px;
-    }
+.contact-email:hover {
+    color: var(--primary);
 }
 
 
