@@ -2996,3 +2996,85 @@ footer {
  }
 
 }
+
+
+/* =========================================================
+ CONTACT — FINAL POSITIONING FIX
+========================================================= */
+
+/* Remove Available For and Email icons */
+.contact-icon {
+    display: none;
+}
+
+/* Center the entire contact two-column layout */
+.contact-card {
+    width: min(1120px, calc(100% - 48px));
+    max-width: 1120px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 0.98fr);
+
+    column-gap: 64px;
+
+    align-items: center;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Keep the headings aligned normally after removing icons */
+.contact-detail-heading {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+/* Keep the right column properly positioned */
+.contact-right {
+    padding-left: 0;
+}
+
+/* =========================================================
+ CONTACT — TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .contact-card {
+        width: calc(100% - 32px);
+        max-width: 1120px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        grid-template-columns: 1fr;
+        row-gap: 36px;
+    }
+}
+
+/* =========================================================
+ CONTACT — MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .contact-card {
+        width: 100%;
+        max-width: none;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        grid-template-columns: 1fr;
+    }
+}
