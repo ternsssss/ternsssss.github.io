@@ -1769,27 +1769,24 @@ section {
  max-width: none;
  padding:
   58px
-  var(--site-gutter);
+  0;
  background: #edf5fc;
  scroll-margin-top: 100px;
 }
 
 .contact-card {
  width: 100%;
- max-width: 1350px;
+ max-width: var(--content-max-width);
  margin: 0 auto;
  padding:
   8px
-  0;
-
+  var(--site-gutter);
  display: grid;
  grid-template-columns:
   minmax(0, 1fr)
   minmax(0, 0.98fr);
-
  column-gap: 70px;
  align-items: start;
-
  background: transparent;
  border: 0;
  border-radius: 0;
@@ -1882,9 +1879,9 @@ section {
 .contact-panel-label {
  color: var(--primary);
  font-size: 13px;
- font-weight: 800;
- letter-spacing: 2.5px;
- line-height: 1.2;
+ font-weight: 700;
+ letter-spacing: 2px;
+ line-height: 1.4;
  text-transform: uppercase;
 }
 
@@ -2058,6 +2055,7 @@ section {
  .contact-card {
   grid-template-columns: 1fr;
   row-gap: 34px;
+  width: 100%;
   padding: 8px 0;
  }
 
@@ -2075,9 +2073,7 @@ section {
 @media (max-width: 500px) {
 
  .contact {
-  padding:
-   58px
-   7%;
+  padding: 52px 7%;
  }
 
  .contact-card {
@@ -2192,7 +2188,7 @@ footer {
 @media (max-width: 1400px) {
 
  .hero,
- section,
+ section:not(.contact),
  .footer-inner {
   width: calc(100% - 64px);
  }
@@ -2202,7 +2198,12 @@ footer {
   padding-right: 4%;
  }
 
+
+ .contact-card {
+  width: calc(100% - 64px);
+ }
 }
+
 
 /* =========================================================
  RESPONSIVE — 1100px
