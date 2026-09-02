@@ -1783,7 +1783,9 @@ section {
     grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
     column-gap: 70px;
 
-    align-items: start;
+    align-items: stretch;
+
+    box-sizing: border-box;
 
     background: transparent;
     border: 0;
@@ -1839,16 +1841,17 @@ section {
 }
 
 .contact-right {
+    width: 100%;
     min-width: 0;
+    box-sizing: border-box;
 
-    /* FINAL RIGHT ALIGNMENT */
     padding-left: 55px;
     padding-right: 0;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-self: start;
+    align-self: stretch;
 }
 
 .contact-detail-heading {
