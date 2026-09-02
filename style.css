@@ -1768,7 +1768,7 @@ section {
  width: 100%;
  max-width: none;
  padding:
-  78px
+  54px
   var(--site-gutter);
  background: #edf5fc;
  scroll-margin-top: 100px;
@@ -1779,24 +1779,24 @@ section {
  max-width: 1120px;
  margin: 0 auto;
  padding:
-  52px
-  58px;
+  34px
+  44px;
 
  display: grid;
  grid-template-columns:
   minmax(0, 1fr)
   minmax(0, 0.98fr);
 
- column-gap: 56px;
- align-items: stretch;
+ column-gap: 46px;
+ align-items: center;
 
  background: #ffffff;
  border: 1px solid #dce7f1;
- border-radius: 18px;
+ border-radius: 16px;
 
  box-shadow:
-  0 12px 32px
-  rgba(25, 61, 100, 0.07);
+  0 10px 26px
+  rgba(25, 61, 100, 0.06);
 }
 
 .contact-left {
@@ -1808,43 +1808,43 @@ section {
 }
 
 .contact-left .section-label {
- margin-bottom: 18px;
+ margin-bottom: 12px;
 }
 
 .contact-left h2 {
  color: var(--heading-soft);
- font-size: 42px;
+ font-size: 38px;
  line-height: 1.12;
- letter-spacing: -0.9px;
- margin-bottom: 24px;
+ letter-spacing: -0.7px;
+ margin-bottom: 16px;
 }
 
 .contact-accent {
- width: 72px;
+ width: 58px;
  height: 3px;
- margin-bottom: 28px;
+ margin-bottom: 20px;
  background: var(--primary);
  border-radius: 999px;
 }
 
 .contact-message {
- max-width: 520px;
+ max-width: 500px;
  color: var(--text);
- font-size: 17px;
- line-height: 1.7;
- margin-bottom: 34px;
+ font-size: 15px;
+ line-height: 1.65;
+ margin-bottom: 24px;
 }
 
 .contact-cta {
- min-height: 48px;
+ min-height: 44px;
  padding:
-  12px
-  24px;
- gap: 12px;
+  10px
+  20px;
+ gap: 10px;
  border-radius: 8px;
  box-shadow:
-  0 10px 24px
-  rgba(23, 105, 170, 0.18);
+  0 8px 20px
+  rgba(23, 105, 170, 0.16);
 }
 
 .contact-cta-icon {
@@ -1877,7 +1877,7 @@ section {
 .contact-detail-heading {
  display: flex;
  align-items: center;
- gap: 20px;
+ gap: 16px;
 }
 
 .contact-panel-label {
@@ -1890,9 +1890,9 @@ section {
 
 .contact-icon {
  position: relative;
- width: 64px;
- height: 64px;
- flex: 0 0 64px;
+ width: 52px;
+ height: 52px;
+ flex: 0 0 52px;
  display: inline-flex;
  align-items: center;
  justify-content: center;
@@ -1957,36 +1957,35 @@ section {
 .contact-services {
  list-style: none;
  margin:
-  20px
-  0
+  14px
   0
   0;
  padding: 0;
  display: flex;
  flex-direction: column;
- gap: 18px;
+ gap: 12px;
 }
 
 .contact-services li {
  display: flex;
  align-items: center;
- gap: 14px;
+ gap: 12px;
  color: var(--heading-soft);
- font-size: 16px;
- line-height: 1.4;
+ font-size: 15px;
+ line-height: 1.35;
 }
 
 .contact-check {
- width: 28px;
- height: 28px;
- flex: 0 0 28px;
+ width: 24px;
+ height: 24px;
+ flex: 0 0 24px;
  display: inline-flex;
  align-items: center;
  justify-content: center;
  border-radius: 50%;
  color: var(--primary);
  background: #eaf4ff;
- font-size: 17px;
+ font-size: 15px;
  font-weight: 800;
  line-height: 1;
 }
@@ -1995,18 +1994,18 @@ section {
  width: 100%;
  height: 1px;
  margin:
-  34px
+  24px
   0;
  background: #dfe8f1;
 }
 
 .contact-email {
  display: inline-block;
- margin-top: 20px;
+ margin-top: 14px;
  color: var(--heading-soft);
- font-size: 17px;
+ font-size: 16px;
  font-weight: 700;
- line-height: 1.45;
+ line-height: 1.4;
  text-decoration: none;
  transition: color 0.2s ease;
 }
@@ -2016,10 +2015,10 @@ section {
 }
 
 .contact-response {
- margin-top: 12px;
+ margin-top: 8px;
  color: #71839a;
- font-size: 14px;
- line-height: 1.5;
+ font-size: 13px;
+ line-height: 1.45;
 }
 
 /* =========================================================
@@ -2064,10 +2063,10 @@ section {
 
  .contact-card {
   grid-template-columns: 1fr;
-  row-gap: 42px;
+  row-gap: 34px;
   padding:
-   40px
-   34px;
+   34px
+   32px;
  }
 
  .contact-right {
