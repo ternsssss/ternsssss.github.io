@@ -1762,43 +1762,46 @@ section {
 }
 
 /* =========================================================
-   CONTACT — FINAL ALIGNMENT
+   CONTACT — FINAL CLEAN CENTERED LAYOUT
 ========================================================= */
 
 .contact {
     width: 100%;
-    max-width: none;
     padding: 58px 0;
     background: #edf5fc;
     scroll-margin-top: 100px;
 }
 
 .contact-card {
-    width: 100%;
-    max-width: var(--content-max-width);
+    width: min(1180px, calc(100% - 80px));
     margin: 0 auto;
-    padding: 8px var(--site-gutter);
+    padding: 8px 0;
 
     display: grid;
-    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-    column-gap: 70px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 90px;
 
-    align-items: stretch;
+    align-items: center;
 
     box-sizing: border-box;
 
+    /* No visible card */
     background: transparent;
-    border: 0;
-    border-radius: 0;
+    border: none;
     box-shadow: none;
+    border-radius: 0;
 }
+
+
+/* ---------------------------------------------------------
+   LEFT SIDE
+--------------------------------------------------------- */
 
 .contact-left {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    min-width: 0;
 }
 
 .contact-left .section-label {
@@ -1806,70 +1809,86 @@ section {
 }
 
 .contact-left h2 {
+    margin: 0 0 16px;
+
     color: var(--heading-soft);
     font-size: 38px;
     line-height: 1.12;
     letter-spacing: -0.7px;
-    margin-bottom: 16px;
 }
 
 .contact-accent {
     width: 58px;
     height: 3px;
     margin-bottom: 20px;
+
     background: var(--primary);
     border-radius: 999px;
 }
 
 .contact-message {
     max-width: 500px;
+    margin-bottom: 24px;
+
     color: var(--text);
     font-size: 15px;
     line-height: 1.65;
-    margin-bottom: 24px;
 }
 
 .contact-cta {
     min-height: 44px;
     padding: 10px 20px;
+
+    display: inline-flex;
+    align-items: center;
     gap: 10px;
+
     border-radius: 8px;
 
     box-shadow:
-        0 8px 20px
-        rgba(23, 105, 170, 0.16);
+        0 8px 20px rgba(23, 105, 170, 0.16);
 }
+
+
+/* ---------------------------------------------------------
+   RIGHT SIDE
+--------------------------------------------------------- */
 
 .contact-right {
     width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
+    max-width: 500px;
 
-    padding-left: 55px;
-    padding-right: 0;
+    margin: 0 auto;
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-self: stretch;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    padding: 0;
 }
 
-.contact-detail-heading {
-    display: flex;
-    align-items: center;
-}
+
+/* Same typography as CONTACT */
 
 .contact-panel-label {
     color: var(--primary);
+
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 2px;
     line-height: 1.4;
+
     text-transform: uppercase;
 }
 
+
+/* Available For */
+
 .contact-services {
     list-style: none;
+
     margin: 14px 0 0;
     padding: 0;
 
@@ -1884,6 +1903,7 @@ section {
     gap: 12px;
 
     color: var(--heading-soft);
+
     font-size: 15px;
     line-height: 1.35;
 }
@@ -1891,20 +1911,25 @@ section {
 .contact-check {
     width: 24px;
     height: 24px;
+
     flex: 0 0 24px;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 50%;
     color: var(--primary);
     background: #eaf4ff;
+
+    border-radius: 50%;
 
     font-size: 15px;
     font-weight: 800;
     line-height: 1;
 }
+
+
+/* Email */
 
 .contact-email-detail {
     margin-top: 28px;
@@ -1912,19 +1937,79 @@ section {
 
 .contact-email {
     display: inline-block;
+
     margin-top: 14px;
 
     color: var(--heading-soft);
+
     font-size: 16px;
     font-weight: 700;
     line-height: 1.4;
 
     text-decoration: none;
-    transition: color 0.2s ease;
 }
 
 .contact-email:hover {
     color: var(--primary);
+}
+
+
+/* =========================================================
+   IMPORTANT — REMOVE DEBUG OUTLINE
+========================================================= */
+
+.contact-right,
+.contact-card {
+    outline: none !important;
+    border: none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .contact-card {
+        width: min(720px, calc(100% - 48px));
+
+        grid-template-columns: 1fr;
+        row-gap: 42px;
+    }
+
+    .contact-right {
+        max-width: 500px;
+        margin: 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .contact {
+        padding: 48px 0;
+    }
+
+    .contact-card {
+        width: calc(100% - 36px);
+    }
+
+    .contact-left h2 {
+        font-size: 32px;
+    }
+
+    .contact-message {
+        font-size: 14px;
+    }
+
+    .contact-services li {
+        font-size: 14px;
+    }
+
+    .contact-email {
+        font-size: 15px;
+    }
 }
 
 
