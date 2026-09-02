@@ -1767,20 +1767,16 @@ section {
 .contact {
  width: 100%;
  max-width: none;
- padding:
-  54px
-  var(--site-gutter);
+ padding:46px var(--site-gutter);
  background: #edf5fc;
  scroll-margin-top: 100px;
 }
 
 .contact-card {
  width: 100%;
- max-width: 1120px;
+ max-width:1400px;
  margin: 0 auto;
- padding:
-  34px
-  44px;
+ padding:30px 44px;
 
  display: grid;
  grid-template-columns:
@@ -2014,12 +2010,6 @@ section {
  color: var(--primary);
 }
 
-.contact-response {
- margin-top: 8px;
- color: #71839a;
- font-size: 13px;
- line-height: 1.45;
-}
 
 /* =========================================================
  CONTACT RESPONSIVE
