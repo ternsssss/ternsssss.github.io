@@ -1777,26 +1777,48 @@ section {
  CONTACT TWO-COLUMN LAYOUT
 ========================================================= */
 
+/* =========================================================
+   CONTACT — EXACT CENTER ALIGNMENT
+========================================================= */
+
 .contact-card {
-    width: 100%;
-    max-width: 1120px;
+    width: 1200px;
+    max-width: calc(100% - 48px);
+
     margin: 0 auto;
 
-    padding: 0;
-
     display: grid;
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 0.98fr);
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
 
-    column-gap: 64px;
     align-items: center;
 
-    /* REMOVE WHITE CARD */
+    padding: 0;
     background: transparent;
     border: none;
-    border-radius: 0;
     box-shadow: none;
+    border-radius: 0;
+}
+
+/* Left column */
+.contact-left {
+    width: 100%;
+}
+
+/* Right column */
+.contact-right {
+    width: 100%;
+    padding: 0;
+}
+
+/* Remove the icons */
+.contact-icon {
+    display: none;
+}
+
+/* Keep headings aligned */
+.contact-detail-heading {
+    display: block;
 }
 
 /* =========================================================
