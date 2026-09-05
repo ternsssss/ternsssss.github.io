@@ -1914,8 +1914,7 @@ section {
 
 
 /* =========================================================
-   RIGHT COLUMN
-   KEEP THIS IN ITS CURRENT POSITION
+   CONTACT — RIGHT COLUMN FINAL POSITION
 ========================================================= */
 
 .contact-right {
@@ -1926,8 +1925,10 @@ section {
 
     display: flex;
     flex-direction: column;
-
     justify-content: center;
+
+    /* Move ONLY the right column to the right */
+    transform: translateX(120px);
 }
 
 
