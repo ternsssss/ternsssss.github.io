@@ -1783,17 +1783,14 @@ section {
 
 /* =========================================================
    CONTACT TWO-COLUMN LAYOUT
+   KEEPING THE ORIGINAL POSITION
 ========================================================= */
 
 .contact-card {
     width: 1200px;
     max-width: calc(100% - 48px);
 
-    margin:
-        0
-        auto;
-
-    padding: 0;
+    margin: 0 auto;
 
     display: grid;
 
@@ -1804,6 +1801,8 @@ section {
     column-gap: 80px;
 
     align-items: center;
+
+    padding: 0;
 
     background: transparent;
 
@@ -1817,10 +1816,12 @@ section {
 
 /* =========================================================
    LEFT COLUMN
+   DO NOT REPOSITION
 ========================================================= */
 
 .contact-left {
     width: 100%;
+
     min-width: 0;
 
     display: flex;
@@ -1847,6 +1848,11 @@ section {
 ========================================================= */
 
 .contact-left h2 {
+    margin:
+        0
+        0
+        18px;
+
     color: var(--heading-soft);
 
     font-size: 36px;
@@ -1856,8 +1862,6 @@ section {
     line-height: 1.15;
 
     letter-spacing: -0.7px;
-
-    margin-bottom: 18px;
 }
 
 
@@ -1883,7 +1887,14 @@ section {
 ========================================================= */
 
 .contact-message {
+    width: 100%;
+
     max-width: 500px;
+
+    margin:
+        0
+        0
+        24px;
 
     color: var(--text);
 
@@ -1892,13 +1903,11 @@ section {
     font-weight: 400;
 
     line-height: 1.65;
-
-    margin-bottom: 24px;
 }
 
 
 /* =========================================================
-   CONTACT CTA
+   CONTACT BUTTON
 ========================================================= */
 
 .contact-cta {
@@ -1918,7 +1927,7 @@ section {
 }
 
 
-/* CTA CIRCLE */
+/* CTA ICON */
 
 .contact-cta-icon {
     width: 24px;
@@ -1959,6 +1968,7 @@ section {
 
 /* =========================================================
    RIGHT COLUMN
+   DO NOT REPOSITION
 ========================================================= */
 
 .contact-right {
@@ -2010,27 +2020,18 @@ section {
 
 
 /* =========================================================
-   REMOVE OLD ICONS
-========================================================= */
-
-.contact-icon {
-    display: none !important;
-}
-
-
-/* =========================================================
    AVAILABLE FOR
 ========================================================= */
 
 .contact-services {
+    list-style: none;
+
     margin:
         14px
         0
         0;
 
     padding: 0;
-
-    list-style: none;
 
     display: flex;
 
@@ -2086,7 +2087,7 @@ section {
 
 /* =========================================================
    EMAIL
-   ALIGNED WITH AVAILABLE FOR
+   SAME LEFT ALIGNMENT AS AVAILABLE FOR
 ========================================================= */
 
 .contact-email-detail {
@@ -2121,7 +2122,17 @@ section {
 
 
 /* =========================================================
-   REMOVE DIVIDER COMPLETELY
+   REMOVE OLD CONTACT ICONS
+========================================================= */
+
+.contact-icon {
+    display: none !important;
+}
+
+
+/* =========================================================
+   REMOVE OLD DIVIDER
+   SAFE EVEN IF OLD HTML EXISTS
 ========================================================= */
 
 .contact-divider {
@@ -2151,7 +2162,37 @@ section {
 
 
 /* =========================================================
-   CONTACT RESPONSIVE — TABLET
+   CONTACT RESPONSIVE — 1000px
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .contact {
+        padding:
+            46px
+            var(--site-gutter);
+    }
+
+    .contact-card {
+        column-gap: 42px;
+    }
+
+    .contact-left h2 {
+        font-size: 34px;
+    }
+
+    .contact-message {
+        font-size: 15px;
+    }
+
+    .contact-services li {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   CONTACT RESPONSIVE — 850px
 ========================================================= */
 
 @media (max-width: 850px) {
@@ -2163,59 +2204,97 @@ section {
     }
 
     .contact-card {
-        width: min(680px, 100%);
-
-        max-width: 680px;
-
         grid-template-columns: 1fr;
 
-        row-gap: 32px;
+        row-gap: 36px;
     }
 
     .contact-right {
-        padding: 0;
+        padding-left: 0;
+    }
+
+    .contact-left h2 {
+        font-size: 32px;
     }
 }
 
 
 /* =========================================================
-   CONTACT RESPONSIVE — MOBILE
+   CONTACT RESPONSIVE — 500px
 ========================================================= */
 
 @media (max-width: 500px) {
 
     .contact {
         padding:
-            40px
+            42px
             7%;
     }
 
     .contact-card {
-        width: 100%;
-
-        max-width: none;
-
         grid-template-columns: 1fr;
 
-        row-gap: 28px;
+        row-gap: 32px;
+    }
+
+    .contact-left .section-label {
+        margin-bottom: 10px;
     }
 
     .contact-left h2 {
         font-size: 30px;
+
+        letter-spacing: -0.5px;
+    }
+
+    .contact-accent {
+        width: 56px;
+
+        margin-bottom: 18px;
     }
 
     .contact-message {
-        max-width: 100%;
+        font-size: 14px;
 
-        font-size: 15px;
+        line-height: 1.6;
+
+        margin-bottom: 22px;
+    }
+
+    .contact-cta {
+        width: auto;
+    }
+
+    .contact-panel-label {
+        font-size: 12px;
+
+        letter-spacing: 1.8px;
+    }
+
+    .contact-services {
+        gap: 11px;
+
+        margin-top: 14px;
     }
 
     .contact-services li {
+        align-items: center;
+
         font-size: 14px;
+    }
+
+    .contact-check {
+        width: 23px;
+
+        height: 23px;
+
+        flex-basis: 23px;
     }
 
     .contact-email {
         font-size: 15px;
+
+        overflow-wrap: anywhere;
     }
 }
 
