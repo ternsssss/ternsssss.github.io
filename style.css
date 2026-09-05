@@ -1949,6 +1949,10 @@ section {
     transform: translateX(42px);
 }
 
+.contact-email-detail {
+    margin-top: 30px;
+}
+
 
 /* =========================================================
    AVAILABLE FOR
