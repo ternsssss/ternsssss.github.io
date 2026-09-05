@@ -1891,7 +1891,7 @@ section {
 
 
 /* =========================================================
-   RIGHT SIDE
+   CONTACT RIGHT — CENTER CONTENT WITHIN SECOND COLUMN
 ========================================================= */
 
 .contact-right {
@@ -1902,7 +1902,14 @@ section {
 
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+}
+
+/* Keep each right-side block the same width */
+.contact-right .contact-detail,
+.contact-right .contact-divider {
+    width: 100%;
 }
 
 
