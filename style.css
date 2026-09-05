@@ -1762,21 +1762,25 @@ section {
 }
 
 /* =========================================================
-   CONTACT — FINAL CENTERED VERSION
+   CONTACT — FINAL VERSION
 ========================================================= */
 
 .contact {
     width: 100%;
     max-width: none;
     margin: 0;
+
     padding: 48px var(--site-gutter);
+
     background: #edf5fc;
+
     scroll-margin-top: 100px;
 }
 
 
 /* =========================================================
-   CENTERED CONTENT WRAPPER
+   CENTERED CONTACT WRAPPER
+   DO NOT CHANGE THE POSITIONING
 ========================================================= */
 
 .contact-card {
@@ -1787,12 +1791,17 @@ section {
     padding: 0;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
     column-gap: 60px;
 
     align-items: center;
 
     background: transparent;
+
     border: none;
     border-radius: 0;
     box-shadow: none;
@@ -1800,7 +1809,7 @@ section {
 
 
 /* =========================================================
-   LEFT SIDE
+   LEFT COLUMN
 ========================================================= */
 
 .contact-left {
@@ -1809,13 +1818,16 @@ section {
 
     display: flex;
     flex-direction: column;
+
     align-items: flex-start;
     justify-content: center;
 }
 
+
 .contact-left .section-label {
     margin-bottom: 12px;
 }
+
 
 .contact-left h2 {
     margin: 0 0 16px;
@@ -1825,8 +1837,10 @@ section {
     font-size: 34px;
     font-weight: 700;
     line-height: 1.15;
+
     letter-spacing: -0.6px;
 }
+
 
 .contact-accent {
     width: 60px;
@@ -1835,8 +1849,10 @@ section {
     margin-bottom: 18px;
 
     background: var(--primary);
+
     border-radius: 999px;
 }
+
 
 .contact-message {
     width: 100%;
@@ -1869,29 +1885,37 @@ section {
         rgba(23, 105, 170, 0.16);
 }
 
+
 .contact-cta-icon {
     width: 26px;
     height: 26px;
 
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
-    border: 1.5px solid currentColor;
+    border:
+        1.5px solid
+        currentColor;
+
     border-radius: 50%;
 
     font-size: 15px;
     line-height: 1;
 }
 
+
 .contact-cta-arrow {
     margin-left: 8px;
+
     font-size: 17px;
 }
 
 
 /* =========================================================
-   RIGHT SIDE
+   RIGHT COLUMN
+   KEEP THIS IN ITS CURRENT POSITION
 ========================================================= */
 
 .contact-right {
@@ -1902,19 +1926,21 @@ section {
 
     display: flex;
     flex-direction: column;
+
     justify-content: center;
 }
 
 
 /* =========================================================
-   LABELS
-   SAME AS "CONTACT"
+   RIGHT COLUMN LABELS
+   SAME STYLE AS "CONTACT"
 ========================================================= */
 
 .contact-panel-label {
     display: block;
 
     margin: 0;
+    padding: 0;
 
     color: var(--primary);
 
@@ -1929,18 +1955,23 @@ section {
 
 
 /* =========================================================
-   REMOVE AVAILABLE FOR / EMAIL ICONS
+   DETAIL HEADING
 ========================================================= */
-
-.contact-icon {
-    display: none !important;
-}
 
 .contact-detail-heading {
     display: block;
 
     margin: 0;
     padding: 0;
+}
+
+
+/* =========================================================
+   REMOVE OLD AVAILABLE / EMAIL ICONS
+========================================================= */
+
+.contact-icon {
+    display: none !important;
 }
 
 
@@ -1956,20 +1987,29 @@ section {
 
     display: flex;
     flex-direction: column;
+
     gap: 10px;
 }
 
+
 .contact-services li {
     display: flex;
+
     align-items: center;
 
     margin: 0;
+    padding: 0;
 
     color: var(--heading-soft);
 
     font-size: 15px;
     line-height: 1.4;
 }
+
+
+/* =========================================================
+   CHECK MARK
+========================================================= */
 
 .contact-check {
     width: 20px;
@@ -1980,6 +2020,7 @@ section {
     flex: 0 0 20px;
 
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -1995,35 +2036,38 @@ section {
 
 
 /* =========================================================
-   DIVIDER
+   NO DIVIDER
+   HTML DIVIDER HAS BEEN REMOVED
+   THIS ALSO PROTECTS AGAINST OLD CSS
 ========================================================= */
 
+.contact-divider {
+    display: none !important;
 
+    width: 0 !important;
+    height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    background: transparent !important;
+}
 
 
 /* =========================================================
-   EMAIL BLOCK — ALIGN WITH AVAILABLE FOR
+   EMAIL BLOCK
+   VERTICAL SPACE ONLY
+   HORIZONTAL POSITION IS UNCHANGED
 ========================================================= */
 
 .contact-email-detail {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-}
+    margin-top: 28px !important;
 
-.contact-email-detail .contact-detail-heading {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-}
+    padding: 0 !important;
 
-.contact-email-detail .contact-panel-label {
-    display: block;
-    margin: 0;
-    padding: 0;
-    text-align: left;
+    border: none !important;
 }
 
 
@@ -2040,10 +2084,12 @@ section {
 
     font-size: 16px;
     font-weight: 700;
+
     line-height: 1.4;
 
     text-decoration: none;
 }
+
 
 .contact-email:hover {
     color: var(--primary);
@@ -2051,7 +2097,7 @@ section {
 
 
 /* =========================================================
-   REMOVE RESPONSE-TIME MESSAGE
+   RESPONSE MESSAGE — REMOVED
 ========================================================= */
 
 .contact-response {
@@ -2060,7 +2106,7 @@ section {
 
 
 /* =========================================================
-   TABLET
+   CONTACT RESPONSIVE — TABLET
 ========================================================= */
 
 @media (max-width: 850px) {
@@ -2074,14 +2120,23 @@ section {
         max-width: 680px;
 
         grid-template-columns: 1fr;
+
         row-gap: 32px;
+    }
+
+    .contact-left h2 {
+        font-size: 32px;
+    }
+
+    .contact-message {
+        max-width: 100%;
     }
 
 }
 
 
 /* =========================================================
-   MOBILE
+   CONTACT RESPONSIVE — MOBILE
 ========================================================= */
 
 @media (max-width: 500px) {
@@ -2095,6 +2150,7 @@ section {
         max-width: none;
 
         grid-template-columns: 1fr;
+
         row-gap: 28px;
     }
 
@@ -2104,6 +2160,7 @@ section {
 
     .contact-message {
         max-width: 100%;
+
         font-size: 15px;
     }
 
@@ -2114,6 +2171,7 @@ section {
     .contact-email {
         font-size: 15px;
     }
+
 }
 
 
