@@ -1762,7 +1762,7 @@ section {
 }
 
 /* =========================================================
-   CONTACT — FINAL CENTERED VERSION
+   CONTACT — BENCHMARK POSITION PRESERVED
 ========================================================= */
 
 .contact {
@@ -1777,6 +1777,7 @@ section {
 
 /* =========================================================
    CENTERED CONTENT WRAPPER
+   POSITION PRESERVED
 ========================================================= */
 
 .contact-card {
@@ -1801,6 +1802,7 @@ section {
 
 /* =========================================================
    LEFT SIDE
+   POSITION PRESERVED
 ========================================================= */
 
 .contact-left {
@@ -1892,6 +1894,7 @@ section {
 
 /* =========================================================
    RIGHT SIDE
+   POSITION PRESERVED
 ========================================================= */
 
 .contact-right {
@@ -1902,7 +1905,6 @@ section {
 
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 
@@ -1928,15 +1930,6 @@ section {
     text-transform: uppercase;
 }
 
-
-/* =========================================================
-   REMOVE AVAILABLE FOR / EMAIL ICONS
-========================================================= */
-
-.contact-icon {
-    display: none !important;
-}
-
 .contact-detail-heading {
     display: block;
 
@@ -1947,6 +1940,16 @@ section {
 
 /* =========================================================
    AVAILABLE FOR
+   ONLY THIS BLOCK IS SHIFTED RIGHT
+========================================================= */
+
+.contact-available-detail {
+    transform: translateX(42px);
+}
+
+
+/* =========================================================
+   AVAILABLE FOR SERVICES
 ========================================================= */
 
 .contact-services {
@@ -1997,21 +2000,17 @@ section {
 
 /* =========================================================
    DIVIDER
+   REMOVED — NO DIVIDER IS RENDERED
 ========================================================= */
-
-.contact-divider {
-    width: 100%;
-    height: 1px;
-
-    margin: 26px 0;
-
-    background: #d7e3ee;
-}
 
 
 /* =========================================================
    EMAIL
 ========================================================= */
+
+.contact-email-detail {
+    margin-top: 26px;
+}
 
 .contact-email {
     display: inline-block;
@@ -2033,7 +2032,8 @@ section {
 
 
 /* =========================================================
-   REMOVE RESPONSE-TIME MESSAGE
+   RESPONSE-TIME MESSAGE
+   REMOVED
 ========================================================= */
 
 .contact-response {
@@ -2059,6 +2059,13 @@ section {
         row-gap: 32px;
     }
 
+    .contact-available-detail {
+        transform: none;
+    }
+
+    .contact-email-detail {
+        margin-top: 26px;
+    }
 }
 
 
@@ -2095,6 +2102,10 @@ section {
 
     .contact-email {
         font-size: 15px;
+    }
+
+    .contact-available-detail {
+        transform: none;
     }
 }
 
